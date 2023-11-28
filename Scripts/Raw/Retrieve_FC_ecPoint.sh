@@ -28,7 +28,7 @@ BaseTime=0
 Acc=12
 CodeVers="2.0.0"
 CalVers="1.1.0"
-Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_Flash_Floods_Reports_4Verif_USA"
+Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN="ec:/ecpoint/forecasts/Oper/ECMWF_ENS/Rainfall"
 DirOUT="Data/Raw/FC/ecPoint"
 #########################################################################################################

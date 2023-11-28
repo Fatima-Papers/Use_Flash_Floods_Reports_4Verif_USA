@@ -1,6 +1,6 @@
 #!/bin/bash
 
-###############################################################################
+##########################################################################
 # CODE DESCRIPTION
 # Retrieve_FC_ERA5_ecPoint retrieves the ERA5-ecPoint data for 12-hourly rainfall.  
 # Runtime: the code can take up to 31 hours to run in series.
@@ -17,10 +17,10 @@
 YearS=1950
 YearF=2020
 Acc=12
-Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_Flash_Floods_Reports_4Verif_USA"
+Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN="/ec/vol/highlander/ERA5_ecPoint_70yr"
 DirOUT="Data/Raw/FC/ERA_ecPoint"
-###############################################################################
+##########################################################################
 
 # Setting general variables
 AccSTR=$(printf %02d ${Acc})

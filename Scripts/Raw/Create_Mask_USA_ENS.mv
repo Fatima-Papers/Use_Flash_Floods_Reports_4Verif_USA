@@ -1,10 +1,10 @@
 # Metview Macro
 
-################################################################################
+###########################################################################
 # CODE DESCRIPTION
-# Create_Mask_USA_ENS.mv creates USA's mask for the ECMWF ENS grid, and saves the it as a 
-# grib file. The code needs to be run only once to create the mask. The code is kept only for 
-# reproducibility purpose.
+# Create_Mask_USA_ENS.mv creates USA's mask for the ECMWF ENS grid, and saves the it 
+# as a grib file. The code needs to be run only once to create the mask. The code is kept only 
+# for reproducibility purpose.
 # Runtime: negligible.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -12,9 +12,9 @@
 # DirOUT (string): relative path containing the domain's mask.
 
 # INPUT PARAMETERS
-Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_Flash_Floods_Reports_4Verif_USA"
+Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirOUT = "Data/Raw/Mask_USA_ENS"
-################################################################################
+###########################################################################
 
 
 # Retrieving the raw data needed to create USA's mask
