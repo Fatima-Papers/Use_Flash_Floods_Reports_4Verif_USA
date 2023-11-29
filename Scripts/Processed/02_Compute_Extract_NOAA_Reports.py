@@ -4,7 +4,7 @@ import pytz
 import numpy as np
 import pandas as pd
 
-#################################################################################
+######################################################################################################################################################################
 # CODE DESCRIPTION
 # 02_Compute_Extract_NOAA_Reports.py extracts the flash flood reports from the NOAA database,
 # and manipulates the raw data to make it suitable for subsequent analysis:
@@ -26,7 +26,7 @@ YearF = 2022
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/OBS/NOAA_Reports"
 DirOUT = "Data/Compute/02_Extract_NOAA_Reports"
-#################################################################################
+######################################################################################################################################################################
 
 
 # Setting the main input/output directories
@@ -46,7 +46,9 @@ ff_all = pd.DataFrame()
 # Reading the raw flood reports
 for Year in range(YearS,YearF+1):
       
-      print(Year)
+      print("Post-processing the reports for " + str(Year))
+
+      years_rep.append(Year)
 
       string2find = "d" + str(Year) + "_"
       FileIN = [f for f in os.listdir(MainDirIN) if string2find in f and os.path.isfile(os.path.join(MainDirIN, f))]
