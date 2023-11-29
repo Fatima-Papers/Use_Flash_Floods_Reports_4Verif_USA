@@ -6,5 +6,6 @@ The downloaded reports are:
 
 Documentation on the database can be found here:
 https://www.nws.noaa.gov/directives/sym/pd01016005curr.pdf
+https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/Storm-Data-Bulk-csv-Format.pdf
 
 The database was accessed on 26/11/2023.
