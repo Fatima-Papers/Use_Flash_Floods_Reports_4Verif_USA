@@ -61,10 +61,11 @@ for Year in range(YearS,YearF+1):
       # Remove reports with no lat/lon coordinates or no reporting date/time
       ff = ff[ff["BEGIN_DATE_TIME"].notna() | ff["END_DATE_TIME"].notna() | ff["BEGIN_LAT"].notna() | ff["END_LAT"].notna() | ff["BEGIN_LON"].notna() | ff["END_LON"].notna()]
       num_rows_ff = ff.shape[0]
-      num_rep_ff.append(num_rows_ff)
 
       if num_rows_ff != 0:
 
+            num_rep_ff.append(num_rows_ff)
+            
             # Adding the new columns to the dataset
             ff["BEGIN_DATE_TIME_UTC"] = np.nan
             ff["END_DATE_TIME_UTC"] = np.nan
