@@ -137,7 +137,7 @@ for Year in range(YearS,YearF+1):
 
 # Saving the database with only flash flood reports and some metadata
 FileOUT = MainDirOUT + "/FlashFloodRep.csv"
-df.to_csv(FileOUT, index=False)
+ff_all.to_csv(FileOUT, index=False)
 
 FileOUT = MainDirOUT + "/years_rep"
 np.save(FileOUT, years_rep)
