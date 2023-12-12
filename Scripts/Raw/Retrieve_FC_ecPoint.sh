@@ -4,7 +4,7 @@
 # CODE DESCRIPTION
 # Retrieve_FC_ecPoint.sh retrieves ecPoint-Rainfall forecasts from ECFS. Files contain global rainfall forecasts for the considered 
 # accumulation period, ending at the time step indicated in the file name.
-# Runtime: negligible.
+# Runtime: the code takes several hours to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # BaseDateS (date, in YYYYMMDD format): start forecast's basedate to retrieve.

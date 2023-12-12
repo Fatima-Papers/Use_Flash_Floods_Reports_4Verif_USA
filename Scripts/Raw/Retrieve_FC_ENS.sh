@@ -4,7 +4,7 @@
 # CODE DESCRIPTION
 # Retrieve_FC_ENS.sh retrieves raw ECMWF ENS rainfall forecasts from MARS. Files contain 
 # cumulative global rainfall forecasts up to the step indicated in the file name.
-# Runtime: negligible.
+# Runtime: the code takes several hours to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # BaseDateS (date, in YYYYMMDD format): start forecast's basedate to retrieve.

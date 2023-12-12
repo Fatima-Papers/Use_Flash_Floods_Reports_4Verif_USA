@@ -1,0 +1,6 @@
+The rainfall climatology was computed in the following GitHub repository:
+https://github.com/FatimaPillosu/RainThr_4FlashFloodFC_ecPointERA5
+
+The grib files were retrieved from there, and saved in:
+Data/Raw/Analysis/ERA5_ecPoint/tp_climate/tp_climate_12h_ERA5_ecPoint.grib # rainfall totals
+Data/Raw/Analysis/ERA5_ecPoint/tp_climate/percs.npy # list of percentiles computed
