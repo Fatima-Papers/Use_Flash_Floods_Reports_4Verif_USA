@@ -53,7 +53,7 @@ for Year in range(YearS,YearF+1):
       df = df.dropna(subset=["BEGIN_DATE_TIME", "END_DATE_TIME", "BEGIN_LAT", "BEGIN_LON", "END_LAT", "END_LON"])
  
       # Extracting reports for flash floods and surface runoff
-      ff = df[df["EVENT_TYPE"].isin(["Flash Flood", "Heavy Rain", "Hurricane/Typhoon", "Tornado", "Tropical Storm"])]
+      ff = df[df["EVENT_TYPE"].isin(["Flash Flood", "Flood", "Coastal Flood", "Heavy Rain", "Hurricane/Typhoon", "Tornado", "Tropical Storm"])]
       ff = ff.reset_index(drop=True)  # to reset the indexes of the new dataframe
 
       # Removing reports with no lat/lon coordinates or no reporting date/time
