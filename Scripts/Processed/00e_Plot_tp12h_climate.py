@@ -16,9 +16,20 @@ import metview as mv
 # DirIN (string): relative path of the directory containing the rainfall climatology.
 # DirOUT (string): relative path of the directory containing the plot of the rainfall climatology.
 
+# NOTES
+# The percentiles correspond roughly to the following return periods:
+# 99th -> 3 times in a year
+# 99.8th -> once in 1 year
+# 99.9th -> once in 2 years
+# 99.95th -> once in 5 years
+# 99.98th -> once in 10 years
+# 99.99th -> once in 20 years
+# 99.995th -> once in 50 years
+# 99.998th -> once in 100 years
+
 # INPUT PARAMETERS
 Acc = 12
-Perc2Plot = 99.95
+Perc2Plot = 99.8
 Mask_Domain = [15,-135,55,-55]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
@@ -26,13 +37,12 @@ DirIN = "Data/Raw/Analysis/ERA5_ecPoint/tp_climate"
 DirOUT = "Data/Plot/00e_tp12h_climate"
 ############################################################################
 
-
 # Reading the domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 
 # Reading the rainfall climatology and the computed percentiles 
 climate = mv.read(Git_Repo + "/" + DirIN + "/tp_climate_" + f"{Acc:02}" + "h_ERA5_ecPoint.grib")
-percs_computed = np.load(Git_Repo + "/" + DirIN + "/percs.npy")
+percs_computed = np.load(Git_Repo + "/" + DirIN + "/percs_computed_4_tp_climate.npy")
 
 # Select the percentile to plot
 ind_Perc = np.where(percs_computed == Perc2Plot)[0][0]
@@ -42,7 +52,6 @@ climate_perc = climate[ind_Perc]
 climate_perc_mask = ((mask == 0) * -9999) + ((mask == 1) * climate_perc)
 
 # Plot the rainfall climatology
-
 geo_view = mv.geoview(
     map_projection = "mercator",
     map_area_definition = "corners",
