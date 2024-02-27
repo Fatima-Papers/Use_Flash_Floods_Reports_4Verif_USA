@@ -7,12 +7,12 @@ from eccodes import *
 
 ################################################################################
 # CODE DESCRIPTION
-# 03_Compute_Extract_Raw_Regridded_PopDens.py reads NASA's population density at 1km 
-# resolution (stored in geotiff files), extracts the max value for each N320 grid-box, and saves both 
-# resolution datasets (1km and N320) as grib files. It finally provides an average population density
-# over all the considered files.
-# Runtime: the code takes up to 10 seconds to run in serial for raw data with 15min (30 km) 
-# resolution, and up to 30 minutes for raw data with 30sec (1km) resolution.
+# 09_Compute_ExtractRaw_Regrid_PopDens.py reads NASA's population density at different 
+# resolutions (as geotiff files), and extracts some statistics (e.g. max or average) for each grid-box 
+# in the grid of interest. It finally saves both resolution datasets (raw and regridded) as grib files. 
+# Runtime: the runtime of the code varies significantly according to the resolution of the raw data. 
+# It can take up to 10 seconds to run in serial for raw data with 15min resolution (30 km), and up 
+# to 30 minutes for raw data with 30sec resolution (1km).
 
 # INPUT PARAMETERS DESCRIPTION
 # Year_S (integer, in YYYY format): start year to consider.
