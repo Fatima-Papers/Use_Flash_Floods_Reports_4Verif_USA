@@ -1,3 +1,4 @@
 # Add here the relative paths of the directories/files to ignore.
+.*
 Data/Raw/*
 Data/Compute/*
