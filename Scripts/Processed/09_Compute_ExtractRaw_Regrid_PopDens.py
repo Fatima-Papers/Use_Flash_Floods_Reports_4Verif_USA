@@ -32,7 +32,7 @@ Grid_Raw = "15_min"
 Grid_2_Interpolate = "n320"
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/OBS/NASA_PopDens"
-DirOUT = "Data/Compute/03_Extract_Raw_Regridded_PopDens"
+DirOUT = "Data/Compute/09_ExtractRaw_Regrid_PopDens"
 ################################################################################
 
 PopDens_all = None
