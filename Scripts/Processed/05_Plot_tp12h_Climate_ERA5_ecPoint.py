@@ -45,7 +45,6 @@ mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 climate = mv.read(Git_Repo + "/" + DirIN + "/tp_climate_" + f"{Acc:02}" + "h_ERA5_ecPoint.grib")
 percs_computed = np.load(Git_Repo + "/" + DirIN + "/percs_computed_4_tp_climate.npy")
 
-
 # Select the percentiles to plot
 print("Creating and saving plot of " + str(Acc) + "-hourly rainfall climatology for the:")
 
