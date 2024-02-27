@@ -3,7 +3,7 @@ import metview as mv
 
 ############################################################################
 # CODE DESCRIPTION
-# 00b_Plot_Soil_Type_ENS_9km.py plots the soil type from the new ENS (at 9 km resolution).  
+# 02_Plot_Soil_Type_ENS_9km.py plots the soil type from the new ENS (at 9 km resolution).  
 # Runtime: negligible.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -16,7 +16,7 @@ import metview as mv
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ENS_9km/Mask.grib"
-DirOUT = "Data/Plot/00b_Soil_Type_ENS_9km"
+DirOUT = "Data/Plot/02_Soil_Type_ENS_9km"
 ############################################################################
 
 # Retrieving the soil type
