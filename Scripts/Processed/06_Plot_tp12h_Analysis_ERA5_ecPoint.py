@@ -20,7 +20,7 @@ import metview as mv
 # DirOUT (string): relative path where to store the plots.
 
 # INPUT PARAMETERS
-DateTime_Start_S = datetime(2020,1,1,0)
+DateTime_Start_S = datetime(1996,1,1,0)
 DateTime_Start_F = datetime(2021,12,31,12)
 Acc = 12
 Disc_Acc = 12
