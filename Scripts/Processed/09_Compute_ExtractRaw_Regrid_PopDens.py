@@ -82,9 +82,10 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
                   geotiff.bounds.bottom,
                   geotiff.bounds.right,
                   )
+      
       di = (e - w) / ni
       dj = (n - s) / nj
-      
+
       h = codes_grib_new_from_samples("regular_ll_sfc_grib2")
       
       codes_set(h, "Ni", ni)
@@ -97,10 +98,6 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
       codes_set(h, "longitudeOfFirstGridPointInDegrees", w + di / 2)
       codes_set(h, "longitudeOfLastGridPointInDegrees", e - dj / 2)
 
-      codes_set(h, "paramId", "167")
-      codes_set(h, "bitmapPresent", 0)
-      codes_set(h, "bitsPerValue", "16")
-
       codes_set_values(h, vals_array2d)
 
       # Saving NASA's raw population density as grib
@@ -108,12 +105,16 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
             codes_write(h, f)
       codes_release(h)
 
+      # Release memory
+      geotiff = 0
+      vals_array2d = 0
 
       #############################################
       # Interpolating NASA's raw dataset into required grid  #
       #############################################
 
       # Interpolating to required grid
+      print("Interpolating NASA's raw dataset into required grid...")
       pop_dens_raw = mv.read(MainDirOUT + "/PopDens_" +  Grid_Raw + "_" + str(Year) + ".grib2")
 
       pop_dens_regridded = mv.regrid(
