@@ -3,7 +3,7 @@ import metview as mv
 
 ###########################################################################
 # CODE DESCRIPTION
-# 00c_Plot_Slope_Orog_ENS_9km.py plots the slope of sub-gridscale orography from the 
+# 03_Plot_Slope_Orog_ENS_9km.py plots the slope of sub-gridscale orography from the 
 # new ENS (at 9 km resolution).
 # Runtime: negligible.
 
@@ -14,10 +14,10 @@ import metview as mv
 # DirOUT (string): relative path where to store the plot 
 
 # INPUT PARAMETERS
-Mask_Domain = [15,-135,55,-55]
+Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ENS_9km/Mask.grib"
-DirOUT = "Data/Plot/00c_Slope_Orog_ENS_9km"
+DirOUT = "Data/Plot/03_Slope_Orog_ENS_9km"
 ###########################################################################
 
 
@@ -44,12 +44,6 @@ slor_mask = (mask == 1) * slor
 # Plotting the slope of sub-gridscale orography values within the considered domain
 print("Plotting the slope of sub-gridscale orography values within the considered domain...")
 
-geo_view = mv.geoview(
-    map_projection = "mercator",
-    map_area_definition = "corners",
-    area = Mask_Domain
-    )
-    
 coastlines = mv.mcoast(
     map_coastline_colour = "charcoal",
     map_coastline_thickness = 1,
@@ -67,6 +61,13 @@ coastlines = mv.mcoast(
     map_grid_thickness = 1,
     map_grid_colour = "charcoal",
     map_label_height = 0.5
+    )
+
+geo_view = mv.geoview(
+    map_projection = "epsg:3857",
+    map_area_definition = "corners",
+    area = Mask_Domain,
+    coastlines = coastlines
     )
 
 contouring = mv.mcont(
@@ -122,4 +123,4 @@ if not os.path.exists(MainDirOUT):
 FileOUT = MainDirOUT + "/Slope_Orog" 
 png = mv.png_output(output_name = FileOUT)
 mv.setoutput(png)
-mv.plot(geo_view, slor_mask, contouring, coastlines, legend, title)
+mv.plot(geo_view, slor_mask, contouring, legend, title)
