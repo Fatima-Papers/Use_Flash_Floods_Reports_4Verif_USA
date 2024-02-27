@@ -5,7 +5,7 @@ import metview as mv
 ##############################################################################################################################################
 # CODE DESCRIPTION
 # 06_Plot_tp12h_Analysis_ERA5_ecPoint.py plots the 99th 12-hourly accumulated rainfall from ERA5 ecPoint.
-# Runtime: negligible.
+# Runtime: the code takes up to several hours to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # DateTime_Start_S (date and time): start date (first three numbers) and time (fourth number) for the analysis period (representing the beginning of the accumulation period).
