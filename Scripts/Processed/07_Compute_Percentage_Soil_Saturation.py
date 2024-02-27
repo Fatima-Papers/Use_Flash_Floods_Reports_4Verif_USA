@@ -4,7 +4,7 @@ import metview as mv
 
 ##############################################################################################################################################
 # CODE DESCRIPTION
-# 01_Compute_Percentage_Soil_Saturation.py computes the percentage to soil saturation for the top 1m level.
+# 07_Compute_Percentage_Soil_Saturation.py computes the percentage to soil saturation for the top 1m level.
 # Runtime: the code takes up to several hours to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -23,7 +23,7 @@ Acc = 12
 Disc_Acc = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/Analysis/ERA5_Land"
-DirOUT = "Data/Compute/01_Percentage_Soil_Saturation"
+DirOUT = "Data/Compute/07_Percentage_Soil_Saturation"
 ##############################################################################################################################################
 
 # Retrieving the soil type
