@@ -2,10 +2,9 @@ import os
 from datetime import datetime, timedelta
 import metview as mv
 
-##########################################################################
+##############################################################################################################################################
 # CODE DESCRIPTION
-# 06_Plot_tp12h_Analysis_ERA5_ecPoint.py plots the 99th 12-hourly accumulated rainfall from 
-# ERA5 ecPoint.
+# 06_Plot_tp12h_Analysis_ERA5_ecPoint.py plots the 99th 12-hourly accumulated rainfall from ERA5 ecPoint.
 # Runtime: negligible.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -21,7 +20,7 @@ import metview as mv
 # DirOUT (string): relative path where to store the plots.
 
 # INPUT PARAMETERS
-DateTime_Start_S = datetime(1996,1,1,0)
+DateTime_Start_S = datetime(2020,1,1,0)
 DateTime_Start_F = datetime(2021,12,31,12)
 Acc = 12
 Disc_Acc = 12
@@ -31,7 +30,7 @@ Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_US
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 DirIN = "Data/Raw/Analysis/ERA5_ecPoint"
 DirOUT = "Data/Plot/06_tp12h_Analysis_ERA5_ecPoint"
-##########################################################################
+##############################################################################################################################################
 
 # Plotting the accumulated rainfall totals from ERA5_ecPoint analysis
 print()
@@ -132,5 +131,4 @@ while TheDateTime_Start <= DateTime_Start_F:
       mv.setoutput(png)
       mv.plot(geo_view, tp_perc_bitmap, contouring, legend, title)
 
-      exit()
       TheDateTime_Start = TheDateTime_Start + timedelta(hours=Disc_Acc)
