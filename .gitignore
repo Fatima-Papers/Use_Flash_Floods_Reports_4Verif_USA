@@ -2,3 +2,8 @@
 .*
 Data/Raw/*
 Data/Compute/*
+Data/Plot/06*
+Data/Plot/08*
+Data/Plot/15*
+Data/Scripts/Processed/LogATOS/*
+Data/Scripts/Processed/TrainML*

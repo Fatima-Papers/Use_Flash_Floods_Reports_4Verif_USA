@@ -1,0 +1,1538 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 49002, mtime: Tue Oct  3 11:53:54 2023
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Tue Mar  5 17:27:12 2024 (1709659632.0373416) on aa6-204.bullx:/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=aa
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SLURM_JOB_ID=13517288
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=PDT_Year
+[ECMWF-INFO -sbatch] - #SBATCH --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=64
+[ECMWF-INFO -sbatch] - #SBATCH --mem=128G
+[ECMWF-INFO -sbatch] - #SBATCH --time=2-00:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --qos=nf
+[ECMWF-INFO -sbatch] - #SBATCH --mail-type=FAIL
+[ECMWF-INFO -sbatch] - #SBATCH --mail-user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['18a_SubmitterATOS_PDT_Year.sh', '2016']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=64
+[ECMWF-INFO -sbatch] - ARG --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --job_name=PDT_Year
+[ECMWF-INFO -sbatch] - ARG --mail_type=FAIL
+[ECMWF-INFO -sbatch] - ARG --mail_user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - ARG --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --qos=nf
+[ECMWF-INFO -sbatch] - ARG --time=2-00:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=128G
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: mofp-PDT_Year-1x64-/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-_.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=64', '--error=LogATOS/PDT_Year-%J.out', '--job-name=PDT_Year', '--mail-type=FAIL', '--mail-user=fatima.pillosu@ecmwf.int', '--output=LogATOS/PDT_Year-%J.out', '--qos=nf', '--time=2-00:00:00', '--mem=128G', '--licenses=h2resw01', '--export=EC_user_time_limit=2-00:00:00', '/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh', '2016']
+[ECMWF-INFO -sbatch] - sbatch executed on aa
+[ECMWF-INFO -sbatch] - Job queued on aa using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 13918872
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on aa6-164 at 20240305_172732.367, PID: 1832312, JOBID: 13918872
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/mofp
+[ECMWF-INFO -ecprofile] $PERM=/perm/mofp
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/mofp
+[ECMWF-INFO -ecprofile] $TMPDIR=/etc/ecmwf/ssd/ssd1/tmpdirs/mofp.13918872
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/mofp/0/13918872
+2016-01-01 00:00:00 12
+Creating point data table for: 2016010112
+2016-01-01 00:00:00 24
+Creating point data table for: 2016010200
+2016-01-02 00:00:00 12
+Creating point data table for: 2016010212
+2016-01-02 00:00:00 24
+Creating point data table for: 2016010300
+2016-01-03 00:00:00 12
+Creating point data table for: 2016010312
+2016-01-03 00:00:00 24
+Creating point data table for: 2016010400
+2016-01-04 00:00:00 12
+Creating point data table for: 2016010412
+2016-01-04 00:00:00 24
+Creating point data table for: 2016010500
+2016-01-05 00:00:00 12
+Creating point data table for: 2016010512
+2016-01-05 00:00:00 24
+Creating point data table for: 2016010600
+2016-01-06 00:00:00 12
+Creating point data table for: 2016010612
+2016-01-06 00:00:00 24
+Creating point data table for: 2016010700
+2016-01-07 00:00:00 12
+Creating point data table for: 2016010712
+2016-01-07 00:00:00 24
+Creating point data table for: 2016010800
+2016-01-08 00:00:00 12
+Creating point data table for: 2016010812
+2016-01-08 00:00:00 24
+Creating point data table for: 2016010900
+2016-01-09 00:00:00 12
+Creating point data table for: 2016010912
+2016-01-09 00:00:00 24
+Creating point data table for: 2016011000
+2016-01-10 00:00:00 12
+Creating point data table for: 2016011012
+2016-01-10 00:00:00 24
+Creating point data table for: 2016011100
+2016-01-11 00:00:00 12
+Creating point data table for: 2016011112
+2016-01-11 00:00:00 24
+Creating point data table for: 2016011200
+2016-01-12 00:00:00 12
+Creating point data table for: 2016011212
+2016-01-12 00:00:00 24
+Creating point data table for: 2016011300
+2016-01-13 00:00:00 12
+Creating point data table for: 2016011312
+2016-01-13 00:00:00 24
+Creating point data table for: 2016011400
+2016-01-14 00:00:00 12
+Creating point data table for: 2016011412
+2016-01-14 00:00:00 24
+Creating point data table for: 2016011500
+2016-01-15 00:00:00 12
+Creating point data table for: 2016011512
+2016-01-15 00:00:00 24
+Creating point data table for: 2016011600
+2016-01-16 00:00:00 12
+Creating point data table for: 2016011612
+2016-01-16 00:00:00 24
+Creating point data table for: 2016011700
+2016-01-17 00:00:00 12
+Creating point data table for: 2016011712
+2016-01-17 00:00:00 24
+Creating point data table for: 2016011800
+2016-01-18 00:00:00 12
+Creating point data table for: 2016011812
+2016-01-18 00:00:00 24
+Creating point data table for: 2016011900
+2016-01-19 00:00:00 12
+Creating point data table for: 2016011912
+2016-01-19 00:00:00 24
+Creating point data table for: 2016012000
+2016-01-20 00:00:00 12
+Creating point data table for: 2016012012
+2016-01-20 00:00:00 24
+Creating point data table for: 2016012100
+2016-01-21 00:00:00 12
+Creating point data table for: 2016012112
+2016-01-21 00:00:00 24
+Creating point data table for: 2016012200
+2016-01-22 00:00:00 12
+Creating point data table for: 2016012212
+2016-01-22 00:00:00 24
+Creating point data table for: 2016012300
+2016-01-23 00:00:00 12
+Creating point data table for: 2016012312
+2016-01-23 00:00:00 24
+Creating point data table for: 2016012400
+2016-01-24 00:00:00 12
+Creating point data table for: 2016012412
+2016-01-24 00:00:00 24
+Creating point data table for: 2016012500
+2016-01-25 00:00:00 12
+Creating point data table for: 2016012512
+2016-01-25 00:00:00 24
+Creating point data table for: 2016012600
+2016-01-26 00:00:00 12
+Creating point data table for: 2016012612
+2016-01-26 00:00:00 24
+Creating point data table for: 2016012700
+2016-01-27 00:00:00 12
+Creating point data table for: 2016012712
+2016-01-27 00:00:00 24
+Creating point data table for: 2016012800
+2016-01-28 00:00:00 12
+Creating point data table for: 2016012812
+2016-01-28 00:00:00 24
+Creating point data table for: 2016012900
+2016-01-29 00:00:00 12
+Creating point data table for: 2016012912
+2016-01-29 00:00:00 24
+Creating point data table for: 2016013000
+2016-01-30 00:00:00 12
+Creating point data table for: 2016013012
+2016-01-30 00:00:00 24
+Creating point data table for: 2016013100
+2016-01-31 00:00:00 12
+Creating point data table for: 2016013112
+2016-01-31 00:00:00 24
+Creating point data table for: 2016020100
+2016-02-01 00:00:00 12
+Creating point data table for: 2016020112
+2016-02-01 00:00:00 24
+Creating point data table for: 2016020200
+2016-02-02 00:00:00 12
+Creating point data table for: 2016020212
+2016-02-02 00:00:00 24
+Creating point data table for: 2016020300
+2016-02-03 00:00:00 12
+Creating point data table for: 2016020312
+2016-02-03 00:00:00 24
+Creating point data table for: 2016020400
+2016-02-04 00:00:00 12
+Creating point data table for: 2016020412
+2016-02-04 00:00:00 24
+Creating point data table for: 2016020500
+2016-02-05 00:00:00 12
+Creating point data table for: 2016020512
+2016-02-05 00:00:00 24
+Creating point data table for: 2016020600
+2016-02-06 00:00:00 12
+Creating point data table for: 2016020612
+2016-02-06 00:00:00 24
+Creating point data table for: 2016020700
+2016-02-07 00:00:00 12
+Creating point data table for: 2016020712
+2016-02-07 00:00:00 24
+Creating point data table for: 2016020800
+2016-02-08 00:00:00 12
+Creating point data table for: 2016020812
+2016-02-08 00:00:00 24
+Creating point data table for: 2016020900
+2016-02-09 00:00:00 12
+Creating point data table for: 2016020912
+2016-02-09 00:00:00 24
+Creating point data table for: 2016021000
+2016-02-10 00:00:00 12
+Creating point data table for: 2016021012
+2016-02-10 00:00:00 24
+Creating point data table for: 2016021100
+2016-02-11 00:00:00 12
+Creating point data table for: 2016021112
+2016-02-11 00:00:00 24
+Creating point data table for: 2016021200
+2016-02-12 00:00:00 12
+Creating point data table for: 2016021212
+2016-02-12 00:00:00 24
+Creating point data table for: 2016021300
+2016-02-13 00:00:00 12
+Creating point data table for: 2016021312
+2016-02-13 00:00:00 24
+Creating point data table for: 2016021400
+2016-02-14 00:00:00 12
+Creating point data table for: 2016021412
+2016-02-14 00:00:00 24
+Creating point data table for: 2016021500
+2016-02-15 00:00:00 12
+Creating point data table for: 2016021512
+2016-02-15 00:00:00 24
+Creating point data table for: 2016021600
+2016-02-16 00:00:00 12
+Creating point data table for: 2016021612
+2016-02-16 00:00:00 24
+Creating point data table for: 2016021700
+2016-02-17 00:00:00 12
+Creating point data table for: 2016021712
+2016-02-17 00:00:00 24
+Creating point data table for: 2016021800
+2016-02-18 00:00:00 12
+Creating point data table for: 2016021812
+2016-02-18 00:00:00 24
+Creating point data table for: 2016021900
+2016-02-19 00:00:00 12
+Creating point data table for: 2016021912
+2016-02-19 00:00:00 24
+Creating point data table for: 2016022000
+2016-02-20 00:00:00 12
+Creating point data table for: 2016022012
+2016-02-20 00:00:00 24
+Creating point data table for: 2016022100
+2016-02-21 00:00:00 12
+Creating point data table for: 2016022112
+2016-02-21 00:00:00 24
+Creating point data table for: 2016022200
+2016-02-22 00:00:00 12
+Creating point data table for: 2016022212
+2016-02-22 00:00:00 24
+Creating point data table for: 2016022300
+2016-02-23 00:00:00 12
+Creating point data table for: 2016022312
+2016-02-23 00:00:00 24
+Creating point data table for: 2016022400
+2016-02-24 00:00:00 12
+Creating point data table for: 2016022412
+2016-02-24 00:00:00 24
+Creating point data table for: 2016022500
+2016-02-25 00:00:00 12
+Creating point data table for: 2016022512
+2016-02-25 00:00:00 24
+Creating point data table for: 2016022600
+2016-02-26 00:00:00 12
+Creating point data table for: 2016022612
+2016-02-26 00:00:00 24
+Creating point data table for: 2016022700
+2016-02-27 00:00:00 12
+Creating point data table for: 2016022712
+2016-02-27 00:00:00 24
+Creating point data table for: 2016022800
+2016-02-28 00:00:00 12
+Creating point data table for: 2016022812
+2016-02-28 00:00:00 24
+Creating point data table for: 2016022900
+2016-02-29 00:00:00 12
+Creating point data table for: 2016022912
+2016-02-29 00:00:00 24
+Creating point data table for: 2016030100
+2016-03-01 00:00:00 12
+Creating point data table for: 2016030112
+2016-03-01 00:00:00 24
+Creating point data table for: 2016030200
+2016-03-02 00:00:00 12
+Creating point data table for: 2016030212
+2016-03-02 00:00:00 24
+Creating point data table for: 2016030300
+2016-03-03 00:00:00 12
+Creating point data table for: 2016030312
+2016-03-03 00:00:00 24
+Creating point data table for: 2016030400
+2016-03-04 00:00:00 12
+Creating point data table for: 2016030412
+2016-03-04 00:00:00 24
+Creating point data table for: 2016030500
+2016-03-05 00:00:00 12
+Creating point data table for: 2016030512
+2016-03-05 00:00:00 24
+Creating point data table for: 2016030600
+2016-03-06 00:00:00 12
+Creating point data table for: 2016030612
+2016-03-06 00:00:00 24
+Creating point data table for: 2016030700
+2016-03-07 00:00:00 12
+Creating point data table for: 2016030712
+2016-03-07 00:00:00 24
+Creating point data table for: 2016030800
+2016-03-08 00:00:00 12
+Creating point data table for: 2016030812
+2016-03-08 00:00:00 24
+Creating point data table for: 2016030900
+2016-03-09 00:00:00 12
+Creating point data table for: 2016030912
+2016-03-09 00:00:00 24
+Creating point data table for: 2016031000
+2016-03-10 00:00:00 12
+Creating point data table for: 2016031012
+2016-03-10 00:00:00 24
+Creating point data table for: 2016031100
+2016-03-11 00:00:00 12
+Creating point data table for: 2016031112
+2016-03-11 00:00:00 24
+Creating point data table for: 2016031200
+2016-03-12 00:00:00 12
+Creating point data table for: 2016031212
+2016-03-12 00:00:00 24
+Creating point data table for: 2016031300
+2016-03-13 00:00:00 12
+Creating point data table for: 2016031312
+2016-03-13 00:00:00 24
+Creating point data table for: 2016031400
+2016-03-14 00:00:00 12
+Creating point data table for: 2016031412
+2016-03-14 00:00:00 24
+Creating point data table for: 2016031500
+2016-03-15 00:00:00 12
+Creating point data table for: 2016031512
+2016-03-15 00:00:00 24
+Creating point data table for: 2016031600
+2016-03-16 00:00:00 12
+Creating point data table for: 2016031612
+2016-03-16 00:00:00 24
+Creating point data table for: 2016031700
+2016-03-17 00:00:00 12
+Creating point data table for: 2016031712
+2016-03-17 00:00:00 24
+Creating point data table for: 2016031800
+2016-03-18 00:00:00 12
+Creating point data table for: 2016031812
+2016-03-18 00:00:00 24
+Creating point data table for: 2016031900
+2016-03-19 00:00:00 12
+Creating point data table for: 2016031912
+2016-03-19 00:00:00 24
+Creating point data table for: 2016032000
+2016-03-20 00:00:00 12
+Creating point data table for: 2016032012
+2016-03-20 00:00:00 24
+Creating point data table for: 2016032100
+2016-03-21 00:00:00 12
+Creating point data table for: 2016032112
+2016-03-21 00:00:00 24
+Creating point data table for: 2016032200
+2016-03-22 00:00:00 12
+Creating point data table for: 2016032212
+2016-03-22 00:00:00 24
+Creating point data table for: 2016032300
+2016-03-23 00:00:00 12
+Creating point data table for: 2016032312
+2016-03-23 00:00:00 24
+Creating point data table for: 2016032400
+2016-03-24 00:00:00 12
+Creating point data table for: 2016032412
+2016-03-24 00:00:00 24
+Creating point data table for: 2016032500
+2016-03-25 00:00:00 12
+Creating point data table for: 2016032512
+2016-03-25 00:00:00 24
+Creating point data table for: 2016032600
+2016-03-26 00:00:00 12
+Creating point data table for: 2016032612
+2016-03-26 00:00:00 24
+Creating point data table for: 2016032700
+2016-03-27 00:00:00 12
+Creating point data table for: 2016032712
+2016-03-27 00:00:00 24
+Creating point data table for: 2016032800
+2016-03-28 00:00:00 12
+Creating point data table for: 2016032812
+2016-03-28 00:00:00 24
+Creating point data table for: 2016032900
+2016-03-29 00:00:00 12
+Creating point data table for: 2016032912
+2016-03-29 00:00:00 24
+Creating point data table for: 2016033000
+2016-03-30 00:00:00 12
+Creating point data table for: 2016033012
+2016-03-30 00:00:00 24
+Creating point data table for: 2016033100
+2016-03-31 00:00:00 12
+Creating point data table for: 2016033112
+2016-03-31 00:00:00 24
+Creating point data table for: 2016040100
+2016-04-01 00:00:00 12
+Creating point data table for: 2016040112
+2016-04-01 00:00:00 24
+Creating point data table for: 2016040200
+2016-04-02 00:00:00 12
+Creating point data table for: 2016040212
+2016-04-02 00:00:00 24
+Creating point data table for: 2016040300
+2016-04-03 00:00:00 12
+Creating point data table for: 2016040312
+2016-04-03 00:00:00 24
+Creating point data table for: 2016040400
+2016-04-04 00:00:00 12
+Creating point data table for: 2016040412
+2016-04-04 00:00:00 24
+Creating point data table for: 2016040500
+2016-04-05 00:00:00 12
+Creating point data table for: 2016040512
+2016-04-05 00:00:00 24
+Creating point data table for: 2016040600
+2016-04-06 00:00:00 12
+Creating point data table for: 2016040612
+2016-04-06 00:00:00 24
+Creating point data table for: 2016040700
+2016-04-07 00:00:00 12
+Creating point data table for: 2016040712
+2016-04-07 00:00:00 24
+Creating point data table for: 2016040800
+2016-04-08 00:00:00 12
+Creating point data table for: 2016040812
+2016-04-08 00:00:00 24
+Creating point data table for: 2016040900
+2016-04-09 00:00:00 12
+Creating point data table for: 2016040912
+2016-04-09 00:00:00 24
+Creating point data table for: 2016041000
+2016-04-10 00:00:00 12
+Creating point data table for: 2016041012
+2016-04-10 00:00:00 24
+Creating point data table for: 2016041100
+2016-04-11 00:00:00 12
+Creating point data table for: 2016041112
+2016-04-11 00:00:00 24
+Creating point data table for: 2016041200
+2016-04-12 00:00:00 12
+Creating point data table for: 2016041212
+2016-04-12 00:00:00 24
+Creating point data table for: 2016041300
+2016-04-13 00:00:00 12
+Creating point data table for: 2016041312
+2016-04-13 00:00:00 24
+Creating point data table for: 2016041400
+2016-04-14 00:00:00 12
+Creating point data table for: 2016041412
+2016-04-14 00:00:00 24
+Creating point data table for: 2016041500
+2016-04-15 00:00:00 12
+Creating point data table for: 2016041512
+2016-04-15 00:00:00 24
+Creating point data table for: 2016041600
+2016-04-16 00:00:00 12
+Creating point data table for: 2016041612
+2016-04-16 00:00:00 24
+Creating point data table for: 2016041700
+2016-04-17 00:00:00 12
+Creating point data table for: 2016041712
+2016-04-17 00:00:00 24
+Creating point data table for: 2016041800
+2016-04-18 00:00:00 12
+Creating point data table for: 2016041812
+2016-04-18 00:00:00 24
+Creating point data table for: 2016041900
+2016-04-19 00:00:00 12
+Creating point data table for: 2016041912
+2016-04-19 00:00:00 24
+Creating point data table for: 2016042000
+2016-04-20 00:00:00 12
+Creating point data table for: 2016042012
+2016-04-20 00:00:00 24
+Creating point data table for: 2016042100
+2016-04-21 00:00:00 12
+Creating point data table for: 2016042112
+2016-04-21 00:00:00 24
+Creating point data table for: 2016042200
+2016-04-22 00:00:00 12
+Creating point data table for: 2016042212
+2016-04-22 00:00:00 24
+Creating point data table for: 2016042300
+2016-04-23 00:00:00 12
+Creating point data table for: 2016042312
+2016-04-23 00:00:00 24
+Creating point data table for: 2016042400
+2016-04-24 00:00:00 12
+Creating point data table for: 2016042412
+2016-04-24 00:00:00 24
+Creating point data table for: 2016042500
+2016-04-25 00:00:00 12
+Creating point data table for: 2016042512
+2016-04-25 00:00:00 24
+Creating point data table for: 2016042600
+2016-04-26 00:00:00 12
+Creating point data table for: 2016042612
+2016-04-26 00:00:00 24
+Creating point data table for: 2016042700
+2016-04-27 00:00:00 12
+Creating point data table for: 2016042712
+2016-04-27 00:00:00 24
+Creating point data table for: 2016042800
+2016-04-28 00:00:00 12
+Creating point data table for: 2016042812
+2016-04-28 00:00:00 24
+Creating point data table for: 2016042900
+2016-04-29 00:00:00 12
+Creating point data table for: 2016042912
+2016-04-29 00:00:00 24
+Creating point data table for: 2016043000
+2016-04-30 00:00:00 12
+Creating point data table for: 2016043012
+2016-04-30 00:00:00 24
+Creating point data table for: 2016050100
+2016-05-01 00:00:00 12
+Creating point data table for: 2016050112
+2016-05-01 00:00:00 24
+Creating point data table for: 2016050200
+2016-05-02 00:00:00 12
+Creating point data table for: 2016050212
+2016-05-02 00:00:00 24
+Creating point data table for: 2016050300
+2016-05-03 00:00:00 12
+Creating point data table for: 2016050312
+2016-05-03 00:00:00 24
+Creating point data table for: 2016050400
+2016-05-04 00:00:00 12
+Creating point data table for: 2016050412
+2016-05-04 00:00:00 24
+Creating point data table for: 2016050500
+2016-05-05 00:00:00 12
+Creating point data table for: 2016050512
+2016-05-05 00:00:00 24
+Creating point data table for: 2016050600
+2016-05-06 00:00:00 12
+Creating point data table for: 2016050612
+2016-05-06 00:00:00 24
+Creating point data table for: 2016050700
+2016-05-07 00:00:00 12
+Creating point data table for: 2016050712
+2016-05-07 00:00:00 24
+Creating point data table for: 2016050800
+2016-05-08 00:00:00 12
+Creating point data table for: 2016050812
+2016-05-08 00:00:00 24
+Creating point data table for: 2016050900
+2016-05-09 00:00:00 12
+Creating point data table for: 2016050912
+2016-05-09 00:00:00 24
+Creating point data table for: 2016051000
+2016-05-10 00:00:00 12
+Creating point data table for: 2016051012
+2016-05-10 00:00:00 24
+Creating point data table for: 2016051100
+2016-05-11 00:00:00 12
+Creating point data table for: 2016051112
+2016-05-11 00:00:00 24
+Creating point data table for: 2016051200
+2016-05-12 00:00:00 12
+Creating point data table for: 2016051212
+2016-05-12 00:00:00 24
+Creating point data table for: 2016051300
+2016-05-13 00:00:00 12
+Creating point data table for: 2016051312
+2016-05-13 00:00:00 24
+Creating point data table for: 2016051400
+2016-05-14 00:00:00 12
+Creating point data table for: 2016051412
+2016-05-14 00:00:00 24
+Creating point data table for: 2016051500
+2016-05-15 00:00:00 12
+Creating point data table for: 2016051512
+2016-05-15 00:00:00 24
+Creating point data table for: 2016051600
+2016-05-16 00:00:00 12
+Creating point data table for: 2016051612
+2016-05-16 00:00:00 24
+Creating point data table for: 2016051700
+2016-05-17 00:00:00 12
+Creating point data table for: 2016051712
+2016-05-17 00:00:00 24
+Creating point data table for: 2016051800
+2016-05-18 00:00:00 12
+Creating point data table for: 2016051812
+2016-05-18 00:00:00 24
+Creating point data table for: 2016051900
+2016-05-19 00:00:00 12
+Creating point data table for: 2016051912
+2016-05-19 00:00:00 24
+Creating point data table for: 2016052000
+2016-05-20 00:00:00 12
+Creating point data table for: 2016052012
+2016-05-20 00:00:00 24
+Creating point data table for: 2016052100
+2016-05-21 00:00:00 12
+Creating point data table for: 2016052112
+2016-05-21 00:00:00 24
+Creating point data table for: 2016052200
+2016-05-22 00:00:00 12
+Creating point data table for: 2016052212
+2016-05-22 00:00:00 24
+Creating point data table for: 2016052300
+2016-05-23 00:00:00 12
+Creating point data table for: 2016052312
+2016-05-23 00:00:00 24
+Creating point data table for: 2016052400
+2016-05-24 00:00:00 12
+Creating point data table for: 2016052412
+2016-05-24 00:00:00 24
+Creating point data table for: 2016052500
+2016-05-25 00:00:00 12
+Creating point data table for: 2016052512
+2016-05-25 00:00:00 24
+Creating point data table for: 2016052600
+2016-05-26 00:00:00 12
+Creating point data table for: 2016052612
+2016-05-26 00:00:00 24
+Creating point data table for: 2016052700
+2016-05-27 00:00:00 12
+Creating point data table for: 2016052712
+2016-05-27 00:00:00 24
+Creating point data table for: 2016052800
+2016-05-28 00:00:00 12
+Creating point data table for: 2016052812
+2016-05-28 00:00:00 24
+Creating point data table for: 2016052900
+2016-05-29 00:00:00 12
+Creating point data table for: 2016052912
+2016-05-29 00:00:00 24
+Creating point data table for: 2016053000
+2016-05-30 00:00:00 12
+Creating point data table for: 2016053012
+2016-05-30 00:00:00 24
+Creating point data table for: 2016053100
+2016-05-31 00:00:00 12
+Creating point data table for: 2016053112
+2016-05-31 00:00:00 24
+Creating point data table for: 2016060100
+2016-06-01 00:00:00 12
+Creating point data table for: 2016060112
+2016-06-01 00:00:00 24
+Creating point data table for: 2016060200
+2016-06-02 00:00:00 12
+Creating point data table for: 2016060212
+2016-06-02 00:00:00 24
+Creating point data table for: 2016060300
+2016-06-03 00:00:00 12
+Creating point data table for: 2016060312
+2016-06-03 00:00:00 24
+Creating point data table for: 2016060400
+2016-06-04 00:00:00 12
+Creating point data table for: 2016060412
+2016-06-04 00:00:00 24
+Creating point data table for: 2016060500
+2016-06-05 00:00:00 12
+Creating point data table for: 2016060512
+2016-06-05 00:00:00 24
+Creating point data table for: 2016060600
+2016-06-06 00:00:00 12
+Creating point data table for: 2016060612
+2016-06-06 00:00:00 24
+Creating point data table for: 2016060700
+2016-06-07 00:00:00 12
+Creating point data table for: 2016060712
+2016-06-07 00:00:00 24
+Creating point data table for: 2016060800
+2016-06-08 00:00:00 12
+Creating point data table for: 2016060812
+2016-06-08 00:00:00 24
+Creating point data table for: 2016060900
+2016-06-09 00:00:00 12
+Creating point data table for: 2016060912
+2016-06-09 00:00:00 24
+Creating point data table for: 2016061000
+2016-06-10 00:00:00 12
+Creating point data table for: 2016061012
+2016-06-10 00:00:00 24
+Creating point data table for: 2016061100
+2016-06-11 00:00:00 12
+Creating point data table for: 2016061112
+2016-06-11 00:00:00 24
+Creating point data table for: 2016061200
+2016-06-12 00:00:00 12
+Creating point data table for: 2016061212
+2016-06-12 00:00:00 24
+Creating point data table for: 2016061300
+2016-06-13 00:00:00 12
+Creating point data table for: 2016061312
+2016-06-13 00:00:00 24
+Creating point data table for: 2016061400
+2016-06-14 00:00:00 12
+Creating point data table for: 2016061412
+2016-06-14 00:00:00 24
+Creating point data table for: 2016061500
+2016-06-15 00:00:00 12
+Creating point data table for: 2016061512
+2016-06-15 00:00:00 24
+Creating point data table for: 2016061600
+2016-06-16 00:00:00 12
+Creating point data table for: 2016061612
+2016-06-16 00:00:00 24
+Creating point data table for: 2016061700
+2016-06-17 00:00:00 12
+Creating point data table for: 2016061712
+2016-06-17 00:00:00 24
+Creating point data table for: 2016061800
+2016-06-18 00:00:00 12
+Creating point data table for: 2016061812
+2016-06-18 00:00:00 24
+Creating point data table for: 2016061900
+2016-06-19 00:00:00 12
+Creating point data table for: 2016061912
+2016-06-19 00:00:00 24
+Creating point data table for: 2016062000
+2016-06-20 00:00:00 12
+Creating point data table for: 2016062012
+2016-06-20 00:00:00 24
+Creating point data table for: 2016062100
+2016-06-21 00:00:00 12
+Creating point data table for: 2016062112
+2016-06-21 00:00:00 24
+Creating point data table for: 2016062200
+2016-06-22 00:00:00 12
+Creating point data table for: 2016062212
+2016-06-22 00:00:00 24
+Creating point data table for: 2016062300
+2016-06-23 00:00:00 12
+Creating point data table for: 2016062312
+2016-06-23 00:00:00 24
+Creating point data table for: 2016062400
+2016-06-24 00:00:00 12
+Creating point data table for: 2016062412
+2016-06-24 00:00:00 24
+Creating point data table for: 2016062500
+2016-06-25 00:00:00 12
+Creating point data table for: 2016062512
+2016-06-25 00:00:00 24
+Creating point data table for: 2016062600
+2016-06-26 00:00:00 12
+Creating point data table for: 2016062612
+2016-06-26 00:00:00 24
+Creating point data table for: 2016062700
+2016-06-27 00:00:00 12
+Creating point data table for: 2016062712
+2016-06-27 00:00:00 24
+Creating point data table for: 2016062800
+2016-06-28 00:00:00 12
+Creating point data table for: 2016062812
+2016-06-28 00:00:00 24
+Creating point data table for: 2016062900
+2016-06-29 00:00:00 12
+Creating point data table for: 2016062912
+2016-06-29 00:00:00 24
+Creating point data table for: 2016063000
+2016-06-30 00:00:00 12
+Creating point data table for: 2016063012
+2016-06-30 00:00:00 24
+Creating point data table for: 2016070100
+2016-07-01 00:00:00 12
+Creating point data table for: 2016070112
+2016-07-01 00:00:00 24
+Creating point data table for: 2016070200
+2016-07-02 00:00:00 12
+Creating point data table for: 2016070212
+2016-07-02 00:00:00 24
+Creating point data table for: 2016070300
+2016-07-03 00:00:00 12
+Creating point data table for: 2016070312
+2016-07-03 00:00:00 24
+Creating point data table for: 2016070400
+2016-07-04 00:00:00 12
+Creating point data table for: 2016070412
+2016-07-04 00:00:00 24
+Creating point data table for: 2016070500
+2016-07-05 00:00:00 12
+Creating point data table for: 2016070512
+2016-07-05 00:00:00 24
+Creating point data table for: 2016070600
+2016-07-06 00:00:00 12
+Creating point data table for: 2016070612
+2016-07-06 00:00:00 24
+Creating point data table for: 2016070700
+2016-07-07 00:00:00 12
+Creating point data table for: 2016070712
+2016-07-07 00:00:00 24
+Creating point data table for: 2016070800
+2016-07-08 00:00:00 12
+Creating point data table for: 2016070812
+2016-07-08 00:00:00 24
+Creating point data table for: 2016070900
+2016-07-09 00:00:00 12
+Creating point data table for: 2016070912
+2016-07-09 00:00:00 24
+Creating point data table for: 2016071000
+2016-07-10 00:00:00 12
+Creating point data table for: 2016071012
+2016-07-10 00:00:00 24
+Creating point data table for: 2016071100
+2016-07-11 00:00:00 12
+Creating point data table for: 2016071112
+2016-07-11 00:00:00 24
+Creating point data table for: 2016071200
+2016-07-12 00:00:00 12
+Creating point data table for: 2016071212
+2016-07-12 00:00:00 24
+Creating point data table for: 2016071300
+2016-07-13 00:00:00 12
+Creating point data table for: 2016071312
+2016-07-13 00:00:00 24
+Creating point data table for: 2016071400
+2016-07-14 00:00:00 12
+Creating point data table for: 2016071412
+2016-07-14 00:00:00 24
+Creating point data table for: 2016071500
+2016-07-15 00:00:00 12
+Creating point data table for: 2016071512
+2016-07-15 00:00:00 24
+Creating point data table for: 2016071600
+2016-07-16 00:00:00 12
+Creating point data table for: 2016071612
+2016-07-16 00:00:00 24
+Creating point data table for: 2016071700
+2016-07-17 00:00:00 12
+Creating point data table for: 2016071712
+2016-07-17 00:00:00 24
+Creating point data table for: 2016071800
+2016-07-18 00:00:00 12
+Creating point data table for: 2016071812
+2016-07-18 00:00:00 24
+Creating point data table for: 2016071900
+2016-07-19 00:00:00 12
+Creating point data table for: 2016071912
+2016-07-19 00:00:00 24
+Creating point data table for: 2016072000
+2016-07-20 00:00:00 12
+Creating point data table for: 2016072012
+2016-07-20 00:00:00 24
+Creating point data table for: 2016072100
+2016-07-21 00:00:00 12
+Creating point data table for: 2016072112
+2016-07-21 00:00:00 24
+Creating point data table for: 2016072200
+2016-07-22 00:00:00 12
+Creating point data table for: 2016072212
+2016-07-22 00:00:00 24
+Creating point data table for: 2016072300
+2016-07-23 00:00:00 12
+Creating point data table for: 2016072312
+2016-07-23 00:00:00 24
+Creating point data table for: 2016072400
+2016-07-24 00:00:00 12
+Creating point data table for: 2016072412
+2016-07-24 00:00:00 24
+Creating point data table for: 2016072500
+2016-07-25 00:00:00 12
+Creating point data table for: 2016072512
+2016-07-25 00:00:00 24
+Creating point data table for: 2016072600
+2016-07-26 00:00:00 12
+Creating point data table for: 2016072612
+2016-07-26 00:00:00 24
+Creating point data table for: 2016072700
+2016-07-27 00:00:00 12
+Creating point data table for: 2016072712
+2016-07-27 00:00:00 24
+Creating point data table for: 2016072800
+2016-07-28 00:00:00 12
+Creating point data table for: 2016072812
+2016-07-28 00:00:00 24
+Creating point data table for: 2016072900
+2016-07-29 00:00:00 12
+Creating point data table for: 2016072912
+2016-07-29 00:00:00 24
+Creating point data table for: 2016073000
+2016-07-30 00:00:00 12
+Creating point data table for: 2016073012
+2016-07-30 00:00:00 24
+Creating point data table for: 2016073100
+2016-07-31 00:00:00 12
+Creating point data table for: 2016073112
+2016-07-31 00:00:00 24
+Creating point data table for: 2016080100
+2016-08-01 00:00:00 12
+Creating point data table for: 2016080112
+2016-08-01 00:00:00 24
+Creating point data table for: 2016080200
+2016-08-02 00:00:00 12
+Creating point data table for: 2016080212
+2016-08-02 00:00:00 24
+Creating point data table for: 2016080300
+2016-08-03 00:00:00 12
+Creating point data table for: 2016080312
+2016-08-03 00:00:00 24
+Creating point data table for: 2016080400
+2016-08-04 00:00:00 12
+Creating point data table for: 2016080412
+2016-08-04 00:00:00 24
+Creating point data table for: 2016080500
+2016-08-05 00:00:00 12
+Creating point data table for: 2016080512
+2016-08-05 00:00:00 24
+Creating point data table for: 2016080600
+2016-08-06 00:00:00 12
+Creating point data table for: 2016080612
+2016-08-06 00:00:00 24
+Creating point data table for: 2016080700
+2016-08-07 00:00:00 12
+Creating point data table for: 2016080712
+2016-08-07 00:00:00 24
+Creating point data table for: 2016080800
+2016-08-08 00:00:00 12
+Creating point data table for: 2016080812
+2016-08-08 00:00:00 24
+Creating point data table for: 2016080900
+2016-08-09 00:00:00 12
+Creating point data table for: 2016080912
+2016-08-09 00:00:00 24
+Creating point data table for: 2016081000
+2016-08-10 00:00:00 12
+Creating point data table for: 2016081012
+2016-08-10 00:00:00 24
+Creating point data table for: 2016081100
+2016-08-11 00:00:00 12
+Creating point data table for: 2016081112
+2016-08-11 00:00:00 24
+Creating point data table for: 2016081200
+2016-08-12 00:00:00 12
+Creating point data table for: 2016081212
+2016-08-12 00:00:00 24
+Creating point data table for: 2016081300
+2016-08-13 00:00:00 12
+Creating point data table for: 2016081312
+2016-08-13 00:00:00 24
+Creating point data table for: 2016081400
+2016-08-14 00:00:00 12
+Creating point data table for: 2016081412
+2016-08-14 00:00:00 24
+Creating point data table for: 2016081500
+2016-08-15 00:00:00 12
+Creating point data table for: 2016081512
+2016-08-15 00:00:00 24
+Creating point data table for: 2016081600
+2016-08-16 00:00:00 12
+Creating point data table for: 2016081612
+2016-08-16 00:00:00 24
+Creating point data table for: 2016081700
+2016-08-17 00:00:00 12
+Creating point data table for: 2016081712
+2016-08-17 00:00:00 24
+Creating point data table for: 2016081800
+2016-08-18 00:00:00 12
+Creating point data table for: 2016081812
+2016-08-18 00:00:00 24
+Creating point data table for: 2016081900
+2016-08-19 00:00:00 12
+Creating point data table for: 2016081912
+2016-08-19 00:00:00 24
+Creating point data table for: 2016082000
+2016-08-20 00:00:00 12
+Creating point data table for: 2016082012
+2016-08-20 00:00:00 24
+Creating point data table for: 2016082100
+2016-08-21 00:00:00 12
+Creating point data table for: 2016082112
+2016-08-21 00:00:00 24
+Creating point data table for: 2016082200
+2016-08-22 00:00:00 12
+Creating point data table for: 2016082212
+2016-08-22 00:00:00 24
+Creating point data table for: 2016082300
+2016-08-23 00:00:00 12
+Creating point data table for: 2016082312
+2016-08-23 00:00:00 24
+Creating point data table for: 2016082400
+2016-08-24 00:00:00 12
+Creating point data table for: 2016082412
+2016-08-24 00:00:00 24
+Creating point data table for: 2016082500
+2016-08-25 00:00:00 12
+Creating point data table for: 2016082512
+2016-08-25 00:00:00 24
+Creating point data table for: 2016082600
+2016-08-26 00:00:00 12
+Creating point data table for: 2016082612
+2016-08-26 00:00:00 24
+Creating point data table for: 2016082700
+2016-08-27 00:00:00 12
+Creating point data table for: 2016082712
+2016-08-27 00:00:00 24
+Creating point data table for: 2016082800
+2016-08-28 00:00:00 12
+Creating point data table for: 2016082812
+2016-08-28 00:00:00 24
+Creating point data table for: 2016082900
+2016-08-29 00:00:00 12
+Creating point data table for: 2016082912
+2016-08-29 00:00:00 24
+Creating point data table for: 2016083000
+2016-08-30 00:00:00 12
+Creating point data table for: 2016083012
+2016-08-30 00:00:00 24
+Creating point data table for: 2016083100
+2016-08-31 00:00:00 12
+Creating point data table for: 2016083112
+2016-08-31 00:00:00 24
+Creating point data table for: 2016090100
+2016-09-01 00:00:00 12
+Creating point data table for: 2016090112
+2016-09-01 00:00:00 24
+Creating point data table for: 2016090200
+2016-09-02 00:00:00 12
+Creating point data table for: 2016090212
+2016-09-02 00:00:00 24
+Creating point data table for: 2016090300
+2016-09-03 00:00:00 12
+Creating point data table for: 2016090312
+2016-09-03 00:00:00 24
+Creating point data table for: 2016090400
+2016-09-04 00:00:00 12
+Creating point data table for: 2016090412
+2016-09-04 00:00:00 24
+Creating point data table for: 2016090500
+2016-09-05 00:00:00 12
+Creating point data table for: 2016090512
+2016-09-05 00:00:00 24
+Creating point data table for: 2016090600
+2016-09-06 00:00:00 12
+Creating point data table for: 2016090612
+2016-09-06 00:00:00 24
+Creating point data table for: 2016090700
+2016-09-07 00:00:00 12
+Creating point data table for: 2016090712
+2016-09-07 00:00:00 24
+Creating point data table for: 2016090800
+2016-09-08 00:00:00 12
+Creating point data table for: 2016090812
+2016-09-08 00:00:00 24
+Creating point data table for: 2016090900
+2016-09-09 00:00:00 12
+Creating point data table for: 2016090912
+2016-09-09 00:00:00 24
+Creating point data table for: 2016091000
+2016-09-10 00:00:00 12
+Creating point data table for: 2016091012
+2016-09-10 00:00:00 24
+Creating point data table for: 2016091100
+2016-09-11 00:00:00 12
+Creating point data table for: 2016091112
+2016-09-11 00:00:00 24
+Creating point data table for: 2016091200
+2016-09-12 00:00:00 12
+Creating point data table for: 2016091212
+2016-09-12 00:00:00 24
+Creating point data table for: 2016091300
+2016-09-13 00:00:00 12
+Creating point data table for: 2016091312
+2016-09-13 00:00:00 24
+Creating point data table for: 2016091400
+2016-09-14 00:00:00 12
+Creating point data table for: 2016091412
+2016-09-14 00:00:00 24
+Creating point data table for: 2016091500
+2016-09-15 00:00:00 12
+Creating point data table for: 2016091512
+2016-09-15 00:00:00 24
+Creating point data table for: 2016091600
+2016-09-16 00:00:00 12
+Creating point data table for: 2016091612
+2016-09-16 00:00:00 24
+Creating point data table for: 2016091700
+2016-09-17 00:00:00 12
+Creating point data table for: 2016091712
+2016-09-17 00:00:00 24
+Creating point data table for: 2016091800
+2016-09-18 00:00:00 12
+Creating point data table for: 2016091812
+2016-09-18 00:00:00 24
+Creating point data table for: 2016091900
+2016-09-19 00:00:00 12
+Creating point data table for: 2016091912
+2016-09-19 00:00:00 24
+Creating point data table for: 2016092000
+2016-09-20 00:00:00 12
+Creating point data table for: 2016092012
+2016-09-20 00:00:00 24
+Creating point data table for: 2016092100
+2016-09-21 00:00:00 12
+Creating point data table for: 2016092112
+2016-09-21 00:00:00 24
+Creating point data table for: 2016092200
+2016-09-22 00:00:00 12
+Creating point data table for: 2016092212
+2016-09-22 00:00:00 24
+Creating point data table for: 2016092300
+2016-09-23 00:00:00 12
+Creating point data table for: 2016092312
+2016-09-23 00:00:00 24
+Creating point data table for: 2016092400
+2016-09-24 00:00:00 12
+Creating point data table for: 2016092412
+2016-09-24 00:00:00 24
+Creating point data table for: 2016092500
+2016-09-25 00:00:00 12
+Creating point data table for: 2016092512
+2016-09-25 00:00:00 24
+Creating point data table for: 2016092600
+2016-09-26 00:00:00 12
+Creating point data table for: 2016092612
+2016-09-26 00:00:00 24
+Creating point data table for: 2016092700
+2016-09-27 00:00:00 12
+Creating point data table for: 2016092712
+2016-09-27 00:00:00 24
+Creating point data table for: 2016092800
+2016-09-28 00:00:00 12
+Creating point data table for: 2016092812
+2016-09-28 00:00:00 24
+Creating point data table for: 2016092900
+2016-09-29 00:00:00 12
+Creating point data table for: 2016092912
+2016-09-29 00:00:00 24
+Creating point data table for: 2016093000
+2016-09-30 00:00:00 12
+Creating point data table for: 2016093012
+2016-09-30 00:00:00 24
+Creating point data table for: 2016100100
+2016-10-01 00:00:00 12
+Creating point data table for: 2016100112
+2016-10-01 00:00:00 24
+Creating point data table for: 2016100200
+2016-10-02 00:00:00 12
+Creating point data table for: 2016100212
+2016-10-02 00:00:00 24
+Creating point data table for: 2016100300
+2016-10-03 00:00:00 12
+Creating point data table for: 2016100312
+2016-10-03 00:00:00 24
+Creating point data table for: 2016100400
+2016-10-04 00:00:00 12
+Creating point data table for: 2016100412
+2016-10-04 00:00:00 24
+Creating point data table for: 2016100500
+2016-10-05 00:00:00 12
+Creating point data table for: 2016100512
+2016-10-05 00:00:00 24
+Creating point data table for: 2016100600
+2016-10-06 00:00:00 12
+Creating point data table for: 2016100612
+2016-10-06 00:00:00 24
+Creating point data table for: 2016100700
+2016-10-07 00:00:00 12
+Creating point data table for: 2016100712
+2016-10-07 00:00:00 24
+Creating point data table for: 2016100800
+2016-10-08 00:00:00 12
+Creating point data table for: 2016100812
+2016-10-08 00:00:00 24
+Creating point data table for: 2016100900
+2016-10-09 00:00:00 12
+Creating point data table for: 2016100912
+2016-10-09 00:00:00 24
+Creating point data table for: 2016101000
+2016-10-10 00:00:00 12
+Creating point data table for: 2016101012
+2016-10-10 00:00:00 24
+Creating point data table for: 2016101100
+2016-10-11 00:00:00 12
+Creating point data table for: 2016101112
+2016-10-11 00:00:00 24
+Creating point data table for: 2016101200
+2016-10-12 00:00:00 12
+Creating point data table for: 2016101212
+2016-10-12 00:00:00 24
+Creating point data table for: 2016101300
+2016-10-13 00:00:00 12
+Creating point data table for: 2016101312
+2016-10-13 00:00:00 24
+Creating point data table for: 2016101400
+2016-10-14 00:00:00 12
+Creating point data table for: 2016101412
+2016-10-14 00:00:00 24
+Creating point data table for: 2016101500
+2016-10-15 00:00:00 12
+Creating point data table for: 2016101512
+2016-10-15 00:00:00 24
+Creating point data table for: 2016101600
+2016-10-16 00:00:00 12
+Creating point data table for: 2016101612
+2016-10-16 00:00:00 24
+Creating point data table for: 2016101700
+2016-10-17 00:00:00 12
+Creating point data table for: 2016101712
+2016-10-17 00:00:00 24
+Creating point data table for: 2016101800
+2016-10-18 00:00:00 12
+Creating point data table for: 2016101812
+2016-10-18 00:00:00 24
+Creating point data table for: 2016101900
+2016-10-19 00:00:00 12
+Creating point data table for: 2016101912
+2016-10-19 00:00:00 24
+Creating point data table for: 2016102000
+2016-10-20 00:00:00 12
+Creating point data table for: 2016102012
+2016-10-20 00:00:00 24
+Creating point data table for: 2016102100
+2016-10-21 00:00:00 12
+Creating point data table for: 2016102112
+2016-10-21 00:00:00 24
+Creating point data table for: 2016102200
+2016-10-22 00:00:00 12
+Creating point data table for: 2016102212
+2016-10-22 00:00:00 24
+Creating point data table for: 2016102300
+2016-10-23 00:00:00 12
+Creating point data table for: 2016102312
+2016-10-23 00:00:00 24
+Creating point data table for: 2016102400
+2016-10-24 00:00:00 12
+Creating point data table for: 2016102412
+2016-10-24 00:00:00 24
+Creating point data table for: 2016102500
+2016-10-25 00:00:00 12
+Creating point data table for: 2016102512
+2016-10-25 00:00:00 24
+Creating point data table for: 2016102600
+2016-10-26 00:00:00 12
+Creating point data table for: 2016102612
+2016-10-26 00:00:00 24
+Creating point data table for: 2016102700
+2016-10-27 00:00:00 12
+Creating point data table for: 2016102712
+2016-10-27 00:00:00 24
+Creating point data table for: 2016102800
+2016-10-28 00:00:00 12
+Creating point data table for: 2016102812
+2016-10-28 00:00:00 24
+Creating point data table for: 2016102900
+2016-10-29 00:00:00 12
+Creating point data table for: 2016102912
+2016-10-29 00:00:00 24
+Creating point data table for: 2016103000
+2016-10-30 00:00:00 12
+Creating point data table for: 2016103012
+2016-10-30 00:00:00 24
+Creating point data table for: 2016103100
+2016-10-31 00:00:00 12
+Creating point data table for: 2016103112
+2016-10-31 00:00:00 24
+Creating point data table for: 2016110100
+2016-11-01 00:00:00 12
+Creating point data table for: 2016110112
+2016-11-01 00:00:00 24
+Creating point data table for: 2016110200
+2016-11-02 00:00:00 12
+Creating point data table for: 2016110212
+2016-11-02 00:00:00 24
+Creating point data table for: 2016110300
+2016-11-03 00:00:00 12
+Creating point data table for: 2016110312
+2016-11-03 00:00:00 24
+Creating point data table for: 2016110400
+2016-11-04 00:00:00 12
+Creating point data table for: 2016110412
+2016-11-04 00:00:00 24
+Creating point data table for: 2016110500
+2016-11-05 00:00:00 12
+Creating point data table for: 2016110512
+2016-11-05 00:00:00 24
+Creating point data table for: 2016110600
+2016-11-06 00:00:00 12
+Creating point data table for: 2016110612
+2016-11-06 00:00:00 24
+Creating point data table for: 2016110700
+2016-11-07 00:00:00 12
+Creating point data table for: 2016110712
+2016-11-07 00:00:00 24
+Creating point data table for: 2016110800
+2016-11-08 00:00:00 12
+Creating point data table for: 2016110812
+2016-11-08 00:00:00 24
+Creating point data table for: 2016110900
+2016-11-09 00:00:00 12
+Creating point data table for: 2016110912
+2016-11-09 00:00:00 24
+Creating point data table for: 2016111000
+2016-11-10 00:00:00 12
+Creating point data table for: 2016111012
+2016-11-10 00:00:00 24
+Creating point data table for: 2016111100
+2016-11-11 00:00:00 12
+Creating point data table for: 2016111112
+2016-11-11 00:00:00 24
+Creating point data table for: 2016111200
+2016-11-12 00:00:00 12
+Creating point data table for: 2016111212
+2016-11-12 00:00:00 24
+Creating point data table for: 2016111300
+2016-11-13 00:00:00 12
+Creating point data table for: 2016111312
+2016-11-13 00:00:00 24
+Creating point data table for: 2016111400
+2016-11-14 00:00:00 12
+Creating point data table for: 2016111412
+2016-11-14 00:00:00 24
+Creating point data table for: 2016111500
+2016-11-15 00:00:00 12
+Creating point data table for: 2016111512
+2016-11-15 00:00:00 24
+Creating point data table for: 2016111600
+2016-11-16 00:00:00 12
+Creating point data table for: 2016111612
+2016-11-16 00:00:00 24
+Creating point data table for: 2016111700
+2016-11-17 00:00:00 12
+Creating point data table for: 2016111712
+2016-11-17 00:00:00 24
+Creating point data table for: 2016111800
+2016-11-18 00:00:00 12
+Creating point data table for: 2016111812
+2016-11-18 00:00:00 24
+Creating point data table for: 2016111900
+2016-11-19 00:00:00 12
+Creating point data table for: 2016111912
+2016-11-19 00:00:00 24
+Creating point data table for: 2016112000
+2016-11-20 00:00:00 12
+Creating point data table for: 2016112012
+2016-11-20 00:00:00 24
+Creating point data table for: 2016112100
+2016-11-21 00:00:00 12
+Creating point data table for: 2016112112
+2016-11-21 00:00:00 24
+Creating point data table for: 2016112200
+2016-11-22 00:00:00 12
+Creating point data table for: 2016112212
+2016-11-22 00:00:00 24
+Creating point data table for: 2016112300
+2016-11-23 00:00:00 12
+Creating point data table for: 2016112312
+2016-11-23 00:00:00 24
+Creating point data table for: 2016112400
+2016-11-24 00:00:00 12
+Creating point data table for: 2016112412
+2016-11-24 00:00:00 24
+Creating point data table for: 2016112500
+2016-11-25 00:00:00 12
+Creating point data table for: 2016112512
+2016-11-25 00:00:00 24
+Creating point data table for: 2016112600
+2016-11-26 00:00:00 12
+Creating point data table for: 2016112612
+2016-11-26 00:00:00 24
+Creating point data table for: 2016112700
+2016-11-27 00:00:00 12
+Creating point data table for: 2016112712
+2016-11-27 00:00:00 24
+Creating point data table for: 2016112800
+2016-11-28 00:00:00 12
+Creating point data table for: 2016112812
+2016-11-28 00:00:00 24
+Creating point data table for: 2016112900
+2016-11-29 00:00:00 12
+Creating point data table for: 2016112912
+2016-11-29 00:00:00 24
+Creating point data table for: 2016113000
+2016-11-30 00:00:00 12
+Creating point data table for: 2016113012
+2016-11-30 00:00:00 24
+Creating point data table for: 2016120100
+2016-12-01 00:00:00 12
+Creating point data table for: 2016120112
+2016-12-01 00:00:00 24
+Creating point data table for: 2016120200
+2016-12-02 00:00:00 12
+Creating point data table for: 2016120212
+2016-12-02 00:00:00 24
+Creating point data table for: 2016120300
+2016-12-03 00:00:00 12
+Creating point data table for: 2016120312
+2016-12-03 00:00:00 24
+Creating point data table for: 2016120400
+2016-12-04 00:00:00 12
+Creating point data table for: 2016120412
+2016-12-04 00:00:00 24
+Creating point data table for: 2016120500
+2016-12-05 00:00:00 12
+Creating point data table for: 2016120512
+2016-12-05 00:00:00 24
+Creating point data table for: 2016120600
+2016-12-06 00:00:00 12
+Creating point data table for: 2016120612
+2016-12-06 00:00:00 24
+Creating point data table for: 2016120700
+2016-12-07 00:00:00 12
+Creating point data table for: 2016120712
+2016-12-07 00:00:00 24
+Creating point data table for: 2016120800
+2016-12-08 00:00:00 12
+Creating point data table for: 2016120812
+2016-12-08 00:00:00 24
+Creating point data table for: 2016120900
+2016-12-09 00:00:00 12
+Creating point data table for: 2016120912
+2016-12-09 00:00:00 24
+Creating point data table for: 2016121000
+2016-12-10 00:00:00 12
+Creating point data table for: 2016121012
+2016-12-10 00:00:00 24
+Creating point data table for: 2016121100
+2016-12-11 00:00:00 12
+Creating point data table for: 2016121112
+2016-12-11 00:00:00 24
+Creating point data table for: 2016121200
+2016-12-12 00:00:00 12
+Creating point data table for: 2016121212
+2016-12-12 00:00:00 24
+Creating point data table for: 2016121300
+2016-12-13 00:00:00 12
+Creating point data table for: 2016121312
+2016-12-13 00:00:00 24
+Creating point data table for: 2016121400
+2016-12-14 00:00:00 12
+Creating point data table for: 2016121412
+2016-12-14 00:00:00 24
+Creating point data table for: 2016121500
+2016-12-15 00:00:00 12
+Creating point data table for: 2016121512
+2016-12-15 00:00:00 24
+Creating point data table for: 2016121600
+2016-12-16 00:00:00 12
+Creating point data table for: 2016121612
+2016-12-16 00:00:00 24
+Creating point data table for: 2016121700
+2016-12-17 00:00:00 12
+Creating point data table for: 2016121712
+2016-12-17 00:00:00 24
+Creating point data table for: 2016121800
+2016-12-18 00:00:00 12
+Creating point data table for: 2016121812
+2016-12-18 00:00:00 24
+Creating point data table for: 2016121900
+2016-12-19 00:00:00 12
+Creating point data table for: 2016121912
+2016-12-19 00:00:00 24
+Creating point data table for: 2016122000
+2016-12-20 00:00:00 12
+Creating point data table for: 2016122012
+2016-12-20 00:00:00 24
+Creating point data table for: 2016122100
+2016-12-21 00:00:00 12
+Creating point data table for: 2016122112
+2016-12-21 00:00:00 24
+Creating point data table for: 2016122200
+2016-12-22 00:00:00 12
+Creating point data table for: 2016122212
+2016-12-22 00:00:00 24
+Creating point data table for: 2016122300
+2016-12-23 00:00:00 12
+Creating point data table for: 2016122312
+2016-12-23 00:00:00 24
+Creating point data table for: 2016122400
+2016-12-24 00:00:00 12
+Creating point data table for: 2016122412
+2016-12-24 00:00:00 24
+Creating point data table for: 2016122500
+2016-12-25 00:00:00 12
+Creating point data table for: 2016122512
+2016-12-25 00:00:00 24
+Creating point data table for: 2016122600
+2016-12-26 00:00:00 12
+Creating point data table for: 2016122612
+2016-12-26 00:00:00 24
+Creating point data table for: 2016122700
+2016-12-27 00:00:00 12
+Creating point data table for: 2016122712
+2016-12-27 00:00:00 24
+Creating point data table for: 2016122800
+2016-12-28 00:00:00 12
+Creating point data table for: 2016122812
+2016-12-28 00:00:00 24
+Creating point data table for: 2016122900
+2016-12-29 00:00:00 12
+Creating point data table for: 2016122912
+2016-12-29 00:00:00 24
+Creating point data table for: 2016123000
+2016-12-30 00:00:00 12
+Creating point data table for: 2016123012
+2016-12-30 00:00:00 24
+Creating point data table for: 2016123100
+2016-12-31 00:00:00 12
+Creating point data table for: 2016123112
+2016-12-31 00:00:00 24
+Creating point data table for: 2017010100
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2024-03-05T18:40:13 on aa
+[ECMWF-INFO -ecepilog] JobName                   : PDT_Year
+[ECMWF-INFO -ecepilog] JobID                     : 13918872
+[ECMWF-INFO -ecepilog] Submit                    : 2024-03-05T17:27:12
+[ECMWF-INFO -ecepilog] Start                     : 2024-03-05T17:27:29
+[ECMWF-INFO -ecepilog] End                       : 2024-03-05T18:40:13
+[ECMWF-INFO -ecepilog] QueuedTime                : 17.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 4364
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : ecodmdmo
+[ECMWF-INFO -ecepilog] QOS                       : nf
+[ECMWF-INFO -ecepilog] User                      : mofp
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918872.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918872.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 64
+[ECMWF-INFO -ecepilog] SBU                       : 661.919
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

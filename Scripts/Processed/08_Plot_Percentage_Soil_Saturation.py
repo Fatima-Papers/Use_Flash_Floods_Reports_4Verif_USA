@@ -1,17 +1,16 @@
 import os
+import sys
 from datetime import datetime, timedelta
 import metview as mv
 
-##############################################################################################################################################
+##############################################################################################
 # CODE DESCRIPTION
-# 08_Plot_Percentage_Soil_Saturation.py plots the percentage to soil saturation for the top 1m level.
-# Runtime: the code takes up to several hours to run in serial.
+# 08_Plot_Percentage_Soil_Saturation.py plots the percentage to instantaneous soil saturation for the top 1m level.
+# Runtime: the code takes up to 60 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
-# DateTime_Start_S (date and time): start date (first three numbers) and time (fourth number) for the analysis period (representing the beginning of the accumulation period).
-# DateTime_Start_F (date and time): final date (first three numbers) and time (fourth number) for the analysis period (representing the beginning of the accumulation period).
-# Acc (integer, in hours): accumulation period.
-# Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
+# Year (integer, in YYYY format): year to consider.
+# Disc_Time (integer, in hours): discretization for time.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path
 # FileIN_Mask (string): relative path where the USA's mask is stored for ERA5_Land.
@@ -19,48 +18,34 @@ import metview as mv
 # DirOUT (string): relative path containing the percentage to soil saturation.
 
 # INPUT PARAMETERS
-DateTime_Start_S = datetime(1996,1,1,0)
-DateTime_Start_F = datetime(2021,12,31,0)
-Acc = 12
-Disc_Acc = 12
+Year = int(sys.argv[1])
+Disc_Time = 12
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5_Land/Mask.grib"
 DirIN = "Data/Compute/07_Percentage_Soil_Saturation"
 DirOUT = "Data/Plot/08_Percentage_Soil_Saturation"
-##############################################################################################################################################
+##############################################################################################
 
 # Reading the domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 
 # Plotting the percentage of soil saturation within the considered domain
 print()
-print("Computing and saving the percentage of soil saturation for the " + str(Acc) + "-hourly accumulation period ending:")
+print("Computing and saving the percentage of soil saturation:")
 
-TheDateTime_Start = DateTime_Start_S
-while TheDateTime_Start <= DateTime_Start_F:
+DateTime_S = datetime(Year,1,1,0)
+DateTime_F = datetime(Year,12,31,12)
 
-      TheDateTime_Final = TheDateTime_Start + timedelta(hours=Acc)
-      print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
+TheDateTime = DateTime_S
+while TheDateTime <= DateTime_F:
+
+      print(" - on " + TheDateTime.strftime("%Y-%m-%d") + " at " + TheDateTime.strftime("%H") + " UTC")
 
       # Reading the percentage of soil saturation 
-      FileIN = Git_Repo + "/" + DirIN + "/" + TheDateTime_Final.strftime("%Y") + "/" + TheDateTime_Final.strftime("%Y%m%d")  + "/soil_saturation_perc_" + TheDateTime_Final.strftime("%Y%m%d%H") + ".grib"
+      FileIN = Git_Repo + "/" + DirIN + "/" + TheDateTime.strftime("%Y") + "/" + TheDateTime.strftime("%Y%m%d")  + "/soil_saturation_perc_" + TheDateTime.strftime("%Y%m%d%H") + ".grib"
       ss_perc = mv.read(FileIN)
       ss_perc_mask =  mv.bitmap(mask, 0) * ss_perc
-
-      # Defining the forecasts' valid times
-      ValidityDateS = TheDateTime_Start
-      DayVS = ValidityDateS.strftime("%d")
-      MonthVS = ValidityDateS.strftime("%B")
-      YearVS = ValidityDateS.strftime("%Y")
-      TimeVS = ValidityDateS.strftime("%H")
-      ValidityDateF = TheDateTime_Final
-      DayVF = ValidityDateF.strftime("%d")
-      MonthVF = ValidityDateF.strftime("%B")
-      YearVF = ValidityDateF.strftime("%Y")
-      TimeVF = ValidityDateF.strftime("%H")
-      title_plot1 = "Percentage of Soil Saturation [-]"
-      title_plot2 = "VT: " + DayVS + " " + MonthVS + " " + YearVS + " " + TimeVS + " UTC - " + DayVF + " " + MonthVF + " " + YearVF + " " + TimeVF  + " UTC"     
 
       # Plotting the percentage of soil saturation 
       coastlines = mv.mcoast(
@@ -108,20 +93,20 @@ while TheDateTime_Start <= DateTime_Start_F:
 
       title = mv.mtext(
             text_line_count = 3,
-            text_line_1 = title_plot1,
-            text_line_2 = title_plot2,
+            text_line_1 = "Percentage of Soil Saturation [-]",
+            text_line_2 = "on " + TheDateTime.strftime("%Y-%m-%d") + " at " + TheDateTime.strftime("%H") + " UTC",
             text_line_3 = " ",
             text_colour = "charcoal",
             text_font_size = 0.75
             )
 
       # Saving the plot
-      MainDirOUT = Git_Repo + "/" + DirOUT + "/" + TheDateTime_Final.strftime("%Y%m")
+      MainDirOUT = Git_Repo + "/" + DirOUT + "/" + TheDateTime.strftime("%Y%m")
       if not os.path.exists(MainDirOUT):
             os.makedirs(MainDirOUT)
-      FileOUT = MainDirOUT + "/Percentage_Soil_Saturation_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H")
+      FileOUT = MainDirOUT + "/Percentage_Soil_Saturation_" + TheDateTime.strftime("%Y%m%d") + "_" + TheDateTime.strftime("%H")
       png = mv.png_output(output_name = FileOUT)
       mv.setoutput(png)
       mv.plot(geo_view, ss_perc_mask, contouring, legend, title)
 
-      TheDateTime_Start = TheDateTime_Start + timedelta(hours=Disc_Acc)
+      TheDateTime = TheDateTime + timedelta(hours=Disc_Time)

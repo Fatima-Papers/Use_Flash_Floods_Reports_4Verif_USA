@@ -1,0 +1,1 @@
+These training was done using all predictors but population density, and a gradually reduced number of flood reports to assess the impacts of data scarcity in the model's accuracy.

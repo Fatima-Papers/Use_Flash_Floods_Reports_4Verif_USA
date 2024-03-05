@@ -1,0 +1,1534 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 49002, mtime: Tue Oct  3 11:53:54 2023
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Tue Mar  5 17:27:12 2024 (1709659632.2784822) on aa6-204.bullx:/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=aa
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SLURM_JOB_ID=13517288
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=PDT_Year
+[ECMWF-INFO -sbatch] - #SBATCH --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=64
+[ECMWF-INFO -sbatch] - #SBATCH --mem=128G
+[ECMWF-INFO -sbatch] - #SBATCH --time=2-00:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --qos=nf
+[ECMWF-INFO -sbatch] - #SBATCH --mail-type=FAIL
+[ECMWF-INFO -sbatch] - #SBATCH --mail-user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['18a_SubmitterATOS_PDT_Year.sh', '2018']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=64
+[ECMWF-INFO -sbatch] - ARG --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --job_name=PDT_Year
+[ECMWF-INFO -sbatch] - ARG --mail_type=FAIL
+[ECMWF-INFO -sbatch] - ARG --mail_user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - ARG --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --qos=nf
+[ECMWF-INFO -sbatch] - ARG --time=2-00:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=128G
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: mofp-PDT_Year-1x64-/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-_.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=64', '--error=LogATOS/PDT_Year-%J.out', '--job-name=PDT_Year', '--mail-type=FAIL', '--mail-user=fatima.pillosu@ecmwf.int', '--output=LogATOS/PDT_Year-%J.out', '--qos=nf', '--time=2-00:00:00', '--mem=128G', '--licenses=h2resw01', '--export=EC_user_time_limit=2-00:00:00', '/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh', '2018']
+[ECMWF-INFO -sbatch] - sbatch executed on aa
+[ECMWF-INFO -sbatch] - Job queued on aa using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 13918874
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on aa6-166 at 20240305_172732.357, PID: 1502174, JOBID: 13918874
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/mofp
+[ECMWF-INFO -ecprofile] $PERM=/perm/mofp
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/mofp
+[ECMWF-INFO -ecprofile] $TMPDIR=/etc/ecmwf/ssd/ssd1/tmpdirs/mofp.13918874
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/mofp/2/13918874
+2018-01-01 00:00:00 12
+Creating point data table for: 2018010112
+2018-01-01 00:00:00 24
+Creating point data table for: 2018010200
+2018-01-02 00:00:00 12
+Creating point data table for: 2018010212
+2018-01-02 00:00:00 24
+Creating point data table for: 2018010300
+2018-01-03 00:00:00 12
+Creating point data table for: 2018010312
+2018-01-03 00:00:00 24
+Creating point data table for: 2018010400
+2018-01-04 00:00:00 12
+Creating point data table for: 2018010412
+2018-01-04 00:00:00 24
+Creating point data table for: 2018010500
+2018-01-05 00:00:00 12
+Creating point data table for: 2018010512
+2018-01-05 00:00:00 24
+Creating point data table for: 2018010600
+2018-01-06 00:00:00 12
+Creating point data table for: 2018010612
+2018-01-06 00:00:00 24
+Creating point data table for: 2018010700
+2018-01-07 00:00:00 12
+Creating point data table for: 2018010712
+2018-01-07 00:00:00 24
+Creating point data table for: 2018010800
+2018-01-08 00:00:00 12
+Creating point data table for: 2018010812
+2018-01-08 00:00:00 24
+Creating point data table for: 2018010900
+2018-01-09 00:00:00 12
+Creating point data table for: 2018010912
+2018-01-09 00:00:00 24
+Creating point data table for: 2018011000
+2018-01-10 00:00:00 12
+Creating point data table for: 2018011012
+2018-01-10 00:00:00 24
+Creating point data table for: 2018011100
+2018-01-11 00:00:00 12
+Creating point data table for: 2018011112
+2018-01-11 00:00:00 24
+Creating point data table for: 2018011200
+2018-01-12 00:00:00 12
+Creating point data table for: 2018011212
+2018-01-12 00:00:00 24
+Creating point data table for: 2018011300
+2018-01-13 00:00:00 12
+Creating point data table for: 2018011312
+2018-01-13 00:00:00 24
+Creating point data table for: 2018011400
+2018-01-14 00:00:00 12
+Creating point data table for: 2018011412
+2018-01-14 00:00:00 24
+Creating point data table for: 2018011500
+2018-01-15 00:00:00 12
+Creating point data table for: 2018011512
+2018-01-15 00:00:00 24
+Creating point data table for: 2018011600
+2018-01-16 00:00:00 12
+Creating point data table for: 2018011612
+2018-01-16 00:00:00 24
+Creating point data table for: 2018011700
+2018-01-17 00:00:00 12
+Creating point data table for: 2018011712
+2018-01-17 00:00:00 24
+Creating point data table for: 2018011800
+2018-01-18 00:00:00 12
+Creating point data table for: 2018011812
+2018-01-18 00:00:00 24
+Creating point data table for: 2018011900
+2018-01-19 00:00:00 12
+Creating point data table for: 2018011912
+2018-01-19 00:00:00 24
+Creating point data table for: 2018012000
+2018-01-20 00:00:00 12
+Creating point data table for: 2018012012
+2018-01-20 00:00:00 24
+Creating point data table for: 2018012100
+2018-01-21 00:00:00 12
+Creating point data table for: 2018012112
+2018-01-21 00:00:00 24
+Creating point data table for: 2018012200
+2018-01-22 00:00:00 12
+Creating point data table for: 2018012212
+2018-01-22 00:00:00 24
+Creating point data table for: 2018012300
+2018-01-23 00:00:00 12
+Creating point data table for: 2018012312
+2018-01-23 00:00:00 24
+Creating point data table for: 2018012400
+2018-01-24 00:00:00 12
+Creating point data table for: 2018012412
+2018-01-24 00:00:00 24
+Creating point data table for: 2018012500
+2018-01-25 00:00:00 12
+Creating point data table for: 2018012512
+2018-01-25 00:00:00 24
+Creating point data table for: 2018012600
+2018-01-26 00:00:00 12
+Creating point data table for: 2018012612
+2018-01-26 00:00:00 24
+Creating point data table for: 2018012700
+2018-01-27 00:00:00 12
+Creating point data table for: 2018012712
+2018-01-27 00:00:00 24
+Creating point data table for: 2018012800
+2018-01-28 00:00:00 12
+Creating point data table for: 2018012812
+2018-01-28 00:00:00 24
+Creating point data table for: 2018012900
+2018-01-29 00:00:00 12
+Creating point data table for: 2018012912
+2018-01-29 00:00:00 24
+Creating point data table for: 2018013000
+2018-01-30 00:00:00 12
+Creating point data table for: 2018013012
+2018-01-30 00:00:00 24
+Creating point data table for: 2018013100
+2018-01-31 00:00:00 12
+Creating point data table for: 2018013112
+2018-01-31 00:00:00 24
+Creating point data table for: 2018020100
+2018-02-01 00:00:00 12
+Creating point data table for: 2018020112
+2018-02-01 00:00:00 24
+Creating point data table for: 2018020200
+2018-02-02 00:00:00 12
+Creating point data table for: 2018020212
+2018-02-02 00:00:00 24
+Creating point data table for: 2018020300
+2018-02-03 00:00:00 12
+Creating point data table for: 2018020312
+2018-02-03 00:00:00 24
+Creating point data table for: 2018020400
+2018-02-04 00:00:00 12
+Creating point data table for: 2018020412
+2018-02-04 00:00:00 24
+Creating point data table for: 2018020500
+2018-02-05 00:00:00 12
+Creating point data table for: 2018020512
+2018-02-05 00:00:00 24
+Creating point data table for: 2018020600
+2018-02-06 00:00:00 12
+Creating point data table for: 2018020612
+2018-02-06 00:00:00 24
+Creating point data table for: 2018020700
+2018-02-07 00:00:00 12
+Creating point data table for: 2018020712
+2018-02-07 00:00:00 24
+Creating point data table for: 2018020800
+2018-02-08 00:00:00 12
+Creating point data table for: 2018020812
+2018-02-08 00:00:00 24
+Creating point data table for: 2018020900
+2018-02-09 00:00:00 12
+Creating point data table for: 2018020912
+2018-02-09 00:00:00 24
+Creating point data table for: 2018021000
+2018-02-10 00:00:00 12
+Creating point data table for: 2018021012
+2018-02-10 00:00:00 24
+Creating point data table for: 2018021100
+2018-02-11 00:00:00 12
+Creating point data table for: 2018021112
+2018-02-11 00:00:00 24
+Creating point data table for: 2018021200
+2018-02-12 00:00:00 12
+Creating point data table for: 2018021212
+2018-02-12 00:00:00 24
+Creating point data table for: 2018021300
+2018-02-13 00:00:00 12
+Creating point data table for: 2018021312
+2018-02-13 00:00:00 24
+Creating point data table for: 2018021400
+2018-02-14 00:00:00 12
+Creating point data table for: 2018021412
+2018-02-14 00:00:00 24
+Creating point data table for: 2018021500
+2018-02-15 00:00:00 12
+Creating point data table for: 2018021512
+2018-02-15 00:00:00 24
+Creating point data table for: 2018021600
+2018-02-16 00:00:00 12
+Creating point data table for: 2018021612
+2018-02-16 00:00:00 24
+Creating point data table for: 2018021700
+2018-02-17 00:00:00 12
+Creating point data table for: 2018021712
+2018-02-17 00:00:00 24
+Creating point data table for: 2018021800
+2018-02-18 00:00:00 12
+Creating point data table for: 2018021812
+2018-02-18 00:00:00 24
+Creating point data table for: 2018021900
+2018-02-19 00:00:00 12
+Creating point data table for: 2018021912
+2018-02-19 00:00:00 24
+Creating point data table for: 2018022000
+2018-02-20 00:00:00 12
+Creating point data table for: 2018022012
+2018-02-20 00:00:00 24
+Creating point data table for: 2018022100
+2018-02-21 00:00:00 12
+Creating point data table for: 2018022112
+2018-02-21 00:00:00 24
+Creating point data table for: 2018022200
+2018-02-22 00:00:00 12
+Creating point data table for: 2018022212
+2018-02-22 00:00:00 24
+Creating point data table for: 2018022300
+2018-02-23 00:00:00 12
+Creating point data table for: 2018022312
+2018-02-23 00:00:00 24
+Creating point data table for: 2018022400
+2018-02-24 00:00:00 12
+Creating point data table for: 2018022412
+2018-02-24 00:00:00 24
+Creating point data table for: 2018022500
+2018-02-25 00:00:00 12
+Creating point data table for: 2018022512
+2018-02-25 00:00:00 24
+Creating point data table for: 2018022600
+2018-02-26 00:00:00 12
+Creating point data table for: 2018022612
+2018-02-26 00:00:00 24
+Creating point data table for: 2018022700
+2018-02-27 00:00:00 12
+Creating point data table for: 2018022712
+2018-02-27 00:00:00 24
+Creating point data table for: 2018022800
+2018-02-28 00:00:00 12
+Creating point data table for: 2018022812
+2018-02-28 00:00:00 24
+Creating point data table for: 2018030100
+2018-03-01 00:00:00 12
+Creating point data table for: 2018030112
+2018-03-01 00:00:00 24
+Creating point data table for: 2018030200
+2018-03-02 00:00:00 12
+Creating point data table for: 2018030212
+2018-03-02 00:00:00 24
+Creating point data table for: 2018030300
+2018-03-03 00:00:00 12
+Creating point data table for: 2018030312
+2018-03-03 00:00:00 24
+Creating point data table for: 2018030400
+2018-03-04 00:00:00 12
+Creating point data table for: 2018030412
+2018-03-04 00:00:00 24
+Creating point data table for: 2018030500
+2018-03-05 00:00:00 12
+Creating point data table for: 2018030512
+2018-03-05 00:00:00 24
+Creating point data table for: 2018030600
+2018-03-06 00:00:00 12
+Creating point data table for: 2018030612
+2018-03-06 00:00:00 24
+Creating point data table for: 2018030700
+2018-03-07 00:00:00 12
+Creating point data table for: 2018030712
+2018-03-07 00:00:00 24
+Creating point data table for: 2018030800
+2018-03-08 00:00:00 12
+Creating point data table for: 2018030812
+2018-03-08 00:00:00 24
+Creating point data table for: 2018030900
+2018-03-09 00:00:00 12
+Creating point data table for: 2018030912
+2018-03-09 00:00:00 24
+Creating point data table for: 2018031000
+2018-03-10 00:00:00 12
+Creating point data table for: 2018031012
+2018-03-10 00:00:00 24
+Creating point data table for: 2018031100
+2018-03-11 00:00:00 12
+Creating point data table for: 2018031112
+2018-03-11 00:00:00 24
+Creating point data table for: 2018031200
+2018-03-12 00:00:00 12
+Creating point data table for: 2018031212
+2018-03-12 00:00:00 24
+Creating point data table for: 2018031300
+2018-03-13 00:00:00 12
+Creating point data table for: 2018031312
+2018-03-13 00:00:00 24
+Creating point data table for: 2018031400
+2018-03-14 00:00:00 12
+Creating point data table for: 2018031412
+2018-03-14 00:00:00 24
+Creating point data table for: 2018031500
+2018-03-15 00:00:00 12
+Creating point data table for: 2018031512
+2018-03-15 00:00:00 24
+Creating point data table for: 2018031600
+2018-03-16 00:00:00 12
+Creating point data table for: 2018031612
+2018-03-16 00:00:00 24
+Creating point data table for: 2018031700
+2018-03-17 00:00:00 12
+Creating point data table for: 2018031712
+2018-03-17 00:00:00 24
+Creating point data table for: 2018031800
+2018-03-18 00:00:00 12
+Creating point data table for: 2018031812
+2018-03-18 00:00:00 24
+Creating point data table for: 2018031900
+2018-03-19 00:00:00 12
+Creating point data table for: 2018031912
+2018-03-19 00:00:00 24
+Creating point data table for: 2018032000
+2018-03-20 00:00:00 12
+Creating point data table for: 2018032012
+2018-03-20 00:00:00 24
+Creating point data table for: 2018032100
+2018-03-21 00:00:00 12
+Creating point data table for: 2018032112
+2018-03-21 00:00:00 24
+Creating point data table for: 2018032200
+2018-03-22 00:00:00 12
+Creating point data table for: 2018032212
+2018-03-22 00:00:00 24
+Creating point data table for: 2018032300
+2018-03-23 00:00:00 12
+Creating point data table for: 2018032312
+2018-03-23 00:00:00 24
+Creating point data table for: 2018032400
+2018-03-24 00:00:00 12
+Creating point data table for: 2018032412
+2018-03-24 00:00:00 24
+Creating point data table for: 2018032500
+2018-03-25 00:00:00 12
+Creating point data table for: 2018032512
+2018-03-25 00:00:00 24
+Creating point data table for: 2018032600
+2018-03-26 00:00:00 12
+Creating point data table for: 2018032612
+2018-03-26 00:00:00 24
+Creating point data table for: 2018032700
+2018-03-27 00:00:00 12
+Creating point data table for: 2018032712
+2018-03-27 00:00:00 24
+Creating point data table for: 2018032800
+2018-03-28 00:00:00 12
+Creating point data table for: 2018032812
+2018-03-28 00:00:00 24
+Creating point data table for: 2018032900
+2018-03-29 00:00:00 12
+Creating point data table for: 2018032912
+2018-03-29 00:00:00 24
+Creating point data table for: 2018033000
+2018-03-30 00:00:00 12
+Creating point data table for: 2018033012
+2018-03-30 00:00:00 24
+Creating point data table for: 2018033100
+2018-03-31 00:00:00 12
+Creating point data table for: 2018033112
+2018-03-31 00:00:00 24
+Creating point data table for: 2018040100
+2018-04-01 00:00:00 12
+Creating point data table for: 2018040112
+2018-04-01 00:00:00 24
+Creating point data table for: 2018040200
+2018-04-02 00:00:00 12
+Creating point data table for: 2018040212
+2018-04-02 00:00:00 24
+Creating point data table for: 2018040300
+2018-04-03 00:00:00 12
+Creating point data table for: 2018040312
+2018-04-03 00:00:00 24
+Creating point data table for: 2018040400
+2018-04-04 00:00:00 12
+Creating point data table for: 2018040412
+2018-04-04 00:00:00 24
+Creating point data table for: 2018040500
+2018-04-05 00:00:00 12
+Creating point data table for: 2018040512
+2018-04-05 00:00:00 24
+Creating point data table for: 2018040600
+2018-04-06 00:00:00 12
+Creating point data table for: 2018040612
+2018-04-06 00:00:00 24
+Creating point data table for: 2018040700
+2018-04-07 00:00:00 12
+Creating point data table for: 2018040712
+2018-04-07 00:00:00 24
+Creating point data table for: 2018040800
+2018-04-08 00:00:00 12
+Creating point data table for: 2018040812
+2018-04-08 00:00:00 24
+Creating point data table for: 2018040900
+2018-04-09 00:00:00 12
+Creating point data table for: 2018040912
+2018-04-09 00:00:00 24
+Creating point data table for: 2018041000
+2018-04-10 00:00:00 12
+Creating point data table for: 2018041012
+2018-04-10 00:00:00 24
+Creating point data table for: 2018041100
+2018-04-11 00:00:00 12
+Creating point data table for: 2018041112
+2018-04-11 00:00:00 24
+Creating point data table for: 2018041200
+2018-04-12 00:00:00 12
+Creating point data table for: 2018041212
+2018-04-12 00:00:00 24
+Creating point data table for: 2018041300
+2018-04-13 00:00:00 12
+Creating point data table for: 2018041312
+2018-04-13 00:00:00 24
+Creating point data table for: 2018041400
+2018-04-14 00:00:00 12
+Creating point data table for: 2018041412
+2018-04-14 00:00:00 24
+Creating point data table for: 2018041500
+2018-04-15 00:00:00 12
+Creating point data table for: 2018041512
+2018-04-15 00:00:00 24
+Creating point data table for: 2018041600
+2018-04-16 00:00:00 12
+Creating point data table for: 2018041612
+2018-04-16 00:00:00 24
+Creating point data table for: 2018041700
+2018-04-17 00:00:00 12
+Creating point data table for: 2018041712
+2018-04-17 00:00:00 24
+Creating point data table for: 2018041800
+2018-04-18 00:00:00 12
+Creating point data table for: 2018041812
+2018-04-18 00:00:00 24
+Creating point data table for: 2018041900
+2018-04-19 00:00:00 12
+Creating point data table for: 2018041912
+2018-04-19 00:00:00 24
+Creating point data table for: 2018042000
+2018-04-20 00:00:00 12
+Creating point data table for: 2018042012
+2018-04-20 00:00:00 24
+Creating point data table for: 2018042100
+2018-04-21 00:00:00 12
+Creating point data table for: 2018042112
+2018-04-21 00:00:00 24
+Creating point data table for: 2018042200
+2018-04-22 00:00:00 12
+Creating point data table for: 2018042212
+2018-04-22 00:00:00 24
+Creating point data table for: 2018042300
+2018-04-23 00:00:00 12
+Creating point data table for: 2018042312
+2018-04-23 00:00:00 24
+Creating point data table for: 2018042400
+2018-04-24 00:00:00 12
+Creating point data table for: 2018042412
+2018-04-24 00:00:00 24
+Creating point data table for: 2018042500
+2018-04-25 00:00:00 12
+Creating point data table for: 2018042512
+2018-04-25 00:00:00 24
+Creating point data table for: 2018042600
+2018-04-26 00:00:00 12
+Creating point data table for: 2018042612
+2018-04-26 00:00:00 24
+Creating point data table for: 2018042700
+2018-04-27 00:00:00 12
+Creating point data table for: 2018042712
+2018-04-27 00:00:00 24
+Creating point data table for: 2018042800
+2018-04-28 00:00:00 12
+Creating point data table for: 2018042812
+2018-04-28 00:00:00 24
+Creating point data table for: 2018042900
+2018-04-29 00:00:00 12
+Creating point data table for: 2018042912
+2018-04-29 00:00:00 24
+Creating point data table for: 2018043000
+2018-04-30 00:00:00 12
+Creating point data table for: 2018043012
+2018-04-30 00:00:00 24
+Creating point data table for: 2018050100
+2018-05-01 00:00:00 12
+Creating point data table for: 2018050112
+2018-05-01 00:00:00 24
+Creating point data table for: 2018050200
+2018-05-02 00:00:00 12
+Creating point data table for: 2018050212
+2018-05-02 00:00:00 24
+Creating point data table for: 2018050300
+2018-05-03 00:00:00 12
+Creating point data table for: 2018050312
+2018-05-03 00:00:00 24
+Creating point data table for: 2018050400
+2018-05-04 00:00:00 12
+Creating point data table for: 2018050412
+2018-05-04 00:00:00 24
+Creating point data table for: 2018050500
+2018-05-05 00:00:00 12
+Creating point data table for: 2018050512
+2018-05-05 00:00:00 24
+Creating point data table for: 2018050600
+2018-05-06 00:00:00 12
+Creating point data table for: 2018050612
+2018-05-06 00:00:00 24
+Creating point data table for: 2018050700
+2018-05-07 00:00:00 12
+Creating point data table for: 2018050712
+2018-05-07 00:00:00 24
+Creating point data table for: 2018050800
+2018-05-08 00:00:00 12
+Creating point data table for: 2018050812
+2018-05-08 00:00:00 24
+Creating point data table for: 2018050900
+2018-05-09 00:00:00 12
+Creating point data table for: 2018050912
+2018-05-09 00:00:00 24
+Creating point data table for: 2018051000
+2018-05-10 00:00:00 12
+Creating point data table for: 2018051012
+2018-05-10 00:00:00 24
+Creating point data table for: 2018051100
+2018-05-11 00:00:00 12
+Creating point data table for: 2018051112
+2018-05-11 00:00:00 24
+Creating point data table for: 2018051200
+2018-05-12 00:00:00 12
+Creating point data table for: 2018051212
+2018-05-12 00:00:00 24
+Creating point data table for: 2018051300
+2018-05-13 00:00:00 12
+Creating point data table for: 2018051312
+2018-05-13 00:00:00 24
+Creating point data table for: 2018051400
+2018-05-14 00:00:00 12
+Creating point data table for: 2018051412
+2018-05-14 00:00:00 24
+Creating point data table for: 2018051500
+2018-05-15 00:00:00 12
+Creating point data table for: 2018051512
+2018-05-15 00:00:00 24
+Creating point data table for: 2018051600
+2018-05-16 00:00:00 12
+Creating point data table for: 2018051612
+2018-05-16 00:00:00 24
+Creating point data table for: 2018051700
+2018-05-17 00:00:00 12
+Creating point data table for: 2018051712
+2018-05-17 00:00:00 24
+Creating point data table for: 2018051800
+2018-05-18 00:00:00 12
+Creating point data table for: 2018051812
+2018-05-18 00:00:00 24
+Creating point data table for: 2018051900
+2018-05-19 00:00:00 12
+Creating point data table for: 2018051912
+2018-05-19 00:00:00 24
+Creating point data table for: 2018052000
+2018-05-20 00:00:00 12
+Creating point data table for: 2018052012
+2018-05-20 00:00:00 24
+Creating point data table for: 2018052100
+2018-05-21 00:00:00 12
+Creating point data table for: 2018052112
+2018-05-21 00:00:00 24
+Creating point data table for: 2018052200
+2018-05-22 00:00:00 12
+Creating point data table for: 2018052212
+2018-05-22 00:00:00 24
+Creating point data table for: 2018052300
+2018-05-23 00:00:00 12
+Creating point data table for: 2018052312
+2018-05-23 00:00:00 24
+Creating point data table for: 2018052400
+2018-05-24 00:00:00 12
+Creating point data table for: 2018052412
+2018-05-24 00:00:00 24
+Creating point data table for: 2018052500
+2018-05-25 00:00:00 12
+Creating point data table for: 2018052512
+2018-05-25 00:00:00 24
+Creating point data table for: 2018052600
+2018-05-26 00:00:00 12
+Creating point data table for: 2018052612
+2018-05-26 00:00:00 24
+Creating point data table for: 2018052700
+2018-05-27 00:00:00 12
+Creating point data table for: 2018052712
+2018-05-27 00:00:00 24
+Creating point data table for: 2018052800
+2018-05-28 00:00:00 12
+Creating point data table for: 2018052812
+2018-05-28 00:00:00 24
+Creating point data table for: 2018052900
+2018-05-29 00:00:00 12
+Creating point data table for: 2018052912
+2018-05-29 00:00:00 24
+Creating point data table for: 2018053000
+2018-05-30 00:00:00 12
+Creating point data table for: 2018053012
+2018-05-30 00:00:00 24
+Creating point data table for: 2018053100
+2018-05-31 00:00:00 12
+Creating point data table for: 2018053112
+2018-05-31 00:00:00 24
+Creating point data table for: 2018060100
+2018-06-01 00:00:00 12
+Creating point data table for: 2018060112
+2018-06-01 00:00:00 24
+Creating point data table for: 2018060200
+2018-06-02 00:00:00 12
+Creating point data table for: 2018060212
+2018-06-02 00:00:00 24
+Creating point data table for: 2018060300
+2018-06-03 00:00:00 12
+Creating point data table for: 2018060312
+2018-06-03 00:00:00 24
+Creating point data table for: 2018060400
+2018-06-04 00:00:00 12
+Creating point data table for: 2018060412
+2018-06-04 00:00:00 24
+Creating point data table for: 2018060500
+2018-06-05 00:00:00 12
+Creating point data table for: 2018060512
+2018-06-05 00:00:00 24
+Creating point data table for: 2018060600
+2018-06-06 00:00:00 12
+Creating point data table for: 2018060612
+2018-06-06 00:00:00 24
+Creating point data table for: 2018060700
+2018-06-07 00:00:00 12
+Creating point data table for: 2018060712
+2018-06-07 00:00:00 24
+Creating point data table for: 2018060800
+2018-06-08 00:00:00 12
+Creating point data table for: 2018060812
+2018-06-08 00:00:00 24
+Creating point data table for: 2018060900
+2018-06-09 00:00:00 12
+Creating point data table for: 2018060912
+2018-06-09 00:00:00 24
+Creating point data table for: 2018061000
+2018-06-10 00:00:00 12
+Creating point data table for: 2018061012
+2018-06-10 00:00:00 24
+Creating point data table for: 2018061100
+2018-06-11 00:00:00 12
+Creating point data table for: 2018061112
+2018-06-11 00:00:00 24
+Creating point data table for: 2018061200
+2018-06-12 00:00:00 12
+Creating point data table for: 2018061212
+2018-06-12 00:00:00 24
+Creating point data table for: 2018061300
+2018-06-13 00:00:00 12
+Creating point data table for: 2018061312
+2018-06-13 00:00:00 24
+Creating point data table for: 2018061400
+2018-06-14 00:00:00 12
+Creating point data table for: 2018061412
+2018-06-14 00:00:00 24
+Creating point data table for: 2018061500
+2018-06-15 00:00:00 12
+Creating point data table for: 2018061512
+2018-06-15 00:00:00 24
+Creating point data table for: 2018061600
+2018-06-16 00:00:00 12
+Creating point data table for: 2018061612
+2018-06-16 00:00:00 24
+Creating point data table for: 2018061700
+2018-06-17 00:00:00 12
+Creating point data table for: 2018061712
+2018-06-17 00:00:00 24
+Creating point data table for: 2018061800
+2018-06-18 00:00:00 12
+Creating point data table for: 2018061812
+2018-06-18 00:00:00 24
+Creating point data table for: 2018061900
+2018-06-19 00:00:00 12
+Creating point data table for: 2018061912
+2018-06-19 00:00:00 24
+Creating point data table for: 2018062000
+2018-06-20 00:00:00 12
+Creating point data table for: 2018062012
+2018-06-20 00:00:00 24
+Creating point data table for: 2018062100
+2018-06-21 00:00:00 12
+Creating point data table for: 2018062112
+2018-06-21 00:00:00 24
+Creating point data table for: 2018062200
+2018-06-22 00:00:00 12
+Creating point data table for: 2018062212
+2018-06-22 00:00:00 24
+Creating point data table for: 2018062300
+2018-06-23 00:00:00 12
+Creating point data table for: 2018062312
+2018-06-23 00:00:00 24
+Creating point data table for: 2018062400
+2018-06-24 00:00:00 12
+Creating point data table for: 2018062412
+2018-06-24 00:00:00 24
+Creating point data table for: 2018062500
+2018-06-25 00:00:00 12
+Creating point data table for: 2018062512
+2018-06-25 00:00:00 24
+Creating point data table for: 2018062600
+2018-06-26 00:00:00 12
+Creating point data table for: 2018062612
+2018-06-26 00:00:00 24
+Creating point data table for: 2018062700
+2018-06-27 00:00:00 12
+Creating point data table for: 2018062712
+2018-06-27 00:00:00 24
+Creating point data table for: 2018062800
+2018-06-28 00:00:00 12
+Creating point data table for: 2018062812
+2018-06-28 00:00:00 24
+Creating point data table for: 2018062900
+2018-06-29 00:00:00 12
+Creating point data table for: 2018062912
+2018-06-29 00:00:00 24
+Creating point data table for: 2018063000
+2018-06-30 00:00:00 12
+Creating point data table for: 2018063012
+2018-06-30 00:00:00 24
+Creating point data table for: 2018070100
+2018-07-01 00:00:00 12
+Creating point data table for: 2018070112
+2018-07-01 00:00:00 24
+Creating point data table for: 2018070200
+2018-07-02 00:00:00 12
+Creating point data table for: 2018070212
+2018-07-02 00:00:00 24
+Creating point data table for: 2018070300
+2018-07-03 00:00:00 12
+Creating point data table for: 2018070312
+2018-07-03 00:00:00 24
+Creating point data table for: 2018070400
+2018-07-04 00:00:00 12
+Creating point data table for: 2018070412
+2018-07-04 00:00:00 24
+Creating point data table for: 2018070500
+2018-07-05 00:00:00 12
+Creating point data table for: 2018070512
+2018-07-05 00:00:00 24
+Creating point data table for: 2018070600
+2018-07-06 00:00:00 12
+Creating point data table for: 2018070612
+2018-07-06 00:00:00 24
+Creating point data table for: 2018070700
+2018-07-07 00:00:00 12
+Creating point data table for: 2018070712
+2018-07-07 00:00:00 24
+Creating point data table for: 2018070800
+2018-07-08 00:00:00 12
+Creating point data table for: 2018070812
+2018-07-08 00:00:00 24
+Creating point data table for: 2018070900
+2018-07-09 00:00:00 12
+Creating point data table for: 2018070912
+2018-07-09 00:00:00 24
+Creating point data table for: 2018071000
+2018-07-10 00:00:00 12
+Creating point data table for: 2018071012
+2018-07-10 00:00:00 24
+Creating point data table for: 2018071100
+2018-07-11 00:00:00 12
+Creating point data table for: 2018071112
+2018-07-11 00:00:00 24
+Creating point data table for: 2018071200
+2018-07-12 00:00:00 12
+Creating point data table for: 2018071212
+2018-07-12 00:00:00 24
+Creating point data table for: 2018071300
+2018-07-13 00:00:00 12
+Creating point data table for: 2018071312
+2018-07-13 00:00:00 24
+Creating point data table for: 2018071400
+2018-07-14 00:00:00 12
+Creating point data table for: 2018071412
+2018-07-14 00:00:00 24
+Creating point data table for: 2018071500
+2018-07-15 00:00:00 12
+Creating point data table for: 2018071512
+2018-07-15 00:00:00 24
+Creating point data table for: 2018071600
+2018-07-16 00:00:00 12
+Creating point data table for: 2018071612
+2018-07-16 00:00:00 24
+Creating point data table for: 2018071700
+2018-07-17 00:00:00 12
+Creating point data table for: 2018071712
+2018-07-17 00:00:00 24
+Creating point data table for: 2018071800
+2018-07-18 00:00:00 12
+Creating point data table for: 2018071812
+2018-07-18 00:00:00 24
+Creating point data table for: 2018071900
+2018-07-19 00:00:00 12
+Creating point data table for: 2018071912
+2018-07-19 00:00:00 24
+Creating point data table for: 2018072000
+2018-07-20 00:00:00 12
+Creating point data table for: 2018072012
+2018-07-20 00:00:00 24
+Creating point data table for: 2018072100
+2018-07-21 00:00:00 12
+Creating point data table for: 2018072112
+2018-07-21 00:00:00 24
+Creating point data table for: 2018072200
+2018-07-22 00:00:00 12
+Creating point data table for: 2018072212
+2018-07-22 00:00:00 24
+Creating point data table for: 2018072300
+2018-07-23 00:00:00 12
+Creating point data table for: 2018072312
+2018-07-23 00:00:00 24
+Creating point data table for: 2018072400
+2018-07-24 00:00:00 12
+Creating point data table for: 2018072412
+2018-07-24 00:00:00 24
+Creating point data table for: 2018072500
+2018-07-25 00:00:00 12
+Creating point data table for: 2018072512
+2018-07-25 00:00:00 24
+Creating point data table for: 2018072600
+2018-07-26 00:00:00 12
+Creating point data table for: 2018072612
+2018-07-26 00:00:00 24
+Creating point data table for: 2018072700
+2018-07-27 00:00:00 12
+Creating point data table for: 2018072712
+2018-07-27 00:00:00 24
+Creating point data table for: 2018072800
+2018-07-28 00:00:00 12
+Creating point data table for: 2018072812
+2018-07-28 00:00:00 24
+Creating point data table for: 2018072900
+2018-07-29 00:00:00 12
+Creating point data table for: 2018072912
+2018-07-29 00:00:00 24
+Creating point data table for: 2018073000
+2018-07-30 00:00:00 12
+Creating point data table for: 2018073012
+2018-07-30 00:00:00 24
+Creating point data table for: 2018073100
+2018-07-31 00:00:00 12
+Creating point data table for: 2018073112
+2018-07-31 00:00:00 24
+Creating point data table for: 2018080100
+2018-08-01 00:00:00 12
+Creating point data table for: 2018080112
+2018-08-01 00:00:00 24
+Creating point data table for: 2018080200
+2018-08-02 00:00:00 12
+Creating point data table for: 2018080212
+2018-08-02 00:00:00 24
+Creating point data table for: 2018080300
+2018-08-03 00:00:00 12
+Creating point data table for: 2018080312
+2018-08-03 00:00:00 24
+Creating point data table for: 2018080400
+2018-08-04 00:00:00 12
+Creating point data table for: 2018080412
+2018-08-04 00:00:00 24
+Creating point data table for: 2018080500
+2018-08-05 00:00:00 12
+Creating point data table for: 2018080512
+2018-08-05 00:00:00 24
+Creating point data table for: 2018080600
+2018-08-06 00:00:00 12
+Creating point data table for: 2018080612
+2018-08-06 00:00:00 24
+Creating point data table for: 2018080700
+2018-08-07 00:00:00 12
+Creating point data table for: 2018080712
+2018-08-07 00:00:00 24
+Creating point data table for: 2018080800
+2018-08-08 00:00:00 12
+Creating point data table for: 2018080812
+2018-08-08 00:00:00 24
+Creating point data table for: 2018080900
+2018-08-09 00:00:00 12
+Creating point data table for: 2018080912
+2018-08-09 00:00:00 24
+Creating point data table for: 2018081000
+2018-08-10 00:00:00 12
+Creating point data table for: 2018081012
+2018-08-10 00:00:00 24
+Creating point data table for: 2018081100
+2018-08-11 00:00:00 12
+Creating point data table for: 2018081112
+2018-08-11 00:00:00 24
+Creating point data table for: 2018081200
+2018-08-12 00:00:00 12
+Creating point data table for: 2018081212
+2018-08-12 00:00:00 24
+Creating point data table for: 2018081300
+2018-08-13 00:00:00 12
+Creating point data table for: 2018081312
+2018-08-13 00:00:00 24
+Creating point data table for: 2018081400
+2018-08-14 00:00:00 12
+Creating point data table for: 2018081412
+2018-08-14 00:00:00 24
+Creating point data table for: 2018081500
+2018-08-15 00:00:00 12
+Creating point data table for: 2018081512
+2018-08-15 00:00:00 24
+Creating point data table for: 2018081600
+2018-08-16 00:00:00 12
+Creating point data table for: 2018081612
+2018-08-16 00:00:00 24
+Creating point data table for: 2018081700
+2018-08-17 00:00:00 12
+Creating point data table for: 2018081712
+2018-08-17 00:00:00 24
+Creating point data table for: 2018081800
+2018-08-18 00:00:00 12
+Creating point data table for: 2018081812
+2018-08-18 00:00:00 24
+Creating point data table for: 2018081900
+2018-08-19 00:00:00 12
+Creating point data table for: 2018081912
+2018-08-19 00:00:00 24
+Creating point data table for: 2018082000
+2018-08-20 00:00:00 12
+Creating point data table for: 2018082012
+2018-08-20 00:00:00 24
+Creating point data table for: 2018082100
+2018-08-21 00:00:00 12
+Creating point data table for: 2018082112
+2018-08-21 00:00:00 24
+Creating point data table for: 2018082200
+2018-08-22 00:00:00 12
+Creating point data table for: 2018082212
+2018-08-22 00:00:00 24
+Creating point data table for: 2018082300
+2018-08-23 00:00:00 12
+Creating point data table for: 2018082312
+2018-08-23 00:00:00 24
+Creating point data table for: 2018082400
+2018-08-24 00:00:00 12
+Creating point data table for: 2018082412
+2018-08-24 00:00:00 24
+Creating point data table for: 2018082500
+2018-08-25 00:00:00 12
+Creating point data table for: 2018082512
+2018-08-25 00:00:00 24
+Creating point data table for: 2018082600
+2018-08-26 00:00:00 12
+Creating point data table for: 2018082612
+2018-08-26 00:00:00 24
+Creating point data table for: 2018082700
+2018-08-27 00:00:00 12
+Creating point data table for: 2018082712
+2018-08-27 00:00:00 24
+Creating point data table for: 2018082800
+2018-08-28 00:00:00 12
+Creating point data table for: 2018082812
+2018-08-28 00:00:00 24
+Creating point data table for: 2018082900
+2018-08-29 00:00:00 12
+Creating point data table for: 2018082912
+2018-08-29 00:00:00 24
+Creating point data table for: 2018083000
+2018-08-30 00:00:00 12
+Creating point data table for: 2018083012
+2018-08-30 00:00:00 24
+Creating point data table for: 2018083100
+2018-08-31 00:00:00 12
+Creating point data table for: 2018083112
+2018-08-31 00:00:00 24
+Creating point data table for: 2018090100
+2018-09-01 00:00:00 12
+Creating point data table for: 2018090112
+2018-09-01 00:00:00 24
+Creating point data table for: 2018090200
+2018-09-02 00:00:00 12
+Creating point data table for: 2018090212
+2018-09-02 00:00:00 24
+Creating point data table for: 2018090300
+2018-09-03 00:00:00 12
+Creating point data table for: 2018090312
+2018-09-03 00:00:00 24
+Creating point data table for: 2018090400
+2018-09-04 00:00:00 12
+Creating point data table for: 2018090412
+2018-09-04 00:00:00 24
+Creating point data table for: 2018090500
+2018-09-05 00:00:00 12
+Creating point data table for: 2018090512
+2018-09-05 00:00:00 24
+Creating point data table for: 2018090600
+2018-09-06 00:00:00 12
+Creating point data table for: 2018090612
+2018-09-06 00:00:00 24
+Creating point data table for: 2018090700
+2018-09-07 00:00:00 12
+Creating point data table for: 2018090712
+2018-09-07 00:00:00 24
+Creating point data table for: 2018090800
+2018-09-08 00:00:00 12
+Creating point data table for: 2018090812
+2018-09-08 00:00:00 24
+Creating point data table for: 2018090900
+2018-09-09 00:00:00 12
+Creating point data table for: 2018090912
+2018-09-09 00:00:00 24
+Creating point data table for: 2018091000
+2018-09-10 00:00:00 12
+Creating point data table for: 2018091012
+2018-09-10 00:00:00 24
+Creating point data table for: 2018091100
+2018-09-11 00:00:00 12
+Creating point data table for: 2018091112
+2018-09-11 00:00:00 24
+Creating point data table for: 2018091200
+2018-09-12 00:00:00 12
+Creating point data table for: 2018091212
+2018-09-12 00:00:00 24
+Creating point data table for: 2018091300
+2018-09-13 00:00:00 12
+Creating point data table for: 2018091312
+2018-09-13 00:00:00 24
+Creating point data table for: 2018091400
+2018-09-14 00:00:00 12
+Creating point data table for: 2018091412
+2018-09-14 00:00:00 24
+Creating point data table for: 2018091500
+2018-09-15 00:00:00 12
+Creating point data table for: 2018091512
+2018-09-15 00:00:00 24
+Creating point data table for: 2018091600
+2018-09-16 00:00:00 12
+Creating point data table for: 2018091612
+2018-09-16 00:00:00 24
+Creating point data table for: 2018091700
+2018-09-17 00:00:00 12
+Creating point data table for: 2018091712
+2018-09-17 00:00:00 24
+Creating point data table for: 2018091800
+2018-09-18 00:00:00 12
+Creating point data table for: 2018091812
+2018-09-18 00:00:00 24
+Creating point data table for: 2018091900
+2018-09-19 00:00:00 12
+Creating point data table for: 2018091912
+2018-09-19 00:00:00 24
+Creating point data table for: 2018092000
+2018-09-20 00:00:00 12
+Creating point data table for: 2018092012
+2018-09-20 00:00:00 24
+Creating point data table for: 2018092100
+2018-09-21 00:00:00 12
+Creating point data table for: 2018092112
+2018-09-21 00:00:00 24
+Creating point data table for: 2018092200
+2018-09-22 00:00:00 12
+Creating point data table for: 2018092212
+2018-09-22 00:00:00 24
+Creating point data table for: 2018092300
+2018-09-23 00:00:00 12
+Creating point data table for: 2018092312
+2018-09-23 00:00:00 24
+Creating point data table for: 2018092400
+2018-09-24 00:00:00 12
+Creating point data table for: 2018092412
+2018-09-24 00:00:00 24
+Creating point data table for: 2018092500
+2018-09-25 00:00:00 12
+Creating point data table for: 2018092512
+2018-09-25 00:00:00 24
+Creating point data table for: 2018092600
+2018-09-26 00:00:00 12
+Creating point data table for: 2018092612
+2018-09-26 00:00:00 24
+Creating point data table for: 2018092700
+2018-09-27 00:00:00 12
+Creating point data table for: 2018092712
+2018-09-27 00:00:00 24
+Creating point data table for: 2018092800
+2018-09-28 00:00:00 12
+Creating point data table for: 2018092812
+2018-09-28 00:00:00 24
+Creating point data table for: 2018092900
+2018-09-29 00:00:00 12
+Creating point data table for: 2018092912
+2018-09-29 00:00:00 24
+Creating point data table for: 2018093000
+2018-09-30 00:00:00 12
+Creating point data table for: 2018093012
+2018-09-30 00:00:00 24
+Creating point data table for: 2018100100
+2018-10-01 00:00:00 12
+Creating point data table for: 2018100112
+2018-10-01 00:00:00 24
+Creating point data table for: 2018100200
+2018-10-02 00:00:00 12
+Creating point data table for: 2018100212
+2018-10-02 00:00:00 24
+Creating point data table for: 2018100300
+2018-10-03 00:00:00 12
+Creating point data table for: 2018100312
+2018-10-03 00:00:00 24
+Creating point data table for: 2018100400
+2018-10-04 00:00:00 12
+Creating point data table for: 2018100412
+2018-10-04 00:00:00 24
+Creating point data table for: 2018100500
+2018-10-05 00:00:00 12
+Creating point data table for: 2018100512
+2018-10-05 00:00:00 24
+Creating point data table for: 2018100600
+2018-10-06 00:00:00 12
+Creating point data table for: 2018100612
+2018-10-06 00:00:00 24
+Creating point data table for: 2018100700
+2018-10-07 00:00:00 12
+Creating point data table for: 2018100712
+2018-10-07 00:00:00 24
+Creating point data table for: 2018100800
+2018-10-08 00:00:00 12
+Creating point data table for: 2018100812
+2018-10-08 00:00:00 24
+Creating point data table for: 2018100900
+2018-10-09 00:00:00 12
+Creating point data table for: 2018100912
+2018-10-09 00:00:00 24
+Creating point data table for: 2018101000
+2018-10-10 00:00:00 12
+Creating point data table for: 2018101012
+2018-10-10 00:00:00 24
+Creating point data table for: 2018101100
+2018-10-11 00:00:00 12
+Creating point data table for: 2018101112
+2018-10-11 00:00:00 24
+Creating point data table for: 2018101200
+2018-10-12 00:00:00 12
+Creating point data table for: 2018101212
+2018-10-12 00:00:00 24
+Creating point data table for: 2018101300
+2018-10-13 00:00:00 12
+Creating point data table for: 2018101312
+2018-10-13 00:00:00 24
+Creating point data table for: 2018101400
+2018-10-14 00:00:00 12
+Creating point data table for: 2018101412
+2018-10-14 00:00:00 24
+Creating point data table for: 2018101500
+2018-10-15 00:00:00 12
+Creating point data table for: 2018101512
+2018-10-15 00:00:00 24
+Creating point data table for: 2018101600
+2018-10-16 00:00:00 12
+Creating point data table for: 2018101612
+2018-10-16 00:00:00 24
+Creating point data table for: 2018101700
+2018-10-17 00:00:00 12
+Creating point data table for: 2018101712
+2018-10-17 00:00:00 24
+Creating point data table for: 2018101800
+2018-10-18 00:00:00 12
+Creating point data table for: 2018101812
+2018-10-18 00:00:00 24
+Creating point data table for: 2018101900
+2018-10-19 00:00:00 12
+Creating point data table for: 2018101912
+2018-10-19 00:00:00 24
+Creating point data table for: 2018102000
+2018-10-20 00:00:00 12
+Creating point data table for: 2018102012
+2018-10-20 00:00:00 24
+Creating point data table for: 2018102100
+2018-10-21 00:00:00 12
+Creating point data table for: 2018102112
+2018-10-21 00:00:00 24
+Creating point data table for: 2018102200
+2018-10-22 00:00:00 12
+Creating point data table for: 2018102212
+2018-10-22 00:00:00 24
+Creating point data table for: 2018102300
+2018-10-23 00:00:00 12
+Creating point data table for: 2018102312
+2018-10-23 00:00:00 24
+Creating point data table for: 2018102400
+2018-10-24 00:00:00 12
+Creating point data table for: 2018102412
+2018-10-24 00:00:00 24
+Creating point data table for: 2018102500
+2018-10-25 00:00:00 12
+Creating point data table for: 2018102512
+2018-10-25 00:00:00 24
+Creating point data table for: 2018102600
+2018-10-26 00:00:00 12
+Creating point data table for: 2018102612
+2018-10-26 00:00:00 24
+Creating point data table for: 2018102700
+2018-10-27 00:00:00 12
+Creating point data table for: 2018102712
+2018-10-27 00:00:00 24
+Creating point data table for: 2018102800
+2018-10-28 00:00:00 12
+Creating point data table for: 2018102812
+2018-10-28 00:00:00 24
+Creating point data table for: 2018102900
+2018-10-29 00:00:00 12
+Creating point data table for: 2018102912
+2018-10-29 00:00:00 24
+Creating point data table for: 2018103000
+2018-10-30 00:00:00 12
+Creating point data table for: 2018103012
+2018-10-30 00:00:00 24
+Creating point data table for: 2018103100
+2018-10-31 00:00:00 12
+Creating point data table for: 2018103112
+2018-10-31 00:00:00 24
+Creating point data table for: 2018110100
+2018-11-01 00:00:00 12
+Creating point data table for: 2018110112
+2018-11-01 00:00:00 24
+Creating point data table for: 2018110200
+2018-11-02 00:00:00 12
+Creating point data table for: 2018110212
+2018-11-02 00:00:00 24
+Creating point data table for: 2018110300
+2018-11-03 00:00:00 12
+Creating point data table for: 2018110312
+2018-11-03 00:00:00 24
+Creating point data table for: 2018110400
+2018-11-04 00:00:00 12
+Creating point data table for: 2018110412
+2018-11-04 00:00:00 24
+Creating point data table for: 2018110500
+2018-11-05 00:00:00 12
+Creating point data table for: 2018110512
+2018-11-05 00:00:00 24
+Creating point data table for: 2018110600
+2018-11-06 00:00:00 12
+Creating point data table for: 2018110612
+2018-11-06 00:00:00 24
+Creating point data table for: 2018110700
+2018-11-07 00:00:00 12
+Creating point data table for: 2018110712
+2018-11-07 00:00:00 24
+Creating point data table for: 2018110800
+2018-11-08 00:00:00 12
+Creating point data table for: 2018110812
+2018-11-08 00:00:00 24
+Creating point data table for: 2018110900
+2018-11-09 00:00:00 12
+Creating point data table for: 2018110912
+2018-11-09 00:00:00 24
+Creating point data table for: 2018111000
+2018-11-10 00:00:00 12
+Creating point data table for: 2018111012
+2018-11-10 00:00:00 24
+Creating point data table for: 2018111100
+2018-11-11 00:00:00 12
+Creating point data table for: 2018111112
+2018-11-11 00:00:00 24
+Creating point data table for: 2018111200
+2018-11-12 00:00:00 12
+Creating point data table for: 2018111212
+2018-11-12 00:00:00 24
+Creating point data table for: 2018111300
+2018-11-13 00:00:00 12
+Creating point data table for: 2018111312
+2018-11-13 00:00:00 24
+Creating point data table for: 2018111400
+2018-11-14 00:00:00 12
+Creating point data table for: 2018111412
+2018-11-14 00:00:00 24
+Creating point data table for: 2018111500
+2018-11-15 00:00:00 12
+Creating point data table for: 2018111512
+2018-11-15 00:00:00 24
+Creating point data table for: 2018111600
+2018-11-16 00:00:00 12
+Creating point data table for: 2018111612
+2018-11-16 00:00:00 24
+Creating point data table for: 2018111700
+2018-11-17 00:00:00 12
+Creating point data table for: 2018111712
+2018-11-17 00:00:00 24
+Creating point data table for: 2018111800
+2018-11-18 00:00:00 12
+Creating point data table for: 2018111812
+2018-11-18 00:00:00 24
+Creating point data table for: 2018111900
+2018-11-19 00:00:00 12
+Creating point data table for: 2018111912
+2018-11-19 00:00:00 24
+Creating point data table for: 2018112000
+2018-11-20 00:00:00 12
+Creating point data table for: 2018112012
+2018-11-20 00:00:00 24
+Creating point data table for: 2018112100
+2018-11-21 00:00:00 12
+Creating point data table for: 2018112112
+2018-11-21 00:00:00 24
+Creating point data table for: 2018112200
+2018-11-22 00:00:00 12
+Creating point data table for: 2018112212
+2018-11-22 00:00:00 24
+Creating point data table for: 2018112300
+2018-11-23 00:00:00 12
+Creating point data table for: 2018112312
+2018-11-23 00:00:00 24
+Creating point data table for: 2018112400
+2018-11-24 00:00:00 12
+Creating point data table for: 2018112412
+2018-11-24 00:00:00 24
+Creating point data table for: 2018112500
+2018-11-25 00:00:00 12
+Creating point data table for: 2018112512
+2018-11-25 00:00:00 24
+Creating point data table for: 2018112600
+2018-11-26 00:00:00 12
+Creating point data table for: 2018112612
+2018-11-26 00:00:00 24
+Creating point data table for: 2018112700
+2018-11-27 00:00:00 12
+Creating point data table for: 2018112712
+2018-11-27 00:00:00 24
+Creating point data table for: 2018112800
+2018-11-28 00:00:00 12
+Creating point data table for: 2018112812
+2018-11-28 00:00:00 24
+Creating point data table for: 2018112900
+2018-11-29 00:00:00 12
+Creating point data table for: 2018112912
+2018-11-29 00:00:00 24
+Creating point data table for: 2018113000
+2018-11-30 00:00:00 12
+Creating point data table for: 2018113012
+2018-11-30 00:00:00 24
+Creating point data table for: 2018120100
+2018-12-01 00:00:00 12
+Creating point data table for: 2018120112
+2018-12-01 00:00:00 24
+Creating point data table for: 2018120200
+2018-12-02 00:00:00 12
+Creating point data table for: 2018120212
+2018-12-02 00:00:00 24
+Creating point data table for: 2018120300
+2018-12-03 00:00:00 12
+Creating point data table for: 2018120312
+2018-12-03 00:00:00 24
+Creating point data table for: 2018120400
+2018-12-04 00:00:00 12
+Creating point data table for: 2018120412
+2018-12-04 00:00:00 24
+Creating point data table for: 2018120500
+2018-12-05 00:00:00 12
+Creating point data table for: 2018120512
+2018-12-05 00:00:00 24
+Creating point data table for: 2018120600
+2018-12-06 00:00:00 12
+Creating point data table for: 2018120612
+2018-12-06 00:00:00 24
+Creating point data table for: 2018120700
+2018-12-07 00:00:00 12
+Creating point data table for: 2018120712
+2018-12-07 00:00:00 24
+Creating point data table for: 2018120800
+2018-12-08 00:00:00 12
+Creating point data table for: 2018120812
+2018-12-08 00:00:00 24
+Creating point data table for: 2018120900
+2018-12-09 00:00:00 12
+Creating point data table for: 2018120912
+2018-12-09 00:00:00 24
+Creating point data table for: 2018121000
+2018-12-10 00:00:00 12
+Creating point data table for: 2018121012
+2018-12-10 00:00:00 24
+Creating point data table for: 2018121100
+2018-12-11 00:00:00 12
+Creating point data table for: 2018121112
+2018-12-11 00:00:00 24
+Creating point data table for: 2018121200
+2018-12-12 00:00:00 12
+Creating point data table for: 2018121212
+2018-12-12 00:00:00 24
+Creating point data table for: 2018121300
+2018-12-13 00:00:00 12
+Creating point data table for: 2018121312
+2018-12-13 00:00:00 24
+Creating point data table for: 2018121400
+2018-12-14 00:00:00 12
+Creating point data table for: 2018121412
+2018-12-14 00:00:00 24
+Creating point data table for: 2018121500
+2018-12-15 00:00:00 12
+Creating point data table for: 2018121512
+2018-12-15 00:00:00 24
+Creating point data table for: 2018121600
+2018-12-16 00:00:00 12
+Creating point data table for: 2018121612
+2018-12-16 00:00:00 24
+Creating point data table for: 2018121700
+2018-12-17 00:00:00 12
+Creating point data table for: 2018121712
+2018-12-17 00:00:00 24
+Creating point data table for: 2018121800
+2018-12-18 00:00:00 12
+Creating point data table for: 2018121812
+2018-12-18 00:00:00 24
+Creating point data table for: 2018121900
+2018-12-19 00:00:00 12
+Creating point data table for: 2018121912
+2018-12-19 00:00:00 24
+Creating point data table for: 2018122000
+2018-12-20 00:00:00 12
+Creating point data table for: 2018122012
+2018-12-20 00:00:00 24
+Creating point data table for: 2018122100
+2018-12-21 00:00:00 12
+Creating point data table for: 2018122112
+2018-12-21 00:00:00 24
+Creating point data table for: 2018122200
+2018-12-22 00:00:00 12
+Creating point data table for: 2018122212
+2018-12-22 00:00:00 24
+Creating point data table for: 2018122300
+2018-12-23 00:00:00 12
+Creating point data table for: 2018122312
+2018-12-23 00:00:00 24
+Creating point data table for: 2018122400
+2018-12-24 00:00:00 12
+Creating point data table for: 2018122412
+2018-12-24 00:00:00 24
+Creating point data table for: 2018122500
+2018-12-25 00:00:00 12
+Creating point data table for: 2018122512
+2018-12-25 00:00:00 24
+Creating point data table for: 2018122600
+2018-12-26 00:00:00 12
+Creating point data table for: 2018122612
+2018-12-26 00:00:00 24
+Creating point data table for: 2018122700
+2018-12-27 00:00:00 12
+Creating point data table for: 2018122712
+2018-12-27 00:00:00 24
+Creating point data table for: 2018122800
+2018-12-28 00:00:00 12
+Creating point data table for: 2018122812
+2018-12-28 00:00:00 24
+Creating point data table for: 2018122900
+2018-12-29 00:00:00 12
+Creating point data table for: 2018122912
+2018-12-29 00:00:00 24
+Creating point data table for: 2018123000
+2018-12-30 00:00:00 12
+Creating point data table for: 2018123012
+2018-12-30 00:00:00 24
+Creating point data table for: 2018123100
+2018-12-31 00:00:00 12
+Creating point data table for: 2018123112
+2018-12-31 00:00:00 24
+Creating point data table for: 2019010100
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2024-03-05T18:32:51 on aa
+[ECMWF-INFO -ecepilog] JobName                   : PDT_Year
+[ECMWF-INFO -ecepilog] JobID                     : 13918874
+[ECMWF-INFO -ecepilog] Submit                    : 2024-03-05T17:27:12
+[ECMWF-INFO -ecepilog] Start                     : 2024-03-05T17:27:29
+[ECMWF-INFO -ecepilog] End                       : 2024-03-05T18:32:51
+[ECMWF-INFO -ecepilog] QueuedTime                : 17.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 3922
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : ecodmdmo
+[ECMWF-INFO -ecepilog] QOS                       : nf
+[ECMWF-INFO -ecepilog] User                      : mofp
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918874.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918874.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 64
+[ECMWF-INFO -ecepilog] SBU                       : 594.877
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

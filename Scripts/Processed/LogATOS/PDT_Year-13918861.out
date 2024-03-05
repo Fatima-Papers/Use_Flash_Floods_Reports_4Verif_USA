@@ -1,0 +1,1534 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 49002, mtime: Tue Oct  3 11:53:54 2023
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Tue Mar  5 17:27:10 2024 (1709659630.7134023) on aa6-204.bullx:/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=aa
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SLURM_JOB_ID=13517288
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=PDT_Year
+[ECMWF-INFO -sbatch] - #SBATCH --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=64
+[ECMWF-INFO -sbatch] - #SBATCH --mem=128G
+[ECMWF-INFO -sbatch] - #SBATCH --time=2-00:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --qos=nf
+[ECMWF-INFO -sbatch] - #SBATCH --mail-type=FAIL
+[ECMWF-INFO -sbatch] - #SBATCH --mail-user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['18a_SubmitterATOS_PDT_Year.sh', '2006']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=64
+[ECMWF-INFO -sbatch] - ARG --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --job_name=PDT_Year
+[ECMWF-INFO -sbatch] - ARG --mail_type=FAIL
+[ECMWF-INFO -sbatch] - ARG --mail_user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - ARG --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --qos=nf
+[ECMWF-INFO -sbatch] - ARG --time=2-00:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=128G
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: mofp-PDT_Year-1x64-/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-_.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=64', '--error=LogATOS/PDT_Year-%J.out', '--job-name=PDT_Year', '--mail-type=FAIL', '--mail-user=fatima.pillosu@ecmwf.int', '--output=LogATOS/PDT_Year-%J.out', '--qos=nf', '--time=2-00:00:00', '--mem=128G', '--licenses=h2resw01', '--export=EC_user_time_limit=2-00:00:00', '/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh', '2006']
+[ECMWF-INFO -sbatch] - sbatch executed on aa
+[ECMWF-INFO -sbatch] - Job queued on aa using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 13918861
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on aa6-149 at 20240305_172732.752, PID: 1766662, JOBID: 13918861
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/mofp
+[ECMWF-INFO -ecprofile] $PERM=/perm/mofp
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/mofp
+[ECMWF-INFO -ecprofile] $TMPDIR=/etc/ecmwf/ssd/ssd1/tmpdirs/mofp.13918861
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/mofp/5/13918861
+2006-01-01 00:00:00 12
+Creating point data table for: 2006010112
+2006-01-01 00:00:00 24
+Creating point data table for: 2006010200
+2006-01-02 00:00:00 12
+Creating point data table for: 2006010212
+2006-01-02 00:00:00 24
+Creating point data table for: 2006010300
+2006-01-03 00:00:00 12
+Creating point data table for: 2006010312
+2006-01-03 00:00:00 24
+Creating point data table for: 2006010400
+2006-01-04 00:00:00 12
+Creating point data table for: 2006010412
+2006-01-04 00:00:00 24
+Creating point data table for: 2006010500
+2006-01-05 00:00:00 12
+Creating point data table for: 2006010512
+2006-01-05 00:00:00 24
+Creating point data table for: 2006010600
+2006-01-06 00:00:00 12
+Creating point data table for: 2006010612
+2006-01-06 00:00:00 24
+Creating point data table for: 2006010700
+2006-01-07 00:00:00 12
+Creating point data table for: 2006010712
+2006-01-07 00:00:00 24
+Creating point data table for: 2006010800
+2006-01-08 00:00:00 12
+Creating point data table for: 2006010812
+2006-01-08 00:00:00 24
+Creating point data table for: 2006010900
+2006-01-09 00:00:00 12
+Creating point data table for: 2006010912
+2006-01-09 00:00:00 24
+Creating point data table for: 2006011000
+2006-01-10 00:00:00 12
+Creating point data table for: 2006011012
+2006-01-10 00:00:00 24
+Creating point data table for: 2006011100
+2006-01-11 00:00:00 12
+Creating point data table for: 2006011112
+2006-01-11 00:00:00 24
+Creating point data table for: 2006011200
+2006-01-12 00:00:00 12
+Creating point data table for: 2006011212
+2006-01-12 00:00:00 24
+Creating point data table for: 2006011300
+2006-01-13 00:00:00 12
+Creating point data table for: 2006011312
+2006-01-13 00:00:00 24
+Creating point data table for: 2006011400
+2006-01-14 00:00:00 12
+Creating point data table for: 2006011412
+2006-01-14 00:00:00 24
+Creating point data table for: 2006011500
+2006-01-15 00:00:00 12
+Creating point data table for: 2006011512
+2006-01-15 00:00:00 24
+Creating point data table for: 2006011600
+2006-01-16 00:00:00 12
+Creating point data table for: 2006011612
+2006-01-16 00:00:00 24
+Creating point data table for: 2006011700
+2006-01-17 00:00:00 12
+Creating point data table for: 2006011712
+2006-01-17 00:00:00 24
+Creating point data table for: 2006011800
+2006-01-18 00:00:00 12
+Creating point data table for: 2006011812
+2006-01-18 00:00:00 24
+Creating point data table for: 2006011900
+2006-01-19 00:00:00 12
+Creating point data table for: 2006011912
+2006-01-19 00:00:00 24
+Creating point data table for: 2006012000
+2006-01-20 00:00:00 12
+Creating point data table for: 2006012012
+2006-01-20 00:00:00 24
+Creating point data table for: 2006012100
+2006-01-21 00:00:00 12
+Creating point data table for: 2006012112
+2006-01-21 00:00:00 24
+Creating point data table for: 2006012200
+2006-01-22 00:00:00 12
+Creating point data table for: 2006012212
+2006-01-22 00:00:00 24
+Creating point data table for: 2006012300
+2006-01-23 00:00:00 12
+Creating point data table for: 2006012312
+2006-01-23 00:00:00 24
+Creating point data table for: 2006012400
+2006-01-24 00:00:00 12
+Creating point data table for: 2006012412
+2006-01-24 00:00:00 24
+Creating point data table for: 2006012500
+2006-01-25 00:00:00 12
+Creating point data table for: 2006012512
+2006-01-25 00:00:00 24
+Creating point data table for: 2006012600
+2006-01-26 00:00:00 12
+Creating point data table for: 2006012612
+2006-01-26 00:00:00 24
+Creating point data table for: 2006012700
+2006-01-27 00:00:00 12
+Creating point data table for: 2006012712
+2006-01-27 00:00:00 24
+Creating point data table for: 2006012800
+2006-01-28 00:00:00 12
+Creating point data table for: 2006012812
+2006-01-28 00:00:00 24
+Creating point data table for: 2006012900
+2006-01-29 00:00:00 12
+Creating point data table for: 2006012912
+2006-01-29 00:00:00 24
+Creating point data table for: 2006013000
+2006-01-30 00:00:00 12
+Creating point data table for: 2006013012
+2006-01-30 00:00:00 24
+Creating point data table for: 2006013100
+2006-01-31 00:00:00 12
+Creating point data table for: 2006013112
+2006-01-31 00:00:00 24
+Creating point data table for: 2006020100
+2006-02-01 00:00:00 12
+Creating point data table for: 2006020112
+2006-02-01 00:00:00 24
+Creating point data table for: 2006020200
+2006-02-02 00:00:00 12
+Creating point data table for: 2006020212
+2006-02-02 00:00:00 24
+Creating point data table for: 2006020300
+2006-02-03 00:00:00 12
+Creating point data table for: 2006020312
+2006-02-03 00:00:00 24
+Creating point data table for: 2006020400
+2006-02-04 00:00:00 12
+Creating point data table for: 2006020412
+2006-02-04 00:00:00 24
+Creating point data table for: 2006020500
+2006-02-05 00:00:00 12
+Creating point data table for: 2006020512
+2006-02-05 00:00:00 24
+Creating point data table for: 2006020600
+2006-02-06 00:00:00 12
+Creating point data table for: 2006020612
+2006-02-06 00:00:00 24
+Creating point data table for: 2006020700
+2006-02-07 00:00:00 12
+Creating point data table for: 2006020712
+2006-02-07 00:00:00 24
+Creating point data table for: 2006020800
+2006-02-08 00:00:00 12
+Creating point data table for: 2006020812
+2006-02-08 00:00:00 24
+Creating point data table for: 2006020900
+2006-02-09 00:00:00 12
+Creating point data table for: 2006020912
+2006-02-09 00:00:00 24
+Creating point data table for: 2006021000
+2006-02-10 00:00:00 12
+Creating point data table for: 2006021012
+2006-02-10 00:00:00 24
+Creating point data table for: 2006021100
+2006-02-11 00:00:00 12
+Creating point data table for: 2006021112
+2006-02-11 00:00:00 24
+Creating point data table for: 2006021200
+2006-02-12 00:00:00 12
+Creating point data table for: 2006021212
+2006-02-12 00:00:00 24
+Creating point data table for: 2006021300
+2006-02-13 00:00:00 12
+Creating point data table for: 2006021312
+2006-02-13 00:00:00 24
+Creating point data table for: 2006021400
+2006-02-14 00:00:00 12
+Creating point data table for: 2006021412
+2006-02-14 00:00:00 24
+Creating point data table for: 2006021500
+2006-02-15 00:00:00 12
+Creating point data table for: 2006021512
+2006-02-15 00:00:00 24
+Creating point data table for: 2006021600
+2006-02-16 00:00:00 12
+Creating point data table for: 2006021612
+2006-02-16 00:00:00 24
+Creating point data table for: 2006021700
+2006-02-17 00:00:00 12
+Creating point data table for: 2006021712
+2006-02-17 00:00:00 24
+Creating point data table for: 2006021800
+2006-02-18 00:00:00 12
+Creating point data table for: 2006021812
+2006-02-18 00:00:00 24
+Creating point data table for: 2006021900
+2006-02-19 00:00:00 12
+Creating point data table for: 2006021912
+2006-02-19 00:00:00 24
+Creating point data table for: 2006022000
+2006-02-20 00:00:00 12
+Creating point data table for: 2006022012
+2006-02-20 00:00:00 24
+Creating point data table for: 2006022100
+2006-02-21 00:00:00 12
+Creating point data table for: 2006022112
+2006-02-21 00:00:00 24
+Creating point data table for: 2006022200
+2006-02-22 00:00:00 12
+Creating point data table for: 2006022212
+2006-02-22 00:00:00 24
+Creating point data table for: 2006022300
+2006-02-23 00:00:00 12
+Creating point data table for: 2006022312
+2006-02-23 00:00:00 24
+Creating point data table for: 2006022400
+2006-02-24 00:00:00 12
+Creating point data table for: 2006022412
+2006-02-24 00:00:00 24
+Creating point data table for: 2006022500
+2006-02-25 00:00:00 12
+Creating point data table for: 2006022512
+2006-02-25 00:00:00 24
+Creating point data table for: 2006022600
+2006-02-26 00:00:00 12
+Creating point data table for: 2006022612
+2006-02-26 00:00:00 24
+Creating point data table for: 2006022700
+2006-02-27 00:00:00 12
+Creating point data table for: 2006022712
+2006-02-27 00:00:00 24
+Creating point data table for: 2006022800
+2006-02-28 00:00:00 12
+Creating point data table for: 2006022812
+2006-02-28 00:00:00 24
+Creating point data table for: 2006030100
+2006-03-01 00:00:00 12
+Creating point data table for: 2006030112
+2006-03-01 00:00:00 24
+Creating point data table for: 2006030200
+2006-03-02 00:00:00 12
+Creating point data table for: 2006030212
+2006-03-02 00:00:00 24
+Creating point data table for: 2006030300
+2006-03-03 00:00:00 12
+Creating point data table for: 2006030312
+2006-03-03 00:00:00 24
+Creating point data table for: 2006030400
+2006-03-04 00:00:00 12
+Creating point data table for: 2006030412
+2006-03-04 00:00:00 24
+Creating point data table for: 2006030500
+2006-03-05 00:00:00 12
+Creating point data table for: 2006030512
+2006-03-05 00:00:00 24
+Creating point data table for: 2006030600
+2006-03-06 00:00:00 12
+Creating point data table for: 2006030612
+2006-03-06 00:00:00 24
+Creating point data table for: 2006030700
+2006-03-07 00:00:00 12
+Creating point data table for: 2006030712
+2006-03-07 00:00:00 24
+Creating point data table for: 2006030800
+2006-03-08 00:00:00 12
+Creating point data table for: 2006030812
+2006-03-08 00:00:00 24
+Creating point data table for: 2006030900
+2006-03-09 00:00:00 12
+Creating point data table for: 2006030912
+2006-03-09 00:00:00 24
+Creating point data table for: 2006031000
+2006-03-10 00:00:00 12
+Creating point data table for: 2006031012
+2006-03-10 00:00:00 24
+Creating point data table for: 2006031100
+2006-03-11 00:00:00 12
+Creating point data table for: 2006031112
+2006-03-11 00:00:00 24
+Creating point data table for: 2006031200
+2006-03-12 00:00:00 12
+Creating point data table for: 2006031212
+2006-03-12 00:00:00 24
+Creating point data table for: 2006031300
+2006-03-13 00:00:00 12
+Creating point data table for: 2006031312
+2006-03-13 00:00:00 24
+Creating point data table for: 2006031400
+2006-03-14 00:00:00 12
+Creating point data table for: 2006031412
+2006-03-14 00:00:00 24
+Creating point data table for: 2006031500
+2006-03-15 00:00:00 12
+Creating point data table for: 2006031512
+2006-03-15 00:00:00 24
+Creating point data table for: 2006031600
+2006-03-16 00:00:00 12
+Creating point data table for: 2006031612
+2006-03-16 00:00:00 24
+Creating point data table for: 2006031700
+2006-03-17 00:00:00 12
+Creating point data table for: 2006031712
+2006-03-17 00:00:00 24
+Creating point data table for: 2006031800
+2006-03-18 00:00:00 12
+Creating point data table for: 2006031812
+2006-03-18 00:00:00 24
+Creating point data table for: 2006031900
+2006-03-19 00:00:00 12
+Creating point data table for: 2006031912
+2006-03-19 00:00:00 24
+Creating point data table for: 2006032000
+2006-03-20 00:00:00 12
+Creating point data table for: 2006032012
+2006-03-20 00:00:00 24
+Creating point data table for: 2006032100
+2006-03-21 00:00:00 12
+Creating point data table for: 2006032112
+2006-03-21 00:00:00 24
+Creating point data table for: 2006032200
+2006-03-22 00:00:00 12
+Creating point data table for: 2006032212
+2006-03-22 00:00:00 24
+Creating point data table for: 2006032300
+2006-03-23 00:00:00 12
+Creating point data table for: 2006032312
+2006-03-23 00:00:00 24
+Creating point data table for: 2006032400
+2006-03-24 00:00:00 12
+Creating point data table for: 2006032412
+2006-03-24 00:00:00 24
+Creating point data table for: 2006032500
+2006-03-25 00:00:00 12
+Creating point data table for: 2006032512
+2006-03-25 00:00:00 24
+Creating point data table for: 2006032600
+2006-03-26 00:00:00 12
+Creating point data table for: 2006032612
+2006-03-26 00:00:00 24
+Creating point data table for: 2006032700
+2006-03-27 00:00:00 12
+Creating point data table for: 2006032712
+2006-03-27 00:00:00 24
+Creating point data table for: 2006032800
+2006-03-28 00:00:00 12
+Creating point data table for: 2006032812
+2006-03-28 00:00:00 24
+Creating point data table for: 2006032900
+2006-03-29 00:00:00 12
+Creating point data table for: 2006032912
+2006-03-29 00:00:00 24
+Creating point data table for: 2006033000
+2006-03-30 00:00:00 12
+Creating point data table for: 2006033012
+2006-03-30 00:00:00 24
+Creating point data table for: 2006033100
+2006-03-31 00:00:00 12
+Creating point data table for: 2006033112
+2006-03-31 00:00:00 24
+Creating point data table for: 2006040100
+2006-04-01 00:00:00 12
+Creating point data table for: 2006040112
+2006-04-01 00:00:00 24
+Creating point data table for: 2006040200
+2006-04-02 00:00:00 12
+Creating point data table for: 2006040212
+2006-04-02 00:00:00 24
+Creating point data table for: 2006040300
+2006-04-03 00:00:00 12
+Creating point data table for: 2006040312
+2006-04-03 00:00:00 24
+Creating point data table for: 2006040400
+2006-04-04 00:00:00 12
+Creating point data table for: 2006040412
+2006-04-04 00:00:00 24
+Creating point data table for: 2006040500
+2006-04-05 00:00:00 12
+Creating point data table for: 2006040512
+2006-04-05 00:00:00 24
+Creating point data table for: 2006040600
+2006-04-06 00:00:00 12
+Creating point data table for: 2006040612
+2006-04-06 00:00:00 24
+Creating point data table for: 2006040700
+2006-04-07 00:00:00 12
+Creating point data table for: 2006040712
+2006-04-07 00:00:00 24
+Creating point data table for: 2006040800
+2006-04-08 00:00:00 12
+Creating point data table for: 2006040812
+2006-04-08 00:00:00 24
+Creating point data table for: 2006040900
+2006-04-09 00:00:00 12
+Creating point data table for: 2006040912
+2006-04-09 00:00:00 24
+Creating point data table for: 2006041000
+2006-04-10 00:00:00 12
+Creating point data table for: 2006041012
+2006-04-10 00:00:00 24
+Creating point data table for: 2006041100
+2006-04-11 00:00:00 12
+Creating point data table for: 2006041112
+2006-04-11 00:00:00 24
+Creating point data table for: 2006041200
+2006-04-12 00:00:00 12
+Creating point data table for: 2006041212
+2006-04-12 00:00:00 24
+Creating point data table for: 2006041300
+2006-04-13 00:00:00 12
+Creating point data table for: 2006041312
+2006-04-13 00:00:00 24
+Creating point data table for: 2006041400
+2006-04-14 00:00:00 12
+Creating point data table for: 2006041412
+2006-04-14 00:00:00 24
+Creating point data table for: 2006041500
+2006-04-15 00:00:00 12
+Creating point data table for: 2006041512
+2006-04-15 00:00:00 24
+Creating point data table for: 2006041600
+2006-04-16 00:00:00 12
+Creating point data table for: 2006041612
+2006-04-16 00:00:00 24
+Creating point data table for: 2006041700
+2006-04-17 00:00:00 12
+Creating point data table for: 2006041712
+2006-04-17 00:00:00 24
+Creating point data table for: 2006041800
+2006-04-18 00:00:00 12
+Creating point data table for: 2006041812
+2006-04-18 00:00:00 24
+Creating point data table for: 2006041900
+2006-04-19 00:00:00 12
+Creating point data table for: 2006041912
+2006-04-19 00:00:00 24
+Creating point data table for: 2006042000
+2006-04-20 00:00:00 12
+Creating point data table for: 2006042012
+2006-04-20 00:00:00 24
+Creating point data table for: 2006042100
+2006-04-21 00:00:00 12
+Creating point data table for: 2006042112
+2006-04-21 00:00:00 24
+Creating point data table for: 2006042200
+2006-04-22 00:00:00 12
+Creating point data table for: 2006042212
+2006-04-22 00:00:00 24
+Creating point data table for: 2006042300
+2006-04-23 00:00:00 12
+Creating point data table for: 2006042312
+2006-04-23 00:00:00 24
+Creating point data table for: 2006042400
+2006-04-24 00:00:00 12
+Creating point data table for: 2006042412
+2006-04-24 00:00:00 24
+Creating point data table for: 2006042500
+2006-04-25 00:00:00 12
+Creating point data table for: 2006042512
+2006-04-25 00:00:00 24
+Creating point data table for: 2006042600
+2006-04-26 00:00:00 12
+Creating point data table for: 2006042612
+2006-04-26 00:00:00 24
+Creating point data table for: 2006042700
+2006-04-27 00:00:00 12
+Creating point data table for: 2006042712
+2006-04-27 00:00:00 24
+Creating point data table for: 2006042800
+2006-04-28 00:00:00 12
+Creating point data table for: 2006042812
+2006-04-28 00:00:00 24
+Creating point data table for: 2006042900
+2006-04-29 00:00:00 12
+Creating point data table for: 2006042912
+2006-04-29 00:00:00 24
+Creating point data table for: 2006043000
+2006-04-30 00:00:00 12
+Creating point data table for: 2006043012
+2006-04-30 00:00:00 24
+Creating point data table for: 2006050100
+2006-05-01 00:00:00 12
+Creating point data table for: 2006050112
+2006-05-01 00:00:00 24
+Creating point data table for: 2006050200
+2006-05-02 00:00:00 12
+Creating point data table for: 2006050212
+2006-05-02 00:00:00 24
+Creating point data table for: 2006050300
+2006-05-03 00:00:00 12
+Creating point data table for: 2006050312
+2006-05-03 00:00:00 24
+Creating point data table for: 2006050400
+2006-05-04 00:00:00 12
+Creating point data table for: 2006050412
+2006-05-04 00:00:00 24
+Creating point data table for: 2006050500
+2006-05-05 00:00:00 12
+Creating point data table for: 2006050512
+2006-05-05 00:00:00 24
+Creating point data table for: 2006050600
+2006-05-06 00:00:00 12
+Creating point data table for: 2006050612
+2006-05-06 00:00:00 24
+Creating point data table for: 2006050700
+2006-05-07 00:00:00 12
+Creating point data table for: 2006050712
+2006-05-07 00:00:00 24
+Creating point data table for: 2006050800
+2006-05-08 00:00:00 12
+Creating point data table for: 2006050812
+2006-05-08 00:00:00 24
+Creating point data table for: 2006050900
+2006-05-09 00:00:00 12
+Creating point data table for: 2006050912
+2006-05-09 00:00:00 24
+Creating point data table for: 2006051000
+2006-05-10 00:00:00 12
+Creating point data table for: 2006051012
+2006-05-10 00:00:00 24
+Creating point data table for: 2006051100
+2006-05-11 00:00:00 12
+Creating point data table for: 2006051112
+2006-05-11 00:00:00 24
+Creating point data table for: 2006051200
+2006-05-12 00:00:00 12
+Creating point data table for: 2006051212
+2006-05-12 00:00:00 24
+Creating point data table for: 2006051300
+2006-05-13 00:00:00 12
+Creating point data table for: 2006051312
+2006-05-13 00:00:00 24
+Creating point data table for: 2006051400
+2006-05-14 00:00:00 12
+Creating point data table for: 2006051412
+2006-05-14 00:00:00 24
+Creating point data table for: 2006051500
+2006-05-15 00:00:00 12
+Creating point data table for: 2006051512
+2006-05-15 00:00:00 24
+Creating point data table for: 2006051600
+2006-05-16 00:00:00 12
+Creating point data table for: 2006051612
+2006-05-16 00:00:00 24
+Creating point data table for: 2006051700
+2006-05-17 00:00:00 12
+Creating point data table for: 2006051712
+2006-05-17 00:00:00 24
+Creating point data table for: 2006051800
+2006-05-18 00:00:00 12
+Creating point data table for: 2006051812
+2006-05-18 00:00:00 24
+Creating point data table for: 2006051900
+2006-05-19 00:00:00 12
+Creating point data table for: 2006051912
+2006-05-19 00:00:00 24
+Creating point data table for: 2006052000
+2006-05-20 00:00:00 12
+Creating point data table for: 2006052012
+2006-05-20 00:00:00 24
+Creating point data table for: 2006052100
+2006-05-21 00:00:00 12
+Creating point data table for: 2006052112
+2006-05-21 00:00:00 24
+Creating point data table for: 2006052200
+2006-05-22 00:00:00 12
+Creating point data table for: 2006052212
+2006-05-22 00:00:00 24
+Creating point data table for: 2006052300
+2006-05-23 00:00:00 12
+Creating point data table for: 2006052312
+2006-05-23 00:00:00 24
+Creating point data table for: 2006052400
+2006-05-24 00:00:00 12
+Creating point data table for: 2006052412
+2006-05-24 00:00:00 24
+Creating point data table for: 2006052500
+2006-05-25 00:00:00 12
+Creating point data table for: 2006052512
+2006-05-25 00:00:00 24
+Creating point data table for: 2006052600
+2006-05-26 00:00:00 12
+Creating point data table for: 2006052612
+2006-05-26 00:00:00 24
+Creating point data table for: 2006052700
+2006-05-27 00:00:00 12
+Creating point data table for: 2006052712
+2006-05-27 00:00:00 24
+Creating point data table for: 2006052800
+2006-05-28 00:00:00 12
+Creating point data table for: 2006052812
+2006-05-28 00:00:00 24
+Creating point data table for: 2006052900
+2006-05-29 00:00:00 12
+Creating point data table for: 2006052912
+2006-05-29 00:00:00 24
+Creating point data table for: 2006053000
+2006-05-30 00:00:00 12
+Creating point data table for: 2006053012
+2006-05-30 00:00:00 24
+Creating point data table for: 2006053100
+2006-05-31 00:00:00 12
+Creating point data table for: 2006053112
+2006-05-31 00:00:00 24
+Creating point data table for: 2006060100
+2006-06-01 00:00:00 12
+Creating point data table for: 2006060112
+2006-06-01 00:00:00 24
+Creating point data table for: 2006060200
+2006-06-02 00:00:00 12
+Creating point data table for: 2006060212
+2006-06-02 00:00:00 24
+Creating point data table for: 2006060300
+2006-06-03 00:00:00 12
+Creating point data table for: 2006060312
+2006-06-03 00:00:00 24
+Creating point data table for: 2006060400
+2006-06-04 00:00:00 12
+Creating point data table for: 2006060412
+2006-06-04 00:00:00 24
+Creating point data table for: 2006060500
+2006-06-05 00:00:00 12
+Creating point data table for: 2006060512
+2006-06-05 00:00:00 24
+Creating point data table for: 2006060600
+2006-06-06 00:00:00 12
+Creating point data table for: 2006060612
+2006-06-06 00:00:00 24
+Creating point data table for: 2006060700
+2006-06-07 00:00:00 12
+Creating point data table for: 2006060712
+2006-06-07 00:00:00 24
+Creating point data table for: 2006060800
+2006-06-08 00:00:00 12
+Creating point data table for: 2006060812
+2006-06-08 00:00:00 24
+Creating point data table for: 2006060900
+2006-06-09 00:00:00 12
+Creating point data table for: 2006060912
+2006-06-09 00:00:00 24
+Creating point data table for: 2006061000
+2006-06-10 00:00:00 12
+Creating point data table for: 2006061012
+2006-06-10 00:00:00 24
+Creating point data table for: 2006061100
+2006-06-11 00:00:00 12
+Creating point data table for: 2006061112
+2006-06-11 00:00:00 24
+Creating point data table for: 2006061200
+2006-06-12 00:00:00 12
+Creating point data table for: 2006061212
+2006-06-12 00:00:00 24
+Creating point data table for: 2006061300
+2006-06-13 00:00:00 12
+Creating point data table for: 2006061312
+2006-06-13 00:00:00 24
+Creating point data table for: 2006061400
+2006-06-14 00:00:00 12
+Creating point data table for: 2006061412
+2006-06-14 00:00:00 24
+Creating point data table for: 2006061500
+2006-06-15 00:00:00 12
+Creating point data table for: 2006061512
+2006-06-15 00:00:00 24
+Creating point data table for: 2006061600
+2006-06-16 00:00:00 12
+Creating point data table for: 2006061612
+2006-06-16 00:00:00 24
+Creating point data table for: 2006061700
+2006-06-17 00:00:00 12
+Creating point data table for: 2006061712
+2006-06-17 00:00:00 24
+Creating point data table for: 2006061800
+2006-06-18 00:00:00 12
+Creating point data table for: 2006061812
+2006-06-18 00:00:00 24
+Creating point data table for: 2006061900
+2006-06-19 00:00:00 12
+Creating point data table for: 2006061912
+2006-06-19 00:00:00 24
+Creating point data table for: 2006062000
+2006-06-20 00:00:00 12
+Creating point data table for: 2006062012
+2006-06-20 00:00:00 24
+Creating point data table for: 2006062100
+2006-06-21 00:00:00 12
+Creating point data table for: 2006062112
+2006-06-21 00:00:00 24
+Creating point data table for: 2006062200
+2006-06-22 00:00:00 12
+Creating point data table for: 2006062212
+2006-06-22 00:00:00 24
+Creating point data table for: 2006062300
+2006-06-23 00:00:00 12
+Creating point data table for: 2006062312
+2006-06-23 00:00:00 24
+Creating point data table for: 2006062400
+2006-06-24 00:00:00 12
+Creating point data table for: 2006062412
+2006-06-24 00:00:00 24
+Creating point data table for: 2006062500
+2006-06-25 00:00:00 12
+Creating point data table for: 2006062512
+2006-06-25 00:00:00 24
+Creating point data table for: 2006062600
+2006-06-26 00:00:00 12
+Creating point data table for: 2006062612
+2006-06-26 00:00:00 24
+Creating point data table for: 2006062700
+2006-06-27 00:00:00 12
+Creating point data table for: 2006062712
+2006-06-27 00:00:00 24
+Creating point data table for: 2006062800
+2006-06-28 00:00:00 12
+Creating point data table for: 2006062812
+2006-06-28 00:00:00 24
+Creating point data table for: 2006062900
+2006-06-29 00:00:00 12
+Creating point data table for: 2006062912
+2006-06-29 00:00:00 24
+Creating point data table for: 2006063000
+2006-06-30 00:00:00 12
+Creating point data table for: 2006063012
+2006-06-30 00:00:00 24
+Creating point data table for: 2006070100
+2006-07-01 00:00:00 12
+Creating point data table for: 2006070112
+2006-07-01 00:00:00 24
+Creating point data table for: 2006070200
+2006-07-02 00:00:00 12
+Creating point data table for: 2006070212
+2006-07-02 00:00:00 24
+Creating point data table for: 2006070300
+2006-07-03 00:00:00 12
+Creating point data table for: 2006070312
+2006-07-03 00:00:00 24
+Creating point data table for: 2006070400
+2006-07-04 00:00:00 12
+Creating point data table for: 2006070412
+2006-07-04 00:00:00 24
+Creating point data table for: 2006070500
+2006-07-05 00:00:00 12
+Creating point data table for: 2006070512
+2006-07-05 00:00:00 24
+Creating point data table for: 2006070600
+2006-07-06 00:00:00 12
+Creating point data table for: 2006070612
+2006-07-06 00:00:00 24
+Creating point data table for: 2006070700
+2006-07-07 00:00:00 12
+Creating point data table for: 2006070712
+2006-07-07 00:00:00 24
+Creating point data table for: 2006070800
+2006-07-08 00:00:00 12
+Creating point data table for: 2006070812
+2006-07-08 00:00:00 24
+Creating point data table for: 2006070900
+2006-07-09 00:00:00 12
+Creating point data table for: 2006070912
+2006-07-09 00:00:00 24
+Creating point data table for: 2006071000
+2006-07-10 00:00:00 12
+Creating point data table for: 2006071012
+2006-07-10 00:00:00 24
+Creating point data table for: 2006071100
+2006-07-11 00:00:00 12
+Creating point data table for: 2006071112
+2006-07-11 00:00:00 24
+Creating point data table for: 2006071200
+2006-07-12 00:00:00 12
+Creating point data table for: 2006071212
+2006-07-12 00:00:00 24
+Creating point data table for: 2006071300
+2006-07-13 00:00:00 12
+Creating point data table for: 2006071312
+2006-07-13 00:00:00 24
+Creating point data table for: 2006071400
+2006-07-14 00:00:00 12
+Creating point data table for: 2006071412
+2006-07-14 00:00:00 24
+Creating point data table for: 2006071500
+2006-07-15 00:00:00 12
+Creating point data table for: 2006071512
+2006-07-15 00:00:00 24
+Creating point data table for: 2006071600
+2006-07-16 00:00:00 12
+Creating point data table for: 2006071612
+2006-07-16 00:00:00 24
+Creating point data table for: 2006071700
+2006-07-17 00:00:00 12
+Creating point data table for: 2006071712
+2006-07-17 00:00:00 24
+Creating point data table for: 2006071800
+2006-07-18 00:00:00 12
+Creating point data table for: 2006071812
+2006-07-18 00:00:00 24
+Creating point data table for: 2006071900
+2006-07-19 00:00:00 12
+Creating point data table for: 2006071912
+2006-07-19 00:00:00 24
+Creating point data table for: 2006072000
+2006-07-20 00:00:00 12
+Creating point data table for: 2006072012
+2006-07-20 00:00:00 24
+Creating point data table for: 2006072100
+2006-07-21 00:00:00 12
+Creating point data table for: 2006072112
+2006-07-21 00:00:00 24
+Creating point data table for: 2006072200
+2006-07-22 00:00:00 12
+Creating point data table for: 2006072212
+2006-07-22 00:00:00 24
+Creating point data table for: 2006072300
+2006-07-23 00:00:00 12
+Creating point data table for: 2006072312
+2006-07-23 00:00:00 24
+Creating point data table for: 2006072400
+2006-07-24 00:00:00 12
+Creating point data table for: 2006072412
+2006-07-24 00:00:00 24
+Creating point data table for: 2006072500
+2006-07-25 00:00:00 12
+Creating point data table for: 2006072512
+2006-07-25 00:00:00 24
+Creating point data table for: 2006072600
+2006-07-26 00:00:00 12
+Creating point data table for: 2006072612
+2006-07-26 00:00:00 24
+Creating point data table for: 2006072700
+2006-07-27 00:00:00 12
+Creating point data table for: 2006072712
+2006-07-27 00:00:00 24
+Creating point data table for: 2006072800
+2006-07-28 00:00:00 12
+Creating point data table for: 2006072812
+2006-07-28 00:00:00 24
+Creating point data table for: 2006072900
+2006-07-29 00:00:00 12
+Creating point data table for: 2006072912
+2006-07-29 00:00:00 24
+Creating point data table for: 2006073000
+2006-07-30 00:00:00 12
+Creating point data table for: 2006073012
+2006-07-30 00:00:00 24
+Creating point data table for: 2006073100
+2006-07-31 00:00:00 12
+Creating point data table for: 2006073112
+2006-07-31 00:00:00 24
+Creating point data table for: 2006080100
+2006-08-01 00:00:00 12
+Creating point data table for: 2006080112
+2006-08-01 00:00:00 24
+Creating point data table for: 2006080200
+2006-08-02 00:00:00 12
+Creating point data table for: 2006080212
+2006-08-02 00:00:00 24
+Creating point data table for: 2006080300
+2006-08-03 00:00:00 12
+Creating point data table for: 2006080312
+2006-08-03 00:00:00 24
+Creating point data table for: 2006080400
+2006-08-04 00:00:00 12
+Creating point data table for: 2006080412
+2006-08-04 00:00:00 24
+Creating point data table for: 2006080500
+2006-08-05 00:00:00 12
+Creating point data table for: 2006080512
+2006-08-05 00:00:00 24
+Creating point data table for: 2006080600
+2006-08-06 00:00:00 12
+Creating point data table for: 2006080612
+2006-08-06 00:00:00 24
+Creating point data table for: 2006080700
+2006-08-07 00:00:00 12
+Creating point data table for: 2006080712
+2006-08-07 00:00:00 24
+Creating point data table for: 2006080800
+2006-08-08 00:00:00 12
+Creating point data table for: 2006080812
+2006-08-08 00:00:00 24
+Creating point data table for: 2006080900
+2006-08-09 00:00:00 12
+Creating point data table for: 2006080912
+2006-08-09 00:00:00 24
+Creating point data table for: 2006081000
+2006-08-10 00:00:00 12
+Creating point data table for: 2006081012
+2006-08-10 00:00:00 24
+Creating point data table for: 2006081100
+2006-08-11 00:00:00 12
+Creating point data table for: 2006081112
+2006-08-11 00:00:00 24
+Creating point data table for: 2006081200
+2006-08-12 00:00:00 12
+Creating point data table for: 2006081212
+2006-08-12 00:00:00 24
+Creating point data table for: 2006081300
+2006-08-13 00:00:00 12
+Creating point data table for: 2006081312
+2006-08-13 00:00:00 24
+Creating point data table for: 2006081400
+2006-08-14 00:00:00 12
+Creating point data table for: 2006081412
+2006-08-14 00:00:00 24
+Creating point data table for: 2006081500
+2006-08-15 00:00:00 12
+Creating point data table for: 2006081512
+2006-08-15 00:00:00 24
+Creating point data table for: 2006081600
+2006-08-16 00:00:00 12
+Creating point data table for: 2006081612
+2006-08-16 00:00:00 24
+Creating point data table for: 2006081700
+2006-08-17 00:00:00 12
+Creating point data table for: 2006081712
+2006-08-17 00:00:00 24
+Creating point data table for: 2006081800
+2006-08-18 00:00:00 12
+Creating point data table for: 2006081812
+2006-08-18 00:00:00 24
+Creating point data table for: 2006081900
+2006-08-19 00:00:00 12
+Creating point data table for: 2006081912
+2006-08-19 00:00:00 24
+Creating point data table for: 2006082000
+2006-08-20 00:00:00 12
+Creating point data table for: 2006082012
+2006-08-20 00:00:00 24
+Creating point data table for: 2006082100
+2006-08-21 00:00:00 12
+Creating point data table for: 2006082112
+2006-08-21 00:00:00 24
+Creating point data table for: 2006082200
+2006-08-22 00:00:00 12
+Creating point data table for: 2006082212
+2006-08-22 00:00:00 24
+Creating point data table for: 2006082300
+2006-08-23 00:00:00 12
+Creating point data table for: 2006082312
+2006-08-23 00:00:00 24
+Creating point data table for: 2006082400
+2006-08-24 00:00:00 12
+Creating point data table for: 2006082412
+2006-08-24 00:00:00 24
+Creating point data table for: 2006082500
+2006-08-25 00:00:00 12
+Creating point data table for: 2006082512
+2006-08-25 00:00:00 24
+Creating point data table for: 2006082600
+2006-08-26 00:00:00 12
+Creating point data table for: 2006082612
+2006-08-26 00:00:00 24
+Creating point data table for: 2006082700
+2006-08-27 00:00:00 12
+Creating point data table for: 2006082712
+2006-08-27 00:00:00 24
+Creating point data table for: 2006082800
+2006-08-28 00:00:00 12
+Creating point data table for: 2006082812
+2006-08-28 00:00:00 24
+Creating point data table for: 2006082900
+2006-08-29 00:00:00 12
+Creating point data table for: 2006082912
+2006-08-29 00:00:00 24
+Creating point data table for: 2006083000
+2006-08-30 00:00:00 12
+Creating point data table for: 2006083012
+2006-08-30 00:00:00 24
+Creating point data table for: 2006083100
+2006-08-31 00:00:00 12
+Creating point data table for: 2006083112
+2006-08-31 00:00:00 24
+Creating point data table for: 2006090100
+2006-09-01 00:00:00 12
+Creating point data table for: 2006090112
+2006-09-01 00:00:00 24
+Creating point data table for: 2006090200
+2006-09-02 00:00:00 12
+Creating point data table for: 2006090212
+2006-09-02 00:00:00 24
+Creating point data table for: 2006090300
+2006-09-03 00:00:00 12
+Creating point data table for: 2006090312
+2006-09-03 00:00:00 24
+Creating point data table for: 2006090400
+2006-09-04 00:00:00 12
+Creating point data table for: 2006090412
+2006-09-04 00:00:00 24
+Creating point data table for: 2006090500
+2006-09-05 00:00:00 12
+Creating point data table for: 2006090512
+2006-09-05 00:00:00 24
+Creating point data table for: 2006090600
+2006-09-06 00:00:00 12
+Creating point data table for: 2006090612
+2006-09-06 00:00:00 24
+Creating point data table for: 2006090700
+2006-09-07 00:00:00 12
+Creating point data table for: 2006090712
+2006-09-07 00:00:00 24
+Creating point data table for: 2006090800
+2006-09-08 00:00:00 12
+Creating point data table for: 2006090812
+2006-09-08 00:00:00 24
+Creating point data table for: 2006090900
+2006-09-09 00:00:00 12
+Creating point data table for: 2006090912
+2006-09-09 00:00:00 24
+Creating point data table for: 2006091000
+2006-09-10 00:00:00 12
+Creating point data table for: 2006091012
+2006-09-10 00:00:00 24
+Creating point data table for: 2006091100
+2006-09-11 00:00:00 12
+Creating point data table for: 2006091112
+2006-09-11 00:00:00 24
+Creating point data table for: 2006091200
+2006-09-12 00:00:00 12
+Creating point data table for: 2006091212
+2006-09-12 00:00:00 24
+Creating point data table for: 2006091300
+2006-09-13 00:00:00 12
+Creating point data table for: 2006091312
+2006-09-13 00:00:00 24
+Creating point data table for: 2006091400
+2006-09-14 00:00:00 12
+Creating point data table for: 2006091412
+2006-09-14 00:00:00 24
+Creating point data table for: 2006091500
+2006-09-15 00:00:00 12
+Creating point data table for: 2006091512
+2006-09-15 00:00:00 24
+Creating point data table for: 2006091600
+2006-09-16 00:00:00 12
+Creating point data table for: 2006091612
+2006-09-16 00:00:00 24
+Creating point data table for: 2006091700
+2006-09-17 00:00:00 12
+Creating point data table for: 2006091712
+2006-09-17 00:00:00 24
+Creating point data table for: 2006091800
+2006-09-18 00:00:00 12
+Creating point data table for: 2006091812
+2006-09-18 00:00:00 24
+Creating point data table for: 2006091900
+2006-09-19 00:00:00 12
+Creating point data table for: 2006091912
+2006-09-19 00:00:00 24
+Creating point data table for: 2006092000
+2006-09-20 00:00:00 12
+Creating point data table for: 2006092012
+2006-09-20 00:00:00 24
+Creating point data table for: 2006092100
+2006-09-21 00:00:00 12
+Creating point data table for: 2006092112
+2006-09-21 00:00:00 24
+Creating point data table for: 2006092200
+2006-09-22 00:00:00 12
+Creating point data table for: 2006092212
+2006-09-22 00:00:00 24
+Creating point data table for: 2006092300
+2006-09-23 00:00:00 12
+Creating point data table for: 2006092312
+2006-09-23 00:00:00 24
+Creating point data table for: 2006092400
+2006-09-24 00:00:00 12
+Creating point data table for: 2006092412
+2006-09-24 00:00:00 24
+Creating point data table for: 2006092500
+2006-09-25 00:00:00 12
+Creating point data table for: 2006092512
+2006-09-25 00:00:00 24
+Creating point data table for: 2006092600
+2006-09-26 00:00:00 12
+Creating point data table for: 2006092612
+2006-09-26 00:00:00 24
+Creating point data table for: 2006092700
+2006-09-27 00:00:00 12
+Creating point data table for: 2006092712
+2006-09-27 00:00:00 24
+Creating point data table for: 2006092800
+2006-09-28 00:00:00 12
+Creating point data table for: 2006092812
+2006-09-28 00:00:00 24
+Creating point data table for: 2006092900
+2006-09-29 00:00:00 12
+Creating point data table for: 2006092912
+2006-09-29 00:00:00 24
+Creating point data table for: 2006093000
+2006-09-30 00:00:00 12
+Creating point data table for: 2006093012
+2006-09-30 00:00:00 24
+Creating point data table for: 2006100100
+2006-10-01 00:00:00 12
+Creating point data table for: 2006100112
+2006-10-01 00:00:00 24
+Creating point data table for: 2006100200
+2006-10-02 00:00:00 12
+Creating point data table for: 2006100212
+2006-10-02 00:00:00 24
+Creating point data table for: 2006100300
+2006-10-03 00:00:00 12
+Creating point data table for: 2006100312
+2006-10-03 00:00:00 24
+Creating point data table for: 2006100400
+2006-10-04 00:00:00 12
+Creating point data table for: 2006100412
+2006-10-04 00:00:00 24
+Creating point data table for: 2006100500
+2006-10-05 00:00:00 12
+Creating point data table for: 2006100512
+2006-10-05 00:00:00 24
+Creating point data table for: 2006100600
+2006-10-06 00:00:00 12
+Creating point data table for: 2006100612
+2006-10-06 00:00:00 24
+Creating point data table for: 2006100700
+2006-10-07 00:00:00 12
+Creating point data table for: 2006100712
+2006-10-07 00:00:00 24
+Creating point data table for: 2006100800
+2006-10-08 00:00:00 12
+Creating point data table for: 2006100812
+2006-10-08 00:00:00 24
+Creating point data table for: 2006100900
+2006-10-09 00:00:00 12
+Creating point data table for: 2006100912
+2006-10-09 00:00:00 24
+Creating point data table for: 2006101000
+2006-10-10 00:00:00 12
+Creating point data table for: 2006101012
+2006-10-10 00:00:00 24
+Creating point data table for: 2006101100
+2006-10-11 00:00:00 12
+Creating point data table for: 2006101112
+2006-10-11 00:00:00 24
+Creating point data table for: 2006101200
+2006-10-12 00:00:00 12
+Creating point data table for: 2006101212
+2006-10-12 00:00:00 24
+Creating point data table for: 2006101300
+2006-10-13 00:00:00 12
+Creating point data table for: 2006101312
+2006-10-13 00:00:00 24
+Creating point data table for: 2006101400
+2006-10-14 00:00:00 12
+Creating point data table for: 2006101412
+2006-10-14 00:00:00 24
+Creating point data table for: 2006101500
+2006-10-15 00:00:00 12
+Creating point data table for: 2006101512
+2006-10-15 00:00:00 24
+Creating point data table for: 2006101600
+2006-10-16 00:00:00 12
+Creating point data table for: 2006101612
+2006-10-16 00:00:00 24
+Creating point data table for: 2006101700
+2006-10-17 00:00:00 12
+Creating point data table for: 2006101712
+2006-10-17 00:00:00 24
+Creating point data table for: 2006101800
+2006-10-18 00:00:00 12
+Creating point data table for: 2006101812
+2006-10-18 00:00:00 24
+Creating point data table for: 2006101900
+2006-10-19 00:00:00 12
+Creating point data table for: 2006101912
+2006-10-19 00:00:00 24
+Creating point data table for: 2006102000
+2006-10-20 00:00:00 12
+Creating point data table for: 2006102012
+2006-10-20 00:00:00 24
+Creating point data table for: 2006102100
+2006-10-21 00:00:00 12
+Creating point data table for: 2006102112
+2006-10-21 00:00:00 24
+Creating point data table for: 2006102200
+2006-10-22 00:00:00 12
+Creating point data table for: 2006102212
+2006-10-22 00:00:00 24
+Creating point data table for: 2006102300
+2006-10-23 00:00:00 12
+Creating point data table for: 2006102312
+2006-10-23 00:00:00 24
+Creating point data table for: 2006102400
+2006-10-24 00:00:00 12
+Creating point data table for: 2006102412
+2006-10-24 00:00:00 24
+Creating point data table for: 2006102500
+2006-10-25 00:00:00 12
+Creating point data table for: 2006102512
+2006-10-25 00:00:00 24
+Creating point data table for: 2006102600
+2006-10-26 00:00:00 12
+Creating point data table for: 2006102612
+2006-10-26 00:00:00 24
+Creating point data table for: 2006102700
+2006-10-27 00:00:00 12
+Creating point data table for: 2006102712
+2006-10-27 00:00:00 24
+Creating point data table for: 2006102800
+2006-10-28 00:00:00 12
+Creating point data table for: 2006102812
+2006-10-28 00:00:00 24
+Creating point data table for: 2006102900
+2006-10-29 00:00:00 12
+Creating point data table for: 2006102912
+2006-10-29 00:00:00 24
+Creating point data table for: 2006103000
+2006-10-30 00:00:00 12
+Creating point data table for: 2006103012
+2006-10-30 00:00:00 24
+Creating point data table for: 2006103100
+2006-10-31 00:00:00 12
+Creating point data table for: 2006103112
+2006-10-31 00:00:00 24
+Creating point data table for: 2006110100
+2006-11-01 00:00:00 12
+Creating point data table for: 2006110112
+2006-11-01 00:00:00 24
+Creating point data table for: 2006110200
+2006-11-02 00:00:00 12
+Creating point data table for: 2006110212
+2006-11-02 00:00:00 24
+Creating point data table for: 2006110300
+2006-11-03 00:00:00 12
+Creating point data table for: 2006110312
+2006-11-03 00:00:00 24
+Creating point data table for: 2006110400
+2006-11-04 00:00:00 12
+Creating point data table for: 2006110412
+2006-11-04 00:00:00 24
+Creating point data table for: 2006110500
+2006-11-05 00:00:00 12
+Creating point data table for: 2006110512
+2006-11-05 00:00:00 24
+Creating point data table for: 2006110600
+2006-11-06 00:00:00 12
+Creating point data table for: 2006110612
+2006-11-06 00:00:00 24
+Creating point data table for: 2006110700
+2006-11-07 00:00:00 12
+Creating point data table for: 2006110712
+2006-11-07 00:00:00 24
+Creating point data table for: 2006110800
+2006-11-08 00:00:00 12
+Creating point data table for: 2006110812
+2006-11-08 00:00:00 24
+Creating point data table for: 2006110900
+2006-11-09 00:00:00 12
+Creating point data table for: 2006110912
+2006-11-09 00:00:00 24
+Creating point data table for: 2006111000
+2006-11-10 00:00:00 12
+Creating point data table for: 2006111012
+2006-11-10 00:00:00 24
+Creating point data table for: 2006111100
+2006-11-11 00:00:00 12
+Creating point data table for: 2006111112
+2006-11-11 00:00:00 24
+Creating point data table for: 2006111200
+2006-11-12 00:00:00 12
+Creating point data table for: 2006111212
+2006-11-12 00:00:00 24
+Creating point data table for: 2006111300
+2006-11-13 00:00:00 12
+Creating point data table for: 2006111312
+2006-11-13 00:00:00 24
+Creating point data table for: 2006111400
+2006-11-14 00:00:00 12
+Creating point data table for: 2006111412
+2006-11-14 00:00:00 24
+Creating point data table for: 2006111500
+2006-11-15 00:00:00 12
+Creating point data table for: 2006111512
+2006-11-15 00:00:00 24
+Creating point data table for: 2006111600
+2006-11-16 00:00:00 12
+Creating point data table for: 2006111612
+2006-11-16 00:00:00 24
+Creating point data table for: 2006111700
+2006-11-17 00:00:00 12
+Creating point data table for: 2006111712
+2006-11-17 00:00:00 24
+Creating point data table for: 2006111800
+2006-11-18 00:00:00 12
+Creating point data table for: 2006111812
+2006-11-18 00:00:00 24
+Creating point data table for: 2006111900
+2006-11-19 00:00:00 12
+Creating point data table for: 2006111912
+2006-11-19 00:00:00 24
+Creating point data table for: 2006112000
+2006-11-20 00:00:00 12
+Creating point data table for: 2006112012
+2006-11-20 00:00:00 24
+Creating point data table for: 2006112100
+2006-11-21 00:00:00 12
+Creating point data table for: 2006112112
+2006-11-21 00:00:00 24
+Creating point data table for: 2006112200
+2006-11-22 00:00:00 12
+Creating point data table for: 2006112212
+2006-11-22 00:00:00 24
+Creating point data table for: 2006112300
+2006-11-23 00:00:00 12
+Creating point data table for: 2006112312
+2006-11-23 00:00:00 24
+Creating point data table for: 2006112400
+2006-11-24 00:00:00 12
+Creating point data table for: 2006112412
+2006-11-24 00:00:00 24
+Creating point data table for: 2006112500
+2006-11-25 00:00:00 12
+Creating point data table for: 2006112512
+2006-11-25 00:00:00 24
+Creating point data table for: 2006112600
+2006-11-26 00:00:00 12
+Creating point data table for: 2006112612
+2006-11-26 00:00:00 24
+Creating point data table for: 2006112700
+2006-11-27 00:00:00 12
+Creating point data table for: 2006112712
+2006-11-27 00:00:00 24
+Creating point data table for: 2006112800
+2006-11-28 00:00:00 12
+Creating point data table for: 2006112812
+2006-11-28 00:00:00 24
+Creating point data table for: 2006112900
+2006-11-29 00:00:00 12
+Creating point data table for: 2006112912
+2006-11-29 00:00:00 24
+Creating point data table for: 2006113000
+2006-11-30 00:00:00 12
+Creating point data table for: 2006113012
+2006-11-30 00:00:00 24
+Creating point data table for: 2006120100
+2006-12-01 00:00:00 12
+Creating point data table for: 2006120112
+2006-12-01 00:00:00 24
+Creating point data table for: 2006120200
+2006-12-02 00:00:00 12
+Creating point data table for: 2006120212
+2006-12-02 00:00:00 24
+Creating point data table for: 2006120300
+2006-12-03 00:00:00 12
+Creating point data table for: 2006120312
+2006-12-03 00:00:00 24
+Creating point data table for: 2006120400
+2006-12-04 00:00:00 12
+Creating point data table for: 2006120412
+2006-12-04 00:00:00 24
+Creating point data table for: 2006120500
+2006-12-05 00:00:00 12
+Creating point data table for: 2006120512
+2006-12-05 00:00:00 24
+Creating point data table for: 2006120600
+2006-12-06 00:00:00 12
+Creating point data table for: 2006120612
+2006-12-06 00:00:00 24
+Creating point data table for: 2006120700
+2006-12-07 00:00:00 12
+Creating point data table for: 2006120712
+2006-12-07 00:00:00 24
+Creating point data table for: 2006120800
+2006-12-08 00:00:00 12
+Creating point data table for: 2006120812
+2006-12-08 00:00:00 24
+Creating point data table for: 2006120900
+2006-12-09 00:00:00 12
+Creating point data table for: 2006120912
+2006-12-09 00:00:00 24
+Creating point data table for: 2006121000
+2006-12-10 00:00:00 12
+Creating point data table for: 2006121012
+2006-12-10 00:00:00 24
+Creating point data table for: 2006121100
+2006-12-11 00:00:00 12
+Creating point data table for: 2006121112
+2006-12-11 00:00:00 24
+Creating point data table for: 2006121200
+2006-12-12 00:00:00 12
+Creating point data table for: 2006121212
+2006-12-12 00:00:00 24
+Creating point data table for: 2006121300
+2006-12-13 00:00:00 12
+Creating point data table for: 2006121312
+2006-12-13 00:00:00 24
+Creating point data table for: 2006121400
+2006-12-14 00:00:00 12
+Creating point data table for: 2006121412
+2006-12-14 00:00:00 24
+Creating point data table for: 2006121500
+2006-12-15 00:00:00 12
+Creating point data table for: 2006121512
+2006-12-15 00:00:00 24
+Creating point data table for: 2006121600
+2006-12-16 00:00:00 12
+Creating point data table for: 2006121612
+2006-12-16 00:00:00 24
+Creating point data table for: 2006121700
+2006-12-17 00:00:00 12
+Creating point data table for: 2006121712
+2006-12-17 00:00:00 24
+Creating point data table for: 2006121800
+2006-12-18 00:00:00 12
+Creating point data table for: 2006121812
+2006-12-18 00:00:00 24
+Creating point data table for: 2006121900
+2006-12-19 00:00:00 12
+Creating point data table for: 2006121912
+2006-12-19 00:00:00 24
+Creating point data table for: 2006122000
+2006-12-20 00:00:00 12
+Creating point data table for: 2006122012
+2006-12-20 00:00:00 24
+Creating point data table for: 2006122100
+2006-12-21 00:00:00 12
+Creating point data table for: 2006122112
+2006-12-21 00:00:00 24
+Creating point data table for: 2006122200
+2006-12-22 00:00:00 12
+Creating point data table for: 2006122212
+2006-12-22 00:00:00 24
+Creating point data table for: 2006122300
+2006-12-23 00:00:00 12
+Creating point data table for: 2006122312
+2006-12-23 00:00:00 24
+Creating point data table for: 2006122400
+2006-12-24 00:00:00 12
+Creating point data table for: 2006122412
+2006-12-24 00:00:00 24
+Creating point data table for: 2006122500
+2006-12-25 00:00:00 12
+Creating point data table for: 2006122512
+2006-12-25 00:00:00 24
+Creating point data table for: 2006122600
+2006-12-26 00:00:00 12
+Creating point data table for: 2006122612
+2006-12-26 00:00:00 24
+Creating point data table for: 2006122700
+2006-12-27 00:00:00 12
+Creating point data table for: 2006122712
+2006-12-27 00:00:00 24
+Creating point data table for: 2006122800
+2006-12-28 00:00:00 12
+Creating point data table for: 2006122812
+2006-12-28 00:00:00 24
+Creating point data table for: 2006122900
+2006-12-29 00:00:00 12
+Creating point data table for: 2006122912
+2006-12-29 00:00:00 24
+Creating point data table for: 2006123000
+2006-12-30 00:00:00 12
+Creating point data table for: 2006123012
+2006-12-30 00:00:00 24
+Creating point data table for: 2006123100
+2006-12-31 00:00:00 12
+Creating point data table for: 2006123112
+2006-12-31 00:00:00 24
+Creating point data table for: 2007010100
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2024-03-05T18:35:38 on aa
+[ECMWF-INFO -ecepilog] JobName                   : PDT_Year
+[ECMWF-INFO -ecepilog] JobID                     : 13918861
+[ECMWF-INFO -ecepilog] Submit                    : 2024-03-05T17:27:10
+[ECMWF-INFO -ecepilog] Start                     : 2024-03-05T17:27:29
+[ECMWF-INFO -ecepilog] End                       : 2024-03-05T18:35:38
+[ECMWF-INFO -ecepilog] QueuedTime                : 19.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 4089
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : ecodmdmo
+[ECMWF-INFO -ecepilog] QOS                       : nf
+[ECMWF-INFO -ecepilog] User                      : mofp
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918861.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918861.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 64
+[ECMWF-INFO -ecepilog] SBU                       : 620.207
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

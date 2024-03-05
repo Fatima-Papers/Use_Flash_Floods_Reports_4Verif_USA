@@ -1,0 +1,1534 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 49002, mtime: Tue Oct  3 11:53:54 2023
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Tue Mar  5 17:27:11 2024 (1709659631.3107157) on aa6-204.bullx:/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=aa
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SLURM_JOB_ID=13517288
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=PDT_Year
+[ECMWF-INFO -sbatch] - #SBATCH --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=64
+[ECMWF-INFO -sbatch] - #SBATCH --mem=128G
+[ECMWF-INFO -sbatch] - #SBATCH --time=2-00:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --qos=nf
+[ECMWF-INFO -sbatch] - #SBATCH --mail-type=FAIL
+[ECMWF-INFO -sbatch] - #SBATCH --mail-user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['18a_SubmitterATOS_PDT_Year.sh', '2011']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=64
+[ECMWF-INFO -sbatch] - ARG --error=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --job_name=PDT_Year
+[ECMWF-INFO -sbatch] - ARG --mail_type=FAIL
+[ECMWF-INFO -sbatch] - ARG --mail_user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - ARG --output=LogATOS/PDT_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --qos=nf
+[ECMWF-INFO -sbatch] - ARG --time=2-00:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=128G
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: mofp-PDT_Year-1x64-/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-_.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=64', '--error=LogATOS/PDT_Year-%J.out', '--job-name=PDT_Year', '--mail-type=FAIL', '--mail-user=fatima.pillosu@ecmwf.int', '--output=LogATOS/PDT_Year-%J.out', '--qos=nf', '--time=2-00:00:00', '--mem=128G', '--licenses=h2resw01', '--export=EC_user_time_limit=2-00:00:00', '/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/18a_SubmitterATOS_PDT_Year.sh', '2011']
+[ECMWF-INFO -sbatch] - sbatch executed on aa
+[ECMWF-INFO -sbatch] - Job queued on aa using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 13918866
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on aa6-157 at 20240305_172733.040, PID: 1113683, JOBID: 13918866
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/mofp
+[ECMWF-INFO -ecprofile] $PERM=/perm/mofp
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/mofp
+[ECMWF-INFO -ecprofile] $TMPDIR=/etc/ecmwf/ssd/ssd1/tmpdirs/mofp.13918866
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/mofp/2/13918866
+2011-01-01 00:00:00 12
+Creating point data table for: 2011010112
+2011-01-01 00:00:00 24
+Creating point data table for: 2011010200
+2011-01-02 00:00:00 12
+Creating point data table for: 2011010212
+2011-01-02 00:00:00 24
+Creating point data table for: 2011010300
+2011-01-03 00:00:00 12
+Creating point data table for: 2011010312
+2011-01-03 00:00:00 24
+Creating point data table for: 2011010400
+2011-01-04 00:00:00 12
+Creating point data table for: 2011010412
+2011-01-04 00:00:00 24
+Creating point data table for: 2011010500
+2011-01-05 00:00:00 12
+Creating point data table for: 2011010512
+2011-01-05 00:00:00 24
+Creating point data table for: 2011010600
+2011-01-06 00:00:00 12
+Creating point data table for: 2011010612
+2011-01-06 00:00:00 24
+Creating point data table for: 2011010700
+2011-01-07 00:00:00 12
+Creating point data table for: 2011010712
+2011-01-07 00:00:00 24
+Creating point data table for: 2011010800
+2011-01-08 00:00:00 12
+Creating point data table for: 2011010812
+2011-01-08 00:00:00 24
+Creating point data table for: 2011010900
+2011-01-09 00:00:00 12
+Creating point data table for: 2011010912
+2011-01-09 00:00:00 24
+Creating point data table for: 2011011000
+2011-01-10 00:00:00 12
+Creating point data table for: 2011011012
+2011-01-10 00:00:00 24
+Creating point data table for: 2011011100
+2011-01-11 00:00:00 12
+Creating point data table for: 2011011112
+2011-01-11 00:00:00 24
+Creating point data table for: 2011011200
+2011-01-12 00:00:00 12
+Creating point data table for: 2011011212
+2011-01-12 00:00:00 24
+Creating point data table for: 2011011300
+2011-01-13 00:00:00 12
+Creating point data table for: 2011011312
+2011-01-13 00:00:00 24
+Creating point data table for: 2011011400
+2011-01-14 00:00:00 12
+Creating point data table for: 2011011412
+2011-01-14 00:00:00 24
+Creating point data table for: 2011011500
+2011-01-15 00:00:00 12
+Creating point data table for: 2011011512
+2011-01-15 00:00:00 24
+Creating point data table for: 2011011600
+2011-01-16 00:00:00 12
+Creating point data table for: 2011011612
+2011-01-16 00:00:00 24
+Creating point data table for: 2011011700
+2011-01-17 00:00:00 12
+Creating point data table for: 2011011712
+2011-01-17 00:00:00 24
+Creating point data table for: 2011011800
+2011-01-18 00:00:00 12
+Creating point data table for: 2011011812
+2011-01-18 00:00:00 24
+Creating point data table for: 2011011900
+2011-01-19 00:00:00 12
+Creating point data table for: 2011011912
+2011-01-19 00:00:00 24
+Creating point data table for: 2011012000
+2011-01-20 00:00:00 12
+Creating point data table for: 2011012012
+2011-01-20 00:00:00 24
+Creating point data table for: 2011012100
+2011-01-21 00:00:00 12
+Creating point data table for: 2011012112
+2011-01-21 00:00:00 24
+Creating point data table for: 2011012200
+2011-01-22 00:00:00 12
+Creating point data table for: 2011012212
+2011-01-22 00:00:00 24
+Creating point data table for: 2011012300
+2011-01-23 00:00:00 12
+Creating point data table for: 2011012312
+2011-01-23 00:00:00 24
+Creating point data table for: 2011012400
+2011-01-24 00:00:00 12
+Creating point data table for: 2011012412
+2011-01-24 00:00:00 24
+Creating point data table for: 2011012500
+2011-01-25 00:00:00 12
+Creating point data table for: 2011012512
+2011-01-25 00:00:00 24
+Creating point data table for: 2011012600
+2011-01-26 00:00:00 12
+Creating point data table for: 2011012612
+2011-01-26 00:00:00 24
+Creating point data table for: 2011012700
+2011-01-27 00:00:00 12
+Creating point data table for: 2011012712
+2011-01-27 00:00:00 24
+Creating point data table for: 2011012800
+2011-01-28 00:00:00 12
+Creating point data table for: 2011012812
+2011-01-28 00:00:00 24
+Creating point data table for: 2011012900
+2011-01-29 00:00:00 12
+Creating point data table for: 2011012912
+2011-01-29 00:00:00 24
+Creating point data table for: 2011013000
+2011-01-30 00:00:00 12
+Creating point data table for: 2011013012
+2011-01-30 00:00:00 24
+Creating point data table for: 2011013100
+2011-01-31 00:00:00 12
+Creating point data table for: 2011013112
+2011-01-31 00:00:00 24
+Creating point data table for: 2011020100
+2011-02-01 00:00:00 12
+Creating point data table for: 2011020112
+2011-02-01 00:00:00 24
+Creating point data table for: 2011020200
+2011-02-02 00:00:00 12
+Creating point data table for: 2011020212
+2011-02-02 00:00:00 24
+Creating point data table for: 2011020300
+2011-02-03 00:00:00 12
+Creating point data table for: 2011020312
+2011-02-03 00:00:00 24
+Creating point data table for: 2011020400
+2011-02-04 00:00:00 12
+Creating point data table for: 2011020412
+2011-02-04 00:00:00 24
+Creating point data table for: 2011020500
+2011-02-05 00:00:00 12
+Creating point data table for: 2011020512
+2011-02-05 00:00:00 24
+Creating point data table for: 2011020600
+2011-02-06 00:00:00 12
+Creating point data table for: 2011020612
+2011-02-06 00:00:00 24
+Creating point data table for: 2011020700
+2011-02-07 00:00:00 12
+Creating point data table for: 2011020712
+2011-02-07 00:00:00 24
+Creating point data table for: 2011020800
+2011-02-08 00:00:00 12
+Creating point data table for: 2011020812
+2011-02-08 00:00:00 24
+Creating point data table for: 2011020900
+2011-02-09 00:00:00 12
+Creating point data table for: 2011020912
+2011-02-09 00:00:00 24
+Creating point data table for: 2011021000
+2011-02-10 00:00:00 12
+Creating point data table for: 2011021012
+2011-02-10 00:00:00 24
+Creating point data table for: 2011021100
+2011-02-11 00:00:00 12
+Creating point data table for: 2011021112
+2011-02-11 00:00:00 24
+Creating point data table for: 2011021200
+2011-02-12 00:00:00 12
+Creating point data table for: 2011021212
+2011-02-12 00:00:00 24
+Creating point data table for: 2011021300
+2011-02-13 00:00:00 12
+Creating point data table for: 2011021312
+2011-02-13 00:00:00 24
+Creating point data table for: 2011021400
+2011-02-14 00:00:00 12
+Creating point data table for: 2011021412
+2011-02-14 00:00:00 24
+Creating point data table for: 2011021500
+2011-02-15 00:00:00 12
+Creating point data table for: 2011021512
+2011-02-15 00:00:00 24
+Creating point data table for: 2011021600
+2011-02-16 00:00:00 12
+Creating point data table for: 2011021612
+2011-02-16 00:00:00 24
+Creating point data table for: 2011021700
+2011-02-17 00:00:00 12
+Creating point data table for: 2011021712
+2011-02-17 00:00:00 24
+Creating point data table for: 2011021800
+2011-02-18 00:00:00 12
+Creating point data table for: 2011021812
+2011-02-18 00:00:00 24
+Creating point data table for: 2011021900
+2011-02-19 00:00:00 12
+Creating point data table for: 2011021912
+2011-02-19 00:00:00 24
+Creating point data table for: 2011022000
+2011-02-20 00:00:00 12
+Creating point data table for: 2011022012
+2011-02-20 00:00:00 24
+Creating point data table for: 2011022100
+2011-02-21 00:00:00 12
+Creating point data table for: 2011022112
+2011-02-21 00:00:00 24
+Creating point data table for: 2011022200
+2011-02-22 00:00:00 12
+Creating point data table for: 2011022212
+2011-02-22 00:00:00 24
+Creating point data table for: 2011022300
+2011-02-23 00:00:00 12
+Creating point data table for: 2011022312
+2011-02-23 00:00:00 24
+Creating point data table for: 2011022400
+2011-02-24 00:00:00 12
+Creating point data table for: 2011022412
+2011-02-24 00:00:00 24
+Creating point data table for: 2011022500
+2011-02-25 00:00:00 12
+Creating point data table for: 2011022512
+2011-02-25 00:00:00 24
+Creating point data table for: 2011022600
+2011-02-26 00:00:00 12
+Creating point data table for: 2011022612
+2011-02-26 00:00:00 24
+Creating point data table for: 2011022700
+2011-02-27 00:00:00 12
+Creating point data table for: 2011022712
+2011-02-27 00:00:00 24
+Creating point data table for: 2011022800
+2011-02-28 00:00:00 12
+Creating point data table for: 2011022812
+2011-02-28 00:00:00 24
+Creating point data table for: 2011030100
+2011-03-01 00:00:00 12
+Creating point data table for: 2011030112
+2011-03-01 00:00:00 24
+Creating point data table for: 2011030200
+2011-03-02 00:00:00 12
+Creating point data table for: 2011030212
+2011-03-02 00:00:00 24
+Creating point data table for: 2011030300
+2011-03-03 00:00:00 12
+Creating point data table for: 2011030312
+2011-03-03 00:00:00 24
+Creating point data table for: 2011030400
+2011-03-04 00:00:00 12
+Creating point data table for: 2011030412
+2011-03-04 00:00:00 24
+Creating point data table for: 2011030500
+2011-03-05 00:00:00 12
+Creating point data table for: 2011030512
+2011-03-05 00:00:00 24
+Creating point data table for: 2011030600
+2011-03-06 00:00:00 12
+Creating point data table for: 2011030612
+2011-03-06 00:00:00 24
+Creating point data table for: 2011030700
+2011-03-07 00:00:00 12
+Creating point data table for: 2011030712
+2011-03-07 00:00:00 24
+Creating point data table for: 2011030800
+2011-03-08 00:00:00 12
+Creating point data table for: 2011030812
+2011-03-08 00:00:00 24
+Creating point data table for: 2011030900
+2011-03-09 00:00:00 12
+Creating point data table for: 2011030912
+2011-03-09 00:00:00 24
+Creating point data table for: 2011031000
+2011-03-10 00:00:00 12
+Creating point data table for: 2011031012
+2011-03-10 00:00:00 24
+Creating point data table for: 2011031100
+2011-03-11 00:00:00 12
+Creating point data table for: 2011031112
+2011-03-11 00:00:00 24
+Creating point data table for: 2011031200
+2011-03-12 00:00:00 12
+Creating point data table for: 2011031212
+2011-03-12 00:00:00 24
+Creating point data table for: 2011031300
+2011-03-13 00:00:00 12
+Creating point data table for: 2011031312
+2011-03-13 00:00:00 24
+Creating point data table for: 2011031400
+2011-03-14 00:00:00 12
+Creating point data table for: 2011031412
+2011-03-14 00:00:00 24
+Creating point data table for: 2011031500
+2011-03-15 00:00:00 12
+Creating point data table for: 2011031512
+2011-03-15 00:00:00 24
+Creating point data table for: 2011031600
+2011-03-16 00:00:00 12
+Creating point data table for: 2011031612
+2011-03-16 00:00:00 24
+Creating point data table for: 2011031700
+2011-03-17 00:00:00 12
+Creating point data table for: 2011031712
+2011-03-17 00:00:00 24
+Creating point data table for: 2011031800
+2011-03-18 00:00:00 12
+Creating point data table for: 2011031812
+2011-03-18 00:00:00 24
+Creating point data table for: 2011031900
+2011-03-19 00:00:00 12
+Creating point data table for: 2011031912
+2011-03-19 00:00:00 24
+Creating point data table for: 2011032000
+2011-03-20 00:00:00 12
+Creating point data table for: 2011032012
+2011-03-20 00:00:00 24
+Creating point data table for: 2011032100
+2011-03-21 00:00:00 12
+Creating point data table for: 2011032112
+2011-03-21 00:00:00 24
+Creating point data table for: 2011032200
+2011-03-22 00:00:00 12
+Creating point data table for: 2011032212
+2011-03-22 00:00:00 24
+Creating point data table for: 2011032300
+2011-03-23 00:00:00 12
+Creating point data table for: 2011032312
+2011-03-23 00:00:00 24
+Creating point data table for: 2011032400
+2011-03-24 00:00:00 12
+Creating point data table for: 2011032412
+2011-03-24 00:00:00 24
+Creating point data table for: 2011032500
+2011-03-25 00:00:00 12
+Creating point data table for: 2011032512
+2011-03-25 00:00:00 24
+Creating point data table for: 2011032600
+2011-03-26 00:00:00 12
+Creating point data table for: 2011032612
+2011-03-26 00:00:00 24
+Creating point data table for: 2011032700
+2011-03-27 00:00:00 12
+Creating point data table for: 2011032712
+2011-03-27 00:00:00 24
+Creating point data table for: 2011032800
+2011-03-28 00:00:00 12
+Creating point data table for: 2011032812
+2011-03-28 00:00:00 24
+Creating point data table for: 2011032900
+2011-03-29 00:00:00 12
+Creating point data table for: 2011032912
+2011-03-29 00:00:00 24
+Creating point data table for: 2011033000
+2011-03-30 00:00:00 12
+Creating point data table for: 2011033012
+2011-03-30 00:00:00 24
+Creating point data table for: 2011033100
+2011-03-31 00:00:00 12
+Creating point data table for: 2011033112
+2011-03-31 00:00:00 24
+Creating point data table for: 2011040100
+2011-04-01 00:00:00 12
+Creating point data table for: 2011040112
+2011-04-01 00:00:00 24
+Creating point data table for: 2011040200
+2011-04-02 00:00:00 12
+Creating point data table for: 2011040212
+2011-04-02 00:00:00 24
+Creating point data table for: 2011040300
+2011-04-03 00:00:00 12
+Creating point data table for: 2011040312
+2011-04-03 00:00:00 24
+Creating point data table for: 2011040400
+2011-04-04 00:00:00 12
+Creating point data table for: 2011040412
+2011-04-04 00:00:00 24
+Creating point data table for: 2011040500
+2011-04-05 00:00:00 12
+Creating point data table for: 2011040512
+2011-04-05 00:00:00 24
+Creating point data table for: 2011040600
+2011-04-06 00:00:00 12
+Creating point data table for: 2011040612
+2011-04-06 00:00:00 24
+Creating point data table for: 2011040700
+2011-04-07 00:00:00 12
+Creating point data table for: 2011040712
+2011-04-07 00:00:00 24
+Creating point data table for: 2011040800
+2011-04-08 00:00:00 12
+Creating point data table for: 2011040812
+2011-04-08 00:00:00 24
+Creating point data table for: 2011040900
+2011-04-09 00:00:00 12
+Creating point data table for: 2011040912
+2011-04-09 00:00:00 24
+Creating point data table for: 2011041000
+2011-04-10 00:00:00 12
+Creating point data table for: 2011041012
+2011-04-10 00:00:00 24
+Creating point data table for: 2011041100
+2011-04-11 00:00:00 12
+Creating point data table for: 2011041112
+2011-04-11 00:00:00 24
+Creating point data table for: 2011041200
+2011-04-12 00:00:00 12
+Creating point data table for: 2011041212
+2011-04-12 00:00:00 24
+Creating point data table for: 2011041300
+2011-04-13 00:00:00 12
+Creating point data table for: 2011041312
+2011-04-13 00:00:00 24
+Creating point data table for: 2011041400
+2011-04-14 00:00:00 12
+Creating point data table for: 2011041412
+2011-04-14 00:00:00 24
+Creating point data table for: 2011041500
+2011-04-15 00:00:00 12
+Creating point data table for: 2011041512
+2011-04-15 00:00:00 24
+Creating point data table for: 2011041600
+2011-04-16 00:00:00 12
+Creating point data table for: 2011041612
+2011-04-16 00:00:00 24
+Creating point data table for: 2011041700
+2011-04-17 00:00:00 12
+Creating point data table for: 2011041712
+2011-04-17 00:00:00 24
+Creating point data table for: 2011041800
+2011-04-18 00:00:00 12
+Creating point data table for: 2011041812
+2011-04-18 00:00:00 24
+Creating point data table for: 2011041900
+2011-04-19 00:00:00 12
+Creating point data table for: 2011041912
+2011-04-19 00:00:00 24
+Creating point data table for: 2011042000
+2011-04-20 00:00:00 12
+Creating point data table for: 2011042012
+2011-04-20 00:00:00 24
+Creating point data table for: 2011042100
+2011-04-21 00:00:00 12
+Creating point data table for: 2011042112
+2011-04-21 00:00:00 24
+Creating point data table for: 2011042200
+2011-04-22 00:00:00 12
+Creating point data table for: 2011042212
+2011-04-22 00:00:00 24
+Creating point data table for: 2011042300
+2011-04-23 00:00:00 12
+Creating point data table for: 2011042312
+2011-04-23 00:00:00 24
+Creating point data table for: 2011042400
+2011-04-24 00:00:00 12
+Creating point data table for: 2011042412
+2011-04-24 00:00:00 24
+Creating point data table for: 2011042500
+2011-04-25 00:00:00 12
+Creating point data table for: 2011042512
+2011-04-25 00:00:00 24
+Creating point data table for: 2011042600
+2011-04-26 00:00:00 12
+Creating point data table for: 2011042612
+2011-04-26 00:00:00 24
+Creating point data table for: 2011042700
+2011-04-27 00:00:00 12
+Creating point data table for: 2011042712
+2011-04-27 00:00:00 24
+Creating point data table for: 2011042800
+2011-04-28 00:00:00 12
+Creating point data table for: 2011042812
+2011-04-28 00:00:00 24
+Creating point data table for: 2011042900
+2011-04-29 00:00:00 12
+Creating point data table for: 2011042912
+2011-04-29 00:00:00 24
+Creating point data table for: 2011043000
+2011-04-30 00:00:00 12
+Creating point data table for: 2011043012
+2011-04-30 00:00:00 24
+Creating point data table for: 2011050100
+2011-05-01 00:00:00 12
+Creating point data table for: 2011050112
+2011-05-01 00:00:00 24
+Creating point data table for: 2011050200
+2011-05-02 00:00:00 12
+Creating point data table for: 2011050212
+2011-05-02 00:00:00 24
+Creating point data table for: 2011050300
+2011-05-03 00:00:00 12
+Creating point data table for: 2011050312
+2011-05-03 00:00:00 24
+Creating point data table for: 2011050400
+2011-05-04 00:00:00 12
+Creating point data table for: 2011050412
+2011-05-04 00:00:00 24
+Creating point data table for: 2011050500
+2011-05-05 00:00:00 12
+Creating point data table for: 2011050512
+2011-05-05 00:00:00 24
+Creating point data table for: 2011050600
+2011-05-06 00:00:00 12
+Creating point data table for: 2011050612
+2011-05-06 00:00:00 24
+Creating point data table for: 2011050700
+2011-05-07 00:00:00 12
+Creating point data table for: 2011050712
+2011-05-07 00:00:00 24
+Creating point data table for: 2011050800
+2011-05-08 00:00:00 12
+Creating point data table for: 2011050812
+2011-05-08 00:00:00 24
+Creating point data table for: 2011050900
+2011-05-09 00:00:00 12
+Creating point data table for: 2011050912
+2011-05-09 00:00:00 24
+Creating point data table for: 2011051000
+2011-05-10 00:00:00 12
+Creating point data table for: 2011051012
+2011-05-10 00:00:00 24
+Creating point data table for: 2011051100
+2011-05-11 00:00:00 12
+Creating point data table for: 2011051112
+2011-05-11 00:00:00 24
+Creating point data table for: 2011051200
+2011-05-12 00:00:00 12
+Creating point data table for: 2011051212
+2011-05-12 00:00:00 24
+Creating point data table for: 2011051300
+2011-05-13 00:00:00 12
+Creating point data table for: 2011051312
+2011-05-13 00:00:00 24
+Creating point data table for: 2011051400
+2011-05-14 00:00:00 12
+Creating point data table for: 2011051412
+2011-05-14 00:00:00 24
+Creating point data table for: 2011051500
+2011-05-15 00:00:00 12
+Creating point data table for: 2011051512
+2011-05-15 00:00:00 24
+Creating point data table for: 2011051600
+2011-05-16 00:00:00 12
+Creating point data table for: 2011051612
+2011-05-16 00:00:00 24
+Creating point data table for: 2011051700
+2011-05-17 00:00:00 12
+Creating point data table for: 2011051712
+2011-05-17 00:00:00 24
+Creating point data table for: 2011051800
+2011-05-18 00:00:00 12
+Creating point data table for: 2011051812
+2011-05-18 00:00:00 24
+Creating point data table for: 2011051900
+2011-05-19 00:00:00 12
+Creating point data table for: 2011051912
+2011-05-19 00:00:00 24
+Creating point data table for: 2011052000
+2011-05-20 00:00:00 12
+Creating point data table for: 2011052012
+2011-05-20 00:00:00 24
+Creating point data table for: 2011052100
+2011-05-21 00:00:00 12
+Creating point data table for: 2011052112
+2011-05-21 00:00:00 24
+Creating point data table for: 2011052200
+2011-05-22 00:00:00 12
+Creating point data table for: 2011052212
+2011-05-22 00:00:00 24
+Creating point data table for: 2011052300
+2011-05-23 00:00:00 12
+Creating point data table for: 2011052312
+2011-05-23 00:00:00 24
+Creating point data table for: 2011052400
+2011-05-24 00:00:00 12
+Creating point data table for: 2011052412
+2011-05-24 00:00:00 24
+Creating point data table for: 2011052500
+2011-05-25 00:00:00 12
+Creating point data table for: 2011052512
+2011-05-25 00:00:00 24
+Creating point data table for: 2011052600
+2011-05-26 00:00:00 12
+Creating point data table for: 2011052612
+2011-05-26 00:00:00 24
+Creating point data table for: 2011052700
+2011-05-27 00:00:00 12
+Creating point data table for: 2011052712
+2011-05-27 00:00:00 24
+Creating point data table for: 2011052800
+2011-05-28 00:00:00 12
+Creating point data table for: 2011052812
+2011-05-28 00:00:00 24
+Creating point data table for: 2011052900
+2011-05-29 00:00:00 12
+Creating point data table for: 2011052912
+2011-05-29 00:00:00 24
+Creating point data table for: 2011053000
+2011-05-30 00:00:00 12
+Creating point data table for: 2011053012
+2011-05-30 00:00:00 24
+Creating point data table for: 2011053100
+2011-05-31 00:00:00 12
+Creating point data table for: 2011053112
+2011-05-31 00:00:00 24
+Creating point data table for: 2011060100
+2011-06-01 00:00:00 12
+Creating point data table for: 2011060112
+2011-06-01 00:00:00 24
+Creating point data table for: 2011060200
+2011-06-02 00:00:00 12
+Creating point data table for: 2011060212
+2011-06-02 00:00:00 24
+Creating point data table for: 2011060300
+2011-06-03 00:00:00 12
+Creating point data table for: 2011060312
+2011-06-03 00:00:00 24
+Creating point data table for: 2011060400
+2011-06-04 00:00:00 12
+Creating point data table for: 2011060412
+2011-06-04 00:00:00 24
+Creating point data table for: 2011060500
+2011-06-05 00:00:00 12
+Creating point data table for: 2011060512
+2011-06-05 00:00:00 24
+Creating point data table for: 2011060600
+2011-06-06 00:00:00 12
+Creating point data table for: 2011060612
+2011-06-06 00:00:00 24
+Creating point data table for: 2011060700
+2011-06-07 00:00:00 12
+Creating point data table for: 2011060712
+2011-06-07 00:00:00 24
+Creating point data table for: 2011060800
+2011-06-08 00:00:00 12
+Creating point data table for: 2011060812
+2011-06-08 00:00:00 24
+Creating point data table for: 2011060900
+2011-06-09 00:00:00 12
+Creating point data table for: 2011060912
+2011-06-09 00:00:00 24
+Creating point data table for: 2011061000
+2011-06-10 00:00:00 12
+Creating point data table for: 2011061012
+2011-06-10 00:00:00 24
+Creating point data table for: 2011061100
+2011-06-11 00:00:00 12
+Creating point data table for: 2011061112
+2011-06-11 00:00:00 24
+Creating point data table for: 2011061200
+2011-06-12 00:00:00 12
+Creating point data table for: 2011061212
+2011-06-12 00:00:00 24
+Creating point data table for: 2011061300
+2011-06-13 00:00:00 12
+Creating point data table for: 2011061312
+2011-06-13 00:00:00 24
+Creating point data table for: 2011061400
+2011-06-14 00:00:00 12
+Creating point data table for: 2011061412
+2011-06-14 00:00:00 24
+Creating point data table for: 2011061500
+2011-06-15 00:00:00 12
+Creating point data table for: 2011061512
+2011-06-15 00:00:00 24
+Creating point data table for: 2011061600
+2011-06-16 00:00:00 12
+Creating point data table for: 2011061612
+2011-06-16 00:00:00 24
+Creating point data table for: 2011061700
+2011-06-17 00:00:00 12
+Creating point data table for: 2011061712
+2011-06-17 00:00:00 24
+Creating point data table for: 2011061800
+2011-06-18 00:00:00 12
+Creating point data table for: 2011061812
+2011-06-18 00:00:00 24
+Creating point data table for: 2011061900
+2011-06-19 00:00:00 12
+Creating point data table for: 2011061912
+2011-06-19 00:00:00 24
+Creating point data table for: 2011062000
+2011-06-20 00:00:00 12
+Creating point data table for: 2011062012
+2011-06-20 00:00:00 24
+Creating point data table for: 2011062100
+2011-06-21 00:00:00 12
+Creating point data table for: 2011062112
+2011-06-21 00:00:00 24
+Creating point data table for: 2011062200
+2011-06-22 00:00:00 12
+Creating point data table for: 2011062212
+2011-06-22 00:00:00 24
+Creating point data table for: 2011062300
+2011-06-23 00:00:00 12
+Creating point data table for: 2011062312
+2011-06-23 00:00:00 24
+Creating point data table for: 2011062400
+2011-06-24 00:00:00 12
+Creating point data table for: 2011062412
+2011-06-24 00:00:00 24
+Creating point data table for: 2011062500
+2011-06-25 00:00:00 12
+Creating point data table for: 2011062512
+2011-06-25 00:00:00 24
+Creating point data table for: 2011062600
+2011-06-26 00:00:00 12
+Creating point data table for: 2011062612
+2011-06-26 00:00:00 24
+Creating point data table for: 2011062700
+2011-06-27 00:00:00 12
+Creating point data table for: 2011062712
+2011-06-27 00:00:00 24
+Creating point data table for: 2011062800
+2011-06-28 00:00:00 12
+Creating point data table for: 2011062812
+2011-06-28 00:00:00 24
+Creating point data table for: 2011062900
+2011-06-29 00:00:00 12
+Creating point data table for: 2011062912
+2011-06-29 00:00:00 24
+Creating point data table for: 2011063000
+2011-06-30 00:00:00 12
+Creating point data table for: 2011063012
+2011-06-30 00:00:00 24
+Creating point data table for: 2011070100
+2011-07-01 00:00:00 12
+Creating point data table for: 2011070112
+2011-07-01 00:00:00 24
+Creating point data table for: 2011070200
+2011-07-02 00:00:00 12
+Creating point data table for: 2011070212
+2011-07-02 00:00:00 24
+Creating point data table for: 2011070300
+2011-07-03 00:00:00 12
+Creating point data table for: 2011070312
+2011-07-03 00:00:00 24
+Creating point data table for: 2011070400
+2011-07-04 00:00:00 12
+Creating point data table for: 2011070412
+2011-07-04 00:00:00 24
+Creating point data table for: 2011070500
+2011-07-05 00:00:00 12
+Creating point data table for: 2011070512
+2011-07-05 00:00:00 24
+Creating point data table for: 2011070600
+2011-07-06 00:00:00 12
+Creating point data table for: 2011070612
+2011-07-06 00:00:00 24
+Creating point data table for: 2011070700
+2011-07-07 00:00:00 12
+Creating point data table for: 2011070712
+2011-07-07 00:00:00 24
+Creating point data table for: 2011070800
+2011-07-08 00:00:00 12
+Creating point data table for: 2011070812
+2011-07-08 00:00:00 24
+Creating point data table for: 2011070900
+2011-07-09 00:00:00 12
+Creating point data table for: 2011070912
+2011-07-09 00:00:00 24
+Creating point data table for: 2011071000
+2011-07-10 00:00:00 12
+Creating point data table for: 2011071012
+2011-07-10 00:00:00 24
+Creating point data table for: 2011071100
+2011-07-11 00:00:00 12
+Creating point data table for: 2011071112
+2011-07-11 00:00:00 24
+Creating point data table for: 2011071200
+2011-07-12 00:00:00 12
+Creating point data table for: 2011071212
+2011-07-12 00:00:00 24
+Creating point data table for: 2011071300
+2011-07-13 00:00:00 12
+Creating point data table for: 2011071312
+2011-07-13 00:00:00 24
+Creating point data table for: 2011071400
+2011-07-14 00:00:00 12
+Creating point data table for: 2011071412
+2011-07-14 00:00:00 24
+Creating point data table for: 2011071500
+2011-07-15 00:00:00 12
+Creating point data table for: 2011071512
+2011-07-15 00:00:00 24
+Creating point data table for: 2011071600
+2011-07-16 00:00:00 12
+Creating point data table for: 2011071612
+2011-07-16 00:00:00 24
+Creating point data table for: 2011071700
+2011-07-17 00:00:00 12
+Creating point data table for: 2011071712
+2011-07-17 00:00:00 24
+Creating point data table for: 2011071800
+2011-07-18 00:00:00 12
+Creating point data table for: 2011071812
+2011-07-18 00:00:00 24
+Creating point data table for: 2011071900
+2011-07-19 00:00:00 12
+Creating point data table for: 2011071912
+2011-07-19 00:00:00 24
+Creating point data table for: 2011072000
+2011-07-20 00:00:00 12
+Creating point data table for: 2011072012
+2011-07-20 00:00:00 24
+Creating point data table for: 2011072100
+2011-07-21 00:00:00 12
+Creating point data table for: 2011072112
+2011-07-21 00:00:00 24
+Creating point data table for: 2011072200
+2011-07-22 00:00:00 12
+Creating point data table for: 2011072212
+2011-07-22 00:00:00 24
+Creating point data table for: 2011072300
+2011-07-23 00:00:00 12
+Creating point data table for: 2011072312
+2011-07-23 00:00:00 24
+Creating point data table for: 2011072400
+2011-07-24 00:00:00 12
+Creating point data table for: 2011072412
+2011-07-24 00:00:00 24
+Creating point data table for: 2011072500
+2011-07-25 00:00:00 12
+Creating point data table for: 2011072512
+2011-07-25 00:00:00 24
+Creating point data table for: 2011072600
+2011-07-26 00:00:00 12
+Creating point data table for: 2011072612
+2011-07-26 00:00:00 24
+Creating point data table for: 2011072700
+2011-07-27 00:00:00 12
+Creating point data table for: 2011072712
+2011-07-27 00:00:00 24
+Creating point data table for: 2011072800
+2011-07-28 00:00:00 12
+Creating point data table for: 2011072812
+2011-07-28 00:00:00 24
+Creating point data table for: 2011072900
+2011-07-29 00:00:00 12
+Creating point data table for: 2011072912
+2011-07-29 00:00:00 24
+Creating point data table for: 2011073000
+2011-07-30 00:00:00 12
+Creating point data table for: 2011073012
+2011-07-30 00:00:00 24
+Creating point data table for: 2011073100
+2011-07-31 00:00:00 12
+Creating point data table for: 2011073112
+2011-07-31 00:00:00 24
+Creating point data table for: 2011080100
+2011-08-01 00:00:00 12
+Creating point data table for: 2011080112
+2011-08-01 00:00:00 24
+Creating point data table for: 2011080200
+2011-08-02 00:00:00 12
+Creating point data table for: 2011080212
+2011-08-02 00:00:00 24
+Creating point data table for: 2011080300
+2011-08-03 00:00:00 12
+Creating point data table for: 2011080312
+2011-08-03 00:00:00 24
+Creating point data table for: 2011080400
+2011-08-04 00:00:00 12
+Creating point data table for: 2011080412
+2011-08-04 00:00:00 24
+Creating point data table for: 2011080500
+2011-08-05 00:00:00 12
+Creating point data table for: 2011080512
+2011-08-05 00:00:00 24
+Creating point data table for: 2011080600
+2011-08-06 00:00:00 12
+Creating point data table for: 2011080612
+2011-08-06 00:00:00 24
+Creating point data table for: 2011080700
+2011-08-07 00:00:00 12
+Creating point data table for: 2011080712
+2011-08-07 00:00:00 24
+Creating point data table for: 2011080800
+2011-08-08 00:00:00 12
+Creating point data table for: 2011080812
+2011-08-08 00:00:00 24
+Creating point data table for: 2011080900
+2011-08-09 00:00:00 12
+Creating point data table for: 2011080912
+2011-08-09 00:00:00 24
+Creating point data table for: 2011081000
+2011-08-10 00:00:00 12
+Creating point data table for: 2011081012
+2011-08-10 00:00:00 24
+Creating point data table for: 2011081100
+2011-08-11 00:00:00 12
+Creating point data table for: 2011081112
+2011-08-11 00:00:00 24
+Creating point data table for: 2011081200
+2011-08-12 00:00:00 12
+Creating point data table for: 2011081212
+2011-08-12 00:00:00 24
+Creating point data table for: 2011081300
+2011-08-13 00:00:00 12
+Creating point data table for: 2011081312
+2011-08-13 00:00:00 24
+Creating point data table for: 2011081400
+2011-08-14 00:00:00 12
+Creating point data table for: 2011081412
+2011-08-14 00:00:00 24
+Creating point data table for: 2011081500
+2011-08-15 00:00:00 12
+Creating point data table for: 2011081512
+2011-08-15 00:00:00 24
+Creating point data table for: 2011081600
+2011-08-16 00:00:00 12
+Creating point data table for: 2011081612
+2011-08-16 00:00:00 24
+Creating point data table for: 2011081700
+2011-08-17 00:00:00 12
+Creating point data table for: 2011081712
+2011-08-17 00:00:00 24
+Creating point data table for: 2011081800
+2011-08-18 00:00:00 12
+Creating point data table for: 2011081812
+2011-08-18 00:00:00 24
+Creating point data table for: 2011081900
+2011-08-19 00:00:00 12
+Creating point data table for: 2011081912
+2011-08-19 00:00:00 24
+Creating point data table for: 2011082000
+2011-08-20 00:00:00 12
+Creating point data table for: 2011082012
+2011-08-20 00:00:00 24
+Creating point data table for: 2011082100
+2011-08-21 00:00:00 12
+Creating point data table for: 2011082112
+2011-08-21 00:00:00 24
+Creating point data table for: 2011082200
+2011-08-22 00:00:00 12
+Creating point data table for: 2011082212
+2011-08-22 00:00:00 24
+Creating point data table for: 2011082300
+2011-08-23 00:00:00 12
+Creating point data table for: 2011082312
+2011-08-23 00:00:00 24
+Creating point data table for: 2011082400
+2011-08-24 00:00:00 12
+Creating point data table for: 2011082412
+2011-08-24 00:00:00 24
+Creating point data table for: 2011082500
+2011-08-25 00:00:00 12
+Creating point data table for: 2011082512
+2011-08-25 00:00:00 24
+Creating point data table for: 2011082600
+2011-08-26 00:00:00 12
+Creating point data table for: 2011082612
+2011-08-26 00:00:00 24
+Creating point data table for: 2011082700
+2011-08-27 00:00:00 12
+Creating point data table for: 2011082712
+2011-08-27 00:00:00 24
+Creating point data table for: 2011082800
+2011-08-28 00:00:00 12
+Creating point data table for: 2011082812
+2011-08-28 00:00:00 24
+Creating point data table for: 2011082900
+2011-08-29 00:00:00 12
+Creating point data table for: 2011082912
+2011-08-29 00:00:00 24
+Creating point data table for: 2011083000
+2011-08-30 00:00:00 12
+Creating point data table for: 2011083012
+2011-08-30 00:00:00 24
+Creating point data table for: 2011083100
+2011-08-31 00:00:00 12
+Creating point data table for: 2011083112
+2011-08-31 00:00:00 24
+Creating point data table for: 2011090100
+2011-09-01 00:00:00 12
+Creating point data table for: 2011090112
+2011-09-01 00:00:00 24
+Creating point data table for: 2011090200
+2011-09-02 00:00:00 12
+Creating point data table for: 2011090212
+2011-09-02 00:00:00 24
+Creating point data table for: 2011090300
+2011-09-03 00:00:00 12
+Creating point data table for: 2011090312
+2011-09-03 00:00:00 24
+Creating point data table for: 2011090400
+2011-09-04 00:00:00 12
+Creating point data table for: 2011090412
+2011-09-04 00:00:00 24
+Creating point data table for: 2011090500
+2011-09-05 00:00:00 12
+Creating point data table for: 2011090512
+2011-09-05 00:00:00 24
+Creating point data table for: 2011090600
+2011-09-06 00:00:00 12
+Creating point data table for: 2011090612
+2011-09-06 00:00:00 24
+Creating point data table for: 2011090700
+2011-09-07 00:00:00 12
+Creating point data table for: 2011090712
+2011-09-07 00:00:00 24
+Creating point data table for: 2011090800
+2011-09-08 00:00:00 12
+Creating point data table for: 2011090812
+2011-09-08 00:00:00 24
+Creating point data table for: 2011090900
+2011-09-09 00:00:00 12
+Creating point data table for: 2011090912
+2011-09-09 00:00:00 24
+Creating point data table for: 2011091000
+2011-09-10 00:00:00 12
+Creating point data table for: 2011091012
+2011-09-10 00:00:00 24
+Creating point data table for: 2011091100
+2011-09-11 00:00:00 12
+Creating point data table for: 2011091112
+2011-09-11 00:00:00 24
+Creating point data table for: 2011091200
+2011-09-12 00:00:00 12
+Creating point data table for: 2011091212
+2011-09-12 00:00:00 24
+Creating point data table for: 2011091300
+2011-09-13 00:00:00 12
+Creating point data table for: 2011091312
+2011-09-13 00:00:00 24
+Creating point data table for: 2011091400
+2011-09-14 00:00:00 12
+Creating point data table for: 2011091412
+2011-09-14 00:00:00 24
+Creating point data table for: 2011091500
+2011-09-15 00:00:00 12
+Creating point data table for: 2011091512
+2011-09-15 00:00:00 24
+Creating point data table for: 2011091600
+2011-09-16 00:00:00 12
+Creating point data table for: 2011091612
+2011-09-16 00:00:00 24
+Creating point data table for: 2011091700
+2011-09-17 00:00:00 12
+Creating point data table for: 2011091712
+2011-09-17 00:00:00 24
+Creating point data table for: 2011091800
+2011-09-18 00:00:00 12
+Creating point data table for: 2011091812
+2011-09-18 00:00:00 24
+Creating point data table for: 2011091900
+2011-09-19 00:00:00 12
+Creating point data table for: 2011091912
+2011-09-19 00:00:00 24
+Creating point data table for: 2011092000
+2011-09-20 00:00:00 12
+Creating point data table for: 2011092012
+2011-09-20 00:00:00 24
+Creating point data table for: 2011092100
+2011-09-21 00:00:00 12
+Creating point data table for: 2011092112
+2011-09-21 00:00:00 24
+Creating point data table for: 2011092200
+2011-09-22 00:00:00 12
+Creating point data table for: 2011092212
+2011-09-22 00:00:00 24
+Creating point data table for: 2011092300
+2011-09-23 00:00:00 12
+Creating point data table for: 2011092312
+2011-09-23 00:00:00 24
+Creating point data table for: 2011092400
+2011-09-24 00:00:00 12
+Creating point data table for: 2011092412
+2011-09-24 00:00:00 24
+Creating point data table for: 2011092500
+2011-09-25 00:00:00 12
+Creating point data table for: 2011092512
+2011-09-25 00:00:00 24
+Creating point data table for: 2011092600
+2011-09-26 00:00:00 12
+Creating point data table for: 2011092612
+2011-09-26 00:00:00 24
+Creating point data table for: 2011092700
+2011-09-27 00:00:00 12
+Creating point data table for: 2011092712
+2011-09-27 00:00:00 24
+Creating point data table for: 2011092800
+2011-09-28 00:00:00 12
+Creating point data table for: 2011092812
+2011-09-28 00:00:00 24
+Creating point data table for: 2011092900
+2011-09-29 00:00:00 12
+Creating point data table for: 2011092912
+2011-09-29 00:00:00 24
+Creating point data table for: 2011093000
+2011-09-30 00:00:00 12
+Creating point data table for: 2011093012
+2011-09-30 00:00:00 24
+Creating point data table for: 2011100100
+2011-10-01 00:00:00 12
+Creating point data table for: 2011100112
+2011-10-01 00:00:00 24
+Creating point data table for: 2011100200
+2011-10-02 00:00:00 12
+Creating point data table for: 2011100212
+2011-10-02 00:00:00 24
+Creating point data table for: 2011100300
+2011-10-03 00:00:00 12
+Creating point data table for: 2011100312
+2011-10-03 00:00:00 24
+Creating point data table for: 2011100400
+2011-10-04 00:00:00 12
+Creating point data table for: 2011100412
+2011-10-04 00:00:00 24
+Creating point data table for: 2011100500
+2011-10-05 00:00:00 12
+Creating point data table for: 2011100512
+2011-10-05 00:00:00 24
+Creating point data table for: 2011100600
+2011-10-06 00:00:00 12
+Creating point data table for: 2011100612
+2011-10-06 00:00:00 24
+Creating point data table for: 2011100700
+2011-10-07 00:00:00 12
+Creating point data table for: 2011100712
+2011-10-07 00:00:00 24
+Creating point data table for: 2011100800
+2011-10-08 00:00:00 12
+Creating point data table for: 2011100812
+2011-10-08 00:00:00 24
+Creating point data table for: 2011100900
+2011-10-09 00:00:00 12
+Creating point data table for: 2011100912
+2011-10-09 00:00:00 24
+Creating point data table for: 2011101000
+2011-10-10 00:00:00 12
+Creating point data table for: 2011101012
+2011-10-10 00:00:00 24
+Creating point data table for: 2011101100
+2011-10-11 00:00:00 12
+Creating point data table for: 2011101112
+2011-10-11 00:00:00 24
+Creating point data table for: 2011101200
+2011-10-12 00:00:00 12
+Creating point data table for: 2011101212
+2011-10-12 00:00:00 24
+Creating point data table for: 2011101300
+2011-10-13 00:00:00 12
+Creating point data table for: 2011101312
+2011-10-13 00:00:00 24
+Creating point data table for: 2011101400
+2011-10-14 00:00:00 12
+Creating point data table for: 2011101412
+2011-10-14 00:00:00 24
+Creating point data table for: 2011101500
+2011-10-15 00:00:00 12
+Creating point data table for: 2011101512
+2011-10-15 00:00:00 24
+Creating point data table for: 2011101600
+2011-10-16 00:00:00 12
+Creating point data table for: 2011101612
+2011-10-16 00:00:00 24
+Creating point data table for: 2011101700
+2011-10-17 00:00:00 12
+Creating point data table for: 2011101712
+2011-10-17 00:00:00 24
+Creating point data table for: 2011101800
+2011-10-18 00:00:00 12
+Creating point data table for: 2011101812
+2011-10-18 00:00:00 24
+Creating point data table for: 2011101900
+2011-10-19 00:00:00 12
+Creating point data table for: 2011101912
+2011-10-19 00:00:00 24
+Creating point data table for: 2011102000
+2011-10-20 00:00:00 12
+Creating point data table for: 2011102012
+2011-10-20 00:00:00 24
+Creating point data table for: 2011102100
+2011-10-21 00:00:00 12
+Creating point data table for: 2011102112
+2011-10-21 00:00:00 24
+Creating point data table for: 2011102200
+2011-10-22 00:00:00 12
+Creating point data table for: 2011102212
+2011-10-22 00:00:00 24
+Creating point data table for: 2011102300
+2011-10-23 00:00:00 12
+Creating point data table for: 2011102312
+2011-10-23 00:00:00 24
+Creating point data table for: 2011102400
+2011-10-24 00:00:00 12
+Creating point data table for: 2011102412
+2011-10-24 00:00:00 24
+Creating point data table for: 2011102500
+2011-10-25 00:00:00 12
+Creating point data table for: 2011102512
+2011-10-25 00:00:00 24
+Creating point data table for: 2011102600
+2011-10-26 00:00:00 12
+Creating point data table for: 2011102612
+2011-10-26 00:00:00 24
+Creating point data table for: 2011102700
+2011-10-27 00:00:00 12
+Creating point data table for: 2011102712
+2011-10-27 00:00:00 24
+Creating point data table for: 2011102800
+2011-10-28 00:00:00 12
+Creating point data table for: 2011102812
+2011-10-28 00:00:00 24
+Creating point data table for: 2011102900
+2011-10-29 00:00:00 12
+Creating point data table for: 2011102912
+2011-10-29 00:00:00 24
+Creating point data table for: 2011103000
+2011-10-30 00:00:00 12
+Creating point data table for: 2011103012
+2011-10-30 00:00:00 24
+Creating point data table for: 2011103100
+2011-10-31 00:00:00 12
+Creating point data table for: 2011103112
+2011-10-31 00:00:00 24
+Creating point data table for: 2011110100
+2011-11-01 00:00:00 12
+Creating point data table for: 2011110112
+2011-11-01 00:00:00 24
+Creating point data table for: 2011110200
+2011-11-02 00:00:00 12
+Creating point data table for: 2011110212
+2011-11-02 00:00:00 24
+Creating point data table for: 2011110300
+2011-11-03 00:00:00 12
+Creating point data table for: 2011110312
+2011-11-03 00:00:00 24
+Creating point data table for: 2011110400
+2011-11-04 00:00:00 12
+Creating point data table for: 2011110412
+2011-11-04 00:00:00 24
+Creating point data table for: 2011110500
+2011-11-05 00:00:00 12
+Creating point data table for: 2011110512
+2011-11-05 00:00:00 24
+Creating point data table for: 2011110600
+2011-11-06 00:00:00 12
+Creating point data table for: 2011110612
+2011-11-06 00:00:00 24
+Creating point data table for: 2011110700
+2011-11-07 00:00:00 12
+Creating point data table for: 2011110712
+2011-11-07 00:00:00 24
+Creating point data table for: 2011110800
+2011-11-08 00:00:00 12
+Creating point data table for: 2011110812
+2011-11-08 00:00:00 24
+Creating point data table for: 2011110900
+2011-11-09 00:00:00 12
+Creating point data table for: 2011110912
+2011-11-09 00:00:00 24
+Creating point data table for: 2011111000
+2011-11-10 00:00:00 12
+Creating point data table for: 2011111012
+2011-11-10 00:00:00 24
+Creating point data table for: 2011111100
+2011-11-11 00:00:00 12
+Creating point data table for: 2011111112
+2011-11-11 00:00:00 24
+Creating point data table for: 2011111200
+2011-11-12 00:00:00 12
+Creating point data table for: 2011111212
+2011-11-12 00:00:00 24
+Creating point data table for: 2011111300
+2011-11-13 00:00:00 12
+Creating point data table for: 2011111312
+2011-11-13 00:00:00 24
+Creating point data table for: 2011111400
+2011-11-14 00:00:00 12
+Creating point data table for: 2011111412
+2011-11-14 00:00:00 24
+Creating point data table for: 2011111500
+2011-11-15 00:00:00 12
+Creating point data table for: 2011111512
+2011-11-15 00:00:00 24
+Creating point data table for: 2011111600
+2011-11-16 00:00:00 12
+Creating point data table for: 2011111612
+2011-11-16 00:00:00 24
+Creating point data table for: 2011111700
+2011-11-17 00:00:00 12
+Creating point data table for: 2011111712
+2011-11-17 00:00:00 24
+Creating point data table for: 2011111800
+2011-11-18 00:00:00 12
+Creating point data table for: 2011111812
+2011-11-18 00:00:00 24
+Creating point data table for: 2011111900
+2011-11-19 00:00:00 12
+Creating point data table for: 2011111912
+2011-11-19 00:00:00 24
+Creating point data table for: 2011112000
+2011-11-20 00:00:00 12
+Creating point data table for: 2011112012
+2011-11-20 00:00:00 24
+Creating point data table for: 2011112100
+2011-11-21 00:00:00 12
+Creating point data table for: 2011112112
+2011-11-21 00:00:00 24
+Creating point data table for: 2011112200
+2011-11-22 00:00:00 12
+Creating point data table for: 2011112212
+2011-11-22 00:00:00 24
+Creating point data table for: 2011112300
+2011-11-23 00:00:00 12
+Creating point data table for: 2011112312
+2011-11-23 00:00:00 24
+Creating point data table for: 2011112400
+2011-11-24 00:00:00 12
+Creating point data table for: 2011112412
+2011-11-24 00:00:00 24
+Creating point data table for: 2011112500
+2011-11-25 00:00:00 12
+Creating point data table for: 2011112512
+2011-11-25 00:00:00 24
+Creating point data table for: 2011112600
+2011-11-26 00:00:00 12
+Creating point data table for: 2011112612
+2011-11-26 00:00:00 24
+Creating point data table for: 2011112700
+2011-11-27 00:00:00 12
+Creating point data table for: 2011112712
+2011-11-27 00:00:00 24
+Creating point data table for: 2011112800
+2011-11-28 00:00:00 12
+Creating point data table for: 2011112812
+2011-11-28 00:00:00 24
+Creating point data table for: 2011112900
+2011-11-29 00:00:00 12
+Creating point data table for: 2011112912
+2011-11-29 00:00:00 24
+Creating point data table for: 2011113000
+2011-11-30 00:00:00 12
+Creating point data table for: 2011113012
+2011-11-30 00:00:00 24
+Creating point data table for: 2011120100
+2011-12-01 00:00:00 12
+Creating point data table for: 2011120112
+2011-12-01 00:00:00 24
+Creating point data table for: 2011120200
+2011-12-02 00:00:00 12
+Creating point data table for: 2011120212
+2011-12-02 00:00:00 24
+Creating point data table for: 2011120300
+2011-12-03 00:00:00 12
+Creating point data table for: 2011120312
+2011-12-03 00:00:00 24
+Creating point data table for: 2011120400
+2011-12-04 00:00:00 12
+Creating point data table for: 2011120412
+2011-12-04 00:00:00 24
+Creating point data table for: 2011120500
+2011-12-05 00:00:00 12
+Creating point data table for: 2011120512
+2011-12-05 00:00:00 24
+Creating point data table for: 2011120600
+2011-12-06 00:00:00 12
+Creating point data table for: 2011120612
+2011-12-06 00:00:00 24
+Creating point data table for: 2011120700
+2011-12-07 00:00:00 12
+Creating point data table for: 2011120712
+2011-12-07 00:00:00 24
+Creating point data table for: 2011120800
+2011-12-08 00:00:00 12
+Creating point data table for: 2011120812
+2011-12-08 00:00:00 24
+Creating point data table for: 2011120900
+2011-12-09 00:00:00 12
+Creating point data table for: 2011120912
+2011-12-09 00:00:00 24
+Creating point data table for: 2011121000
+2011-12-10 00:00:00 12
+Creating point data table for: 2011121012
+2011-12-10 00:00:00 24
+Creating point data table for: 2011121100
+2011-12-11 00:00:00 12
+Creating point data table for: 2011121112
+2011-12-11 00:00:00 24
+Creating point data table for: 2011121200
+2011-12-12 00:00:00 12
+Creating point data table for: 2011121212
+2011-12-12 00:00:00 24
+Creating point data table for: 2011121300
+2011-12-13 00:00:00 12
+Creating point data table for: 2011121312
+2011-12-13 00:00:00 24
+Creating point data table for: 2011121400
+2011-12-14 00:00:00 12
+Creating point data table for: 2011121412
+2011-12-14 00:00:00 24
+Creating point data table for: 2011121500
+2011-12-15 00:00:00 12
+Creating point data table for: 2011121512
+2011-12-15 00:00:00 24
+Creating point data table for: 2011121600
+2011-12-16 00:00:00 12
+Creating point data table for: 2011121612
+2011-12-16 00:00:00 24
+Creating point data table for: 2011121700
+2011-12-17 00:00:00 12
+Creating point data table for: 2011121712
+2011-12-17 00:00:00 24
+Creating point data table for: 2011121800
+2011-12-18 00:00:00 12
+Creating point data table for: 2011121812
+2011-12-18 00:00:00 24
+Creating point data table for: 2011121900
+2011-12-19 00:00:00 12
+Creating point data table for: 2011121912
+2011-12-19 00:00:00 24
+Creating point data table for: 2011122000
+2011-12-20 00:00:00 12
+Creating point data table for: 2011122012
+2011-12-20 00:00:00 24
+Creating point data table for: 2011122100
+2011-12-21 00:00:00 12
+Creating point data table for: 2011122112
+2011-12-21 00:00:00 24
+Creating point data table for: 2011122200
+2011-12-22 00:00:00 12
+Creating point data table for: 2011122212
+2011-12-22 00:00:00 24
+Creating point data table for: 2011122300
+2011-12-23 00:00:00 12
+Creating point data table for: 2011122312
+2011-12-23 00:00:00 24
+Creating point data table for: 2011122400
+2011-12-24 00:00:00 12
+Creating point data table for: 2011122412
+2011-12-24 00:00:00 24
+Creating point data table for: 2011122500
+2011-12-25 00:00:00 12
+Creating point data table for: 2011122512
+2011-12-25 00:00:00 24
+Creating point data table for: 2011122600
+2011-12-26 00:00:00 12
+Creating point data table for: 2011122612
+2011-12-26 00:00:00 24
+Creating point data table for: 2011122700
+2011-12-27 00:00:00 12
+Creating point data table for: 2011122712
+2011-12-27 00:00:00 24
+Creating point data table for: 2011122800
+2011-12-28 00:00:00 12
+Creating point data table for: 2011122812
+2011-12-28 00:00:00 24
+Creating point data table for: 2011122900
+2011-12-29 00:00:00 12
+Creating point data table for: 2011122912
+2011-12-29 00:00:00 24
+Creating point data table for: 2011123000
+2011-12-30 00:00:00 12
+Creating point data table for: 2011123012
+2011-12-30 00:00:00 24
+Creating point data table for: 2011123100
+2011-12-31 00:00:00 12
+Creating point data table for: 2011123112
+2011-12-31 00:00:00 24
+Creating point data table for: 2012010100
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2024-03-05T18:39:55 on aa
+[ECMWF-INFO -ecepilog] JobName                   : PDT_Year
+[ECMWF-INFO -ecepilog] JobID                     : 13918866
+[ECMWF-INFO -ecepilog] Submit                    : 2024-03-05T17:27:11
+[ECMWF-INFO -ecepilog] Start                     : 2024-03-05T17:27:29
+[ECMWF-INFO -ecepilog] End                       : 2024-03-05T18:39:55
+[ECMWF-INFO -ecepilog] QueuedTime                : 18.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 4346
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : ecodmdmo
+[ECMWF-INFO -ecepilog] QOS                       : nf
+[ECMWF-INFO -ecepilog] User                      : mofp
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918866.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/PDT_Year-13918866.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 64
+[ECMWF-INFO -ecepilog] SBU                       : 659.188
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+
