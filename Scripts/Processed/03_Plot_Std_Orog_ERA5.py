@@ -1,7 +1,7 @@
 import os
 import metview as mv
 
-###########################################################################
+#####################################################################################################
 # CODE DESCRIPTION
 # 03_Plot_Std_Orog_ERA5.py plots the standard deviation of sub-gridscale orography 
 # from ERA5 (at 31 km resolution)
@@ -11,7 +11,8 @@ import metview as mv
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path
 # FileIN_Mask (string): relative path where the US mask is stored.
-# DirOUT (string): relative path where to store the plot 
+# FileIN (string): relative path of the file containing the standard deviation of the sub-grid scale orography.
+# DirOUT (string): relative path of the directory containing the plot of the standard deviation of the sub-grid scale orography.
 
 # INPUT PARAMETERS
 Mask_Domain = [22,-130,52,-60]
@@ -19,14 +20,14 @@ Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_US
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 FileIN = "Data/Raw/Analysis/ERA5/sdor/sdor.grib"
 DirOUT = "Data/Plot/03_Std_Orog_ERA5"
-###########################################################################
+#####################################################################################################
 
 
 # Retrieving the standard deviation of sub-gridscale orography
 print("Reading the standard deviation of sub-gridscale orography...")
 sdor = mv.read(Git_Repo + "/" + FileIN)
 
-# Reading USA's domain
+# Reading US mask
 print("Reading the US domain ...")
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask = mv.bitmap(mask,0) # bitmap the values outside the domain

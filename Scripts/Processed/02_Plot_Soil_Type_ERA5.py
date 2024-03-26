@@ -10,7 +10,7 @@ import metview as mv
 # INPUT PARAMETERS DESCRIPTION
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path
-# FileIN_Mask (string): relative path where the USA's mask is stored.
+# FileIN_Mask (string): relative path where the US mask is stored.
 # DirOUT (string): relative path where to store the plot 
 
 # INPUT PARAMETERS
@@ -33,7 +33,7 @@ slt = mv.retrieve(
      "time" : "00:00:00"
     })
 
-# Reading USA's domain
+# Reading US mask
 print("Reading the US domain ...")
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask = mv.bitmap(mask,0) # bitmap the values outside the domain

@@ -1,0 +1,1 @@
+These training was done using all available predictors but excluding all flash flood reports from one side (i.e. the east) to assess how the model performs in areas where it has never seen reports.

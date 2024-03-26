@@ -14,7 +14,7 @@ import metview as mv
 # City_Lats ( list of floats): latitudes of the 20 most important cities in the US.
 # City_Lons ( list of floats): longitudes of the 20 most important cities in the US.
 # Git_Repo (string): repository's local path
-# FileIN_Mask (string): relative path where the USA's mask is stored.
+# FileIN_Mask (string): relative path where the US mask is stored.
 # DirOUT (string): relative path where to store the plot 
 
 # INPUT PARAMETERS
@@ -31,7 +31,7 @@ DirOUT = "Data/Plot/01_Orog_1km"
 print("Reading the orography values...")
 orog = mv.read("/home/rdx/data/climate/climate.v021/15999l_2/orog") * 1 # multiplying by 1 to eliminate the automatic scale of the values
 
-# Reading US domain
+# Reading US mask
 print("Reading the US domain ...")
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask = mv.bitmap(mask,0) # bitmap the values outside the domain

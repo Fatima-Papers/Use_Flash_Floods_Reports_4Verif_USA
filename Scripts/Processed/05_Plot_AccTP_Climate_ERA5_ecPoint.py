@@ -2,15 +2,16 @@ import os
 import numpy as np
 import metview as mv
 
-############################################################################
+#####################################################################################
 # CODE DESCRIPTION
-# 05_Plot_AccTP_Climate_ERA5_ecPoint.py plots the rainfall climatology from ERA5-ecPoint 
-# for the considered accumulation period.
-# Runtime: negligible.
+# 05_Plot_AccTP_Climate_ERA5_ecPoint.py plots the rainfall climatology from ERA5-ecPoint, for 
+# different return periods and for a specific rainfall accumulation period.
+# Runtime: the script takes up to 30 seconds to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Acc (integer, in hours): rainfall's accumulation period.
 # Perc2Plot_list (list of floats): list of percentiles to plot.
+# YearRP_list (list of integers): list of the years return period corresponding to the considered percentiles.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path.
 # FileIN_Mask (string): relative path of the file containing ERA5's mask for USA.
@@ -31,26 +32,30 @@ import metview as mv
 # INPUT PARAMETERS
 Acc = 12
 Perc2Plot_list = [99.8, 99.9, 99.95, 99.98, 99.99, 99.995, 99.998]
+YearRP_list = [1, 2, 5, 10, 20, 50, 100]
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 DirIN = "Data/Raw/Analysis/ERA5_ecPoint/tp_climate"
 DirOUT = "Data/Plot/05_AccTP_Climate_ERA5_ecPoint"
-############################################################################
+#####################################################################################
 
 # Reading the domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 
 # Reading the rainfall climatology and the computed percentiles 
 climate = mv.read(Git_Repo + "/" + DirIN + "/tp_climate_" + f"{Acc:02}" + "h_ERA5_ecPoint.grib")
-percs_computed = np.load(Git_Repo + "/" + DirIN + "/percs_computed_4_tp_climate.npy")
+percs_computed = np.load(Git_Repo + "/" + DirIN + "/percs.npy")
 
 # Select the percentiles to plot
 print("Creating and saving plot of " + str(Acc) + "-hourly rainfall climatology for the:")
 
-for Perc2Plot in Perc2Plot_list:
+for ind_perc in range(len(Perc2Plot_list)):
 
-    print(" - " + str(Perc2Plot) + "th percentile")
+    Perc2Plot = Perc2Plot_list[ind_perc]
+    YearRP = YearRP_list[ind_perc]
+
+    print(" - " + str(Perc2Plot) + "th percentile (" + str(YearRP) + "-year return period)")
 
     # Select the percentile to plot
     ind_Perc = np.where(percs_computed == Perc2Plot)[0][0]
@@ -62,21 +67,21 @@ for Perc2Plot in Perc2Plot_list:
     # Plot the rainfall climatology
     coastlines = mv.mcoast(
         map_coastline_colour = "charcoal",
-        map_coastline_thickness = 1,
-        map_coastline_resolution = "high",
+        map_coastline_thickness = 2,
+        map_coastline_resolution = "full",
         map_coastline_sea_shade = "on",
-        map_coastline_sea_shade_colour = "RGB(0.7398,0.9465,0.943)",
+        map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
         map_boundaries = "on",
         map_boundaries_colour = "charcoal",
-        map_boundaries_thickness = 1,
-        map_grid_latitude_increment = 5,
-        map_grid_longitude_increment = 10,
+        map_boundaries_thickness = 2,
+        map_grid_latitude_increment = 10,
+        map_grid_longitude_increment = 20,
         map_label_right = "off",
         map_label_top = "off",
         map_label_colour = "charcoal",
         map_grid_thickness = 1,
         map_grid_colour = "charcoal",
-        map_label_height = 0.5
+        map_label_height = 0.7
         )
 
     geo_view = mv.geoview(
@@ -105,7 +110,7 @@ for Perc2Plot in Perc2Plot_list:
 
     title = mv.mtext(
         text_line_count = 2,
-        text_line_1 = "Climatology from ERA5-ecPoint for " + str(Acc) + "h rainfall - " + str(Perc2Plot) + "th  percentile",
+        text_line_1 = "Climatology from ERA5-ecPoint for " + str(Acc) + "h rainfall - " + str(Perc2Plot) + "th  percentile (" + str(YearRP) + "-year return period)",
         text_line_2 = " ",
         text_colour = "charcoal",
         text_font_size = 0.75
@@ -116,6 +121,6 @@ for Perc2Plot in Perc2Plot_list:
     if not os.path.exists(DirOUT_temp):
         os.makedirs(DirOUT_temp)
     FileOUT = DirOUT_temp + "/tp" + f"{Acc:02}" + "h_climate_" + str(Perc2Plot) + "th"
-    png = mv.png_output(output_name = FileOUT)
+    png = mv.png_output(output_width = 5000, output_name = FileOUT)
     mv.setoutput(png)
     mv.plot(geo_view, climate_perc_mask, contouring, legend, title)
