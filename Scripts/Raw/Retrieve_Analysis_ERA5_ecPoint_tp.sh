@@ -4,7 +4,7 @@
 # CODE DESCRIPTION
 # Retrieve_Analysis_ERA5_ecPoint_tp.sh retrieves from disk the 12-hourly rainfall from 
 # ERA5-ecPoint.  
-# Runtime: the code can take up to 31 hours to run in series.
+# Runtime: the code can take up to 12 hours to run in series.
 
 # INPUT PARAMETERS DESCRIPTION
 # YearS (date, in YYYY format): start year to retrieve.
