@@ -25,15 +25,15 @@ mkdir -p ${MainDirOUT}
 mars <<EOF
 
     retrieve,
-        class=od,
-        date=0,
+        class=ea,
+        date=19400101,
         expver=1,
         levtype=sfc,
         param=160.128,
         step=0,
-        stream=enfo,
+        stream=oper,
         time=0,
-        type=cf,
+        type=an,
         target="${MainDirOUT}/${FileNameOUT}"
 
 EOF
