@@ -15,7 +15,7 @@
 # DirOUT (string): relative path containing the retrieved forecasts.
 
 # INPUT PARAMETERS
-YearS=1996
+YearS=2005
 YearF=2021
 Acc=12
 Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
@@ -29,11 +29,11 @@ AccSTR=$(printf %02d ${Acc})
 # Setting output directory
 DirOUT_temp=${Git_Repo}/${DirOUT}
 mkdir -p ${DirOUT_temp}/Pt_BC_PERC
-mkdir -p ${DirOUT_temp}/WT
+mkdir -p ${DirOUT_temp}/Grid_BC_VALS
 
 # Retrieving the ERA5_ecPoint data
 for Year in $(seq ${YearS} ${YearF}); do
     echo "Retrieving ERA5_ecPoint for ${Year}"
     cp -r ${DirIN}/Rainfall_${AccSTR}h/Pt_BC_PERC/${Year}* ${DirOUT_temp}/Pt_BC_PERC
-    cp -r ${DirIN}/Rainfall_${AccSTR}h/WT/${Year}* ${DirOUT_temp}/WT
+    cp -r ${DirIN}/Rainfall_${AccSTR}h/Grid_BC_VALS/${Year}* ${DirOUT_temp}/Grid_BC_VALS
 done
