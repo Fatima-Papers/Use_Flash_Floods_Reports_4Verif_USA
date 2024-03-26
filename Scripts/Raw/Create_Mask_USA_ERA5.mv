@@ -2,9 +2,9 @@
 
 ###########################################################################
 # CODE DESCRIPTION
-# Create_Mask_USA_ERA5.mv creates the mask for the USA's domain from the ERA5 grid
-# (31 km resolution), and saves it as a grib file. The code needs to be run only once to create 
-# the mask. The code is kept for reproducibility purposes.
+# Create_Mask_USA_ERA5.mv creates the US mask for the ERA5 grid at 31 km resolution, 
+# and saves it as a grib file. The code needs to be run only once to create the mask. The code
+# is kept for reproducibility purposes.
 # Runtime: negligible.
 
 # INPUT PARAMETERS DESCRIPTION

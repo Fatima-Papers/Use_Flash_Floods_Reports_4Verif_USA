@@ -3,8 +3,8 @@
 ###########################################################################
 # CODE DESCRIPTION
 # Create_Mask_USA_1km.mv creates the US mask for a reduced-gaussian grid at 1 km 
-# resolution, and saves it as a grib file. The code needs to be run only once to create 
-# the mask. The code is kept for reproducibility purposes.
+# resolution, and saves it as a grib file. The code needs to be run only once to create the 
+# mask. The code is kept for reproducibility purposes.
 # Runtime: the code takes up to 30 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
