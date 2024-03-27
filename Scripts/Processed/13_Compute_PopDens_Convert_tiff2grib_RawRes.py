@@ -6,7 +6,7 @@ from eccodes import *
 
 ################################################################################
 # CODE DESCRIPTION
-# 09_Compute_PopDens_Convert_tiff2grib_RawRes.py converts NASA's population density (at  
+# 13_Compute_PopDens_Convert_tiff2grib_RawRes.py converts NASA's population density (at  
 # different resolutions) from geotiff to grib2.
 # Runtime: the runtime of the code varies significantly according to the resolution of the raw data. 
 # It can take up to 10 seconds to run in serial for raw data with 15min resolution (30 km), and up 
@@ -28,7 +28,7 @@ Disc_Year = 5
 Grid_Raw = "30_sec"
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/OBS/NASA_PopDens"
-DirOUT = "Data/Compute/09_PopDens_Convert_tiff2grib_RawRes"
+DirOUT = "Data/Compute/13_PopDens_Convert_tiff2grib_RawRes"
 ################################################################################
 
 for Year in range(Year_S, Year_F+1, Disc_Year):

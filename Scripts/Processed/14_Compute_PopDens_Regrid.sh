@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#SBATCH --job-name=Regrid
-#SBATCH --output=LogATOS/Regrid-%J.out
-#SBATCH --error=LogATOS/Regrid-%J.out
+#SBATCH --job-name=PopDens_Regrid
+#SBATCH --output=LogATOS/PopDens_Regrid-%J.out
+#SBATCH --error=LogATOS/PopDens_Regrid-%J.out
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=128G
 #SBATCH --time=2-00:00:00
@@ -12,7 +12,7 @@
 
 ################################################################################
 # CODE DESCRIPTION
-# 10_Compute_PopDens_Regrid.py regrid the original NASA's population density (at different
+# 14_Compute_PopDens_Regrid.py regrid the original NASA's population density (at different
 # resolutions) to the required grid resolution.
 # Runtime: the code can take up to 30 minutes to run in serial.
 
@@ -33,8 +33,8 @@ Grid_New="N320"
 Interpolation_type="grid-box-statistics"
 Interpolation_tats="maximum"
 Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
-DirIN="Data/Compute/09_PopDens_Convert_tiff2grib_RawRes"
-DirOUT="Data/Compute/10_PopDens_Regrid"
+DirIN="Data/Compute/13_PopDens_Convert_tiff2grib_RawRes"
+DirOUT="Data/Compute/14_PopDens_Regrid"
 ################################################################################
 
 # Loading the needed libraries for the regrid

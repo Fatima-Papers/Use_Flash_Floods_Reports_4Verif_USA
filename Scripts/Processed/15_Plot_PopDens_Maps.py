@@ -3,7 +3,7 @@ import metview as mv
 
 ###############################################################################
 # CODE DESCRIPTION
-# 11_Plot_PopDens_Maps.py plots population density.
+# 15_Plot_PopDens_Maps.py plots population density.
 # Runtime: negligible.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -25,8 +25,8 @@ Grid = "N320"
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
-DirIN = "Data/Compute/10_PopDens_Regrid"
-DirOUT = "Data/Plot/11_PopDens_Maps"
+DirIN = "Data/Compute/14_PopDens_Regrid"
+DirOUT = "Data/Plot/15_PopDens_Maps"
 ###############################################################################
 
 
@@ -49,21 +49,21 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
     # Plotting the population density
     coastlines = mv.mcoast(
         map_coastline_colour = "charcoal",
-        map_coastline_thickness = 1,
-        map_coastline_resolution = "high",
+        map_coastline_thickness = 2,
+        map_coastline_resolution = "full",
         map_coastline_sea_shade = "on",
-        map_coastline_sea_shade_colour = "RGB(0.7398,0.9465,0.943)",
+        map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
         map_boundaries = "on",
         map_boundaries_colour = "charcoal",
-        map_boundaries_thickness = 1,
-        map_grid_latitude_increment = 5,
-        map_grid_longitude_increment = 10,
+        map_boundaries_thickness = 4,
+        map_grid_latitude_increment = 10,
+        map_grid_longitude_increment = 20,
         map_label_right = "off",
         map_label_top = "off",
         map_label_colour = "charcoal",
         map_grid_thickness = 1,
         map_grid_colour = "charcoal",
-        map_label_height = 0.5
+        map_label_height = 0.7
         )
 
     geo_view = mv.geoview(
@@ -116,6 +116,6 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
     if not os.path.exists(MainDirOUT):
         os.makedirs(MainDirOUT)
     FileOUT = MainDirOUT + "/PopDens_" + Grid + "_" + str(Year)
-    png = mv.png_output(output_name = FileOUT)
+    png = mv.png_output(output_width = 5000, output_name = FileOUT)
     mv.setoutput(png)
     mv.plot(geo_view, pop_dens_mask, contouring, legend, title)
