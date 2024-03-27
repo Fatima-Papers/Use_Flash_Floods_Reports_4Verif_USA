@@ -22,7 +22,7 @@ Year = int(sys.argv[1])
 Disc_Time = 12
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
-FileIN_Mask = "Data/Raw/Mask/USA_ERA5_Land/Mask.grib"
+FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 DirIN = "Data/Compute/11_Percentage_Soil_Saturation"
 DirOUT = "Data/Plot/12_Percentage_Soil_Saturation"
 ##############################################################################################
