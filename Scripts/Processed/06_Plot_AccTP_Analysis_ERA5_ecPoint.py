@@ -28,7 +28,7 @@ Perc = 99
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
-DirIN = "Data/Raw/Analysis/ERA5_ecPoint"
+DirIN = "Data/Raw/Analysis/ERA5_ecPoint/tp"
 DirOUT = "Data/Plot/06_AccTP_Analysis_ERA5_ecPoint"
 ###########################################################################
 
@@ -53,7 +53,7 @@ while TheDate <= Date_F:
             TheDateTime_Final = TheDate + timedelta(hours=EndPeriod)
             print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
 
-            tp = mv.read(Git_Repo + "/" + DirIN + "/tp/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + str(EndPeriod) + ".grib2")
+            tp = mv.read(Git_Repo + "/" + DirIN + "/Pt_BC_PERC/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + str(EndPeriod) + ".grib2")
             tp_perc = tp[Perc-1]
             tp_perc_bitmap = mv.bitmap(tp_perc, mask_bitmap)
 
@@ -74,21 +74,21 @@ while TheDate <= Date_F:
             # Plot the rainfall climatology
             coastlines = mv.mcoast(
                   map_coastline_colour = "charcoal",
-                  map_coastline_thickness = 1,
-                  map_coastline_resolution = "high",
+                  map_coastline_thickness = 2,
+                  map_coastline_resolution = "full",
                   map_coastline_sea_shade = "on",
-                  map_coastline_sea_shade_colour = "RGB(0.7398,0.9465,0.943)",
+                  map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
                   map_boundaries = "on",
                   map_boundaries_colour = "charcoal",
-                  map_boundaries_thickness = 1,
-                  map_grid_latitude_increment = 5,
-                  map_grid_longitude_increment = 10,
+                  map_boundaries_thickness = 4,
+                  map_grid_latitude_increment = 10,
+                  map_grid_longitude_increment = 20,
                   map_label_right = "off",
                   map_label_top = "off",
                   map_label_colour = "charcoal",
                   map_grid_thickness = 1,
                   map_grid_colour = "charcoal",
-                  map_label_height = 0.5
+                  map_label_height = 0.7
                   )
 
             geo_view = mv.geoview(
@@ -129,7 +129,7 @@ while TheDate <= Date_F:
             if not os.path.exists(DirOUT_temp):
                   os.makedirs(DirOUT_temp)
             FileOUT = DirOUT_temp + "/tp" + str(Acc) + "h_" + str(Perc) + "th_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H")
-            png = mv.png_output(output_name = FileOUT)
+            png = mv.png_output(output_width = 5000, output_name = FileOUT)
             mv.setoutput(png)
             mv.plot(geo_view, tp_perc_bitmap, contouring, legend, title)
 

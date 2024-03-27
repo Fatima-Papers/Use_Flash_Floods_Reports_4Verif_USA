@@ -6,9 +6,9 @@ import metview as mv
 
 #######################################################################################
 # CODE DESCRIPTION
-# 07_Compute_ClassRP_AccTP.py computes the return period class for the 99th percentile of accumulated 
-# rainfall from ERA5-ecPoint.
-# Runtime: the code takes up to 90 minutes to run in serial.
+# 07_Compute_ClassRP_AccTP.py computes the return period class for the extreme (e.g. the 99th 
+# percentile) accumulated rainfall from ERA5-ecPoint.
+# Runtime: the code takes up to 60 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
@@ -20,7 +20,7 @@ import metview as mv
 # Git_Repo (string): repository's local path.
 # DirIN_Climate (string): relative path of the directory containing the rainfall thresholds.
 # DirIN_Analaysis (string): relative path of the directory containing the ERA5-ecPoint rainfall analaysis.
-# DirOUT (string): relative path of the directory containing the class for the 99th percentile.
+# DirOUT (string): relative path of the directory containing the return period class for the extreme rainfall.
 
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
@@ -42,14 +42,11 @@ print("Reading the climatology of " + str() + "-hourly rainfall")
 climate_tp = mv.read(Git_Repo + "/" + DirIN_Climate + "/tp_climate_" + f"{Acc:02}" + "h_ERA5_ecPoint.grib")
 climate_percs = np.load(Git_Repo + "/" + DirIN_Climate + "/percs.npy")
 
-
-# Computing the return period class for the 99th percentile of accumulated rainfall from ERA5-ecPoint.
+# Computing the return period class for the extreme accumulated rainfall from ERA5-ecPoint.
 print()
-print("Computing the return period class for the 99th percentile of  " + str() + "-hourly rainfall from ERA5-ecPoint, ending:")
-
+print("Computing the return period class for the extreme  " + f"{Acc:02}" + "-hourly rainfall from ERA5-ecPoint, ending:")
 Date_S = datetime(Year,1,1,0)
 Date_F = datetime(Year,12,31,0)
-
 TheDate = Date_S
 while TheDate <= Date_F:
 
@@ -87,7 +84,7 @@ while TheDate <= Date_F:
             DirOUT_temp = Git_Repo + "/" + DirOUT + "/" + TheDateTime_Final.strftime("%Y%m")
             if not os.path.exists(DirOUT_temp):
                   os.makedirs(DirOUT_temp)
-            FileOUT = DirOUT_temp + "/ClassRP_" + str(Acc) + "h_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
+            FileOUT = DirOUT_temp + "/ClassRP_" + f"{Acc:02}" + "h_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
             mv.write(FileOUT, classRP)
 
       TheDate = TheDate + timedelta(days=1)

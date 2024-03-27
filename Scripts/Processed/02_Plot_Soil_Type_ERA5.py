@@ -88,7 +88,7 @@ legend = mv.mlegend(
     legend_display_type = "disjoint",
     legend_text_composition = "user_text_only",
     legend_user_lines = ["coarse","medium","medium fine","fine","very fine","organic","tropical organic"],
-    legend_entry_text_width = 90.00,
+    legend_entry_text_width = 50.00,
     )
 
 title = mv.mtext(

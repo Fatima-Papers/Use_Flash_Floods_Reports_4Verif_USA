@@ -1,1 +1,0 @@
-These training was done using the full dataset, i.e. all available flash flood reports and predictors.

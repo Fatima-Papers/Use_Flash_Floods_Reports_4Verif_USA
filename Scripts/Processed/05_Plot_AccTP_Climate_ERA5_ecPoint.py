@@ -20,19 +20,16 @@ import metview as mv
 
 # NOTES
 # The percentiles correspond roughly to the following return periods:
-# 99th -> 3 times in a year
-# 99.8th -> once in 1 year
-# 99.9th -> once in 2 years
-# 99.95th -> once in 5 years
-# 99.98th -> once in 10 years
-# 99.99th -> once in 20 years
-# 99.995th -> once in 50 years
-# 99.998th -> once in 100 years
+# 99.9th -> once in 1 years
+# 99.95th -> once in 2 years
+# 99.98th -> once in 5 years
+# 99.99th -> once in 10 years
+# 99.995th -> once in 20 years
 
 # INPUT PARAMETERS
 Acc = 12
-Perc2Plot_list = [99.8, 99.9, 99.95, 99.98, 99.99, 99.995, 99.998]
-YearRP_list = [1, 2, 5, 10, 20, 50, 100]
+Perc2Plot_list = [99.9, 99.95, 99.98, 99.99, 99.995]
+YearRP_list = [1, 2, 5, 10, 20]
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
@@ -48,7 +45,7 @@ climate = mv.read(Git_Repo + "/" + DirIN + "/tp_climate_" + f"{Acc:02}" + "h_ERA
 percs_computed = np.load(Git_Repo + "/" + DirIN + "/percs.npy")
 
 # Select the percentiles to plot
-print("Creating and saving plot of " + str(Acc) + "-hourly rainfall climatology for the:")
+print("Creating and saving plot of " + f"{Acc:02}" + "-hourly rainfall climatology for the:")
 
 for ind_perc in range(len(Perc2Plot_list)):
 
@@ -73,7 +70,7 @@ for ind_perc in range(len(Perc2Plot_list)):
         map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
         map_boundaries = "on",
         map_boundaries_colour = "charcoal",
-        map_boundaries_thickness = 2,
+        map_boundaries_thickness = 4,
         map_grid_latitude_increment = 10,
         map_grid_longitude_increment = 20,
         map_label_right = "off",
@@ -110,7 +107,7 @@ for ind_perc in range(len(Perc2Plot_list)):
 
     title = mv.mtext(
         text_line_count = 2,
-        text_line_1 = "Climatology from ERA5-ecPoint for " + str(Acc) + "h rainfall - " + str(Perc2Plot) + "th  percentile (" + str(YearRP) + "-year return period)",
+        text_line_1 = "Climatology from ERA5-ecPoint for " + f"{Acc:02}" + "h rainfall - " + str(Perc2Plot) + "th  percentile (" + str(YearRP) + "-year return period)",
         text_line_2 = " ",
         text_colour = "charcoal",
         text_font_size = 0.75
