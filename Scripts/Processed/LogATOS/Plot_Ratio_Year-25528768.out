@@ -1,0 +1,78 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 49350, mtime: Thu Mar 14 09:32:52 2024
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Wed Mar 27 17:59:33 2024 (1711562373.1096003) on ab6-205.bullx:/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ab
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SLURM_JOB_ID=25114150
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/10a_SubmitterATOS_Ratio_Extreme_Mean_AccTP.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=Plot_Ratio_Year
+[ECMWF-INFO -sbatch] - #SBATCH --output=LogATOS/Plot_Ratio_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --error=LogATOS/Plot_Ratio_Year-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --mem=16G
+[ECMWF-INFO -sbatch] - #SBATCH --time=2-00:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --qos=nf
+[ECMWF-INFO -sbatch] - #SBATCH --mail-type=FAIL
+[ECMWF-INFO -sbatch] - #SBATCH --mail-user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['10a_SubmitterATOS_Ratio_Extreme_Mean_AccTP.sh', '2007']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --error=LogATOS/Plot_Ratio_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --job_name=Plot_Ratio_Year
+[ECMWF-INFO -sbatch] - ARG --mail_type=FAIL
+[ECMWF-INFO -sbatch] - ARG --mail_user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - ARG --output=LogATOS/Plot_Ratio_Year-%J.out
+[ECMWF-INFO -sbatch] - ARG --qos=nf
+[ECMWF-INFO -sbatch] - ARG --time=2-00:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=16G
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: mofp-Plot_Ratio_Year-1x4-/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Plot_Ratio_Year-_.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--error=LogATOS/Plot_Ratio_Year-%J.out', '--job-name=Plot_Ratio_Year', '--mail-type=FAIL', '--mail-user=fatima.pillosu@ecmwf.int', '--output=LogATOS/Plot_Ratio_Year-%J.out', '--qos=nf', '--time=2-00:00:00', '--mem=16G', '--licenses=h2resw01', '--export=EC_user_time_limit=2-00:00:00', '/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/10a_SubmitterATOS_Ratio_Extreme_Mean_AccTP.sh', '2007']
+[ECMWF-INFO -sbatch] - sbatch executed on ab
+[ECMWF-INFO -sbatch] - Job queued on ab using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 25528768
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ab6-128 at 20240327_175953.912, PID: 1065306, JOBID: 25528768
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/mofp
+[ECMWF-INFO -ecprofile] $PERM=/perm/mofp
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/mofp
+[ECMWF-INFO -ecprofile] $TMPDIR=/etc/ecmwf/ssd/ssd1/tmpdirs/mofp.25528768
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/mofp/0/25528768
+Reading the US domain ...
+
+Computing the return period class for the extreme  12-hourly rainfall from ERA5-ecPoint, ending:
+ - on 2008-01-01 at 00 UTC
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2024-03-27T18:00:00 on ab
+[ECMWF-INFO -ecepilog] JobName                   : Plot_Ratio_Year
+[ECMWF-INFO -ecepilog] JobID                     : 25528768
+[ECMWF-INFO -ecepilog] Submit                    : 2024-03-27T17:59:33
+[ECMWF-INFO -ecepilog] Start                     : 2024-03-27T17:59:50
+[ECMWF-INFO -ecepilog] End                       : 2024-03-27T18:00:00
+[ECMWF-INFO -ecepilog] QueuedTime                : 17.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 10
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : ecodmdmo
+[ECMWF-INFO -ecepilog] QOS                       : nf
+[ECMWF-INFO -ecepilog] User                      : mofp
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Plot_Ratio_Year-25528768.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Plot_Ratio_Year-25528768.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 4
+[ECMWF-INFO -ecepilog] SBU                       : 0.095
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

@@ -5,7 +5,7 @@ import metview as mv
 
 ##############################################################################################
 # CODE DESCRIPTION
-# 08_Plot_Percentage_Soil_Saturation.py plots the percentage to instantaneous soil saturation for the top 1m level.
+# 12_Plot_Percentage_Soil_Saturation.py plots the percentage to instantaneous soil saturation for the top 1m level.
 # Runtime: the code takes up to 60 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -23,8 +23,8 @@ Disc_Time = 12
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5_Land/Mask.grib"
-DirIN = "Data/Compute/07_Percentage_Soil_Saturation"
-DirOUT = "Data/Plot/08_Percentage_Soil_Saturation"
+DirIN = "Data/Compute/11_Percentage_Soil_Saturation"
+DirOUT = "Data/Plot/12_Percentage_Soil_Saturation"
 ##############################################################################################
 
 # Reading the domain's mask
@@ -50,21 +50,21 @@ while TheDateTime <= DateTime_F:
       # Plotting the percentage of soil saturation 
       coastlines = mv.mcoast(
             map_coastline_colour = "charcoal",
-            map_coastline_thickness = 1,
-            map_coastline_resolution = "high",
+            map_coastline_thickness = 2,
+            map_coastline_resolution = "full",
             map_coastline_sea_shade = "on",
-            map_coastline_sea_shade_colour = "RGB(0.7398,0.9465,0.943)",
+            map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
             map_boundaries = "on",
             map_boundaries_colour = "charcoal",
-            map_boundaries_thickness = 1,
-            map_grid_latitude_increment = 5,
-            map_grid_longitude_increment = 10,
+            map_boundaries_thickness = 4,
+            map_grid_latitude_increment = 10,
+            map_grid_longitude_increment = 20,
             map_label_right = "off",
             map_label_top = "off",
             map_label_colour = "charcoal",
             map_grid_thickness = 1,
             map_grid_colour = "charcoal",
-            map_label_height = 0.5
+            map_label_height = 0.7
             )
 
       geo_view = mv.geoview(
@@ -105,7 +105,7 @@ while TheDateTime <= DateTime_F:
       if not os.path.exists(MainDirOUT):
             os.makedirs(MainDirOUT)
       FileOUT = MainDirOUT + "/Percentage_Soil_Saturation_" + TheDateTime.strftime("%Y%m%d") + "_" + TheDateTime.strftime("%H")
-      png = mv.png_output(output_name = FileOUT)
+      png = mv.png_output(output_width = 5000, output_name = FileOUT)
       mv.setoutput(png)
       mv.plot(geo_view, ss_perc_mask, contouring, legend, title)
 

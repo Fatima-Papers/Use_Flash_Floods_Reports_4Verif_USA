@@ -42,7 +42,7 @@ mask = mv.bitmap(mask,0) # bitmap the values outside the domain
 print()
 print("Computing the return period class for the extreme  " +  f"{Acc:02}" + "-hourly rainfall from ERA5-ecPoint, ending:")
 TheDateTime_Final_S = datetime(Year, 1, 1, 12)
-TheDateTime_Final_F = datetime(Year, 12, 31, 12)
+TheDateTime_Final_F = datetime(Year+1, 1, 1, 0)
 TheDateTime_Final = TheDateTime_Final_S
 while TheDateTime_Final <= TheDateTime_Final_F:
 

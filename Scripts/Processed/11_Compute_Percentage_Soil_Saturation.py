@@ -5,8 +5,8 @@ import metview as mv
 
 ##############################################################################################
 # CODE DESCRIPTION
-# 07_Compute_Percentage_Soil_Saturation.py computes the instantaneous percentage of soil saturation for the 
-# top 1m level.
+# 11_Compute_Percentage_Soil_Saturation.py computes the instantaneous percentage of soil saturation for the 
+# top 1m level from ERA5.
 # Runtime: the code takes up to 60 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -20,8 +20,8 @@ import metview as mv
 Year = int(sys.argv[1])
 Disc_Time = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
-DirIN = "Data/Raw/Analysis/ERA5_Land"
-DirOUT = "Data/Compute/07_Percentage_Soil_Saturation"
+DirIN = "Data/Raw/Analysis/ERA5"
+DirOUT = "Data/Compute/11_Percentage_Soil_Saturation"
 ##############################################################################################
 
 
@@ -37,7 +37,6 @@ soil_type = mv.retrieve(
      "date": "1940-01-01",
      "time": "00:00:00"
     })
-
 soil_type = mv.bitmap(soil_type, 0) # sostitute the zeros for the sea with missing values to avoid dividing by zero
 
 # Calculating the fields of maximum saturation, field capacity and permanent wilting point using the new soil hydrology scheme (obtained from: https://confluence.ecmwf.int/pages/viewpage.action?pageId=121839768)

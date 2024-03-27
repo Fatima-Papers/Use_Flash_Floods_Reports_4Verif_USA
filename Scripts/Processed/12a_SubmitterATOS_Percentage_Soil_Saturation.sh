@@ -13,4 +13,4 @@
 # INPUTS
 Year=${1}
 
-python3 08_Plot_Percentage_Soil_Saturation.py ${Year}
+python3 12_Plot_Percentage_Soil_Saturation.py ${Year}
