@@ -12,7 +12,6 @@ import metview as mv
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
 # Acc (integer, in hours): accumulation period.
-# Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
 # Git_Repo (string): repository's local path.
 # DirIN (string): relative path of the directory containing the ERA5-ecPoint rainfall reanalysis.
 # DirOUT (string): relative path of the directory containing the ratios.
@@ -20,7 +19,6 @@ import metview as mv
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
 Acc = 12
-Disc_Acc = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/Analysis/ERA5_ecPoint/tp"
 DirOUT = "Data/Compute/09_Ratio_Extreme_Mean_AccTP"
@@ -30,10 +28,12 @@ DirOUT = "Data/Compute/09_Ratio_Extreme_Mean_AccTP"
 print()
 print("Computing the ratio between extreme and mean " + str() + "-hourly ERA5-ecPoint rainfall, ending:")
 
-Date_S = datetime(Year,1,1,0)
-Date_F = datetime(Year,12,31,0)
-TheDate = Date_S
-while TheDate <= Date_F:
+# Defining the period to consider
+TheDate_S = datetime(Year,1,1)
+TheDate_F = datetime(Year,12,31)
+
+TheDate = TheDate_S
+while TheDate <= TheDate_F:
 
       for EndPeriod in range(0+Acc, 24+1, Acc):
 

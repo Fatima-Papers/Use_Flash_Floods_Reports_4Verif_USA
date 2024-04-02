@@ -36,14 +36,17 @@ print("Reading the US domain ...")
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask = mv.bitmap(mask,0) # bitmap the values outside the domain
 
+# Defining the accumulation periods to consider
+TheDateTime_Start_S = datetime(Year, 1, 1, 0)
+TheDateTime_Start_F = datetime(Year, 12, 31, 24-Disc_Acc)
+
 # Plotting the return period class for the extreme accumulated rainfall from ERA5-ecPoint.
 print()
 print("Computing the return period class for the extreme  " +  f"{Acc:02}" + "-hourly rainfall from ERA5-ecPoint, ending:")
-TheDateTime_Final_S = datetime(Year, 1, 1, 12)
-TheDateTime_Final_F = datetime(Year+1, 1, 1, 0)
-TheDateTime_Final = TheDateTime_Final_S
-while TheDateTime_Final <= TheDateTime_Final_F:
+TheDateTime_Start = TheDateTime_Start_S
+while TheDateTime_Start <= TheDateTime_Start_F:
 
+    TheDateTime_Final = TheDateTime_Start + timedelta(hours=Acc)
     print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
 
     # Reading the return period class, and mask the US domain
@@ -136,4 +139,4 @@ while TheDateTime_Final <= TheDateTime_Final_F:
     mv.setoutput(png)
     mv.plot(geo_view, classRP_mask, contouring, legend, title)
 
-    TheDateTime_Final = TheDateTime_Final + timedelta(hours = Disc_Acc)
+    TheDateTime_Start = TheDateTime_Start + timedelta(hours = Disc_Acc)

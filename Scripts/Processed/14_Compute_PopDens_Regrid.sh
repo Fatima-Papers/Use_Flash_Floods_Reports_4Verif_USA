@@ -21,7 +21,7 @@
 # Grid_Raw (string): grid of NASA's raw dataset.
 # Grid_New (string): new grid to consider.
 # Interpolation_type (string): type of interpolation.
-# Interpolation_stats ()
+# Interpolation_stats (string): statistic to compute during the interpolation.
 # Git_Repo (string): repository's local path
 # DirIN (string): relative path containing NASA's raw population density.
 # DirOUT (string): relative path containing the extracted raw and interpolated population density.
@@ -31,7 +31,7 @@ Year=${1}
 Grid_Raw="30_sec"
 Grid_New="N320"
 Interpolation_type="grid-box-statistics"
-Interpolation_tats="maximum"
+Interpolation_stats="maximum"
 Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN="Data/Compute/13_PopDens_Convert_tiff2grib_RawRes"
 DirOUT="Data/Compute/14_PopDens_Regrid"
@@ -49,4 +49,4 @@ grib_set -s basicAngleOfTheInitialProductionDomain=1,subdivisionsOfBasicAngle=24
 mkdir -p "${Git_Repo}/${DirOUT}/${Year}"
 FileIN="${Git_Repo}/${DirIN}/${Year}/PopDens_${Grid_Raw}_${Year}-fixed.grib2"
 FileOUT="${Git_Repo}/${DirOUT}/${Year}/PopDens_${Grid_New}_${Year}.grib2"
-MIR_DEBUB=1 mir ${FileIN} ${FileOUT} --grid=${Grid_New} --interpolation ${Interpolation_type} --interpolation-statistics ${Interpolation_Stats}
+MIR_DEBUB=1 mir ${FileIN} ${FileOUT} --grid=${Grid_New} --interpolation ${Interpolation_type} --interpolation-statistics ${Interpolation_stats}

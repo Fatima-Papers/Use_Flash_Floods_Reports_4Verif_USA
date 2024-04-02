@@ -13,7 +13,6 @@ import metview as mv
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
 # Acc (integer, in hours): accumulation period.
-# Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
 # Perc (float, from 0 to 100): percentile to consider for the rainfall analysis.
 # YearRP_list (list of integers): list of the considered rainfall thresholds expressed as return period in years.
 # Perc_Climate_list (list of floats): list of percentiles corresponding to the considered return periods.
@@ -25,7 +24,6 @@ import metview as mv
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
 Acc = 12
-Disc_Acc = 12
 Perc = 99
 YearRP_list = [1, 2, 5, 10, 20]
 Perc_Climate_list = [99.9, 99.95, 99.98, 99.99, 99.995]
@@ -42,13 +40,15 @@ print("Reading the climatology of " + str() + "-hourly rainfall")
 climate_tp = mv.read(Git_Repo + "/" + DirIN_Climate + "/tp_climate_" + f"{Acc:02}" + "h_ERA5_ecPoint.grib")
 climate_percs = np.load(Git_Repo + "/" + DirIN_Climate + "/percs.npy")
 
+# Defining the period to consider
+TheDate_S = datetime(Year,1,1)
+TheDate_F = datetime(Year,12,31)
+
 # Computing the return period class for the extreme accumulated rainfall from ERA5-ecPoint.
 print()
 print("Computing the return period class for the extreme  " + f"{Acc:02}" + "-hourly rainfall from ERA5-ecPoint, ending:")
-Date_S = datetime(Year,1,1,0)
-Date_F = datetime(Year,12,31,0)
-TheDate = Date_S
-while TheDate <= Date_F:
+TheDate = TheDate_S
+while TheDate <= TheDate_F:
 
       for EndPeriod in range(0+Acc, 24+1, Acc):
 

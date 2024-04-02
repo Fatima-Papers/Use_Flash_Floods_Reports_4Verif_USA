@@ -12,7 +12,6 @@ import metview as mv
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
 # Acc (integer, in hours): accumulation period.
-# Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
 # Perc (float, from 0 to 100): percentile to plot.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path.
@@ -23,7 +22,6 @@ import metview as mv
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
 Acc = 12
-Disc_Acc = 12
 Perc = 99
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
@@ -38,15 +36,15 @@ mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask_vals = mv.values(mask)
 mask_bitmap = mv.bitmap(mask, 0)
 
+# Defining the period to consider
+TheDate_S = datetime(Year,1,1)
+TheDate_F = datetime(Year,12,31)
+
 # Plotting the accumulated rainfall totals from ERA5_ecPoint analysis
 print()
 print("Plotting accumulated rainfall analysis from ERA5-ecPoint for the " + str() + "-hourly period ending:")
-
-Date_S = datetime(Year,1,1,0)
-Date_F = datetime(Year,12,31,0)
-
-TheDate = Date_S
-while TheDate <= Date_F:
+TheDate = TheDate_S
+while TheDate <= TheDate_F:
 
       for EndPeriod in range(0+Acc, 24+1, Acc):
 

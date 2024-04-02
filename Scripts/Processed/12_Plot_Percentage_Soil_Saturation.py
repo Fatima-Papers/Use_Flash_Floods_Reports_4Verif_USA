@@ -30,15 +30,15 @@ DirOUT = "Data/Plot/12_Percentage_Soil_Saturation"
 # Reading the domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 
+# Defining the dates/times to consider
+TheDateTime_S = datetime(Year, 1, 1, 0)
+TheDateTime_F = datetime(Year, 12, 31, 24-Disc_Time)
+
 # Plotting the percentage of soil saturation within the considered domain
 print()
 print("Computing and saving the percentage of soil saturation:")
-
-DateTime_S = datetime(Year,1,1,0)
-DateTime_F = datetime(Year,12,31,12)
-
-TheDateTime = DateTime_S
-while TheDateTime <= DateTime_F:
+TheDateTime = TheDateTime_S
+while TheDateTime <= TheDateTime_F:
 
       print(" - on " + TheDateTime.strftime("%Y-%m-%d") + " at " + TheDateTime.strftime("%H") + " UTC")
 

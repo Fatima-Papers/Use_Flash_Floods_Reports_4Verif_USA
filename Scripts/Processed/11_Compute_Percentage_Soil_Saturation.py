@@ -48,14 +48,14 @@ pwp_field = ( (soil_type == soil_type_codes[0]) * pwp[0] ) + ( (soil_type == soi
 fc_field = ( (soil_type == soil_type_codes[0]) * fc[0] ) + ( (soil_type == soil_type_codes[1]) * fc[1] ) + ( (soil_type == soil_type_codes[2]) * fc[2] ) + ( (soil_type == soil_type_codes[3]) * fc[3] ) + ( (soil_type == soil_type_codes[4]) * fc[4] ) + ( (soil_type == soil_type_codes[5]) * fc[5] ) + ( (soil_type == soil_type_codes[6]) * fc[6] )
 sat_field = ( (soil_type == soil_type_codes[0]) * sat[0] ) + ( (soil_type == soil_type_codes[1]) * sat[1] ) + ( (soil_type == soil_type_codes[2]) * sat[2] ) + ( (soil_type == soil_type_codes[3]) * sat[3] ) + ( (soil_type == soil_type_codes[4]) * sat[4] ) + ( (soil_type == soil_type_codes[5]) * sat[5] ) + ( (soil_type == soil_type_codes[6]) * sat[6] )
 
+# Defining the dates/times to consider
+TheDateTime_S = datetime(Year, 1, 1, 0)
+TheDateTime_F = datetime(Year, 12, 31, 24-Disc_Time)
+
 # Computing the levels of moisture content in the soil
 print("Computing the instantaneous percentage to soil saturation:")
-
-DateTime_S = datetime(Year,1,1,0)
-DateTime_F = datetime(Year,12,31,12)
-
-TheDateTime = DateTime_S
-while TheDateTime <= DateTime_F:
+TheDateTime = TheDateTime_S
+while TheDateTime <= TheDateTime_F:
 
       print(" - on " + TheDateTime.strftime("%Y-%m-%d") + " at " + TheDateTime.strftime("%H") + " UTC")
       
