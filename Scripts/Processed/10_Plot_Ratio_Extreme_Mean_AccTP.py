@@ -14,8 +14,8 @@ import metview as mv
 # Acc (integer, in hours): accumulation period.
 # Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
-# Git_Repo (string): repository's local path
-# FileIN_Mask (string): relative path where the US mask is stored.
+# Git_Repo (string): repository's local path.
+# FileIN_Mask (string): relative path of the file containing the domain's mask.
 # DirIN_ClassRP (string): relative path of the directory containing the return period class for the extreme rainfall.
 # DirIN_Ratio (string): relative path of the directory containing the ratio between the extreme and the mean ERA5-ecPoint rainfall.
 # DirOUT (string): relative path of the directory containing the plots of the return period class.
@@ -38,14 +38,17 @@ print("Reading the US domain ...")
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask = mv.bitmap(mask,0) # bitmap the values outside the domain
 
+# Defining the accumulation periods to consider
+TheDateTime_Start_S = datetime(Year, 1, 1, 0)
+TheDateTime_Start_F = datetime(Year, 12, 31, 24-Disc_Acc)
+
 # Plotting the return period class for the extreme accumulated rainfall from ERA5-ecPoint.
 print()
 print("Computing the return period class for the extreme  " +  f"{Acc:02}" + "-hourly rainfall from ERA5-ecPoint, ending:")
-TheDateTime_Final_S = datetime(Year, 1, 1, 12)
-TheDateTime_Final_F = datetime(Year+1, 1, 1, 0)
-TheDateTime_Final = TheDateTime_Final_S
-while TheDateTime_Final <= TheDateTime_Final_F:
+TheDateTime_Start = TheDateTime_Start_S
+while TheDateTime_Start <= TheDateTime_Start_F:
 
+      TheDateTime_Final = TheDateTime_Start + timedelta(hours=Acc)
       print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
 
       # Reading the return period class, and mask the zero return period class (corresponding to very small rainfall values)
@@ -142,4 +145,4 @@ while TheDateTime_Final <= TheDateTime_Final_F:
       mv.setoutput(png)
       mv.plot(geo_view, ratio_mask, contouring, legend, title)
 
-      TheDateTime_Final = TheDateTime_Final + timedelta(hours = Disc_Acc)
+      TheDateTime_Start = TheDateTime_Start + timedelta(hours = Disc_Acc)

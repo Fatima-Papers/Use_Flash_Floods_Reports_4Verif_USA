@@ -9,8 +9,8 @@ import metview as mv
 
 # INPUT PARAMETERS DESCRIPTION
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
-# Git_Repo (string): repository's local path
-# FileIN_Mask (string): relative path where the US mask is stored.
+# Git_Repo (string): repository's local path.
+# FileIN_Mask (string): relative path of the file containing the domain's mask.
 # FileIN (string): relative path of the file containing the standard deviation of the sub-grid scale orography.
 # DirOUT (string): relative path of the directory containing the plot of the standard deviation of the sub-grid scale orography.
 

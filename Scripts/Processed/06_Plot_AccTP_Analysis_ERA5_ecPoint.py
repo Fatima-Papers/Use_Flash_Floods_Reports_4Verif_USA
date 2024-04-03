@@ -15,9 +15,9 @@ import metview as mv
 # Perc (float, from 0 to 100): percentile to plot.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path.
-# FileIN_Mask (string): relative path where the USA's mask is stored.
-# DirIN (string): relative path of the directory containing the ERA5-ecPoint data.
-# DirOUT (string): relative path where to store the plots.
+# FileIN_Mask (string): relative path of the file containing the domain's mask.
+# DirIN (string): relative path of the directory containing the ERA5-ecPoint analysis.
+# DirOUT (string): relative path of the directory containing the 99th percentile's plots.
 
 # INPUT PARAMETERS
 Year = int(sys.argv[1])

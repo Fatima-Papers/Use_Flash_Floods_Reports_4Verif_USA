@@ -13,9 +13,9 @@ import metview as mv
 # City_Names (list of strings): name of the 20 most important cities in the US.
 # City_Lats ( list of floats): latitudes of the 20 most important cities in the US.
 # City_Lons ( list of floats): longitudes of the 20 most important cities in the US.
-# Git_Repo (string): repository's local path
-# FileIN_Mask (string): relative path where the US mask is stored.
-# DirOUT (string): relative path where to store the plot 
+# Git_Repo (string): repository's local path.
+# FileIN_Mask (string): relative path of the file containing the domain's mask.
+# DirOUT (string): relative path of the directory containing the orography plot.
 
 # INPUT PARAMETERS
 Mask_Domain = [22,-130,52,-60]

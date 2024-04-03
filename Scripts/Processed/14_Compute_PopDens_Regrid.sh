@@ -10,11 +10,11 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-user=fatima.pillosu@ecmwf.int
 
-################################################################################
+#############################################################################################
 # CODE DESCRIPTION
-# 14_Compute_PopDens_Regrid.py regrid the original NASA's population density (at different
-# resolutions) to the required grid resolution.
-# Runtime: the code can take up to 30 minutes to run in serial.
+# 14_Compute_PopDens_Regrid.py regrids the original NASA's population density (at different resolutions) to the 
+# required grid resolution.
+# Runtime: the code can take up to 10 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
@@ -22,9 +22,9 @@
 # Grid_New (string): new grid to consider.
 # Interpolation_type (string): type of interpolation.
 # Interpolation_stats (string): statistic to compute during the interpolation.
-# Git_Repo (string): repository's local path
-# DirIN (string): relative path containing NASA's raw population density.
-# DirOUT (string): relative path containing the extracted raw and interpolated population density.
+# Git_Repo (string): repository's local path.
+# DirIN (string): relative path of the directory containing NASA's raw population density.
+# DirOUT (string): relative path of  the directory containing the extracted raw and interpolated population density.
 
 # INPUT PARAMETERS
 Year=${1}
@@ -35,7 +35,7 @@ Interpolation_stats="maximum"
 Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN="Data/Compute/13_PopDens_Convert_tiff2grib_RawRes"
 DirOUT="Data/Compute/14_PopDens_Regrid"
-################################################################################
+#############################################################################################
 
 # Loading the needed libraries for the regrid
 module load ecmwf-toolbox/new

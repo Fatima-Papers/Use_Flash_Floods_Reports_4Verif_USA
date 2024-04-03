@@ -3,18 +3,18 @@ import sys
 from datetime import datetime, timedelta
 import metview as mv
 
-##############################################################################################
+##########################################################################################################
 # CODE DESCRIPTION
-# 11_Compute_Percentage_Soil_Saturation.py computes the instantaneous percentage of soil saturation for the 
-# top 1m level from ERA5.
+# 11_Compute_Percentage_Soil_Saturation.py computes the instantaneous percentage of soil saturation for the top 1m level 
+# from ERA5.
 # Runtime: the code takes up to 60 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
 # Disc_Time (integer, in hours): discretization for time.
 # Git_Repo (string): repository's local path.
-# DirIN (string): relative path containing the volumetric soil water for levels 1 (0-7cm), 2(7-28cm), and 3(28-100cm).
-# DirOUT (string): relative path containing the percentage to soil saturation.
+# DirIN (string): relative path of the directory containing the volumetric soil water for levels 1 (0-7cm), 2(7-28cm), and 3(28-100cm).
+# DirOUT (string): relative path of the directory containing the instantaneous percentage of soil saturation.
 
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
@@ -22,7 +22,7 @@ Disc_Time = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/Analysis/ERA5"
 DirOUT = "Data/Compute/11_Percentage_Soil_Saturation"
-##############################################################################################
+##########################################################################################################
 
 
 # Retrieving the soil type

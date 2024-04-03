@@ -4,22 +4,20 @@ import rasterio
 import numpy as np
 from eccodes import *
 
-################################################################################
+############################################################################################
 # CODE DESCRIPTION
-# 13_Compute_PopDens_Convert_tiff2grib_RawRes.py converts NASA's population density (at  
-# different resolutions) from geotiff to grib2.
-# Runtime: the runtime of the code varies significantly according to the resolution of the raw data. 
-# It can take up to 10 seconds to run in serial for raw data with 15min resolution (30 km), and up 
-# to 10 minutes for raw data with 30sec resolution (1km).
+# 13_Compute_PopDens_Convert_tiff2grib_RawRes.py converts the NASA's population density (at different 
+# resolutions) from geotiff to grib2.
+# Runtime: the code can take up to 10 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year_S (integer, in YYYY format): start year to consider.
 # Year_F (integer, in YYYY format): final year to consider.
 # Disc_Year (integer): discretization for the years to consider.
 # Grid_Raw (string): grid of NASA's raw dataset.
-# Git_Repo (string): repository's local path
-# DirIN (string): relative path containing NASA's raw population density.
-# DirOUT (string): relative path containing the extracted raw and interpolated population density.
+# Git_Repo (string): repository's local path.
+# DirIN (string): relative path of the directory containing the NASA's raw population density.
+# DirOUT (string): relative path of the directory containing the extracted raw and interpolated population density.
 
 # INPUT PARAMETERS
 Year_S = 2000
@@ -29,7 +27,7 @@ Grid_Raw = "30_sec"
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/OBS/NASA_PopDens"
 DirOUT = "Data/Compute/13_PopDens_Convert_tiff2grib_RawRes"
-################################################################################
+############################################################################################
 
 for Year in range(Year_S, Year_F+1, Disc_Year):
 

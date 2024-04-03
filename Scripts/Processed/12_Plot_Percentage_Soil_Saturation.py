@@ -3,19 +3,20 @@ import sys
 from datetime import datetime, timedelta
 import metview as mv
 
-##############################################################################################
+#####################################################################################
 # CODE DESCRIPTION
-# 12_Plot_Percentage_Soil_Saturation.py plots the percentage to instantaneous soil saturation for the top 1m level.
+# 12_Plot_Percentage_Soil_Saturation.py plots the percentage of instantaneous soil saturation for the 
+# top 1m level.
 # Runtime: the code takes up to 60 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
 # Disc_Time (integer, in hours): discretization for time.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
-# Git_Repo (string): repository's local path
-# FileIN_Mask (string): relative path where the USA's mask is stored for ERA5_Land.
-# DirIN (string): relative path containing the volumetric soil water for levels 1 (0-7cm), 2(7-28cm), and 3(28-100cm).
-# DirOUT (string): relative path containing the percentage to soil saturation.
+# Git_Repo (string): repository's local path.
+# FileIN_Mask (string): relative path of the file containing the domain's mask.
+# DirIN (string): relative path of the directory containing the percentage of instantaneous soil saturation.
+# DirOUT (string): relative path of the directory containing the plots of the percentage to soil saturation.
 
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
@@ -25,7 +26,7 @@ Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_US
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 DirIN = "Data/Compute/11_Percentage_Soil_Saturation"
 DirOUT = "Data/Plot/12_Percentage_Soil_Saturation"
-##############################################################################################
+#####################################################################################
 
 # Reading the domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)

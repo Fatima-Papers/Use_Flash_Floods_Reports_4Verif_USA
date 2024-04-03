@@ -14,9 +14,9 @@ import metview as mv
 # YearRP_list (list of integers): list of the years return period corresponding to the considered percentiles.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path.
-# FileIN_Mask (string): relative path of the file containing ERA5's mask for USA.
+# FileIN_Mask (string): relative path of the file containing the domain's mask.
 # DirIN (string): relative path of the directory containing the rainfall climatology.
-# DirOUT (string): relative path of the directory containing the plot of the rainfall climatology.
+# DirOUT (string): relative path of the directory containing the rainfall climatology plots.
 
 # NOTES
 # The percentiles correspond roughly to the following return periods:

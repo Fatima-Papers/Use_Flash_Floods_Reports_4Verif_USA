@@ -3,10 +3,10 @@ import sys
 from datetime import datetime, timedelta
 import metview as mv
 
-###########################################################################
+#######################################################################################################
 # CODE DESCRIPTION
-# 09_Compute_Ratio_Extreme_Mean_AccTP.py computes the ratio between the extreme 
-# and the mean point-rainfall ERA5-ecPoint reanalysis in each grid-box. 
+# 09_Compute_Ratio_Extreme_Mean_AccTP.py computes the ratio between the extreme and the mean ERA5-ecPoint rainfall 
+# reanalysis in each grid-box. 
 # Runtime: the code takes up to 60 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -14,7 +14,7 @@ import metview as mv
 # Acc (integer, in hours): accumulation period.
 # Git_Repo (string): repository's local path.
 # DirIN (string): relative path of the directory containing the ERA5-ecPoint rainfall reanalysis.
-# DirOUT (string): relative path of the directory containing the ratios.
+# DirOUT (string): relative path of the directory containing the ratios between the extreme and the mean ERA5-ecPoint rainfall.
 
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
@@ -22,7 +22,7 @@ Acc = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Raw/Analysis/ERA5_ecPoint/tp"
 DirOUT = "Data/Compute/09_Ratio_Extreme_Mean_AccTP"
-###########################################################################
+#######################################################################################################
 
 # Computing the ratio between the extreme and the mean point-rainfall ERA5-ecPoint reanalysis in each grid-box. 
 print()

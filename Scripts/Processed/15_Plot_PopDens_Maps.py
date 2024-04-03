@@ -1,9 +1,9 @@
 import os
 import metview as mv
 
-###############################################################################
+#####################################################################################
 # CODE DESCRIPTION
-# 15_Plot_PopDens_Maps.py plots population density.
+# 15_Plot_PopDens_Maps.py plots the regridded population density.
 # Runtime: negligible.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -12,10 +12,10 @@ import metview as mv
 # Disc_Year (integer): discretization for the years to consider.
 # Grid (string): grid to consider (e.g. "n320" for ERA5's grid).
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
-# Git_Repo (string): repository's local path
-# FileIN_Mask (string): relative path of the file containing ERA5's mask for USA.
-# DirIN (string): relative path containing NASA's raw population density.
-# DirOUT (string): relative path containing the extracted raw and interpolated population density.
+# Git_Repo (string): repository's local path.
+# FileIN_Mask (string): relative path of the file containing the domain's mask.
+# DirIN (string): relative path of the directory containing the regridded population density.
+# DirOUT (string): relative path of the directory containing the plots of the regridded population density.
 
 # INPUT PARAMETERS
 Year_S = 2000
@@ -27,12 +27,12 @@ Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_US
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 DirIN = "Data/Compute/14_PopDens_Regrid"
 DirOUT = "Data/Plot/15_PopDens_Maps"
-###############################################################################
+#####################################################################################
 
 
-# Plotting the population density for specific years
+# Plotting the regridded population density for specific years
 print()
-print("Plotting the population density for year:")
+print("Plotting the regridded population density for year:")
 
 for Year in range(Year_S, Year_F+1, Disc_Year):
 
