@@ -39,7 +39,7 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
     print(" - " + str(Year))
 
     # Reading the population density
-    FileIN = Git_Repo + "/" + DirIN + "/" + str(Year) + "/PopDens_" + Grid + "_" + str(Year) + ".grib2"
+    FileIN = Git_Repo + "/" + DirIN + "/" + Grid + "/PopDens_" + str(Year) + ".grib2"
     pop_dens = mv.read(FileIN)
 
     # Selecting the grid-points within the considered domain
@@ -112,10 +112,10 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
         )
 
     # Saving the plot
-    MainDirOUT = Git_Repo + "/" + DirOUT
+    MainDirOUT = Git_Repo + "/" + DirOUT + "/" + Grid
     if not os.path.exists(MainDirOUT):
         os.makedirs(MainDirOUT)
-    FileOUT = MainDirOUT + "/PopDens_" + Grid + "_" + str(Year)
+    FileOUT = MainDirOUT + "/PopDens_" + str(Year)
     png = mv.png_output(output_width = 5000, output_name = FileOUT)
     mv.setoutput(png)
     mv.plot(geo_view, pop_dens_mask, contouring, legend, title)

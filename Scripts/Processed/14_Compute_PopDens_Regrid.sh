@@ -46,7 +46,7 @@ FileOUT="${Git_Repo}/${DirIN}/${Year}/PopDens_${Grid_Raw}_${Year}-fixed.grib2"
 grib_set -s basicAngleOfTheInitialProductionDomain=1,subdivisionsOfBasicAngle=240,iDirectionIncrement=2,jDirectionIncrement=2,latitudeOfFirstGridPoint=21599,longitudeOfFirstGridPoint=43201,latitudeOfLastGridPoint=-21599,longitudeOfLastGridPoint=43199 ${FileIN} ${FileOUT}
 
 # Regrid the original population density data to the required grid
-mkdir -p "${Git_Repo}/${DirOUT}/${Year}"
+mkdir -p "${Git_Repo}/${DirOUT}/${Grid_New}"
 FileIN="${Git_Repo}/${DirIN}/${Year}/PopDens_${Grid_Raw}_${Year}-fixed.grib2"
-FileOUT="${Git_Repo}/${DirOUT}/${Year}/PopDens_${Grid_New}_${Year}.grib2"
+FileOUT="${Git_Repo}/${DirOUT}/${Grid_New}/PopDens_${Year}.grib2"
 MIR_DEBUB=1 mir ${FileIN} ${FileOUT} --grid=${Grid_New} --interpolation ${Interpolation_type} --interpolation-statistics ${Interpolation_stats}

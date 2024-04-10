@@ -33,8 +33,8 @@ DirOUT = "Data/Plot/10_Ratio_Extreme_Mean_AccTP"
 ##########################################################################################################
 
 
-# Reading US mask
-print("Reading the US domain ...")
+# Reading the domain's mask
+print("Reading the domain's domain ...")
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask = mv.bitmap(mask,0) # bitmap the values outside the domain
 

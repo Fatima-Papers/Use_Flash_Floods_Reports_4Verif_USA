@@ -1,1 +1,0 @@
-These training was done using all the available flash flood reports and all predictors but population density to assess the impact that this demographical parameter has on the final output.
