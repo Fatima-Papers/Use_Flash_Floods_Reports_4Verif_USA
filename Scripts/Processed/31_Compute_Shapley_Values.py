@@ -40,9 +40,9 @@ DirIN_RatioEM = "Data/Compute/09_Ratio_Extreme_Mean_AccTP"
 DirIN_PercSS = "Data/Compute/11_Percentage_Soil_Saturation"
 DirIN_LAI = "Data/Raw/Analysis/ERA5/lai"
 DirIN_PD = "Data/Compute/14_PopDens_Regrid/N320"
-FileIN_PDT = "Data/Compute/26_Combine_PDT/AllFF/pdt_AllFF_AllPred_2005_2020.npy"
-DirIN_ANN = "Data/Compute/27_Train_ANN/AllFF_2005_2020/AllPred"
-DirOUT = "Data/Compute/31_Compute_Shapley_Values/AllFF_2005_2020/AllPred"
+FileIN_PDT = "Data/Compute/26_Combine_PDT/AllFF/pdt_AllFF_NoPD_2005_2020.npy"
+DirIN_ANN = "Data/Compute/27_Train_ANN/AllFF_2005_2020/NoPD"
+DirOUT = "Data/Compute/31_Compute_Shapley_Values/AllFF_2005_2020/NoPD"
 #############################################################################################################
 
 
