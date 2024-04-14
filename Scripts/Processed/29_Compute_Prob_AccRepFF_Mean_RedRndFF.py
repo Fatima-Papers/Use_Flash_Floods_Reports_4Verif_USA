@@ -6,7 +6,7 @@ import metview as mv
 # CODE DESCRIPTION
 # 29_Compute_Prob_AccRepFF_Mean_RedRndFF.py computes the mean probabilities of having a flash flood event in a given 
 # grid-box from the random reduction of flash flood reports in the training dataset.
-# Runtime: the script can take up to 2 hours to compute in serial.
+# Runtime: the script can take up to 4 hours to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
@@ -24,7 +24,7 @@ Acc = 12
 Disc_Acc = 12
 NamePDT_list = ["AllPred", "NoPD"]
 Perc_Red_list = [10, 50, 90]
-Rep = 50
+Rep = 100
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Compute/28_Prob_AccRepFF/RedRndFF_2005_2020"
 DirOUT = "Data/Compute/29_Prob_AccRepFF_Mean_RedRndFF/RedRndFF_2005_2020"

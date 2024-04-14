@@ -1,7 +1,6 @@
 import os
 from datetime import datetime, timedelta
 import numpy as np
-import pandas as pd
 import metview as mv
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates

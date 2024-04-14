@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # CODE DESCRIPTION
 # 31_Plot_Distribution_Prob_AccRepFF plots the distribution of probabilities of having a flash flood event in 
 # each grid-box from different training datasets.
-# Runtime: the script can take up to 1 hour to run in serial.
+# Runtime: the script can take up to 2 minutes to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
