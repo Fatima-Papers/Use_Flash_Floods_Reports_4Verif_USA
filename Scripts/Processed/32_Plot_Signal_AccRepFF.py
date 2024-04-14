@@ -182,7 +182,7 @@ Perc_NumGP = NumGP / np.sum(NumGP_AllFF) * 100
 print(Perc_NumGP)
 
 # Creating the dumbel plot
-fig, ax = plt.subplots(figsize=(10,6), facecolor = "white")
+fig, ax = plt.subplots(figsize=(8,10), facecolor = "white")
 ax.grid(which="major", axis='both', color='#758D99', alpha=0.6, zorder=1)
 ax.spines[['top','right','bottom']].set_visible(False)
 
