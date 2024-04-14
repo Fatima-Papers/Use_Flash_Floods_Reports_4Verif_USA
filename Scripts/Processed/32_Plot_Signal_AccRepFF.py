@@ -179,11 +179,13 @@ TrainPDT_List = [
       "RedRndFF_10"] 
 
 Perc_NumGP = NumGP / np.sum(NumGP_AllFF) * 100
+print(NumGP)
+print(NumGP_comp)
 print(Perc_NumGP)
 
 # Creating the dumbel plot
 fig, ax = plt.subplots(figsize=(8,10), facecolor = "white")
-ax.grid(which="major", axis='both', color='#758D99', alpha=0.6, zorder=1)
+#ax.grid(which="major", axis='both', color='#758D99', alpha=0.6, zorder=1)
 ax.spines[['top','right','bottom']].set_visible(False)
 
 ax.hlines(y=np.arange(len(NumGP)), xmin=NumGP, xmax=NumGP_comp, color='#758D99', zorder=2, linewidth=2, label='_nolegend_', alpha=.8)
@@ -192,6 +194,7 @@ ax.scatter(NumGP_comp, TrainPDT_List, label="AllFF", s=60, color="darkgrey", zor
 
 plt.title("N. of grid-boxes exceeding the climatological average probability (=" + str(np.round(ClimAv_Grid_AccRepFF,decimals=2)) + "%) of having a flash flood event in a grid-box")
 plt.xlabel("N. of grid-boxes")
+plt.xlim([100000,260000])
 
 # Save the dumbell plot
 MainDirOUT = Git_Repo + "/" + DirOUT
