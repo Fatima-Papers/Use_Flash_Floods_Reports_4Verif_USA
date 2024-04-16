@@ -22,8 +22,8 @@
 # DirOUT (string): relative path containing the retrieved forecasts.
 
 # INPUT PARAMETERS
-BaseDateS=20220101
-BaseDateF=20221231
+BaseDateS=20221101
+BaseDateF=20221130
 BaseTime=0
 Acc=12
 CodeVers="2.0.0"

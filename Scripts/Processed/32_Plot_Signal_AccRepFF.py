@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 #########################################################################################
 # CODE DESCRIPTION
-# 31_Plot_Distribution_Prob_AccRepFF creates a dumbell plot with the number of grid-boxes exceeding the 
+# 32_Plot_Signal_AccRepFF creates a dumbell plot with the number of grid-boxes exceeding the 
 # climatological average probability of having a flash flood event in a grid-box in different training datasets 
 # compared to the full training dataset.
 # Runtime: the script can take up to 5 minutes to run in serial.
@@ -149,7 +149,8 @@ while TheDateTime_Start <= TheDateTime_Start_F:
       TheDateTime_Start = TheDateTime_Start + timedelta(hours=Disc_Acc)
 
 # Creating the arrays to create the dumbell plot
-NumGP = np.array([np.sum(NumGP_NoNorthFF),
+NumGP = np.array([
+      np.sum(NumGP_NoNorthFF),
       np.sum(NumGP_NoSouthFF), 
       np.sum(NumGP_NoWestFF), 
       np.sum(NumGP_NoEastFF), 

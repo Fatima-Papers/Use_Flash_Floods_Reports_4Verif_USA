@@ -8,7 +8,7 @@ shap.initjs()
 
 #############################################################################################################
 # CODE DESCRIPTION
-# 32_Compute_Shapley_Values.py computes the shapley values for the ANN predictions.
+# 33_Compute_Shapley_Values.py computes the shapley values for the ANN predictions.
 # Runtime: the script can take up to 10 hours to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -24,6 +24,7 @@ shap.initjs()
 # DirIN_PercSS (string): relative path of the directory containing the percentage of soil saturation.
 # DirIN_LAI (string): relative path of the directory containing the leaf area index.
 # DirIN_PD (string): relative path of the directory containing the regridded population density.
+# DirIN_PDT (string): relative path of the directory containing the pdt to consider.
 # DirIN_ANN (string): relative path of the directory containg the ANN's weights.
 # DirOUT (string): relative path of the directory containing the probabilities of having a flash flood event in a given grid-box.
 
@@ -42,7 +43,7 @@ DirIN_LAI = "Data/Raw/Analysis/ERA5/lai"
 DirIN_PD = "Data/Compute/14_PopDens_Regrid/N320"
 FileIN_PDT = "Data/Compute/26_Combine_PDT/AllFF/pdt_AllFF_NoPD_2005_2020.npy"
 DirIN_ANN = "Data/Compute/27_Train_ANN/AllFF_2005_2020/NoPD"
-DirOUT = "Data/Compute/32_Compute_Shapley_Values/AllFF_2005_2020/NoPD"
+DirOUT = "Data/Compute/33_Compute_Shapley_Values/AllFF_2005_2020/NoPD"
 #############################################################################################################
 
 

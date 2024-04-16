@@ -77,7 +77,7 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
         legend = "on", 
         contour = "off",
         contour_level_selection_type = "level_list",
-        contour_level_list = [0, 2, 4, 6, 8, 10, 25, 50, 100, 250, 500, 1000, 2500, 10000],
+        contour_level_list = [0, 2, 4, 6, 8, 10, 25, 50, 100, 250, 500, 1000, 2500, 10000, 100000],
         contour_label = "off",
         contour_shade = "on",
         contour_shade_technique = "grid_shading",
@@ -95,7 +95,8 @@ for Year in range(Year_S, Year_F+1, Disc_Year):
                     "rgb(1,0,0.498)", #250-500
                     "rgb(0.5818,0.02998,0.3059)", #500-1000
                     "rgb(0.968,0.887,0.428)", #1000-2500
-                    "rgb(0.6154,0.5272,0.02774)"] #2500-10000
+                    "rgb(0.6154,0.5272,0.02774)", #2500-10000
+                    "rgb(0.4094,0.3548,0.04549)"] #10000-100000
                     )
 
     legend = mv.mlegend(
