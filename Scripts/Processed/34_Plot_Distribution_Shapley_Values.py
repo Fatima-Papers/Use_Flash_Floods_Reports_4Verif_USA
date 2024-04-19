@@ -7,7 +7,7 @@ import matplotlib.colors as mcolors
 
 #############################################################################################################
 # CODE DESCRIPTION
-# 34_Plot_Shapley_Values.py plots the distribution of shapley values according to the correspondent predictors.
+# 34_Plot_Distribution_Shapley_Values.py plots the distribution of shapley values according to the correspondent predictors.
 # Runtime: the script can take up to 15 minutes to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -38,7 +38,7 @@ DirIN_PercSS = "Data/Compute/11_Percentage_Soil_Saturation"
 DirIN_LAI = "Data/Raw/Analysis/ERA5/lai"
 DirIN_PD = "Data/Compute/14_PopDens_Regrid/N320"
 DirIN = "Data/Compute/33_Compute_Shapley_Values/AllFF_2005_2020/AllPred"
-DirOUT = "Data/Plot/34_Shapley_Values/AllFF_2005_2020/AllPred"
+DirOUT = "Data/Plot/34_Distribution_Shapley_Values/AllFF_2005_2020/AllPred"
 #############################################################################################################
 
 

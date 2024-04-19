@@ -28,17 +28,15 @@ import numpy as np
 # DirOUT (string): relative path of the directory containing the FB values, including the bootstrapped ones.
 
 # INPUT PARAMETERS
-DateS = datetime(2020,1,1,0)
-DateF = datetime(2020,12,31,0)
+DateS = datetime(2022,1,1,0)
+DateF = datetime(2022,12,31,0)
 StepF_Start = 12
-StepF_Final = 246
-Disc_Step = 6
+StepF_Final = 240
+Disc_Step = 12
 Acc = 12
-EFFCI_list = [1,6,10]
-MagnitudeInPerc_Rain_Event_FR_list = [85,99]
-RepetitionsBS = 10000
-RegionName_list = ["Costa","Sierra"]
-SystemFC_list = ["ENS", "ecPoint"]
+Perc_VRT = 99.995
+RepetitionsBS = 1
+SystemFC = "ecPoint"
 NumEM_list = [51,99]
 Git_repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Verif_Flash_Floods_Ecuador"
 DirIN = "Data/Compute/23_Counts_FC_OBS_Exceeding_VRT"

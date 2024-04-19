@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 ##################################################################################################################
 # CODE DESCRIPTION
-# 35_Plot_Verif_Scores.py computes the contingency tables for specific accumulation periods.  
+# 36_Plot_Verif_Scores.py computes the contingency tables for specific accumulation periods.  
 # Runtime: the script can take up to 10 hours to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
@@ -29,7 +29,7 @@ Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_US
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 DirIN_FC= "Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/NoPD"
 DirIN_OBS = "Data/Compute/19_Grid_AccRepFF"
-DirOUT = "Data/Plot/35_CT/AllFF_2005_2020/AllPred"
+DirOUT = "Data/Plot/36_Plot_Verif_Scores/AllFF_2005_2020/NoPD"
 ##################################################################################################################
 
 
@@ -132,4 +132,8 @@ axs[1,1].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 axs[1,1].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 axs[1,1].set_xlim([0,10.1])
 
-plt.show()
+MainDirOUT = Git_Repo + "/" + DirOUT
+if not os.path.exists(MainDirOUT):
+      os.makedirs(MainDirOUT)
+FileOUT = MainDirOUT + "/Verif_Scores.jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
