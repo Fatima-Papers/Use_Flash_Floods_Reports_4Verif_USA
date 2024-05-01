@@ -2,7 +2,7 @@
 
 # Submit the first batch of jobs
 Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
-Name1_list=("AllFF" "NoNorthFF" "NoNorthGP" "NoSouthFF" "NoSouthGP" "NoWestFF" "NoWestGP" "NoEastFF" "NoEastGP")
+Name1_list=("AllFF", "NoNorthFF" "NoNorthGP" "NoSouthFF" "NoSouthGP" "NoWestFF" "NoWestGP" "NoEastFF" "NoEastGP")
 Name2_list=("AllPred" "NoPD")
 Name3="2005_2020"
 

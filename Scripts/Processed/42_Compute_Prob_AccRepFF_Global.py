@@ -1,15 +1,15 @@
 import os
+import sys
 from datetime import datetime, timedelta
 import numpy as np
 import metview as mv
 import tensorflow as tf
-import shap
-shap.initjs()
 
 #############################################################################################################
 # CODE DESCRIPTION
-# 33_Compute_Shapley_Values.py computes the shapley values for the ANN predictions.
-# Runtime: the script can take up to 10 hours to compute in serial.
+# 42_Compute_Prob_AccRepFF_Global.py computes the global probabilities of having a flash flood event in a given grid-box using the 
+# ANN model.
+# Runtime: the script can take up to 2 hours and 30 minutes to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # Year (integer, in YYYY format): year to consider.
@@ -24,15 +24,13 @@ shap.initjs()
 # DirIN_PercSS (string): relative path of the directory containing the percentage of soil saturation.
 # DirIN_LAI (string): relative path of the directory containing the leaf area index.
 # DirIN_PD (string): relative path of the directory containing the regridded population density.
-# DirIN_PDT (string): relative path of the directory containing the pdt to consider.
 # DirIN_ANN (string): relative path of the directory containg the ANN's weights.
 # DirOUT (string): relative path of the directory containing the probabilities of having a flash flood event in a given grid-box.
 
 # INPUT PARAMETERS
-Year = 2021
+Year = int(sys.argv[1])
 Acc = 12
 Disc_Acc = 12
-Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 FileIN_StdOrog = "Data/Raw/Analysis/ERA5/sdor/sdor.grib"
@@ -41,18 +39,16 @@ DirIN_RatioEM = "Data/Compute/09_Ratio_Extreme_Mean_AccTP"
 DirIN_PercSS = "Data/Compute/11_Percentage_Soil_Saturation"
 DirIN_LAI = "Data/Raw/Analysis/ERA5/lai"
 DirIN_PD = "Data/Compute/14_PopDens_Regrid/N320"
-FileIN_PDT = "Data/Compute/26_Combine_PDT/AllFF/pdt_AllFF_AllPred_2005_2020.npy"
-DirIN_ANN = "Data/Compute/27_Train_ANN/AllFF_2005_2020/AllPred"
-DirOUT = "Data/Compute/33_Compute_Shapley_Values/AllFF_2005_2020/AllPred"
-#############################################################################################################
+DirIN_ANN = sys.argv[2]
+DirOUT = sys.argv[3]
+############################################################################################################
 
 
 # Importing the ANN model
-if DirIN_ANN.split("/")[-1] == "AllPred":
+if DirIN_ANN.split("/")[4] == "AllPred":
       Num_Pred = 6
 else:
       Num_Pred = 5
-
 model = tf.keras.Sequential([
       tf.keras.layers.InputLayer(input_shape=(Num_Pred,)),  # Input layer specifying the input shape
       tf.keras.layers.Dense(4, activation=tf.nn.relu),  # First hidden dense layer with ReLU activation
@@ -69,22 +65,11 @@ model.compile(
       metrics = [tf.keras.metrics.CategoricalAccuracy(name = "accuracy")],
       )
 
-# Creating explainer for the computation of shap values
-train = np.load(Git_Repo + "/" + FileIN_PDT)
-train = train[:,1:]
-explainer = shap.Explainer(model, train)
-
 # Reading domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
-mask_lats = mv.latitudes(mask)
-mask_lons = mv.longitudes(mask)
-mask_vals = mv.values(mask)
-mask_index = np.where(mask_vals == 1)[0]
-mask_lats = mask_lats[mask_index]
-mask_lons = mask_lons[mask_index]
 
 # Reading the stdor values within the considered domain
-stdor = mv.values(mv.read(Git_Repo + "/" + FileIN_StdOrog))[mask_index].reshape(-1, 1)
+stdor = mv.values(mv.read(Git_Repo + "/" + FileIN_StdOrog)).reshape(-1, 1)
 
 # Reading the predictors that are time-dipendent
 TheDateTime_Start_S = datetime(Year, 1, 1, 0)
@@ -112,19 +97,19 @@ while TheDateTime_Start <= TheDateTime_Start_F:
       
       # Reading the predictors 
       File_ClassRP = Git_Repo + "/" + DirIN_ClassRP + "/" + TheDateTime_Final.strftime("%Y%m") + "/ClassRP_" + f"{Acc:02}" + "h_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
-      ClassRP = mv.values(mv.read(File_ClassRP))[mask_index].reshape(-1, 1)
+      ClassRP = mv.values(mv.read(File_ClassRP)).reshape(-1, 1)
       
       File_RatioEM = Git_Repo + "/" + DirIN_RatioEM + "/" + TheDateTime_Final.strftime("%Y%m") + "/Ratio_" + f"{Acc:02}" + "h_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
-      RatioEM = mv.values(mv.read(File_RatioEM))[mask_index].reshape(-1, 1)
+      RatioEM = mv.values(mv.read(File_RatioEM)).reshape(-1, 1)
       
       File_PercSS = Git_Repo + "/" + DirIN_PercSS + "/" + TheDateTime_PercSS.strftime("%Y") + "/" + TheDateTime_PercSS.strftime("%Y%m%d") + "/soil_saturation_perc_" + TheDateTime_PercSS.strftime("%Y%m%d%H") + ".grib"
-      PercSS = mv.values(mv.read(File_PercSS))[mask_index].reshape(-1, 1)
+      PercSS = mv.values(mv.read(File_PercSS)).reshape(-1, 1)
       
       File_LAI = Git_Repo + "/" + DirIN_LAI  + "/lai_" + TheDateTime_Final.strftime("%m%d") + ".grib"
-      lai = mv.values(mv.read(File_LAI))[mask_index].reshape(-1, 1)
+      lai = mv.values(mv.read(File_LAI)).reshape(-1, 1)
 
       File_PD = Git_Repo + "/" + DirIN_PD + "/PopDens_" + str(YearPD) + ".grib2"
-      pd = mv.values(mv.read(File_PD))[mask_index].reshape(-1, 1)
+      pd = mv.values(mv.read(File_PD)).reshape(-1, 1)
      
       # Building the predictors' table
       if DirIN_ANN.split("/")[4] == "AllPred":
@@ -132,22 +117,21 @@ while TheDateTime_Start <= TheDateTime_Start_F:
       else:
             predictors = np.concatenate((stdor, ClassRP, RatioEM, PercSS, lai), axis=1)
       
-      # Computing the shap values for each prediction
-      shap = explainer(predictors)
-      shap_vals = shap.values
+      # Create the predictions
+      ff_pred_array = model.predict(predictors) * 100
+
+      # Set to zero the probabilities of having a flash flood report where there is no rainfall
+      ind_tp0 = np.where(ClassRP == 0)[0] 
+      ff_pred_array[ind_tp0] = -1
       
-      # Encoding the shapley values in grib
-      shap_vals_grib = None
-      for ind in range(shap_vals.shape[1]):
-            template = mask_vals * 0
-            template[mask_index] = shap_vals[:,ind,0]
-            shap_vals_grib = mv.merge(shap_vals_grib, mv.set_values(mask, template))
+      # Encoding the predictions in grib
+      ff_pred_grib = mv.set_values(mask, ff_pred_array[:,0])
 
       # Saving the grib files
       MainDirOUT = Git_Repo + "/" + DirOUT
       if not os.path.exists(MainDirOUT):
             os.makedirs(MainDirOUT)
-      FileOUT_prob = MainDirOUT + "/ShapVal_" +  TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
-      mv.write(FileOUT_prob, shap_vals_grib)
+      FileOUT_prob = MainDirOUT + "/Prob_AccRepFF_" +  TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
+      mv.write(FileOUT_prob, ff_pred_grib)
 
       TheDateTime_Start = TheDateTime_Start + timedelta(hours=Disc_Acc)

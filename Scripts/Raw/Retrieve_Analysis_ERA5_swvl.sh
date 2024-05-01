@@ -16,8 +16,8 @@
 # DirOUT (string): relative path containing the retrieved forecasts.
 
 # INPUT PARAMETERS
-YearS=2005
-YearF=2021
+YearS=2024
+YearF=2024
 TimeS=0
 TimeF=23
 DiscTime=1
@@ -38,7 +38,7 @@ mars <<EOF
       retrieve,
             class=ea,
             date=${Year}${Month}01/to/${Year}${Month}31,
-            expver=1,
+            expver=5,
             levtype=sfc,
             param=39.128/40.128/41.128,
             stream=oper,

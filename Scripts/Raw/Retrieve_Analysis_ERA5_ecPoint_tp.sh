@@ -15,10 +15,10 @@
 # DirOUT (string): relative path containing the retrieved forecasts.
 
 # INPUT PARAMETERS
-YearS=2022
-YearF=2022
+YearS=2023
+YearF=2023
 Acc=12
-ExpVer="0001"
+ExpVer="0005"
 Code_Cal_Ver="Code2.0.0_Cal1.0.0"
 Git_Repo="/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN="/ec/vol/ecpoint/mofp/forecasts/SemiOper/ECMWF_ERA5"

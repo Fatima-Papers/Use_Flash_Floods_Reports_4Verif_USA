@@ -41,7 +41,7 @@ while TheDate <= TheDate_F:
             print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
 
             # Reading the ERA5-ecPoint rainfall reanalysis
-            tp = mv.read(Git_Repo + "/" + DirIN + "/Pt_BC_PERC/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + str(EndPeriod) + ".grib2")
+            tp = mv.read(Git_Repo + "/" + DirIN + "/Pt_BC_PERC/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + f"{EndPeriod:03}" + ".grib2")
             
             # Selecting the field containing the extreme rainfall and computing the field containing the average of all the point rainfall values
             tp_extreme = tp[-1] # extreme

@@ -36,7 +36,7 @@ import metview as mv
 Year = 2022
 StepF = int(sys.argv[1])
 Acc = 12
-Perc_VRT = 99.995
+Perc_VRT = 99.9
 Prob_Thr_list = [0.1, 1, 2, 3, 4, 5]
 SystemFC = "ecPoint"
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"

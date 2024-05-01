@@ -23,6 +23,7 @@ Year = int(sys.argv[1])
 Acc = 12
 Disc_Acc = 12
 Mask_Domain = [22,-130,52,-60]
+Name_Domain = "Central_East_Africa"
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = sys.argv[2]
 DirOUT = sys.argv[3]
@@ -64,9 +65,8 @@ while TheDateTime_Start <= TheDateTime_Start_F:
       YearVF = ValidityDateF.strftime("%Y")
       TimeVF = ValidityDateF.strftime("%H")
       
-      title_plot1 = "Probability (%) of having a flash flood report in each grid-box"
-      title_plot2 = "Training dataset: " + Name_PDT
-      title_plot3 = "VT: " + DayVS + " " + MonthVS + " " + YearVS + " " + TimeVS + " UTC - " + DayVF + " " + MonthVF + " " + YearVF + " " + TimeVF  + " UTC"          
+      title_plot1 = "Probability (%) of having a flash flood event within each grid-box"
+      title_plot2 = "VT: " + DayVS + " " + MonthVS + " " + YearVS + " " + TimeVS + " UTC - " + DayVF + " " + MonthVF + " " + YearVF + " " + TimeVF  + " UTC"          
 
       # Plotting the probabilities
       coastlines = mv.mcoast(
@@ -76,17 +76,10 @@ while TheDateTime_Start <= TheDateTime_Start_F:
             map_coastline_sea_shade = "on",
             map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
             map_boundaries = "on",
-            map_boundaries_colour = "charcoal",
-            map_boundaries_thickness = 2,
-            map_administrative_boundaries = "on",
-            map_administrative_boundaries_countries_list = "usa",
-            map_administrative_boundaries_style = "solid",
-            map_administrative_boundaries_thickness = 2,
-            map_administrative_boundaries_colour = "charcoal",
+            map_boundaries_colour = "evergreen",
+            map_boundaries_thickness = 4,
             map_grid_latitude_increment = 10,
             map_grid_longitude_increment = 20,
-            map_label_right = "off",
-            map_label_top = "off",
             map_label_colour = "charcoal",
             map_grid_thickness = 1,
             map_grid_colour = "charcoal",
@@ -94,9 +87,8 @@ while TheDateTime_Start <= TheDateTime_Start_F:
             )
 
       geo_view = mv.geoview(
-            map_projection = "epsg:3857",
             map_area_definition = "corners",
-            area = Mask_Domain,
+            area = [-20,15,20,60],
             coastlines = coastlines
             )
 
@@ -129,22 +121,21 @@ while TheDateTime_Start <= TheDateTime_Start_F:
             )
 
       title = mv.mtext(
-            text_line_count = 4,
+            text_line_count = 3,
             text_line_1 = title_plot1,
             text_line_2 = title_plot2,
-            text_line_3 = title_plot3,
-            text_line_4 = " ",
+            text_line_3 = " ",
             text_colour = "charcoal",
             text_font_size = 0.7
             )
 
       # Saving the plot
-      MainDirOUT = Git_Repo + "/" + DirOUT
+      MainDirOUT = Git_Repo + "/" + DirOUT + "/" + Name_Domain
       if not os.path.exists(MainDirOUT):
             os.makedirs(MainDirOUT)
       FileOUT = MainDirOUT + "/Prob_AccRepFF_" +  TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H")
       png = mv.png_output(output_width = 5000, output_name = FileOUT)
       mv.setoutput(png)
-      mv.plot(geo_view, Prob_AccRepFF, contouring, legend, title)
+      mv.plot(Prob_AccRepFF, geo_view,  contouring, legend, title)
 
       TheDateTime_Start = TheDateTime_Start + timedelta(hours = Disc_Acc)

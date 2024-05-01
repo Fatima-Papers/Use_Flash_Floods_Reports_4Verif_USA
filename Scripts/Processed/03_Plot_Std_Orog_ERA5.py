@@ -22,10 +22,9 @@ FileIN = "Data/Raw/Analysis/ERA5/sdor/sdor.grib"
 DirOUT = "Data/Plot/03_Std_Orog_ERA5"
 #####################################################################################################
 
-
 # Retrieving the standard deviation of sub-gridscale orography
 print("Reading the standard deviation of sub-gridscale orography...")
-sdor = mv.read(Git_Repo + "/" + FileIN)
+sdor = mv.read(Git_Repo + "/" + FileIN) * 1
 
 # Reading US mask
 print("Reading the US domain ...")

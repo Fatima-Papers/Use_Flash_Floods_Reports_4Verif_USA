@@ -21,8 +21,8 @@ import matplotlib.dates as mdates
 # DirOUT (string): relative path containing the timeseries plots. 
 
 # INPUT PARAMETERS
-Year_S = 2005
-Year_F = 2023
+Year_S = 2021
+Year_F = 2021
 Acc = 12
 Disc_Acc = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"

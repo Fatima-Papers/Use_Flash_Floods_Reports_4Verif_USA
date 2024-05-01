@@ -56,7 +56,7 @@ while TheDate <= TheDate_F:
             print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
 
             # Reading the rainfall analysis
-            tp = mv.read(Git_Repo + "/" + DirIN_Analaysis + "/Pt_BC_PERC/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + str(EndPeriod) + ".grib2")
+            tp = mv.read(Git_Repo + "/" + DirIN_Analaysis + "/Pt_BC_PERC/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + f"{EndPeriod:03}" + ".grib2")
             tp_perc = mv.values(tp[Perc-1])
 
             # Determining the return period classes

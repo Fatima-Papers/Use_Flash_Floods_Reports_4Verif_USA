@@ -27,9 +27,9 @@ Disc_Acc = 12
 Thr_list = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,6,7,8,9,10]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
-DirIN_FC= "Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/NoPD"
+DirIN_FC= "Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/AllPred"
 DirIN_OBS = "Data/Compute/19_Grid_AccRepFF"
-DirOUT = "Data/Plot/36_Plot_Verif_Scores/AllFF_2005_2020/NoPD"
+DirOUT = "Data/Plot/36_Plot_Verif_Scores/AllFF_2005_2020/AllPred"
 ##################################################################################################################
 
 
@@ -58,11 +58,10 @@ fc = fc[ind_no_NaN]
 obs = obs[ind_no_NaN]
 
 # Initializing the variables that will stored the considered scores
-accuracy = []
-bias = []
 hr = []
 far = []
-ts = []
+bias = []
+pss = []
 ets = []
 
 # Computing the scores to consider
@@ -79,11 +78,10 @@ for Thr in Thr_list:
       # Computing the scores
       total = h + m + fa + cn
       h_chance = (h + fa) * (h + m) / total
-      accuracy.append( (h + cn) / total )
-      bias.append( (h + fa) / (h + m) )
       hr.append( h / (h + m) )
       far.append( fa / (fa + cn) )
-      ts.append( h / (h + fa + m) )
+      bias.append( (h + fa) / (h + m) )
+      pss.append( (h/(h+m)) - (fa/(fa+cn)) )
       ets.append((h - h_chance) / (h + m + fa - h_chance))
 
 # Plotting the considered scores
@@ -92,23 +90,14 @@ plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, hspace=0.3, wspace
 
 fig.suptitle("Scores for flash flood predictions exceeding a certain probability threshold (Prob_Thr)")
 
-axs[0,0].plot(Thr_list, accuracy, "o-") # Accuracy
+axs[0,0].plot(Thr_list, bias, "o-") # Bias
 axs[0,0]. plot([0,10.1], [1,1], color="black")
-axs[0,0].set_title("Accuracy")
+axs[0,0].set_title("Bias")
 axs[0,0].set_xlabel("Prob_Thr [%]")
-axs[0,0].set_ylabel("Accuracy [-]")
+axs[0,0].set_ylabel("Bias [-]")
 axs[0,0].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 axs[0,0].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 axs[0,0].set_xlim([0,10.1])
-
-axs[1,0].plot(Thr_list, bias, "o-") # Bias
-axs[1,0]. plot([0,10.1], [1,1], color="black")
-axs[1,0].set_title("Bias")
-axs[1,0].set_xlabel("Prob_Thr [%]")
-axs[1,0].set_ylabel("Bias [-]")
-axs[1,0].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[1,0].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[1,0].set_xlim([0,10.1])
 
 hr.insert(0, 1) # Roc curve
 hr.append(0)
@@ -123,6 +112,14 @@ axs[0,1].set_xlim([-0.01,1.01])
 axs[0,1].set_ylim([-0.01,1.01])
 axs[0,1].set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
 axs[0,1].set_yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+
+axs[1,0].plot(Thr_list, pss, "o-") # Pierce skill score
+axs[1,0].set_title("Pierce Skill Score, PSS")
+axs[1,0].set_xlabel("Prob_Thr [%]")
+axs[1,0].set_ylabel("PSS [-]")
+axs[1,0].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+axs[1,0].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+axs[1,0].set_xlim([0,10.1])
 
 axs[1,1].plot(Thr_list, ets, "o-") # Equitable threat score
 axs[1,1].set_title("Equitable threat score, ETS")
