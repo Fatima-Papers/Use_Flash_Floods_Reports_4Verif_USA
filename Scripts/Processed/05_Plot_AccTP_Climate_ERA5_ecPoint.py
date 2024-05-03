@@ -28,8 +28,8 @@ import metview as mv
 
 # INPUT PARAMETERS
 Acc = 12
-Perc2Plot_list = [99.9, 99.95, 99.98, 99.99, 99.995]
-YearRP_list = [1, 2, 5, 10, 20]
+Perc2Plot_list = [99.995] #99.9, 99.95, 99.98, 99.99, 99.995
+YearRP_list = [20] #1, 2, 5, 10, 20
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
@@ -114,10 +114,10 @@ for ind_perc in range(len(Perc2Plot_list)):
         )
 
     # Saving the maps
-    DirOUT_temp = Git_Repo + "/" + DirOUT
-    if not os.path.exists(DirOUT_temp):
-        os.makedirs(DirOUT_temp)
-    FileOUT = DirOUT_temp + "/tp" + f"{Acc:02}" + "h_climate_" + str(Perc2Plot) + "th"
-    png = mv.png_output(output_width = 5000, output_name = FileOUT)
-    mv.setoutput(png)
-    mv.plot(geo_view, climate_perc_mask, contouring, legend, title)
+    # DirOUT_temp = Git_Repo + "/" + DirOUT
+#     if not os.path.exists(DirOUT_temp):
+#         os.makedirs(DirOUT_temp)
+#     FileOUT = DirOUT_temp + "/tp" + f"{Acc:02}" + "h_climate_" + str(Perc2Plot) + "th"
+#     png = mv.png_output(output_width = 5000, output_name = FileOUT)
+#     mv.setoutput(png)
+    mv.plot(coastlines, climate_perc, contouring, legend, title)

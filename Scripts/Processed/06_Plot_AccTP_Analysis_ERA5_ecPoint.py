@@ -20,7 +20,8 @@ import metview as mv
 # DirOUT (string): relative path of the directory containing the 99th percentile's plots.
 
 # INPUT PARAMETERS
-Year = int(sys.argv[1])
+Year = 2024
+#Year = int(sys.argv[1])
 Acc = 12
 Perc = 99
 Mask_Domain = [22,-130,52,-60]
@@ -37,8 +38,8 @@ mask_vals = mv.values(mask)
 mask_bitmap = mv.bitmap(mask, 0)
 
 # Defining the period to consider
-TheDate_S = datetime(Year,1,1)
-TheDate_F = datetime(Year,12,31)
+TheDate_S = datetime(Year,4,24)
+TheDate_F = datetime(Year,4,24)
 
 # Plotting the accumulated rainfall totals from ERA5_ecPoint analysis
 print()
@@ -51,7 +52,7 @@ while TheDate <= TheDate_F:
             TheDateTime_Final = TheDate + timedelta(hours=EndPeriod)
             print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
 
-            tp = mv.read(Git_Repo + "/" + DirIN + "/Pt_BC_PERC/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + str(EndPeriod) + ".grib2")
+            tp = mv.read(Git_Repo + "/" + DirIN + "/Pt_BC_PERC/" + TheDate.strftime("%Y%m") + "/Pt_BC_PERC_" + TheDate.strftime("%Y%m%d") + "_" + "0" + str(EndPeriod) + ".grib2")
             tp_perc = tp[Perc-1]
             tp_perc_bitmap = mv.bitmap(tp_perc, mask_bitmap)
 
@@ -123,12 +124,12 @@ while TheDate <= TheDate_F:
                   )
 
             # Saving the maps
-            DirOUT_temp = Git_Repo + "/" + DirOUT + "/" + TheDateTime_Final.strftime("%Y%m")
-            if not os.path.exists(DirOUT_temp):
-                  os.makedirs(DirOUT_temp)
-            FileOUT = DirOUT_temp + "/tp" + str(Acc) + "h_" + str(Perc) + "th_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H")
-            png = mv.png_output(output_width = 5000, output_name = FileOUT)
-            mv.setoutput(png)
-            mv.plot(geo_view, tp_perc_bitmap, contouring, legend, title)
+            # DirOUT_temp = Git_Repo + "/" + DirOUT + "/" + TheDateTime_Final.strftime("%Y%m")
+#             if not os.path.exists(DirOUT_temp):
+#                   os.makedirs(DirOUT_temp)
+#             FileOUT = DirOUT_temp + "/tp" + str(Acc) + "h_" + str(Perc) + "th_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H")
+#             png = mv.png_output(output_width = 5000, output_name = FileOUT)
+#             mv.setoutput(png)
+            mv.plot(coastlines, tp_perc, contouring, legend, title)
 
       TheDate = TheDate + timedelta(days=1)

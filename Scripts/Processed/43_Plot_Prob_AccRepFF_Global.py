@@ -20,13 +20,16 @@ import metview as mv
 
 # INPUT PARAMETERS
 Year = int(sys.argv[1])
+#Year = 2024
 Acc = 12
 Disc_Acc = 12
-Mask_Domain = [22,-130,52,-60]
-Name_Domain = "Central_East_Africa"
+Mask_Domain = [-20,15,20,60] # [-90,-180,90,180], [-20,15,20,60]
+Name_Domain = "Central_East_Africa" # Global, Central_East_Africa
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = sys.argv[2]
 DirOUT = sys.argv[3]
+#DirIN="Data/Compute/42_Prob_AccRepFF_Global/AllFF_2005_2020/NoPD"
+#DirOUT="Data/Plot/43_Prob_AccRepFF_Global/AllFF_2005_2020/NoPD"
 ##########################################################################
 
 
@@ -66,29 +69,51 @@ while TheDateTime_Start <= TheDateTime_Start_F:
       TimeVF = ValidityDateF.strftime("%H")
       
       title_plot1 = "Probability (%) of having a flash flood event within each grid-box"
-      title_plot2 = "VT: " + DayVS + " " + MonthVS + " " + YearVS + " " + TimeVS + " UTC - " + DayVF + " " + MonthVF + " " + YearVF + " " + TimeVF  + " UTC"          
+      title_plot2 = "VT: " + DayVS + " " + MonthVS + " " + YearVS + " " + TimeVS + " UTC to " + DayVF + " " + MonthVF + " " + YearVF + " " + TimeVF  + " UTC"          
 
       # Plotting the probabilities
-      coastlines = mv.mcoast(
-            map_coastline_colour = "charcoal",
-            map_coastline_thickness = 2,
-            map_coastline_resolution = "full",
-            map_coastline_sea_shade = "on",
-            map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
-            map_boundaries = "on",
-            map_boundaries_colour = "evergreen",
-            map_boundaries_thickness = 4,
-            map_grid_latitude_increment = 10,
-            map_grid_longitude_increment = 20,
-            map_label_colour = "charcoal",
-            map_grid_thickness = 1,
-            map_grid_colour = "charcoal",
-            map_label_height = 0.7
-            )
-
+      if Name_Domain == "Global":
+          coastlines = mv.mcoast(
+                map_coastline_colour = "charcoal",
+                map_coastline_thickness = 1,
+                map_coastline_resolution = "low",
+                map_coastline_sea_shade = "on",
+                map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
+                map_boundaries = "on",
+                map_boundaries_colour = "charcoal",
+                map_label_right = "off",
+                map_label_top = "off",
+                map_boundaries_thickness = 1,
+                map_grid_latitude_increment = 10,
+                map_grid_longitude_increment = 20,
+                map_label_colour = "charcoal",
+                map_grid_thickness = 1,
+                map_grid_colour = "charcoal",
+                map_label_height = 1
+                )
+      else:
+            coastlines = mv.mcoast(
+                map_coastline_colour = "charcoal",
+                map_coastline_thickness = 1,
+                map_coastline_resolution = "full",
+                map_coastline_sea_shade = "on",
+                map_coastline_sea_shade_colour = "rgb(0.665,0.9193,0.9108)",
+                map_boundaries = "on",
+                map_boundaries_colour = "charcoal",
+                map_label_right = "off",
+                map_label_top = "off",
+                map_boundaries_thickness = 1,
+                map_grid_latitude_increment = 10,
+                map_grid_longitude_increment = 20,
+                map_label_colour = "charcoal",
+                map_grid_thickness = 1,
+                map_grid_colour = "charcoal",
+                map_label_height = 1
+                )
+        
       geo_view = mv.geoview(
             map_area_definition = "corners",
-            area = [-20,15,20,60],
+            area = Mask_Domain,
             coastlines = coastlines
             )
 
@@ -99,8 +124,8 @@ while TheDateTime_Start <= TheDateTime_Start_F:
             contour_level_list = [0, 0.2, 0.4, 0.6, 0.8, 1, 3, 5, 7, 10, 100],
             contour_label = "off",
             contour_shade = "on",
-            contour_shade_technique = "grid_shading",
             contour_shade_colour_method = "list",
+            contour_shade_method = "area_fill",
             contour_shade_colour_list = [
                   "rgb(0.8,0.8,0.8)", # 0 - 0.2
                   "rgb(0.7,0.7,0.7)", # 0.2 - 0.4
@@ -117,16 +142,15 @@ while TheDateTime_Start <= TheDateTime_Start_F:
 
       legend = mv.mlegend(
             legend_text_colour = "charcoal",
-            legend_text_font_size = 0.5,
+            legend_text_font_size = 1,
             )
 
       title = mv.mtext(
-            text_line_count = 3,
-            text_line_1 = title_plot1,
-            text_line_2 = title_plot2,
-            text_line_3 = " ",
+            text_line_count = 2,
+            text_line_1 = title_plot2,
+            text_line_2 = title_plot1,
             text_colour = "charcoal",
-            text_font_size = 0.7
+            text_font_size = 1
             )
 
       # Saving the plot
@@ -134,7 +158,7 @@ while TheDateTime_Start <= TheDateTime_Start_F:
       if not os.path.exists(MainDirOUT):
             os.makedirs(MainDirOUT)
       FileOUT = MainDirOUT + "/Prob_AccRepFF_" +  TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H")
-      png = mv.png_output(output_width = 5000, output_name = FileOUT)
+      png = mv.png_output(output_width = 2000, output_name = FileOUT)
       mv.setoutput(png)
       mv.plot(Prob_AccRepFF, geo_view,  contouring, legend, title)
 
