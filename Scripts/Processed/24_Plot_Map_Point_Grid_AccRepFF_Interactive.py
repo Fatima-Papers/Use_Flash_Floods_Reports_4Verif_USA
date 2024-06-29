@@ -102,9 +102,9 @@ symb_point = mv.msymb(
       symbol_outline = "on",
       symbol_min_table = [-0.1],
       symbol_max_table = [0.1],
-      symbol_colour_table = "red",
+      symbol_colour_table = "black",
       symbol_marker_table = 15,
-      symbol_height_table = 0.2
+      symbol_height_table = 0.1
       )
 
 symb_grid = mv.msymb(
@@ -114,9 +114,9 @@ symb_grid = mv.msymb(
       symbol_outline = "on",
       symbol_min_table = [-0.1],
       symbol_max_table = [0.1],
-      symbol_colour_table = "black",
+      symbol_colour_table = "red",
       symbol_marker_table = 15,
-      symbol_height_table = 0.4
+      symbol_height_table = 0.2
       )
 
 symb_gridpoints = mv.msymb(

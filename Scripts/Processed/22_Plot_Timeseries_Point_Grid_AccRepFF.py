@@ -21,8 +21,8 @@ import matplotlib.dates as mdates
 # DirOUT (string): relative path containing the timeseries plots. 
 
 # INPUT PARAMETERS
-Year_S = 2021
-Year_F = 2021
+Year_S = 2005
+Year_F = 2023
 Acc = 12
 Disc_Acc = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
@@ -69,8 +69,8 @@ for Year in range(Year_S, Year_F+1):
       
       # Plot the histogram with the counts
       fig, ax = plt.subplots(figsize=(25, 8))
-      rects1 = ax.bar(Dates_all, Count_Point_AccRepFF_all, 0.5, color="black", align='center', label="Point")
-      rects2 = ax.bar(Dates_all, Count_Grid_AccRepFF_all, 0.5, color="red", align='center', label="Grid")
+      rects1 = ax.bar(Dates_all, Count_Point_AccRepFF_all, 0.5, color="red", align='center', label="Point")
+      rects2 = ax.bar(Dates_all, Count_Grid_AccRepFF_all, 0.5, color="black", align='center', label="Grid")
       ax.xaxis.set_major_locator(mdates.MonthLocator())
       ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
       plt.xticks(rotation=30)
