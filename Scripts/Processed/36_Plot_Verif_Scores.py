@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 # Runtime: the script can take up to 10 hours to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
-# Year (integer, in YYYY format): year to consider.
+# TheDateTime_Start_S (date): start date of the beginning accumulation period to consider.
+# TheDateTime_Start_F (date): final date of the beginning accumulation period to consider.
 # Acc (integer, in hours): accumulation period.
 # Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
@@ -21,7 +22,8 @@ import matplotlib.pyplot as plt
 # DirOUT (string): relative path of the directory containing the contingency tables. 
 
 # INPUT PARAMETERS
-Year = 2021
+TheDateTime_Start_S = datetime(2021, 1, 1, 0)
+TheDateTime_Start_F = datetime(2023, 12, 31, 12)
 Acc = 12
 Disc_Acc = 12
 Thr_list = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,6,7,8,9,10]
@@ -39,8 +41,6 @@ mask_vals = mv.values(mask)
 mask_index = np.where(mask_vals == 1)[0]
 
 # Reading the fields with the reported and predicted flash flood events per grid-box
-TheDateTime_Start_S = datetime(Year, 1, 1, 0)
-TheDateTime_Start_F = datetime(Year, 12, 31, 12)
 TheDateTime_Start = TheDateTime_Start_S
 fc = np.array([])
 obs = np.array([])
