@@ -1,6 +1,7 @@
 import os
 from datetime import datetime, timedelta
 import numpy as np
+import random
 import metview as mv
 import matplotlib.pyplot as plt
 
@@ -15,6 +16,8 @@ import matplotlib.pyplot as plt
 # TheDateTime_Start_F (date): final date of the beginning accumulation period to consider.
 # Acc (integer, in hours): accumulation period.
 # Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
+# Num_BS (integer): number of bootstrapping repetitions.
+# CL (integer, from 0 to 100, in %): confidence level for the error bars.
 # Mask_Domain (list of floats, in S/W/N/E coordinates): domain's coordinates.
 # Git_Repo (string): repository's local path.
 # DirIN_FC (string): relative path of the directory containg the ANN predictions for the probabilities of having a flash flood event in a grid-box.
@@ -26,6 +29,8 @@ TheDateTime_Start_S = datetime(2021, 1, 1, 0)
 TheDateTime_Start_F = datetime(2023, 12, 31, 12)
 Acc = 12
 Disc_Acc = 12
+Num_BS = 100
+CL = 99
 Thr_list = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,6,7,8,9,10]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
@@ -35,102 +40,187 @@ DirOUT = "Data/Plot/36_Plot_Verif_Scores/AllFF_2005_2020/NoPD"
 ##################################################################################################################
 
 
+# CUSTOM FUNCTIONS
+
+# Generating the list of original dates within the verification period
+def generate_date_list_with_hours(start, end, list_start_accper):
+      delta = end - start
+      date_list = []
+      for i in range(delta.days + 1):
+            day = start + timedelta(days=i)
+            for start_accper in list_start_accper:
+                  date_list.append(day.replace(hour=start_accper))
+      return date_list
+
+# Generating the list of bootstrapped dates within the verification period
+def random_dates_list(start, end, num_acc_day, list_start_accper):
+      delta = end - start
+      num_days = (delta.days + 1) * num_acc_day
+      random_dates = []
+      for _ in range(num_days):
+            random_days = random.randint(0, num_days)
+            random_hour = random.choice(list_start_accper)
+            random_date = start + timedelta(days=random_days, hours=random_hour)
+            random_dates.append(random_date)
+      return random_dates
+###################################################################
+
+
+# Setting the main output directory
+MainDirOUT = Git_Repo + "/" + DirOUT
+if not os.path.exists(MainDirOUT):
+      os.makedirs(MainDirOUT)
+
+# Initializing the variables that will stored the bootsrapped contingency tables
+h_bs = np.zeros((len(Thr_list), (Num_BS+1)))
+m_bs = np.zeros((len(Thr_list), (Num_BS+1)))
+fa_bs = np.zeros((len(Thr_list), (Num_BS+1))) 
+cn_bs = np.zeros((len(Thr_list), (Num_BS+1)))
+
+# Assessing how many accumulation periods are considered per day
+List_Start_AccPer = integer_list = list(range(0, 24, 12))
+Num_Acc_Day = len(List_Start_AccPer)
+
 # Reading domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask_vals = mv.values(mask)
 mask_index = np.where(mask_vals == 1)[0]
 
-# Reading the fields with the reported and predicted flash flood events per grid-box
-TheDateTime_Start = TheDateTime_Start_S
-fc = np.array([])
-obs = np.array([])
-while TheDateTime_Start <= TheDateTime_Start_F:
-      TheDateTime_Final = TheDateTime_Start + timedelta(hours=Acc)
-      print(" - on " + TheDateTime_Final.strftime("%Y-%m-%d") + " at " + TheDateTime_Final.strftime("%H") + " UTC")
-      FileIN_FC = Git_Repo + "/" + DirIN_FC + "/Prob_AccRepFF_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
-      FileIN_OBS = Git_Repo + "/" + DirIN_OBS + "/" + TheDateTime_Final.strftime("%Y") + "/" + TheDateTime_Final.strftime("%Y%m%d") + "/Grid_AccRepFF_" + TheDateTime_Final.strftime("%Y%m%d%H") + ".grib"
-      fc = np.concatenate((fc, mv.values(mv.read(FileIN_FC))[mask_index]))
-      obs = np.concatenate((obs, mv.values(mv.read(FileIN_OBS))[mask_index]))
-      TheDateTime_Start = TheDateTime_Start + timedelta(hours=Disc_Acc)
-fc[fc == -1] = 0 # set to zero the probabilities of having a flash flood event in those grid-boxes with zero rainfall
-ind_no_NaN = np.where(fc >= 0)[0] # remove the NaN
-fc = fc[ind_no_NaN]
-obs = obs[ind_no_NaN]
+# Computing the bootstrapped verification scores for the considered verification period
+print("Computing the bootstrapped verification scores for the verification period between " + TheDateTime_Start_S.strftime("%Y-%m-%d %H UTC") + " and " + TheDateTime_Start_F.strftime("%Y-%m-%d %H UTC"))
+for ind_BS in range(Num_BS+1):
 
-# Initializing the variables that will stored the considered scores
-hr = []
-far = []
-bias = []
-pss = []
-ets = []
+      print(" - Bootstrap n. " + str(ind_BS) + "/" + str(Num_BS))
 
-# Computing the scores to consider
-print()
-for Thr in Thr_list:
+      if ind_BS == 0: # original dates
+            TheDateTime_Start_list = generate_date_list_with_hours(TheDateTime_Start_S, TheDateTime_Start_F, List_Start_AccPer)
+      else: # bootstrapped dates
+            TheDateTime_Start_list = random_dates_list(TheDateTime_Start_S, TheDateTime_Start_F, Num_Acc_Day, List_Start_AccPer)
 
-      # Creating the contingency table
-      print("Computing the contingency table for prob >= " + str(Thr))
-      h = np.where((obs>0) & (fc>=Thr))[0].shape[0]
-      m = np.where((obs>0) & (fc<Thr))[0].shape[0]
-      fa = np.where((obs==0) & (fc>=Thr))[0].shape[0]
-      cn = np.where((obs==0) & (fc<Thr))[0].shape[0]
+      # Reading the fields with the reported and predicted flash flood events per grid-box
+      fc = np.array([])
+      obs = np.array([])
+      for TheDateTime_Start in TheDateTime_Start_list:
+            TheDateTime_Final = TheDateTime_Start + timedelta(hours=Acc)
+            FileIN_FC = Git_Repo + "/" + DirIN_FC + "/Prob_AccRepFF_" + TheDateTime_Final.strftime("%Y%m%d") + "_" + TheDateTime_Final.strftime("%H") + ".grib"
+            FileIN_OBS = Git_Repo + "/" + DirIN_OBS + "/" + TheDateTime_Final.strftime("%Y") + "/" + TheDateTime_Final.strftime("%Y%m%d") + "/Grid_AccRepFF_" + TheDateTime_Final.strftime("%Y%m%d%H") + ".grib"
+            fc = np.concatenate((fc, mv.values(mv.read(FileIN_FC))[mask_index]))
+            obs = np.concatenate((obs, mv.values(mv.read(FileIN_OBS))[mask_index]))
+            TheDateTime_Start = TheDateTime_Start + timedelta(hours=Disc_Acc)
+      fc[fc == -1] = 0 # set to zero the probabilities of having a flash flood event in those grid-boxes with zero rainfall
+      ind_no_NaN = np.where(fc >= 0)[0] # remove the NaN
+      fc = fc[ind_no_NaN]
+      obs = obs[ind_no_NaN]
 
-      # Computing the scores
-      total = h + m + fa + cn
-      h_chance = (h + fa) * (h + m) / total
-      hr.append( h / (h + m) )
-      far.append( fa / (fa + cn) )
-      bias.append( (h + fa) / (h + m) )
-      pss.append( (h/(h+m)) - (fa/(fa+cn)) )
-      ets.append((h - h_chance) / (h + m + fa - h_chance))
+      # Computing the bootstrapped contingency tables
+      h = []
+      m = []
+      fa = []
+      cn = []
+      for ind_Thr in range(len(Thr_list)):
+            Thr = Thr_list[ind_Thr]
+            h.append(np.where((obs>0) & (fc>=Thr))[0].shape[0])
+            m.append(np.where((obs>0) & (fc<Thr))[0].shape[0])
+            fa.append(np.where((obs==0) & (fc>=Thr))[0].shape[0])
+            cn.append(np.where((obs==0) & (fc<Thr))[0].shape[0])
 
-# Plotting the considered scores
-fig, axs = plt.subplots(2,2, figsize=(14, 10))
-plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, hspace=0.3, wspace=0.2)
+      # Storing the bootstrapped contingency tables
+      h_bs[:, ind_BS] = h
+      m_bs[:, ind_BS] = m
+      fa_bs[:, ind_BS] = fa
+      cn_bs[:, ind_BS] = cn
 
-#fig.suptitle("Scores for flash flood predictions exceeding a certain probability threshold (Prob_Thr)")
+# Computing the scores
+total_bs = h_bs + m_bs + fa_bs + cn_bs
+h_chance_bs = (h_bs + fa_bs) * (h_bs + m_bs) / total_bs
+hr_bs = h_bs / (h_bs + m_bs) 
+far_bs = fa_bs / (fa_bs + cn_bs)
+bias_bs =  (h_bs + fa_bs) / (h_bs + m_bs)
+pss_bs = (h_bs / (h_bs + m_bs)) - (fa_bs / (fa_bs + cn_bs))
+ets_bs = (h_bs - h_chance_bs) / (h_bs + m_bs + fa_bs - h_chance_bs)
 
-axs[0,0].plot(Thr_list, bias, "o-", color="#E0115F", linewidth=2, markersize=4) # Bias
-axs[0,0]. plot([0,10.1], [1,1], color="#36454F", linewidth=1)
-axs[0,0].set_title("Bias")
-axs[0,0].set_xlabel("Prob_Thr [%]")
-axs[0,0].set_ylabel("Bias [-]")
-axs[0,0].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[0,0].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[0,0].set_xlim([0,10.1])
 
-hr.insert(0, 1) # Roc curve
-hr.append(0)
-far.insert(0, 1)
-far.append(0)
-axs[0,1].plot(far, hr, "o-", color="#E0115F", linewidth=2, markersize=4)
-axs[0,1].plot([-0.01,1.01], [-0.01,1.01], color="#36454F")
-axs[0,1].set_title("ROC curve")
-axs[0,1].set_xlabel("False Alarm Rate [-]")
-axs[0,1].set_ylabel("Hit Rate [-]")
-axs[0,1].set_xlim([-0.01,1.01])
-axs[0,1].set_ylim([-0.01,1.01])
-axs[0,1].set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
-axs[0,1].set_yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+# Plotting the verification scores
 
-axs[1,0].plot(Thr_list, pss, "o-", color="#E0115F", linewidth=2, markersize=4) # Pierce skill score
-axs[1,0].set_title("Pierce Skill Score, PSS")
-axs[1,0].set_xlabel("Prob_Thr [%]")
-axs[1,0].set_ylabel("PSS [-]")
-axs[1,0].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[1,0].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[1,0].set_xlim([0,10.1])
-
-axs[1,1].plot(Thr_list, ets, "o-", color="#E0115F", linewidth=2, markersize=4) # Equitable threat score
-axs[1,1].set_title("Equitable threat score, ETS")
-axs[1,1].set_xlabel("Prob_Thr [%]")
-axs[1,1].set_ylabel("ETS [-]")
-axs[1,1].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[1,1].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-axs[1,1].set_xlim([0,10.1])
-
-MainDirOUT = Git_Repo + "/" + DirOUT
-if not os.path.exists(MainDirOUT):
-      os.makedirs(MainDirOUT)
-FileOUT = MainDirOUT + "/Verif_Scores.jpeg"
+# Hits
+var = h_bs
+VarName = "h"
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+# Misses
+var = m_bs
+VarName = "m"
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+# False alarms
+var = fa_bs
+VarName = "fa"
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+# Correct negatives
+var = cn_bs
+VarName = "cn"
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+# Correct negatives
+var = bias_bs
+VarName = "bias"
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+# Correct negatives
+var = pss_bs
+VarName = "pss"
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+# Correct negatives
+var = ets_bs
+VarName = "ets"
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+# Roc curve
+plt.plot(far_bs[:,0], hr_bs[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+FileOUT = MainDirOUT + "/roc.jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
