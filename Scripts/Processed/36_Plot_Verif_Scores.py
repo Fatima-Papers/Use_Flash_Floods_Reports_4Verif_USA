@@ -27,9 +27,9 @@ Disc_Acc = 12
 Thr_list = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,6,7,8,9,10]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
-DirIN_FC= "Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/AllPred"
+DirIN_FC= "Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/NoPD"
 DirIN_OBS = "Data/Compute/19_Grid_AccRepFF"
-DirOUT = "Data/Plot/36_Plot_Verif_Scores/AllFF_2005_2020/AllPred"
+DirOUT = "Data/Plot/36_Plot_Verif_Scores/AllFF_2005_2020/NoPD"
 ##################################################################################################################
 
 
@@ -88,10 +88,10 @@ for Thr in Thr_list:
 fig, axs = plt.subplots(2,2, figsize=(14, 10))
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, hspace=0.3, wspace=0.2)
 
-fig.suptitle("Scores for flash flood predictions exceeding a certain probability threshold (Prob_Thr)")
+#fig.suptitle("Scores for flash flood predictions exceeding a certain probability threshold (Prob_Thr)")
 
-axs[0,0].plot(Thr_list, bias, "o-") # Bias
-axs[0,0]. plot([0,10.1], [1,1], color="black")
+axs[0,0].plot(Thr_list, bias, "o-", color="#E0115F", linewidth=2, markersize=4) # Bias
+axs[0,0]. plot([0,10.1], [1,1], color="#36454F", linewidth=1)
 axs[0,0].set_title("Bias")
 axs[0,0].set_xlabel("Prob_Thr [%]")
 axs[0,0].set_ylabel("Bias [-]")
@@ -103,8 +103,8 @@ hr.insert(0, 1) # Roc curve
 hr.append(0)
 far.insert(0, 1)
 far.append(0)
-axs[0,1].plot(far, hr, "o-")
-axs[0,1].plot([-0.01,1.01], [-0.01,1.01], color="black")
+axs[0,1].plot(far, hr, "o-", color="#E0115F", linewidth=2, markersize=4)
+axs[0,1].plot([-0.01,1.01], [-0.01,1.01], color="#36454F")
 axs[0,1].set_title("ROC curve")
 axs[0,1].set_xlabel("False Alarm Rate [-]")
 axs[0,1].set_ylabel("Hit Rate [-]")
@@ -113,7 +113,7 @@ axs[0,1].set_ylim([-0.01,1.01])
 axs[0,1].set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
 axs[0,1].set_yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
 
-axs[1,0].plot(Thr_list, pss, "o-") # Pierce skill score
+axs[1,0].plot(Thr_list, pss, "o-", color="#E0115F", linewidth=2, markersize=4) # Pierce skill score
 axs[1,0].set_title("Pierce Skill Score, PSS")
 axs[1,0].set_xlabel("Prob_Thr [%]")
 axs[1,0].set_ylabel("PSS [-]")
@@ -121,7 +121,7 @@ axs[1,0].set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 axs[1,0].set_xticklabels([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 axs[1,0].set_xlim([0,10.1])
 
-axs[1,1].plot(Thr_list, ets, "o-") # Equitable threat score
+axs[1,1].plot(Thr_list, ets, "o-", color="#E0115F", linewidth=2, markersize=4) # Equitable threat score
 axs[1,1].set_title("Equitable threat score, ETS")
 axs[1,1].set_xlabel("Prob_Thr [%]")
 axs[1,1].set_ylabel("ETS [-]")

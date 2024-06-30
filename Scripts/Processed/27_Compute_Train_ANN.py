@@ -108,9 +108,7 @@ train_time = time_callback.times
 MainDirOUT = Git_Repo + "/" + DirOUT
 if not os.path.exists(MainDirOUT):
     os.makedirs(MainDirOUT)
-model.save_weights(
-    MainDirOUT + "/weights", overwrite=True, save_format=None, options=None
-)
+model.save_weights(MainDirOUT + "/test.weights.h5", overwrite=True)
 np.save(MainDirOUT + "/train_accuracy", train_accuracy)
 np.save(MainDirOUT + "/validation_accuracy", validation_accuracy)
 np.save(MainDirOUT + "/train_time", train_time)
