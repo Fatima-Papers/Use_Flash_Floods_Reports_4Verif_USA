@@ -28,10 +28,10 @@ from matplotlib.patches import PathPatch
 
 # INPUT PARAMETERS
 TheDateTime_Start_S = datetime(2021, 1, 1, 0)
-TheDateTime_Start_F = datetime(2021, 1, 31, 12)
+TheDateTime_Start_F = datetime(2023, 12, 31, 12)
 Acc = 12
 Disc_Acc = 12
-Num_BS = 10
+Num_BS = 1000
 CL = 99
 Thr_list = [0.1, 0.3, 0.5, 0.7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
@@ -79,11 +79,13 @@ cn_bs = np.zeros((len(Thr_list), (Num_BS+1)))
 
 # Assessing how many accumulation periods are considered per day
 List_Start_AccPer = integer_list = list(range(0, 24, Disc_Acc))
+Num_Days = (TheDateTime_Start_F - TheDateTime_Start_S).days + 1
 
 # Reading domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
 mask_vals = mv.values(mask)
 mask_index = np.where(mask_vals == 1)[0]
+Num_GP = mask_index.shape[0]
 
 # Computing the bootstrapped verification scores for the considered verification period
 print("Computing the bootstrapped verification scores for the verification period between " + TheDateTime_Start_S.strftime("%Y-%m-%d %H UTC") + " and " + TheDateTime_Start_F.strftime("%Y-%m-%d %H UTC"))
@@ -129,7 +131,25 @@ for ind_BS in range(Num_BS+1):
       fa_bs[:, ind_BS] = fa
       cn_bs[:, ind_BS] = cn
 
-# Computing the scores
+# Printing on screen the contingency table
+Tot_NumGB_Verif_Per = (h_bs + m_bs + fa_bs + cn_bs)[0]
+print("Total n. of grid-boxes in the verification period:", Tot_NumGB_Verif_Per)
+print()
+print("Hits:")
+print(h_bs / Tot_NumGB_Verif_Per * 100)
+print()
+print("Misses:")
+print(m_bs / Tot_NumGB_Verif_Per * 100)
+print()
+print("False alarms:")
+print(fa_bs / Tot_NumGB_Verif_Per * 100)
+print()
+print("Correct negatives:")
+print(cn_bs / Tot_NumGB_Verif_Per * 100)
+
+# Computing the verification scores
+print()
+print("Computing the verification scores")
 total_bs = h_bs + m_bs + fa_bs + cn_bs
 h_chance_bs = (h_bs + fa_bs) * (h_bs + m_bs) / total_bs
 hr_bs = h_bs / (h_bs + m_bs) 
@@ -138,109 +158,9 @@ bias_bs =  (h_bs + fa_bs) / (h_bs + m_bs)
 pss_bs = (h_bs / (h_bs + m_bs)) - (fa_bs / (fa_bs + cn_bs))
 ets_bs = (h_bs - h_chance_bs) / (h_bs + m_bs + fa_bs - h_chance_bs)
 
-
 # Plotting and saving the verification scores
 print()
 print("Plotting and saving the verification scores")
-
-
-######
-# Hits #
-######
-
-var = h_bs
-VarName = "h"
-
-lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
-upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
-
-plt.figure(figsize=(6,6))
-plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
-plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
-
-ax = plt.gca()
-ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
-ax.spines["left"].set_visible(False)
-ax.spines["right"].set_visible(False)
-plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
-ax.tick_params(axis="y", colors="#36454F")
-
-plt.ylim([-9, np.max(var[:,0] + 10)])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
-
-plt.grid(axis="y", color="silver", linewidth=0.5)
-
-FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
-plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
-plt.close()
-
-
-#########
-# Misses #
-#########
-
-var = m_bs
-VarName = "m"
-
-lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
-upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
-
-plt.figure(figsize=(6,6))
-plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
-plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
-
-ax = plt.gca()
-ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
-ax.spines["left"].set_visible(False)
-ax.spines["right"].set_visible(False)
-plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
-ax.tick_params(axis="y", colors="#36454F")
-
-plt.ylim([-9, np.max(var[:,0] + 10)])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
-
-plt.grid(axis="y", color="silver", linewidth=0.5)
-
-FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
-plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
-plt.close()
-
-
-#############
-# False alarms #
-#############
-
-var = fa_bs
-VarName = "fa"
-
-lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
-upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
-
-plt.figure(figsize=(6,6))
-plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
-plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
-
-ax = plt.gca()
-ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
-ax.spines["left"].set_visible(False)
-ax.spines["right"].set_visible(False)
-plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
-ax.tick_params(axis="y", colors="#36454F")
-
-plt.ylim([-1000, np.max(var[:,0] + 1000)])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
-
-plt.grid(axis="y", color="silver", linewidth=0.5)
-
-FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
-plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
-plt.close()
 
 
 ###########
@@ -303,9 +223,9 @@ plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
 
-######
-# Bias #
-######
+###############
+# Frequency Bias #
+###############
 
 var = bias_bs
 VarName = "bias"
