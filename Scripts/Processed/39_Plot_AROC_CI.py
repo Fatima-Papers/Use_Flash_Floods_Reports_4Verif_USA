@@ -42,6 +42,11 @@ for ind in range(len(ROC_list)):
 
       # Reading the steps computed, and the original and bootstrapped AROC values
       FileIN = Git_Repo + "/" + DirIN + "/" + f"{Acc:02d}" + "h/AROC_" + f"{Acc:02d}" + "h_" + SystemFC + "_" + str(Perc_VRT) + "_" + ROC + ".npy"
+
+      a = np.load(FileIN)
+      print(a.shape)
+      exit()
+
       StepF = np.load(FileIN)[:,0].astype(int)
       aroc_real = np.load(FileIN)[:,1]
       #aroc_BS = np.load(FileIN)[:,2:]

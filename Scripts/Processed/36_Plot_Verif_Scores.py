@@ -4,6 +4,8 @@ import numpy as np
 import random
 import metview as mv
 import matplotlib.pyplot as plt
+from matplotlib.path import Path
+from matplotlib.patches import PathPatch
 
 
 ##################################################################################################################
@@ -26,12 +28,12 @@ import matplotlib.pyplot as plt
 
 # INPUT PARAMETERS
 TheDateTime_Start_S = datetime(2021, 1, 1, 0)
-TheDateTime_Start_F = datetime(2023, 12, 31, 12)
+TheDateTime_Start_F = datetime(2021, 1, 31, 12)
 Acc = 12
 Disc_Acc = 12
-Num_BS = 100
+Num_BS = 10
 CL = 99
-Thr_list = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,6,7,8,9,10]
+Thr_list = [0.1, 0.3, 0.5, 0.7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 FileIN_Mask = "Data/Raw/Mask/USA_ERA5/Mask.grib"
 DirIN_FC= "Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/NoPD"
@@ -52,10 +54,8 @@ def generate_date_list_with_hours(start, end, list_start_accper):
                   date_list.append(day.replace(hour=start_accper))
       return date_list
 
-# Generating the list of bootstrapped dates within the verification period
-def random_dates_list(start, end, num_acc_day, list_start_accper):
-      delta = end - start
-      num_days = (delta.days + 1) * num_acc_day
+def random_dates_list(start, end, list_start_accper):
+      num_days = (end - start).days
       random_dates = []
       for _ in range(num_days):
             random_days = random.randint(0, num_days)
@@ -78,8 +78,7 @@ fa_bs = np.zeros((len(Thr_list), (Num_BS+1)))
 cn_bs = np.zeros((len(Thr_list), (Num_BS+1)))
 
 # Assessing how many accumulation periods are considered per day
-List_Start_AccPer = integer_list = list(range(0, 24, 12))
-Num_Acc_Day = len(List_Start_AccPer)
+List_Start_AccPer = integer_list = list(range(0, 24, Disc_Acc))
 
 # Reading domain's mask
 mask = mv.read(Git_Repo + "/" + FileIN_Mask)
@@ -95,7 +94,7 @@ for ind_BS in range(Num_BS+1):
       if ind_BS == 0: # original dates
             TheDateTime_Start_list = generate_date_list_with_hours(TheDateTime_Start_S, TheDateTime_Start_F, List_Start_AccPer)
       else: # bootstrapped dates
-            TheDateTime_Start_list = random_dates_list(TheDateTime_Start_S, TheDateTime_Start_F, Num_Acc_Day, List_Start_AccPer)
+            TheDateTime_Start_list = random_dates_list(TheDateTime_Start_S, TheDateTime_Start_F, List_Start_AccPer)
 
       # Reading the fields with the reported and predicted flash flood events per grid-box
       fc = np.array([])
@@ -140,87 +139,280 @@ pss_bs = (h_bs / (h_bs + m_bs)) - (fa_bs / (fa_bs + cn_bs))
 ets_bs = (h_bs - h_chance_bs) / (h_bs + m_bs + fa_bs - h_chance_bs)
 
 
-# Plotting the verification scores
+# Plotting and saving the verification scores
+print()
+print("Plotting and saving the verification scores")
 
-# Hits
+
+######
+# Hits #
+######
+
 var = h_bs
 VarName = "h"
+
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+
+plt.figure(figsize=(6,6))
 plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
 plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.ylim([-9, np.max(var[:,0] + 10)])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
 FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
-# Misses
+
+#########
+# Misses #
+#########
+
 var = m_bs
 VarName = "m"
+
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+
+plt.figure(figsize=(6,6))
 plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
 plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.ylim([-9, np.max(var[:,0] + 10)])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
 FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
-# False alarms
+
+#############
+# False alarms #
+#############
+
 var = fa_bs
 VarName = "fa"
+
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+
+plt.figure(figsize=(6,6))
 plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
 plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.ylim([-1000, np.max(var[:,0] + 1000)])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
 FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
-# Correct negatives
-var = cn_bs
-VarName = "cn"
-lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
-upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
-plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
-plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
-FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+
+###########
+# Roc curve #
+###########
+
+plt.figure(figsize=(6,6))
+
+far = far_bs[:,0]
+hr = hr_bs[:,0]
+far = np.insert(far, 0, 1)
+hr = np.insert(hr, 0, 1)
+far = np.append(far, 0)
+hr = np.append(hr, 0)
+
+far_lower_error = np.percentile(far_bs[:,1:], (100-CL)/2, axis = 1)
+hr_lower_error = np.percentile(hr_bs[:,1:], (100-CL)/2, axis = 1)
+far_lower_error = np.insert(far_lower_error, 0, 1)
+hr_lower_error = np.insert(hr_lower_error, 0, 1)
+far_lower_error = np.append(far_lower_error, 0)
+hr_lower_error = np.append(hr_lower_error, 0)
+
+far_upper_error = np.percentile(far_bs[:,1:], (100 - (100-CL)/2), axis = 1)
+hr_upper_error = np.percentile(hr_bs[:,1:], (100 - (100-CL)/2), axis = 1)
+far_upper_error = np.insert(far_upper_error, 0, 1)
+hr_upper_error = np.insert(hr_upper_error, 0, 1)
+far_upper_error = np.append(far_upper_error, 0)
+hr_upper_error = np.append(hr_upper_error, 0)
+
+vertices = np.concatenate([np.column_stack([far_lower_error, hr_lower_error]), np.column_stack([far_upper_error, hr_upper_error])[::-1]])
+codes = np.concatenate([np.full(far_lower_error.shape, Path.LINETO), np.full(far_upper_error.shape, Path.LINETO)])
+codes[0] = Path.MOVETO
+codes[len(far_lower_error)] = Path.MOVETO
+path = Path(vertices, codes)
+patch = PathPatch(path, facecolor="#E0115F", alpha=0.25, edgecolor='none')
+
+plt.plot(far, hr, "o-", color="#E0115F", linewidth=1, markersize=2)
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_visible(False)
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False, bottom=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.005, 1])
+ax.set_xticks(np.arange(0, 1.1, 0.1))
+plt.ylim([-0.005,1])
+ax.set_yticks(np.arange(0, 1.1, 0.1))
+plt.plot([0,1], [0,1], "-", color="#2F11F5", linewidth=0.5)
+
+ax.add_patch(patch)
+
+plt.grid(color='grey', linewidth=0.5)
+
+FileOUT = MainDirOUT + "/roc.jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
-# Correct negatives
+
+######
+# Bias #
+######
+
 var = bias_bs
 VarName = "bias"
+
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
-plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+
+plt.figure(figsize=(6,6))
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=1, markersize=2)
 plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.1, np.max(Thr_list) + 0.1])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+ax.set_ylim(bottom=-20)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
 FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
-# Correct negatives
+
+#################
+# Peirce's skill score #
+#################
+
 var = pss_bs
 VarName = "pss"
+
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
-plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
+
+plt.figure(figsize=(6,6))
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=1, markersize=2)
 plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.1, np.max(Thr_list) + 0.1])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.ylim([-1.2,1.1])
+ax.set_yticks(np.arange(-0.9, 1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
 FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
-# Correct negatives
+
+#####################
+# Equitable threat score #
+#####################
+
 var = ets_bs
 VarName = "ets"
+
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
-plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
-plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
-FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
-plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
-plt.close()
 
-# Roc curve
-plt.plot(far_bs[:,0], hr_bs[:,0], "o-", color="#E0115F", linewidth=2, markersize=4)
-FileOUT = MainDirOUT + "/roc.jpeg"
+plt.figure(figsize=(6,6))
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=1, markersize=2)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.1, np.max(Thr_list) + 0.1])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.ylim([-0.49,1])
+ax.set_yticks(np.arange(-0.3, 1.1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1/3,-1/3], "-", color="#2F11F5", linewidth=0.5)
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()

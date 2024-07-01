@@ -4,18 +4,20 @@ from random import choices
 import itertools
 import numpy as np
 
-###############################################################################################
+#########################################################################################
 # CODE DESCRIPTION
 # 38_Compute_AROC_BS.py computes the values of the Area Under the ROC curve with the trapezoidal 
-# approximation, including 
-# bootstrapped (BS) values.
+# approximation.
 # Code Runtime: the script takes 1 minute to run in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # BaseDateS (date, in format YYYYMMDD): start forecast base date for the considered verification period.
 # BaseDateF (date, in format YYYYMMDD): final forecast base date for the considered verification period.
-# StepF (integer, in hours): final step of the considered accumulation period.
+# StepF_Start (integer, in hours): start end step of the considered accumulation period.
+# StepF_Final (integer, in hours): final end step of the considered accumulation period.
+
 # Acc (number, in hours): rainfall accumulation to consider.
+# Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
 # Perc_VRT (integer, from 0 to 100): percentile that defines the verifying rainfall event to consider.
 # SystemFC (string): name of the forecasting systems to consider.
 # RepetitionsBS (integer, from 0 to infinite): number of repetitions to consider in the bootstrapping.
@@ -39,13 +41,13 @@ StepF_Final = 240
 Disc_Step = 12
 Acc = 12
 Perc_VRT = 99.9
-Prob_Thr_list = [0.1, 1, 2, 3, 4, 5]
+Prob_Thr_list = [0.1, 1, 2, 3, 4, 5, 8, 10]
 SystemFC = "ecPoint"
 RepetitionsBS = 0
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Compute/37_Counts_FC_OBS_Exceeding_VRT"
 DirOUT = "Data/Compute/38_AROC_BS"
-###############################################################################################
+#########################################################################################
 
 
 # COSTUME FUNCTIONS
