@@ -111,6 +111,7 @@ MainDirOUT = Git_Repo + "/" + DirOUT
 if not os.path.exists(MainDirOUT):
       os.makedirs(MainDirOUT)
 
+print("Plotting shap values for 'Standard Deviation of Orography'...")
 boundaries = [0, 50, 100, 200, 500, 1000]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[0]*100, indices, s=0.1, c=stdorog, cmap="plasma", norm=norm)
@@ -125,6 +126,7 @@ FileOUT = MainDirOUT + "/StdOrog.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+print("Plotting shap values for 'Return Period of Extreme Rainfall'...")
 boundaries = [0, 1, 2, 5, 10, 20, 100]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[1]*100, indices, s=0.1, c=classRP, cmap="plasma", norm=norm)
@@ -139,6 +141,7 @@ FileOUT = MainDirOUT + "/ClassRP.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+print("Plotting shap values for 'Ratio Extreme-Mean Rainfall'...")
 boundaries = [0, 1, 2, 5, 10, 20, 100, 1000]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[2]*100, indices, s=0.1, c=ratioEM, cmap="plasma", norm=norm)
@@ -153,6 +156,7 @@ FileOUT = MainDirOUT + "/RatioEM.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+print("Plotting shap values for 'Soil Saturation Percentage'...")
 boundaries = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[3]*100, indices, s=0.1, c=percSS, cmap="plasma", norm=norm)
@@ -167,6 +171,7 @@ FileOUT = MainDirOUT + "/PercSS.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+print("Plotting shap values for 'Leaf Area Index'...")
 boundaries = [0, 1, 2, 3, 4, 5, 6, 7]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[4]*100, indices, s=0.1, c=lai, cmap="plasma", norm=norm)
@@ -181,6 +186,7 @@ FileOUT = MainDirOUT + "/LAI.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+print("Plotting shap values for 'Population Density'...")
 boundaries = [0, 100, 500, 1000, 2000, 5000, 10000, 100000]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[5]*100, indices, s=0.1, c=pd, cmap="plasma", norm=norm)

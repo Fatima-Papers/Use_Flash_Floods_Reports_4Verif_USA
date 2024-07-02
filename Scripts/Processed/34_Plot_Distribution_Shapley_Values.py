@@ -11,7 +11,8 @@ import matplotlib.colors as mcolors
 # Runtime: the script can take up to 15 minutes to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
-# Year (integer, in YYYY format): year to consider.
+# TheDateTime_Start_S (date): start date of the beginning accumulation period to consider.
+# TheDateTime_Start_F (date): final date of the beginning accumulation period to consider.
 # Acc (integer, in hours): accumulation period.
 # Disc_Acc (integer, in hours): discretization for the accumulation peiods to consider.
 # Git_Repo (string): repository's local path.
@@ -26,7 +27,8 @@ import matplotlib.colors as mcolors
 # DirOUT (string): relative path of the directory containing the probabilities of having a flash flood event in a given grid-box.
 
 # INPUT PARAMETERS
-Year = 2021
+TheDateTime_Start_S = datetime(2021, 1, 1, 0)
+TheDateTime_Start_F = datetime(2023, 12, 31, 12)
 Acc = 12
 Disc_Acc = 12
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
@@ -48,8 +50,6 @@ mask_vals = mv.values(mask)
 mask_index = np.where(mask_vals == 1)[0]
 
 # Reading the shapley and predictors values
-TheDateTime_Start_S = datetime(Year, 1, 1, 0)
-TheDateTime_Start_F = datetime(Year, 12, 31, 0)
 TheDateTime_Start = TheDateTime_Start_S
 while TheDateTime_Start <= TheDateTime_Start_F:
 
@@ -111,20 +111,21 @@ MainDirOUT = Git_Repo + "/" + DirOUT
 if not os.path.exists(MainDirOUT):
       os.makedirs(MainDirOUT)
 
+fig, ax = plt.subplots()
 boundaries = [0, 50, 100, 200, 500, 1000]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[0]*100, indices, s=0.1, c=stdorog, cmap="plasma", norm=norm)
-plt.title("Standard Deviation of Orography")
+plt.title("Shap Values for Standard Deviation of Orography")
 plt.xlabel("Probability [%]")
 plt.yticks([])
 sm = plt.cm.ScalarMappable(cmap="plasma", norm=norm)
 sm.set_array([])
-cbar = plt.colorbar(sm, ticks=boundaries)
-cbar.set_label("StdOrog")
+cbar = plt.colorbar(sm, ticks=boundaries, ax=ax)
 FileOUT = MainDirOUT + "/StdOrog.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+fig, ax = plt.subplots()
 boundaries = [0, 1, 2, 5, 10, 20, 100]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[1]*100, indices, s=0.1, c=classRP, cmap="plasma", norm=norm)
@@ -133,12 +134,13 @@ plt.xlabel("Probability [%]")
 plt.yticks([])
 sm = plt.cm.ScalarMappable(cmap="plasma", norm=norm)
 sm.set_array([])
-cbar = plt.colorbar(sm, ticks=boundaries)
+cbar = plt.colorbar(sm, ticks=boundaries, ax=ax)
 cbar.set_label("ClassRP")
 FileOUT = MainDirOUT + "/ClassRP.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+fig, ax = plt.subplots()
 boundaries = [0, 1, 2, 5, 10, 20, 100, 1000]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[2]*100, indices, s=0.1, c=ratioEM, cmap="plasma", norm=norm)
@@ -147,12 +149,13 @@ plt.xlabel("Probability [%]")
 plt.yticks([])
 sm = plt.cm.ScalarMappable(cmap="plasma", norm=norm)
 sm.set_array([])
-cbar = plt.colorbar(sm, ticks=boundaries)
+cbar = plt.colorbar(sm, ticks=boundaries, ax=ax)
 cbar.set_label("RatioEM")
 FileOUT = MainDirOUT + "/RatioEM.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+fig, ax = plt.subplots()
 boundaries = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[3]*100, indices, s=0.1, c=percSS, cmap="plasma", norm=norm)
@@ -161,12 +164,13 @@ plt.xlabel("Probability [%]")
 plt.yticks([])
 sm = plt.cm.ScalarMappable(cmap="plasma", norm=norm)
 sm.set_array([])
-cbar = plt.colorbar(sm, ticks=boundaries)
+cbar = plt.colorbar(sm, ticks=boundaries, ax=ax)
 cbar.set_label("PercSS")
 FileOUT = MainDirOUT + "/PercSS.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+fig, ax = plt.subplots()
 boundaries = [0, 1, 2, 3, 4, 5, 6, 7]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[4]*100, indices, s=0.1, c=lai, cmap="plasma", norm=norm)
@@ -175,12 +179,13 @@ plt.xlabel("Probability [%]")
 plt.yticks([])
 sm = plt.cm.ScalarMappable(cmap="plasma", norm=norm)
 sm.set_array([])
-cbar = plt.colorbar(sm, ticks=boundaries)
+cbar = plt.colorbar(sm, ticks=boundaries, ax=ax)
 cbar.set_label("LAI")
 FileOUT = MainDirOUT + "/LAI.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
+fig, ax = plt.subplots()
 boundaries = [0, 100, 500, 1000, 2000, 5000, 10000, 100000]
 norm = mcolors.BoundaryNorm(boundaries, ncolors=plt.cm.plasma.N, clip=True)
 plt.scatter(shap[5]*100, indices, s=0.1, c=pd, cmap="plasma", norm=norm)
@@ -189,7 +194,7 @@ plt.xlabel("Probability [%]")
 plt.yticks([])
 sm = plt.cm.ScalarMappable(cmap="plasma", norm=norm)
 sm.set_array([])
-cbar = plt.colorbar(sm, ticks=boundaries)
+cbar = plt.colorbar(sm, ticks=boundaries, ax=ax)
 cbar.set_label("PD")
 FileOUT = MainDirOUT + "/PD.png"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)

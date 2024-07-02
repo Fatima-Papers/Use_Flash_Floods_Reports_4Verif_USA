@@ -154,7 +154,7 @@ total_bs = h_bs + m_bs + fa_bs + cn_bs
 h_chance_bs = (h_bs + fa_bs) * (h_bs + m_bs) / total_bs
 hr_bs = h_bs / (h_bs + m_bs) 
 far_bs = fa_bs / (fa_bs + cn_bs)
-bias_bs =  (h_bs + fa_bs) / (h_bs + m_bs)
+fb_bs =  (h_bs + fa_bs) / (h_bs + m_bs)
 pss_bs = (h_bs / (h_bs + m_bs)) - (fa_bs / (fa_bs + cn_bs))
 ets_bs = (h_bs - h_chance_bs) / (h_bs + m_bs + fa_bs - h_chance_bs)
 
@@ -227,8 +227,8 @@ plt.close()
 # Frequency Bias #
 ###############
 
-var = bias_bs
-VarName = "bias"
+var = fb_bs
+VarName = "fb"
 
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
