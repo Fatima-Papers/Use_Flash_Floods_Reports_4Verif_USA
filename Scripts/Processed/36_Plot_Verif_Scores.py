@@ -11,7 +11,7 @@ from matplotlib.patches import PathPatch
 ##################################################################################################################
 # CODE DESCRIPTION
 # 36_Plot_Verif_Scores.py computes the contingency tables for specific accumulation periods.  
-# Runtime: the script can take up to 10 hours to compute in serial.
+# Runtime: the script can take up to 15 hours to compute in serial.
 
 # INPUT PARAMETERS DESCRIPTION
 # TheDateTime_Start_S (date): start date of the beginning accumulation period to consider.
@@ -31,7 +31,7 @@ TheDateTime_Start_S = datetime(2021, 1, 1, 0)
 TheDateTime_Start_F = datetime(2023, 12, 31, 12)
 Acc = 12
 Disc_Acc = 12
-Num_BS = 100
+Num_BS = 1000
 CL = 99
 Thr_list = [0.1, 0.3, 0.5, 0.7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
@@ -225,7 +225,7 @@ plt.xlim([-0.005, 1])
 ax.set_xticks(np.arange(0, 1.1, 0.1))
 plt.ylim([-0.005,1])
 ax.set_yticks(np.arange(0, 1.1, 0.1))
-plt.plot([0,1], [0,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([0,1], [0,1], "-", color="#2F11F5", linewidth=1.5)
 
 ax.add_patch(patch)
 
@@ -252,19 +252,18 @@ plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25
 
 ax = plt.gca()
 ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
+ax.spines["bottom"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["right"].set_visible(False)
-plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
+plt.tick_params(left=False, right=False, top=False, bottom=False)
 ax.tick_params(axis="y", colors="#36454F")
 
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+ax.set_xticks([])
 
-ax.set_ylim(bottom=-20)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+ax.set_ylim(bottom = 0)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=1)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=1.5)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
@@ -289,18 +288,18 @@ plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25
 
 ax = plt.gca()
 ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
+ax.spines["bottom"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["right"].set_visible(False)
-plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
+plt.tick_params(left=False, right=False, top=False, bottom=False)
 ax.tick_params(axis="y", colors="#36454F")
 
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+ax.set_xticks([])
 
-ax.set_ylim(bottom=-1)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+plt.ylim([-1, 1])
+ax.set_yticks(np.arange(-1, 1.1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=1)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
@@ -325,21 +324,20 @@ plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25
 
 ax = plt.gca()
 ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
+ax.spines["bottom"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["right"].set_visible(False)
 plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
 ax.tick_params(axis="y", colors="#36454F")
 
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+ax.set_xticks([])
 
-plt.ylim([-0.49,1])
-ax.set_yticks(np.arange(-0.3, 1.1, 0.2))
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1/3,-1/3], "-", color="#2F11F5", linewidth=0.5)
+plt.ylim([-1,1])
+ax.set_yticks(np.arange(-1, 1.1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=1.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=1)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1/3,-1/3], "-", color="#2F11F5", linewidth=1)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
@@ -364,21 +362,20 @@ plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25
 
 ax = plt.gca()
 ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
+ax.spines["bottom"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["right"].set_visible(False)
 plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
 ax.tick_params(axis="y", colors="#36454F")
 
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+ax.set_xticks([])
 
-plt.ylim([-1.2,1.1])
-ax.set_yticks(np.arange(-0.9, 1, 0.2))
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
+plt.ylim([-1,1])
+ax.set_yticks(np.arange(-1, 1.1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=1.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=1)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=2)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
@@ -403,21 +400,20 @@ plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25
 
 ax = plt.gca()
 ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
+ax.spines["bottom"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["right"].set_visible(False)
 plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
 ax.tick_params(axis="y", colors="#36454F")
 
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+ax.set_xticks([])
 
-plt.ylim([-1.2,1.1])
-ax.set_yticks(np.arange(-0.9, 1, 0.2))
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
+plt.ylim([-1,1])
+ax.set_yticks(np.arange(-1, 1.1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=1.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=1)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=2)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
@@ -442,19 +438,18 @@ plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25
 
 ax = plt.gca()
 ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
+ax.spines["bottom"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["right"].set_visible(False)
 plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
 ax.tick_params(axis="y", colors="#36454F")
 
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+ax.set_xticks([])
 
-ax.set_ylim(bottom=-20)
+ax.set_ylim(bottom=0)
 plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=1.5)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
@@ -479,21 +474,20 @@ plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25
 
 ax = plt.gca()
 ax.spines["top"].set_visible(False)
-ax.spines["bottom"].set_color("#36454F")
+ax.spines["bottom"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["right"].set_visible(False)
 plt.tick_params(left=False, right=False, top=False)
-ax.tick_params(axis="x", colors="#36454F")
 ax.tick_params(axis="y", colors="#36454F")
 
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
-ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+ax.set_xticks([])
 
-plt.ylim([-1.2,1.1])
-ax.set_yticks(np.arange(-0.9, 1, 0.2))
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
+plt.ylim([-1,1])
+ax.set_yticks(np.arange(-1, 1.1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=1.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=1)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=2)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
