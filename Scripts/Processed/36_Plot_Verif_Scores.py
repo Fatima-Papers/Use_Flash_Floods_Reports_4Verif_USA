@@ -31,7 +31,7 @@ TheDateTime_Start_S = datetime(2021, 1, 1, 0)
 TheDateTime_Start_F = datetime(2023, 12, 31, 12)
 Acc = 12
 Disc_Acc = 12
-Num_BS = 1000
+Num_BS = 100
 CL = 99
 Thr_list = [0.1, 0.3, 0.5, 0.7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
@@ -150,13 +150,26 @@ print(cn_bs / Tot_NumGB_Verif_Per * 100)
 # Computing the verification scores
 print()
 print("Computing the verification scores")
-total_bs = h_bs + m_bs + fa_bs + cn_bs
-h_chance_bs = (h_bs + fa_bs) * (h_bs + m_bs) / total_bs
-hr_bs = h_bs / (h_bs + m_bs) 
-far_bs = fa_bs / (fa_bs + cn_bs)
-fb_bs =  (h_bs + fa_bs) / (h_bs + m_bs)
-pss_bs = (h_bs / (h_bs + m_bs)) - (fa_bs / (fa_bs + cn_bs))
+
+fb_bs =  (h_bs + fa_bs) / (h_bs + m_bs) # frequency bias
+
+csi_bs = h_bs / (h_bs + m_bs + fa_bs) # critical success index
+
+h_chance_bs = (h_bs + m_bs) * (h_bs + fa_bs) / (h_bs + m_bs + fa_bs + cn_bs) # equitable threat score
 ets_bs = (h_bs - h_chance_bs) / (h_bs + m_bs + fa_bs - h_chance_bs)
+
+pss_bs = (h_bs / (h_bs + m_bs)) - (fa_bs / (fa_bs + cn_bs)) # Pierce's skill score
+
+correct_rnd = ( ( (h_bs + m_bs) * (h_bs + fa_bs) ) + ( (cn_bs + m_bs) * (cn_bs + fa_bs) ) ) / (h_bs + m_bs + fa_bs + cn_bs) # Heidke skill score
+hss_bs = (h_bs + cn_bs - correct_rnd) / (h_bs + m_bs + fa_bs + cn_bs - correct_rnd)
+
+or_bs = (h_bs * cn_bs) / (m_bs * fa_bs) # odd's ratio
+
+q_bs  = ( (h_bs * cn_bs) - (m_bs * fa_bs) ) / ( (h_bs * cn_bs) + (m_bs * fa_bs) ) # Yules' Q
+
+hr_bs = h_bs / (h_bs + m_bs)  # hit rate for ROC
+far_bs = fa_bs / (fa_bs + cn_bs) # false alarm rate for ROC
+
 
 # Plotting and saving the verification scores
 print()
@@ -260,12 +273,12 @@ plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
 
-#################
-# Peirce's skill score #
-#################
+####################
+# Critical Success Index #
+####################
 
-var = pss_bs
-VarName = "pss"
+var = csi_bs
+VarName = "csi"
 
 lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
 upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
@@ -286,11 +299,8 @@ ax.tick_params(axis="y", colors="#36454F")
 plt.xlim([-0.1, np.max(Thr_list) + 0.1])
 ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
 
-plt.ylim([-1.2,1.1])
-ax.set_yticks(np.arange(-0.9, 1, 0.2))
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+ax.set_ylim(bottom=-1)
 plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
-plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
@@ -330,6 +340,160 @@ ax.set_yticks(np.arange(-0.3, 1.1, 0.2))
 plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
 plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
 plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1/3,-1/3], "-", color="#2F11F5", linewidth=0.5)
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+
+#################
+# Peirce's skill score #
+#################
+
+var = pss_bs
+VarName = "pss"
+
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+
+plt.figure(figsize=(6,6))
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=1, markersize=2)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.1, np.max(Thr_list) + 0.1])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.ylim([-1.2,1.1])
+ax.set_yticks(np.arange(-0.9, 1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+
+#################
+# Heidke skill score #
+#################
+
+var = hss_bs
+VarName = "hss"
+
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+
+plt.figure(figsize=(6,6))
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=1, markersize=2)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.1, np.max(Thr_list) + 0.1])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.ylim([-1.2,1.1])
+ax.set_yticks(np.arange(-0.9, 1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+
+############
+# Odd's ratio #
+############
+
+var = or_bs
+VarName = "or"
+
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+
+plt.figure(figsize=(6,6))
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=1, markersize=2)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.1, np.max(Thr_list) + 0.1])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+ax.set_ylim(bottom=-20)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+
+plt.grid(axis="y", color="silver", linewidth=0.5)
+
+FileOUT = MainDirOUT + "/" + VarName + ".jpeg"
+plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
+plt.close()
+
+
+#########
+# Yule's Q #
+#########
+
+var = q_bs
+VarName = "q"
+
+lower_error = np.percentile(var[:,1:], (100-CL)/2, axis = 1)
+upper_error = np.percentile(var[:,1:], (100 - (100-CL)/2), axis = 1)
+
+plt.figure(figsize=(6,6))
+plt.plot(Thr_list, var[:,0], "o-", color="#E0115F", linewidth=1, markersize=2)
+plt.fill_between(Thr_list, lower_error, upper_error, color="#E0115F", alpha=0.25, edgecolor="none")
+
+ax = plt.gca()
+ax.spines["top"].set_visible(False)
+ax.spines["bottom"].set_color("#36454F")
+ax.spines["left"].set_visible(False)
+ax.spines["right"].set_visible(False)
+plt.tick_params(left=False, right=False, top=False)
+ax.tick_params(axis="x", colors="#36454F")
+ax.tick_params(axis="y", colors="#36454F")
+
+plt.xlim([-0.1, np.max(Thr_list) + 0.1])
+ax.set_xticks(np.arange(0, np.max(Thr_list) + 1))
+
+plt.ylim([-1.2,1.1])
+ax.set_yticks(np.arange(-0.9, 1, 0.2))
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [1,1], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [0,0], "-", color="#2F11F5", linewidth=0.5)
+plt.plot([-0.1,np.max(Thr_list) + 0.1], [-1,-1], "-", color="#2F11F5", linewidth=0.5)
 
 plt.grid(axis="y", color="silver", linewidth=0.5)
 
