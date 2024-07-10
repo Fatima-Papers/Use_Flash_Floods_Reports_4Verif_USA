@@ -1,0 +1,88 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 49350, mtime: Thu Mar 14 09:32:52 2024
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Sun Jun 30 00:00:50 2024 (1719705650.1368122) on ab6-206.bullx:/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ab
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SLURM_JOB_ID=22541654
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/28a_SubmitterATOS_Prob_AccRepFF.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=Compute_Prob_AccRepFF
+[ECMWF-INFO -sbatch] - #SBATCH --output=LogATOS/Compute_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --error=LogATOS/Compute_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=64
+[ECMWF-INFO -sbatch] - #SBATCH --mem=128G
+[ECMWF-INFO -sbatch] - #SBATCH --time=2-00:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --qos=nf
+[ECMWF-INFO -sbatch] - #SBATCH --mail-type=FAIL
+[ECMWF-INFO -sbatch] - #SBATCH --mail-user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['28a_SubmitterATOS_Prob_AccRepFF.sh', '2022', 'Data/Compute/27_Train_ANN/AllFF_2005_2020/AllPred', 'Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/AllPred']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=64
+[ECMWF-INFO -sbatch] - ARG --error=LogATOS/Compute_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - ARG --job_name=Compute_Prob_AccRepFF
+[ECMWF-INFO -sbatch] - ARG --mail_type=FAIL
+[ECMWF-INFO -sbatch] - ARG --mail_user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - ARG --output=LogATOS/Compute_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - ARG --qos=nf
+[ECMWF-INFO -sbatch] - ARG --time=2-00:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=128G
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: mofp-Compute_Pr_b_AccRepFF-1x64-/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Compute_Prob_AccRepFF-_.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=64', '--error=LogATOS/Compute_Prob_AccRepFF-%J.out', '--job-name=Compute_Prob_AccRepFF', '--mail-type=FAIL', '--mail-user=fatima.pillosu@ecmwf.int', '--output=LogATOS/Compute_Prob_AccRepFF-%J.out', '--qos=nf', '--time=2-00:00:00', '--mem=128G', '--licenses=h2resw01', '--export=EC_user_time_limit=2-00:00:00', '/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/28a_SubmitterATOS_Prob_AccRepFF.sh', '2022', 'Data/Compute/27_Train_ANN/AllFF_2005_2020/AllPred', 'Data/Compute/28_Prob_AccRepFF/AllFF_2005_2020/AllPred']
+[ECMWF-INFO -sbatch] - sbatch executed on ab
+[ECMWF-INFO -sbatch] - Job queued on ab using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 22574034
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ab6-183 at 20240630_000104.916, PID: 2828060, JOBID: 22574034
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/mofp
+[ECMWF-INFO -ecprofile] $PERM=/perm/mofp
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/mofp
+[ECMWF-INFO -ecprofile] $TMPDIR=/etc/ecmwf/ssd/ssd1/tmpdirs/mofp.22574034
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/mofp/2/22574034
+2024-06-30 00:01:07.679807: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-06-30 00:01:08.761152: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/usr/local/apps/python3/3.11.8-01/lib/python3.11/site-packages/keras/src/layers/core/input_layer.py:25: UserWarning: Argument `input_shape` is deprecated. Use `shape` instead.
+  warnings.warn(
+2024-06-30 00:01:09.848095: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:282] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+Traceback (most recent call last):
+  File "/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/28_Compute_Prob_AccRepFF.py", line 60, in <module>
+    model.load_weights(FileIN)
+  File "/usr/local/apps/python3/3.11.8-01/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 123, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/usr/local/apps/python3/3.11.8-01/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 237, in load_weights
+    raise ValueError(
+ValueError: File format not supported: filepath=/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Data/Compute/27_Train_ANN/AllFF_2005_2020/AllPred/weights. Keras 3 only supports V3 `.keras` and `.weights.h5` files, or legacy V1/V2 `.h5` files.
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2024-06-30T00:01:11 on ab
+[ECMWF-INFO -ecepilog] JobName                   : Compute_Prob_AccRepFF
+[ECMWF-INFO -ecepilog] JobID                     : 22574034
+[ECMWF-INFO -ecepilog] Submit                    : 2024-06-30T00:00:50
+[ECMWF-INFO -ecepilog] Start                     : 2024-06-30T00:01:01
+[ECMWF-INFO -ecepilog] End                       : 2024-06-30T00:01:11
+[ECMWF-INFO -ecepilog] QueuedTime                : 11.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 10
+[ECMWF-INFO -ecepilog] ExitCode                  : 1:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : FAILED
+[ECMWF-INFO -ecepilog] Account                   : ecodmdmo
+[ECMWF-INFO -ecepilog] QOS                       : nf
+[ECMWF-INFO -ecepilog] User                      : mofp
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Compute_Prob_AccRepFF-22574034.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Compute_Prob_AccRepFF-22574034.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 64
+[ECMWF-INFO -ecepilog] SBU                       : 1.517
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,87 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 49350, mtime: Thu Mar 14 09:29:45 2024
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Thu Jul  4 22:10:20 2024 (1720131020.9538257) on ac6-100.bullx:/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/30a_SubmitterATOS_Prob_AccRepFF.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=Plot_Prob_AccRepFF
+[ECMWF-INFO -sbatch] - #SBATCH --output=LogATOS/Plot_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --error=LogATOS/Plot_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=64
+[ECMWF-INFO -sbatch] - #SBATCH --mem=128G
+[ECMWF-INFO -sbatch] - #SBATCH --time=2-00:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --qos=nf
+[ECMWF-INFO -sbatch] - #SBATCH --mail-type=FAIL
+[ECMWF-INFO -sbatch] - #SBATCH --mail-user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['30a_SubmitterATOS_Prob_AccRepFF.sh', '2022', 'Data/Compute/28_Prob_AccRepFF/NoSouthFF_2005_2020/NoPD', 'Data/Plot/30_Prob_AccRepFF/NoSouthFF_2005_2020/NoPD']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=64
+[ECMWF-INFO -sbatch] - ARG --error=LogATOS/Plot_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - ARG --job_name=Plot_Prob_AccRepFF
+[ECMWF-INFO -sbatch] - ARG --mail_type=FAIL
+[ECMWF-INFO -sbatch] - ARG --mail_user=fatima.pillosu@ecmwf.int
+[ECMWF-INFO -sbatch] - ARG --output=LogATOS/Plot_Prob_AccRepFF-%J.out
+[ECMWF-INFO -sbatch] - ARG --qos=nf
+[ECMWF-INFO -sbatch] - ARG --time=2-00:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=128G
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: mofp-Plot_Prob_AccRepFF-1x64-/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Plot_Prob_AccRepFF-_.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=64', '--error=LogATOS/Plot_Prob_AccRepFF-%J.out', '--job-name=Plot_Prob_AccRepFF', '--mail-type=FAIL', '--mail-user=fatima.pillosu@ecmwf.int', '--output=LogATOS/Plot_Prob_AccRepFF-%J.out', '--qos=nf', '--time=2-00:00:00', '--mem=128G', '--licenses=h2resw01', '--export=EC_user_time_limit=2-00:00:00', '/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/30a_SubmitterATOS_Prob_AccRepFF.sh', '2022', 'Data/Compute/28_Prob_AccRepFF/NoSouthFF_2005_2020/NoPD', 'Data/Plot/30_Prob_AccRepFF/NoSouthFF_2005_2020/NoPD']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 33605886
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac6-122 at 20240704_221035.774, PID: 1443932, JOBID: 33605886
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/mofp
+[ECMWF-INFO -ecprofile] $PERM=/perm/mofp
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/mofp
+[ECMWF-INFO -ecprofile] $TMPDIR=/etc/ecmwf/ssd/ssd1/tmpdirs/mofp.33605886
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/mofp/6/33605886
+Python - ERROR  - 20240704.221038 - Line 0 in 'PythonScript': Cannot read /ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Data/Compute/28_Prob_AccRepFF/NoSouthFF_2005_2020/NoPD/Prob_AccRepFF_20220101_12.grib. Type BAD is not supported.
+
+Plotting the probabilities of having a flash flood event at a grid-box for: NoSouthFF_NoPD_2005_2020
+ - on 2022-01-01 at 12 UTC
+Traceback (most recent call last):
+  File "/etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/30_Plot_Prob_AccRepFF.py", line 53, in <module>
+    Prob_AccRepFF = mv.read(FileIN)
+                    ^^^^^^^^^^^^^^^
+  File "/usr/local/apps/python3/3.11.8-01/lib/python3.11/site-packages/metview/bindings.py", line 1286, in wrapped
+    return value_from_metview(val)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/apps/python3/3.11.8-01/lib/python3.11/site-packages/metview/bindings.py", line 1240, in value_from_metview
+    raise retval
+Exception: Metview error: Error calling Metview function
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2024-07-04T22:10:39 on ac
+[ECMWF-INFO -ecepilog] JobName                   : Plot_Prob_AccRepFF
+[ECMWF-INFO -ecepilog] JobID                     : 33605886
+[ECMWF-INFO -ecepilog] Submit                    : 2024-07-04T22:10:21
+[ECMWF-INFO -ecepilog] Start                     : 2024-07-04T22:10:32
+[ECMWF-INFO -ecepilog] End                       : 2024-07-04T22:10:39
+[ECMWF-INFO -ecepilog] QueuedTime                : 11.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 7
+[ECMWF-INFO -ecepilog] ExitCode                  : 1:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : FAILED
+[ECMWF-INFO -ecepilog] Account                   : ecodmdmo
+[ECMWF-INFO -ecepilog] QOS                       : nf
+[ECMWF-INFO -ecepilog] User                      : mofp
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Plot_Prob_AccRepFF-33605886.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA/Scripts/Processed/LogATOS/Plot_Prob_AccRepFF-33605886.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 64
+[ECMWF-INFO -ecepilog] SBU                       : 1.062
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

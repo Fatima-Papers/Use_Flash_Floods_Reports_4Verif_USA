@@ -22,7 +22,7 @@ import metview as mv
 # DirOUT (string): relative path containing the map plots of the point and gridded accumulated flash flood reports.
 
 # INPUT PARAMETERS
-TheDateTime_Start = datetime(2021,9,1,12)
+TheDateTime_Start = datetime(2021,3,28,0)
 Acc = 12
 Mask_Domain = [22,-130,52,-60]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"

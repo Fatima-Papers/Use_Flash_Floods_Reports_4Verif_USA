@@ -65,7 +65,7 @@ num_patience_eralyStopping = 8
 
 model = tf.keras.Sequential([
 tf.keras.layers.InputLayer(input_shape=(num_inputs,)),  # Input layer specifying the input shape
-tf.keras.layers.Dense(4, activation=tf.nn.relu),  # First hidden dense layer with ReLU activation
+tf.keras.layers.Dense(8, activation=tf.nn.relu),  # First hidden dense layer with ReLU activation
 tf.keras.layers.Dense(4, activation=tf.nn.relu),  # Second hidden dense layer with ReLU activation
 tf.keras.layers.Dense(2, activation=tf.nn.softmax)  # Output Dense layer with Softmax activation
 ])
