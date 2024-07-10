@@ -104,25 +104,24 @@ while TheDateTime_Start <= TheDateTime_Start_F:
             legend = "on", 
             contour = "off", 
             contour_level_selection_type = "level_list",
-            contour_level_list = [0, 0.1, 0.3, 0.5, 0.7, 1, 3, 5, 7, 10, 100],
+            contour_level_list = [0.1, 0.3, 0.5, 0.7, 1, 2, 3, 5, 10, 100],
             contour_label = "off",
             contour_shade = "on",
             contour_shade_technique = "grid_shading",
             contour_shade_colour_method = "list",
             contour_shade_colour_list = [
-                  "rgb(0.8,0.8,0.8)", # 0 - 0.1
-                  "rgb(0.7,0.7,0.7)", # 0.1 - 0.3
-                  "rgb(0.6,0.6,0.6)", # 0.3 - 0.5
-                  "rgb(0.5,0.5,0.5)", # 0.5 - 0.7
-                  "rgb(0.4,0.4,0.4)", # 0.7 - 1
-                  "rgb(0.9562,0.5968,0.7765)", # 1 -3
+                  "rgb(0.9,0.9,0.9)", # 0.1 - 0.3
+                  "rgb(0.85,0.85,0.85)", # 0.3 - 0.5
+                  "rgb(0.75,0.75,0.75)", # 0.5 - 0.7
+                  "rgb(0.65,0.65,0.65)", # 0.7 - 1
+                  "rgb(0.55,0.55,0.55)", # 1 - 2
+                  "rgb(0.45,0.45,0.45)", # 2 - 3
                   "rgb(1,0,0.498)", # 3 - 5
-                  "rgb(0.5654,0.5043,0.9624)", # 5 - 7
-                  "rgb(0.1451,0,1)", # 7 - 10
+                  "rgb(0.1451,0,1)", # 5 - 10
                   "rgb(0.749,0.5765,0.07451)" # 10 - 100
                   ]
             )
-
+      
       legend = mv.mlegend(
             legend_text_colour = "charcoal",
             legend_text_font_size = 0.5,

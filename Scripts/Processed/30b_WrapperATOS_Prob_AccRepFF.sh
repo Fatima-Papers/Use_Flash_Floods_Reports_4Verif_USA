@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # General inputs
-Year=2021
+Year=2023
 Name3="2005_2020"
 
 # Submitting the first batch of jobs
-Name1_list=("AllFF", "NoNorthFF" "NoNorthGP" "NoSouthFF" "NoSouthGP" "NoWestFF" "NoWestGP" "NoEastFF" "NoEastGP")
-Name2_list=("AllPred" "NoPD")
+Name1_list=("AllFF" "NoNorthFF" "NoNorthGP" "NoSouthFF" "NoSouthGP" "NoWestFF" "NoWestGP" "NoEastFF" "NoEastGP")
+Name2_list=("NoPD") # ("AllPred" "NoPD")
 
 for Name1 in "${Name1_list[@]}"; do
       for Name2 in "${Name2_list[@]}"; do
@@ -19,7 +19,7 @@ done
 
 # Submitting the first batch of jobs
 Name1="RedRndFF"
-Name2_list=("AllPred" "NoPD")
+Name2_list=("NoPD") # ("AllPred" "NoPD")
 Name4_list=(10 50 90)
 
 for Name2 in "${Name2_list[@]}"; do

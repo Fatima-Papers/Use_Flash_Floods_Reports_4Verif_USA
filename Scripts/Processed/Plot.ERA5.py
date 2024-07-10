@@ -2,8 +2,8 @@ import metview as mv
 
 tp_temp1 = mv.retrieve(
     class_ = "ea",
-    date = "2024-04-23",
-    expver = 5,
+    date = "2021-03-27",
+    expver = 1,
     levtype = "sfc",
     param = "228.128",
     step = [7, 8, 9, 10, 11, 12],
@@ -14,8 +14,8 @@ tp_temp1 = mv.retrieve(
 
 tp_temp2 = mv.retrieve(
     class_ = "ea",
-    date = "2024-04-24",
-    expver = 5,
+    date = "2021-03-28",
+    expver = 1,
     levtype = "sfc",
     param = "228.128",
     step = [1, 2, 3, 4, 5, 6],
