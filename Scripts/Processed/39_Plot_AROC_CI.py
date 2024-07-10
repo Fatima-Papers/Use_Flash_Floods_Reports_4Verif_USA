@@ -22,11 +22,11 @@ import matplotlib.pyplot as plt
 
 # INPUT PARAMETERS
 Acc = 12
-Perc_VRT = 99.98
+Perc_VRT = 99.9
 CL = 95
 SystemFC = "ecPoint"
-ROC_list = ["True", "Pseudo_0.1", "Pseudo_1", "Pseudo_3", "Pseudo_5"]
-Colour_ROC_List = ["black", "lightseagreen", "darkorange", "mediumblue", "deeppink"]
+ROC_list = ["True", "Pseudo_0.1", "Pseudo_1", "Pseudo_2", "Pseudo_3", "Pseudo_4", "Pseudo_5"]
+Colour_ROC_List = ["black", "magenta", "blue", "red", "green", "brown", "cyan"]
 Git_Repo = "/ec/vol/ecpoint_dev/mofp/Papers_2_Write/Use_FlashFloodsRep_4Verif_USA"
 DirIN = "Data/Compute/38_AROC_BS"
 DirOUT = "Data/Plot/39_AROC_BS"
@@ -44,6 +44,8 @@ for ind in range(len(ROC_list)):
       FileIN = Git_Repo + "/" + DirIN + "/" + f"{Acc:02d}" + "h/AROC_" + f"{Acc:02d}" + "h_" + SystemFC + "_" + str(Perc_VRT) + "_" + ROC + ".npy"
 
       a = np.load(FileIN)
+      print(a.shape)
+      exit()
 
       StepF = np.load(FileIN)[:,0].astype(int)
       aroc_real = np.load(FileIN)[:,1]
@@ -61,6 +63,7 @@ for ind in range(len(ROC_list)):
       # Setting the plot metadata
       ax.plot([StepF[0], StepF[-1]], [0.5, 0.5], "-", color="grey", linewidth=2)
       DiscStep = ((StepF[-1] - StepF[0]) / (len(StepF)-1))
+      #ax.set_title("Area Under the ROC curve\n" + r"EFFCI>=" + str(EFFCI) + ", VRT>=tp(" + str(MagnitudeInPerc_Rain_Event_FR) + "th percentile), Region=" +  RegionName + ", CL=" + str(CL) + "%", fontsize=20, pad=40, color="#333333", weight="bold")
       ax.set_xlabel("Step ad the end of the " + str(Acc) + "-hourly accumulation period [hours]", fontsize=20, labelpad=10, color="#333333")
       ax.set_ylabel("AROC [-]", fontsize=20, labelpad=10, color="#333333")
       ax.set_xlim([StepF[0]-1, StepF[-1]+1])
@@ -69,18 +72,8 @@ for ind in range(len(ROC_list)):
       ax.set_yticks(np.arange(0.4,1.1, 0.1))
       ax.xaxis.set_tick_params(labelsize=20, rotation=90, color="#333333")
       ax.yaxis.set_tick_params(labelsize=20, color="#333333")
-      ax.legend(loc="upper right", ncol=2, fontsize=20, frameon=False)
+      ax.legend(loc="upper center",  bbox_to_anchor=(0.5, 1.08), ncol=2, fontsize=20, frameon=False)
       ax.grid()
-
-      ax = plt.gca()
-      ax.spines["top"].set_visible(False)
-      ax.spines["left"].set_visible(False)
-      ax.spines["right"].set_visible(False)
-      plt.tick_params(left=False, right=False, top=False)
-      ax.tick_params(axis="y", colors="#36454F")
-
-plt.show()
-exit()
 
 # Saving the plot
 DirOUT_temp= Git_Repo + "/" + DirOUT + "/" + f"{Acc:02d}" + "h"
