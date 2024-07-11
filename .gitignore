@@ -2,11 +2,11 @@
 
 Data/Raw
 Data/Compute
-Data/Plot/04_*
-Data/Plot/06_*
-Data/Plot/08_*
-Data/Plot/10_*
-Data/Plot/12_*
-Data/Plot/23_*
-Data/Plot/30_*
-Data/Plot/43_*
+Data/Plot/04_Leaf_Area_Index_ERA5/*
+Data/Plot/06_AccTP_Analysis_ERA5_ecPoint/*
+Data/Plot/08_ClassRP_AccTP/*
+Data/Plot/10_Ratio_Extreme_Mean_AccTP/*
+Data/Plot/12_Percentage_Soil_Saturation/*
+Data/Plot/23_Map_Point_AccRepFF/*
+Data/Plot/30_Prob_AccRepFF/*
+Data/Plot/43_Prob_AccRepFF_Global/*
