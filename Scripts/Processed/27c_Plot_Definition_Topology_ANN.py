@@ -46,27 +46,7 @@ plt.tick_params(left=False, right=False, top=False)
 plt.grid(axis="y", color="silver", linewidth=0.5)
 plt.xlim([-0.2,25.2])
 ax.set_ylim(bottom = 0.99045)
-FileOUT = MainDirOUT + "/" + "training_full.jpeg"
-plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
-plt.close()
-
-# Plotting the accuracy for the training dataset (zoomed in)
-for ind in range(len(Num_HL_N_list)):
-      Num_HL_N = Num_HL_N_list[ind]
-      Colour = Colour_list[ind]
-      accuracy_training = np.load(Git_Repo + "/" + DirIN + "/" + Num_HL_N + "_train_accuracy.npy")
-      x = np.arange(len(accuracy_training))
-      plt.plot(x, accuracy_training, "-", color=Colour, linewidth=2, label=Num_HL_N)
-ax = plt.gca()
-ax.spines["top"].set_visible(False)
-ax.spines["left"].set_visible(False)
-ax.spines["right"].set_visible(False)
-ax.tick_params(axis="y", colors="#36454F")
-plt.tick_params(left=False, right=False, top=False)
-plt.grid(axis="y", color="silver", linewidth=0.5)
-plt.xlim([-0.2,25.2])
-plt.ylim([0.99127, 0.991302])
-FileOUT = MainDirOUT + "/" + "training_zoomIN.jpeg"
+FileOUT = MainDirOUT + "/" + "train_accuracy.jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
@@ -86,7 +66,7 @@ plt.tick_params(left=False, right=False, top=False)
 plt.grid(axis="y", color="silver", linewidth=0.5)
 plt.xlim([-0.2,25.2])
 ax.set_ylim(bottom = 0.98907)
-FileOUT = MainDirOUT + "/" + "validation.jpeg"
+FileOUT = MainDirOUT + "/" + "validation_accuracy.jpeg"
 plt.savefig(FileOUT, format="jpeg", bbox_inches="tight", dpi=1000)
 plt.close()
 
