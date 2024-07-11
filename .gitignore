@@ -1,0 +1,12 @@
+# Files to ignore
+
+Data/Raw
+Data/Compute
+Data/Plot/04_*
+Data/Plot/06_*
+Data/Plot/08_*
+Data/Plot/10_*
+Data/Plot/12_*
+Data/Plot/23_*
+Data/Plot/30_*
+Data/Plot/43_*
